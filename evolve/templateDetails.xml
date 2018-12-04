@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 3.x//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+	<name>Evolve</name>
+	<version>1.0</version>
+	<creationDate>11/09/2015</creationDate>
+	<author>cmsBlueTheme</author>
+	<authorEmail>contact.bluetheme@gmail.com</authorEmail>
+	<copyright>Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.</copyright>
+	<description>
+    <![CDATA[
+				Evolve. Info and Support: <a href="mailto:contact.bluetheme@gmail.com">contact.bluetheme@gmail.com</a> - <a href="index.php?option=com_templates">Go to Template Manager</a> 
+			]]>
+   </description>
+	<files>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>font</folder>
+		<folder>scripts</folder>
+		<folder>language</folder>
+		<folder>less</folder>
+	</files>
+	<positions>
+		<position>banner</position>
+		<position>debug</position>
+        <position>left</position>
+        <position>right</position>
+		<position>breadcrumb</position>
+		<position>search</position>
+		<position>top1</position>
+		<position>top2</position>
+		<position>menu</position>
+		<position>featured</position>
+		<position>user1</position>
+		<position>user2</position>
+		<position>user3</position>
+		<position>user4</position>
+		<position>user5</position>
+		<position>user6</position>
+		<position>user7</position>
+		<position>user8</position>
+		<position>user9</position>
+		<position>user10</position>
+		<position>user11</position>
+		<position>user12</position>
+		<position>user13</position>
+		<position>bottom1</position>
+		<position>bottom2</position>
+		<position>bottom3</position>
+		<position>bottom4</position>
+		<position>bottom5</position>
+		<position>footer</position>
+	</positions>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_evolve.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_evolve.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="stbasic" label="Layout Option">
+				<field name="xml_logo" type="media" directory="/images/" defalt="images/logo.png"
+					label="TPL_EVOLVE_LOGO_LABEL"
+					description="TPL_EVOLVE_LOGO_DESC" />
+                <field name="bt_logo_hight" type="text"
+					label="Hight Logo" default="42"
+					description="" >
+                </field>
+                <field name="xml_layout_style" type="list" default="1"
+					label="TPL_EVOLVE_LAYOUT_STYLE_LABEL"
+					description="TPL_EVOLVE_LAYOUT_STYLE_DESC" >
+                    <option value="1">Wide</option>
+                    <option value="2">Boxed</option>
+                </field>
+                <field name="xml_layout_style_bg" type="list" default="escheresque_ste"
+					label="TPL_EVOLVE_LAYOUT_STYLE_BG_LABEL"
+					description="TPL_EVOLVE_LAYOUT_STYLE_BG_DESC" >
+                    <option value="noise_pattern_with_crosslines">bg1</option>
+                    <option value="noise">bg2</option>
+                    <option value="escheresque_ste">bg3</option>
+                    <option value="crisp_paper_ruffles">bg4</option>
+                    <option value="navy_blue">bg5</option>
+                    <option value="bedge_grunge">bg6</option>
+                    <option value="diamond_upholstery">bg7</option>
+                    <option value="px_by_Gre3g">bg8</option>
+                    <option value="light_toast">bg9</option>
+                    <option value="retina_dus">bg10</option>
+                    <option value="purty_wood">bg11</option>
+                    <option value="pw_maze_black">bg12</option>
+                    <option value="textured_stripes">bg13</option>
+                    <option value="tileable_wood_texture">bg14</option>
+                </field>
+                
+                <field name="bt_control" type="radio"
+					class="btn-group btn-group-yesno"
+					label="Switcher Control" default="0"
+					description="" >
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+				<field name="xml_404_page" type="menuitem"
+					label="TPL_EVOLVE_404_PAGE_LABEL"
+					description="TPL_EVOLVE_404_PAGE_DESC" />
+			</fieldset>
+            <fieldset name="stcolor" label="Preset Color">
+                <field
+    			name="xml_space_header"
+    			type="spacer"
+                label="Header" 
+    			/>
+				<field name="xml_header_bg_color" type="color" default="#ffffff" label="TPL_EVOLVE_HEADER_BG_COLOR_LABEL" description="TPL_EVOLVE_HEADER_BG_COLOR_DESC"/>
+				<field name="xml_header_color" type="color" default="#666" label="TPL_EVOLVE_HEADER_COLOR_LABEL" description="TPL_EVOLVE_HEADER_COLOR_DESC"/>
+				<field name="xml_space_preset_main"
+    			type="spacer"
+                label="Preset color main" 
+    			/>
+                <field name="xml_preset_color_df" type="list" default="grayblue"
+					label="TPL_EVOLVE_PRESET_COLOR_LABEL"
+					description="TPL_EVOLVE_PRESET_COLOR_DESC" >
+                    <option value="#d2be82">beige</option>
+                    <option value="#50d2f5">blue</option>
+                    <option value="#643c1e">brown</option>
+                    <option value="#28cdbe">cyan</option>
+                    <option value="#9ba5af">gray</option>
+                    <option value="#5f8cb4">grayblue</option>
+                    <option value="#2dcd73">green</option>
+                    <option value="#2850c8">navy</option>
+                    <option value="#9bbe55">olive</option>
+                    <option value="#f56450">orange</option>
+                    <option value="#cd2d78">pink</option>
+                    <option value="#8250a0">purple</option>
+                    <option value="#cd2323">red</option>
+                    <option value="#f5d250">yellow</option>
+                    <option value="other">other color</option>
+                </field>
+                <field name="xml_preset_main_other"
+    			type="color"
+                label="Preset color other" 
+    			/>
+			</fieldset>
+		</fields>
+        
+	</config>
+</extension>
