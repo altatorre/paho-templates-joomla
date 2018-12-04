@@ -18,7 +18,7 @@ body {
 	background-color: #F5F5F5;
 	margin: 0;
 	padding: 0;
-	font-family: Verdana, Arial, sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
 	line-height: 20px;
 	-webkit-text-size-adjust: none;
@@ -34,7 +34,7 @@ body {
 /* Some basic styles */
 /* ============ */
 p {
-	font: 13px/20px Verdana, Arial, sans-serif;
+	font: 13px/20px 'Open Sans', Arial, sans-serif;
 	margin-top: 2px;
 	margin-bottom: 10px;
 }
@@ -329,19 +329,32 @@ ul.jemmod {
 	padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
 	padding-top: 25px;
 	height: 0;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
 }
-.ytWrapper iframe {
+.ytWrapper iframe, .ytWrapper object, .ytWrapper embed {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%!important;
 	height: 100%!important;
 }
-#postmain {
-	clear: both !important;
-	margin: 0;
+.moduletablenmh-multimedia #dc-video {
 	width: 100%;
-	float: left;
+	float: none;
+}
+.moduletablenmh-multimedia #dc-video #ytlist{
+	width: 96.2%;
+	height: 136px;
+	border: 1px solid #CCC;
+}
+.moduletablenmh-multimedia #dc-video #ytlist ul{
+	list-style-type: square;
+	margin-left: 6px;
+	padding-left: 6px;
 }
 #postmain {
 	clear: both !important;
@@ -395,7 +408,7 @@ ul.jemmod {
 	text-align: center;
 	margin-top: 4px;
 	margin-bottom: 4px;
-	float: left
+	float: left;
 }
 .ftmenu {
 	width: 22%;
@@ -406,15 +419,18 @@ ul.jemmod {
 .ftmenu ul {
 	list-style-type: none;
 	color: #FFF;
-	margin: 0 0 0 -14px;
+	margin: 0 0 0 -1px;
 	padding: 0;
 }
 .ftmenu ul li {
 	line-height: 12px;
 	color: #FFF;
 }
+.ftmenu:last-child ul {
+	margin-top: -20px;
+}
 #countries h3, .fplatestnews {
-	font: 14px/20px Verdana, Arial, sans-serif;
+	font: 14px/20px 'Open Sans', Arial, sans-serif;
 	font-weight: bold;
 	color: #D70;
 	padding-bottom: 5px;
@@ -458,14 +474,14 @@ ul.jemmod {
 	color: #FFF;
 }
 h2.entry-title {
-	font: 15px/20px Verdana, Arial, sans-serif;
+	font: 15px/24px 'Open Sans', Arial, sans-serif;
 	font-weight: bold;
 	color: #2255aa;
 	margin-top: 5px;
 	margin-bottom: 12px;
 }
 h1.entry-title {
-	font: 15px/20px Verdana, Arial, sans-serif;
+	font:  18px/28px 'Open Sans', Arial, sans-serif;
 	font-weight: bold;
 	color: #2255aa;
 	margin-top: 8px;
@@ -475,16 +491,16 @@ h1.entry-title a {
 	color: #25A;
 }
 .entry-meta {
-	font: 11px/25px Verdana, Arial, sans-serif;
+	font: 11px/25px 'Open Sans', Arial, sans-serif;
 	color: #666;
 }
 .entry-text, .entry-text p {
-	font: 13px/18px Verdana, Arial, sans-serif;
+	font: 13px/18px 'Open Sans', Arial, sans-serif;
 	color: #222;
 }
 .entry-utility {
 	border-bottom: 1px solid #AAA;
-	font: 12px/18px Verdana, Arial, sans-serif;
+	font: 12px/18px 'Open Sans', Arial, sans-serif;
 	padding: 4px;	
 	background-color: #E6E9EC;
 	margin-bottom: 12px;
@@ -506,9 +522,6 @@ h1.entry-title a {
 	font-weight: bold;
 	padding: 3px;
 	margin-bottom: 4px;
-}
-.programs ul li {
-	list-style-type: none;
 }
 .largebox_title {
 /*	color: #2266cc; */
@@ -534,7 +547,7 @@ h1.entry-title a {
 	color: #259;
 }
 #primary ul, #sidebar ul {
-	style: none;
+	list-style: none;
 	margin: 0px;
 }
 #primary ul li ul, #sidebar ul li ul {
@@ -563,6 +576,15 @@ h1.entry-title a {
 }
 #sidebar a {
 	font-size: 11px;
+}
+.hap-foto-l {
+	clear: both;
+	width: 49.5%;
+	float: left;
+}
+.hap-foto-r {
+	width: 49.5%;
+	float: right;
 }
 #footer {
 	clear: both;
@@ -623,10 +645,10 @@ h1.entry-title a {
 	margin: 0px;
 }
 #home_widgets_internal2 ul li {
-	font: 13px/22px Verdana, Arial, sans-serif;
+	font: 13px/22px 'Open Sans', Arial, sans-serif;
 }
 #home-widget-area-1 ul li {
-	font: 13px/15px Verdana, Arial, sans-serif;
+	font: 13px/15px 'Open Sans', Arial, sans-serif;
 }
 #home-widget-area-1 {
 	width:31%;
@@ -768,13 +790,27 @@ div.moduletable h2 {
 }
 h1.contentheading, h1.componentheading, h2.news {
 	margin-top: -14px;
-	font: 18px/23px 'Cabin', sans-serif;
+	font: 20px/24px 'Open Sans', sans-serif;
+	font-weight: bold;
 	color: #26C;
 	margin-bottom: 18px;
 }
 h2.contentheading, h2.componentheading, h2.contentheading a, h2.componentheading a {
 	line-height: 19px;
+	font-weight: bold;
 	font-size: 16px;
+	color: #26C;
+}
+h3.contentheading, h3.componentheading, h3.contentheading a, h3.componentheading a {
+	line-height: 17px;
+	font-weight: bold;
+	font-size: 14px;
+	color: #26C;
+}
+h4.contentheading, h4.componentheading, h4.contentheading a, h4.componentheading a {
+	line-height: 15px;
+	font-weight: bold;
+	font-size: 13px;
 	color: #26C;
 }
 div.moduletable h3 {
@@ -807,10 +843,8 @@ h3.dm_title {
   display: table;
   clear: both;
 }
-
-
 .contentpagetitle {
-	font: 18px/23px 'Cabin', sans-serif;
+	font: 20px/24px 'Open Sans', sans-serif;
 	color: #196AAA;
 }
 #language ul {
@@ -1103,7 +1137,6 @@ a.colapslistptd {
 	list-style-type: none;
 	width: 478px;
 	margin-left: -32px;
-	padding-left: -32px;
 	padding-bottom: 8px;
 	border-bottom: 1px solid #CCC;
 	margin-bottom: 10px;
@@ -1111,7 +1144,6 @@ a.colapslistptd {
 ul#list_3547 {
 	margin-top: 100px;
 	margin-left: -10px;
-	padding-left: -10px;
 }
 
 ul.colaps_ulnoarrow li {
@@ -1396,10 +1428,10 @@ blockquote
 .oneboxResults { display:none; }
 .main-results-without-dn td a { font-size:14px; font-weight:bold; } 
 #content_full .gsc-control-cse {
-font-family: Verdana, Arial, sans-serif;
+font-family: 'Open Sans', Arial, sans-serif;
 }
 .gsc-control-cse .gsc-table-result {
-font-family: Verdana, Arial, sans-serif;
+font-family: 'Open Sans', Arial, sans-serif;
 }
 
 #content_full #cse-header {
@@ -1416,7 +1448,7 @@ font-family: Verdana, Arial, sans-serif;
 #content_full .gsc-result,
 #content_full .gs-webResult,
 #content_full .gs-result {
-font-family: Verdana, Arial, sans-serif;
+font-family: 'Open Sans', Arial, sans-serif;
 font-size: 14px;
 line-height: 19px;
 }
@@ -1516,7 +1548,7 @@ div.prlist {
   border-left: none;
 }
 #mcnewsright p {
-	font-size: 12px;
+	font-size: 13px;
 	margin-top: 0px;
 	margin-bottom: 8px;
 	border-bottom: 1px dotted #aaaaaa;
@@ -2240,14 +2272,27 @@ line-height:95%;
 	border-top: 1px solid #999;
 	border-bottom: 1px solid #999;
 }
+.wd-dotted-border {
+	border-top: 1px dotted #aaa;
+	border-bottom: 1px dotted #aaa;
+}
 .wd-border-tp {
 	border-top: 1px solid #999;
+}
+.wd-dotted-border-tp { 
+	border-top: 1px dotted #aaa;
 }
 .wd-border-bt, .wd-border-special {
 	border-bottom: 1px solid #999;
 }
+.wd-dotted-border-bt, .wd-dotted-border-special {
+	border-bottom: 1px dotted #aaa;
+}
 .wd-border-full {
 	border: 1px solid #999;
+}
+.wd-dotted-border-full {
+	border: 1px dotted #aaa;
 }
 .wd-border-round {
 	border-radius: 5px;
@@ -4804,6 +4849,14 @@ a.bkbutton, a.bkbutton:visited {
 	.wd-pull-up {
 		margin-top: -16px;
 	}
+		/* modulos de las paginas wd */
+	.colapslist_main p, .colapslist_mainnoarrow p, .colapslist_mainnoarroworange p {
+		font-size: 16px !important;
+	}
+	#mcnewsright p {
+		font-size: 16px;
+	}
+	
 }
 
 /* ================================================================================ */
@@ -5246,7 +5299,7 @@ a.bkbutton, a.bkbutton:visited {
 		width: 440px;
 		height: 236px;
 		position: relative;
-		margin: 10px 0 5px 5px;
+		margin: 10px 0 5px 0;
 		overflow: hidden;
 	}
 	.fp_slsh_foto {
@@ -5349,6 +5402,11 @@ a.bkbutton, a.bkbutton:visited {
 		padding: 2px;
 		margin: 2px 0;
 	}
+	.hap-foto-l, .hap-foto-r {
+		clear: both;
+		width: 100%;
+		float: none;
+	}
 	#stories {
 		position: relative;
 		width: 450px;
@@ -5412,6 +5470,12 @@ a.bkbutton, a.bkbutton:visited {
 		width: 40px;
 		float: right;
 	}
+	.eb-box.autoridades a, .eb-box-33 a, .eb-box-33-last a, .eb-box.autoridades a:visited, .eb-box.profesionales a, .eb-box.profesionales a:visited {
+		font-size: 100%;
+	}
+	.eb-box.autoridades a:hover, .eb-box-33 a:hover, .eb-box-33-last a:hover, .eb-box.profesionales a:hover {
+		font-size: 100%;
+	}
 	.stories_caption {
 		position: absolute;
 		width: 440px;
@@ -5428,6 +5492,10 @@ a.bkbutton, a.bkbutton:visited {
 		position: absolute;
 		top: 0;
 		left: 0;
+	}
+	#big_pubslide .image_only img {
+		width: 440px;
+		height: auto;
 	}
 	.pub_slsh_texto img {
 		width: 120px;
@@ -5459,7 +5527,7 @@ a.bkbutton, a.bkbutton:visited {
 	#pubslides {
 		width: 440px;
 		float: left;
-		height: 230px;
+		height: 260px;
 		position: relative;
 		margin: 10px 0 5px 0;
 		overflow: hidden;
@@ -5598,6 +5666,14 @@ a.bkbutton, a.bkbutton:visited {
 	.wd-pull-up {
 		margin-top: -16px;
 	}
+		/* modulos de las paginas wd */
+	.colapslist_main p, .colapslist_mainnoarrow p, .colapslist_mainnoarroworange p {
+		font-size: 16px !important;
+	}
+	#mcnewsright p {
+		font-size: 16px;
+	}
+	
 }
 
 /* ================================================================================ */
@@ -5607,6 +5683,35 @@ a.bkbutton, a.bkbutton:visited {
 @media screen and (max-width: 479px) {
 	body {
 		overflow-x: auto;
+	}
+	h1.entry-title, h1.content-heading, .contentpagetitle {
+		font-size: 24px !important;
+		line-height: 24px;
+	}
+	h2 {
+		font-size: 22px;
+		line-height: 26px;
+	}
+	#primary h3, #sidebar h3 {
+		font-size: 20px;
+	}
+	#sidebar a {
+		font-size: 15px;
+		line-height: 18px;
+	}
+	p, li {
+		font-size: 16px;
+		line-height: 22px;
+	} 
+	.moduletablemcleft ul li a {
+		font-size: 14px;
+	}
+	#site-info p {
+		font-size: 13px;
+	}
+	.ocm {
+		font-size: 12px;
+		line-height: 16px;
 	}
 	#wrapper {
 		width: 300px;
@@ -5637,7 +5742,7 @@ a.bkbutton, a.bkbutton:visited {
 	}
 	#header {
 		width: 300px;
-		height: 82px;
+		height: 100px;
 		position: relative;
 		margin: 0;
 		float: left;
@@ -5710,9 +5815,9 @@ a.bkbutton, a.bkbutton:visited {
 	}
 	#share {
 		position: absolute;
-		width: 138px;
-		right: 0;
-		top: 40px;
+		width: 100%;
+		right: 38px;
+		top: 60px; /* 40px; */ 
 		text-align: right;
 		border: none;
 	}
@@ -5785,14 +5890,13 @@ a.bkbutton, a.bkbutton:visited {
 		border-radius: 0;
 	}
 	#breadcrumbs {
-		display: none;
 		background: #FFF;
 		margin: 0;
 		padding-top: 4px;
 		padding-bottom: 4px;
 	}
 	.pathway {
-		font-size: 10px;
+		font-size: 14px;
 	}
 	#highlight_out {
 		display: block;
@@ -5800,7 +5904,7 @@ a.bkbutton, a.bkbutton:visited {
 		border: 1px solid #259;
 	}
 	#highlight_mid h3 {
-		font-size:11px;
+		font-size:15px;
 		margin: 0;
 		padding-left: 4px;
 		color: #EEE;
@@ -5815,7 +5919,8 @@ a.bkbutton, a.bkbutton:visited {
 		display: inline;
 		margin-left: 0;
 		margin-right: 4px;
-		font-size: 11px;
+		font-size: 14px;
+		line-height:18px;
 	}
 	#highlight_mid ul li:after {
 		content: " |";
@@ -5837,6 +5942,34 @@ a.bkbutton, a.bkbutton:visited {
 	h2.entry-title {
 	  line-height: 17px;
  	}
+	#content_full .moduletable ul, #content_right .moduletable ul,
+	#content_left#content_right .moduletable ul, #content_lr .moduletable ul {
+		list-style: none;
+		margin-left: -15px;
+	}
+	#content_full .moduletable ul li, #content_right .moduletable ul li,
+	#content_left#content_right .moduletable ul li, #content_lr .moduletable ul li {
+		border-bottom: 1px solid #CCC;
+		padding-bottom: 4px;
+		margin-bottom: 6px;
+	}
+	#footr_in .ftmenu {
+		width: 100%;
+		float: none;
+	}
+	#footr_in .ftmenu h3 {
+		margin-top: 10px;
+	}
+	.eb-box.autoridades a, .eb-box-33 a, .eb-box-33-last a, .eb-box.autoridades a:visited, .eb-box.profesionales a, .eb-box.profesionales a:visited {
+		font-size: 80%;
+	}
+	.eb-box.autoridades a:hover, .eb-box-33 a:hover, .eb-box-33-last a:hover, .eb-box.profesionales a:hover {
+		font-size: 80%;
+	}
+	.photo-caption-left, .photo-caption-center, .photo-caption-right {
+		font-size: 11px;
+		line-height: 15px;
+	}
 	#right {
 		clear: both;
 		display: block;
@@ -5851,6 +5984,18 @@ a.bkbutton, a.bkbutton:visited {
 		padding-bottom: 0;
 		margin-bottom: 0;
 	}
+	#sidebar ul.newsfeed {
+		margin-left: -12px;
+		list-style-type: square;
+	}
+	
+	.colapslist_main p, .colapslist_mainnoarrow p, .colapslist_mainnoarroworange p {
+		font-size: 16px !important;
+	}
+	#mcnewsright p {
+		font-size: 16px;
+	}
+	
 	#footr_out {
 		width: 300px;
 		float: none;
@@ -5871,7 +6016,12 @@ a.bkbutton, a.bkbutton:visited {
 		width: 290px;
 		margin: 0;
 		text-align: center;
-}
+	}
+	.hap-foto-l, .hap-foto-r {
+		clear: both;
+		width: 100%;
+		float: none;
+	}
 	.soc {
 		width: 16%;
 	}
@@ -5889,15 +6039,15 @@ a.bkbutton, a.bkbutton:visited {
 		font-size: 11px;
 	}
 	.ftmenu ul {
-		list-style-type: none;
+		list-style-type: square;
 		color: #FFF;
-		margin-left: -14px;
+		margin-left: -1px;
 	}
 	.ftmenu ul li {
 		line-height: 14px;
 	}
 	.ftmenu a {
-		font-size: 10px;
+		font-size: 12px;
 	}
 	#home_widgets {
 		width: 290px;
@@ -6065,6 +6215,10 @@ a.bkbutton, a.bkbutton:visited {
 		top: 0;
 		left: 0;
 	}
+	#big_pubslide .image_only img {
+		width: 300px;
+		height: auto;
+	}
 	.pub_slsh_texto img {
 		width: 80px;
 		height: auto;
@@ -6095,7 +6249,7 @@ a.bkbutton, a.bkbutton:visited {
 	#pubslides {
 		width: 300px;
 		float: left;
-		height: 230px;
+		height: 240px;
 		position: relative;
 		margin: 10px 0 5px 0;
 		overflow: hidden;
