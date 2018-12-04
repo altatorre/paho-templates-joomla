@@ -26,12 +26,12 @@ body {
 	-webkit-text-size-adjust: none;
 	overflow-x: hidden;
 }
-/* ============== */
-/* Some basic styles */
-/* ============ */
+/* =============
+	 Some basic styles
+	 ============= */
 p {
 	font: 13px/18px Verdana, Arial, sans-serif;
-	margin-top: 10px;
+	margin-top: 2px;
 	margin-bottom: 10px;
 }
 a {
@@ -134,7 +134,6 @@ ul {
 	height:13px;
 	float:left;
 	background:#F92;
-/*	border: 1px solid #E6EFFC; */
 	border-radius: 50%;
 }
 .color-circle-b {
@@ -143,7 +142,6 @@ ul {
 	height:13px;
 	float:left;
 	background:#258;
-/*	border: 1px solid #E6EFFC; */
 	border-radius: 50%;
 }
 #main {
@@ -220,9 +218,7 @@ ul.eventlistmod li span.date {
 	margin: 0;
 }
 #honcode {
-	width: 16%;
-	margin-left: 2%;
-	margin-right: 1%;
+	width: 31%;
 	float: left;
 }
 #honcode p {
@@ -356,6 +352,7 @@ ul.xoxo {
 #primary h3, #sidebar h3 {
 	font-size: 12px;
 	font-weight: bold;
+	font: 15px/19px 'Cabin', sans-serif;
 	border-bottom: 2px dotted #666;
 	border-bottom: 1px solid #AAA;
 	color: #D70;
@@ -492,7 +489,7 @@ ul.latestnews {
 	padding-top: 0;
 }
 ul.latestnews li {
-	font-weight: bold;
+	font-weight: normal;
 	font-size: 100%;
 }
 #language ul {
@@ -584,7 +581,7 @@ ul.latestnews li {
 	#header {
 		width: 980px;
 		position: relative;
-		margin: 0 12px;
+		margin: 0 22px;
 		float: left;
 		text-align: center;
 	}
@@ -594,7 +591,7 @@ ul.latestnews li {
 		top: 0;
 	}
 	#flag img {
-		width: 275px;
+		width: 250px;
 		height: auto;
 	}
 	#banner {
@@ -656,7 +653,7 @@ ul.latestnews li {
 		position: absolute;
 		width: 138px;
 		right: 0;
-		top: 46px;
+		top: 38px;
 		text-align: right;
 		border: none;
 }
@@ -669,7 +666,7 @@ ul.latestnews li {
 		height: 22px;
 		border: 1px solid #DBEEF9;
 		border-radius: 0;
-		top: 7px;
+		top: 6px;
 		left: 730px;
 	}
 	#search input[name="sa"] {
@@ -773,7 +770,7 @@ ul.latestnews li {
 		border: 3px double #AAA;
 		float: left;
 		margin: 2px 8px 5px 0;
-}
+	}
 	#noticias_col_dois {
 		width: 35%;
 		float: right;
@@ -825,19 +822,20 @@ ul.latestnews li {
 	}
 	#honcode {
 		margin: 0;
-		text-align: center;
-}
+		text-align: left;
+	}
 	.soc {
-		width: 50px;
+		width: 38px;
 	}
 	#honcode img {
-		width: 38px;
+		width: 32px;
 		height: auto;
 		margin: 0;
 		padding: 0;
 	}
 	#honcode p {
-		font-size: 10px;
+		margin-left: 5px;
+		font-size: 11px;
 	}
 	#footr_out {
 		width: 1024px;
@@ -859,7 +857,7 @@ ul.latestnews li {
 		width: 980px;
 		height: 315px;
 		position: relative;
-		margin: 12px 0 18px 20px;
+		margin: 0 0 18px 20px;
 		background: url(../images/sl_bg.png); 
 		background-position: bottom right;
 		background-repeat: no-repeat;

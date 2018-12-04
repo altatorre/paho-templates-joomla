@@ -1,4 +1,4 @@
-﻿/*
+/*
 Theme Name: Responsive FP
 Theme URI: http://www.paho.org/
 Description:	A responsive website framework for Joomla 1.5. 
@@ -58,9 +58,6 @@ ul {
 #language {
 	text-align: right;
 }
-#language .mod-languagesengspa ul.lang-inline li:nth-child(3), #language .mod-languagesengspa ul.lang-inline li:nth-child(4) {
-	display: none;
-}
 #header {
 	width: 980px;
 	clear: both;
@@ -118,6 +115,11 @@ ul {
 	border: 1px solid #196AAA;
 	padding: 1px 8px 4px 8px;
 }
+#slideshow {
+	clear: both;
+	margin: 0 !important;
+	padding: 0;
+}
 #circles {
 	margin: 0 auto;
 }
@@ -156,6 +158,10 @@ ul {
 }
 .mascara {
 	display: none;
+}
+ul.eventlistmod, ul.jemmod {
+	margin-top: 0;
+	margin-bottom: 10px !important;
 }
 ul.eventlistmod li span.date {
 	font-size: 11px;
@@ -228,9 +234,12 @@ ul.eventlistmod li span.date {
 }
 .soc {
 	text-align: center;
-	margin-top: 4px;
+	margin-top: 0px;
 	margin-bottom: 4px;
 	float: left
+}
+.soc a img {
+	height: auto; max-width: 32px;
 }
 .ftmenu {
 	width: 22%;
@@ -239,9 +248,9 @@ ul.eventlistmod li span.date {
 	margin-right: 0;
 }
 .ftmenu ul {
-	list-style-type: none;
+	list-style-type: square;
 	color: #FFF;
-	margin: 0 0 0 -14px;
+	margin: 0 0 0 -1px;
 	padding: 0;
 }
 .ftmenu ul li {
@@ -307,6 +316,9 @@ h1.entry-title a {
 	background-color: #E6E9EC;
 	margin-bottom: 12px;
 }
+.ftmenu:last-child ul {
+	margin-top: -20px;
+}
 #sidebar {
     background: transparent;
     padding-top: 10px;
@@ -351,7 +363,7 @@ ul.xoxo {
 }
 #primary ul, #sidebar ul {
 	style: none;
-	margin: 0px;
+	margin: 0;
 }
 #primary ul li ul, #sidebar ul li ul {
 	list-style: square;
@@ -366,6 +378,9 @@ ul.xoxo {
 	color: #D70;
 	padding-bottom: 2px;
 	margin-top: 11px;
+}
+ul .latestnews {
+	margin-top: 15px;
 }
 #home-widget-area-1 h3, #home-widget-area-2 h3, #home-widget-area-3 h3 {
 	font-weight: bold;
@@ -581,20 +596,15 @@ ul.latestnews li {
 	}
 	#language {
 		width: 1004px;
-		margin-top: 0px;
-		padding: 0;
+		margin: 0 10px;
 		text-align: right;
 	}
 	#language ul {
 		list-style-type: none;
-		margin: 0;
-		padding: 0;
 	}
 	#language ul li {
 		display: inline;
 		font-size: 12px;
-		margin: 0;
-		padding: 0;
 		margin-left: 10px;
 	}
 	#language ul li a {
@@ -673,9 +683,9 @@ ul.latestnews li {
 	}
 	#share {
 		position: absolute;
-		width: 138px;
-		right: 0;
-		top: 38px;
+		width: 238px;
+		right: -10px;
+		top: 30px;
 		text-align: right;
 		border: none;
 }
@@ -714,12 +724,11 @@ ul.latestnews li {
 		position: relative;
 		clear: both;
 		display: block;
-		height: 13px;
+		height: 41px;
 		margin-top: 80px;
 		margin-left: 0;
-		padding-bottom: 28px;
+		margin-bottom: 0 !important;
 		border: none;
-		margin-bottom: 0;
 		background:	#008DC9;
 	}
 	#menus ul {
@@ -893,11 +902,15 @@ ul.latestnews li {
 		background: #F5F5F5;
 		color: #000;
 	}
+
+#slideshow .moduletable #slides {
+padding: 0;
+}
 	#slides {
 		width: 980px;
 		height: 315px;
 		position: relative;
-		margin: -30px 0 18px 20px;
+		margin: 0px 0 18px 20px;
 		border-right: 2px solid #BFDCE5;
 		background: url(../images/sl_bg.png); 
 		background-position: bottom right;
@@ -999,8 +1012,6 @@ ul.latestnews li {
 		top: 293px;
 		text-align: center;
 		z-index: 9100;
-	}
-	.moduletable .eventlistmodi {
 	}
 	#fphighlight_out {
 		width: 982px;
@@ -1254,7 +1265,7 @@ ul.latestnews li {
 		position: absolute;
 		width: 138px;
 		right: 0;
-		top: 36px;
+		top: 3px;
 		text-align: right;
 		border: none;
 	}
@@ -1580,7 +1591,10 @@ ul.latestnews li {
 		text-align: left;
 	}
 	.soc {
-		width: 32px;
+		width: 38px;
+	}
+	.soc a img {
+		height: auto; max-width: 28px;
 	}
 	#honcode img {
 		width: 28px;
@@ -1720,7 +1734,7 @@ ul.latestnews li {
 	#header {
 		width: 600px;
 		position: relative;
-		margin: 0 5px;
+		margin: 4px 5px;
 		float: left;
 		text-align: center;
 	}
@@ -1790,7 +1804,7 @@ ul.latestnews li {
 		position: absolute;
 		width: 138px;
 		right: 0;
-		top: 28px;
+		top: -2px;
 		text-align: right;
 		border: none;
 }
@@ -1949,7 +1963,10 @@ ul.latestnews li {
 		text-align: left;
 	}
 	.soc {
-		width: 27px;
+		width: 38px;
+	}
+	.soc a img {
+		height: auto; max-width: 24px;
 	}
 	#honcode img {
 		width: 24px;
@@ -2066,7 +2083,7 @@ ul.latestnews li {
 	}
 	#fphighlight_mid {
 		position: absolute;
-		top: 20px;
+		top: 25px;
 		left: 0;
 		width: 100%;
 	}
@@ -2225,7 +2242,7 @@ ul.latestnews li {
 	#header {
 		width: 440px;
 		position: relative;
-		margin: 0;
+		margin: 4px 0;
 		float: left;
 		text-align: center;
 	}
@@ -2233,7 +2250,7 @@ ul.latestnews li {
 		position: relative;
 		width: 250px;
 		float: none;
-		margin: 0 auto;
+		margin: 0 10px;
 	}
 	#bnrimg {
 		position: absolute;
@@ -2295,7 +2312,7 @@ ul.latestnews li {
 		position: absolute;
 		width: 138px;
 		right: 0;
-		top: 32px;
+		top: -3px; /* 30px; */
 		text-align: right;
 		border: none;
 }
@@ -2339,6 +2356,7 @@ ul.latestnews li {
 		display: list-item;
 		line-height: 22px;
 	}
+
 	#search {
 		color: #008DC9;
 	}
@@ -2524,10 +2542,14 @@ ul.latestnews li {
 		color: #000;
 	}
 	#honcode {
+		width: 100%;
 		margin: 0;
 	}
 	.soc {
 		width: 40px;
+	}
+	.soc a img {
+		height: auto; max-width: 28px;
 	}
 	#honcode img {
 		width: 28px;
@@ -2548,6 +2570,9 @@ ul.latestnews li {
 		width: 110px;
 		height: auto;
 	}
+	.ftmenu {
+		width: 31%;
+	}
 	.ftmenu a {
 		line-height: 14px;
 	}
@@ -2555,9 +2580,9 @@ ul.latestnews li {
 		font-size: 11px;
 	}
 	.ftmenu ul {
-		list-style-type: none;
+		list-style-type: square;
 		color: #FFF;
-		margin-left: -14px;
+		margin-left: -1px;
 	}
 	.ftmenu ul li {
 		line-height: 12px;
@@ -2566,7 +2591,8 @@ ul.latestnews li {
 		font-size: 10px;
 	}
 	#slideshow {
-		margin-top: -10px;
+		clear: both;
+		margin: 0 !important;
 	}
 	#mini_sld_texto {
 		display: block;
@@ -2652,7 +2678,7 @@ ul.latestnews li {
 	#fphighlight_mid ul {
 		border: 1px solid #999;
 		list-style-type: none;
-		margin-top: 5px;
+		margin-top: 9px;
 		margin-left: 0;
 		line-height: 2px;
 		padding: 3px;
@@ -2692,12 +2718,16 @@ ul.latestnews li {
 }
 
 /* ================================================================================ */
-/* Para janelas abaixo de 480 pixels de largura (na prática, 320px)                 */
+/* Para janelas abaixo de 480 pixels de largura (na pr�tica, 320px)                 */
 /* ================================================================================ */
 
 @media screen and (max-width: 479px) {
 	body {
 		overflow-x: auto;
+	}
+	p.noticias_links, #mini_sld_texto p {
+		font-size: 14px;	
+		line-height:26px;
 	}
 	#wrapper {
 		width: 300px;
@@ -2728,7 +2758,7 @@ ul.latestnews li {
 	}
 	#header {
 		width: 290px;
-		height: 82px;
+		height: 100px;
 		position: relative;
 		margin: 0;
 		float: left;
@@ -2801,9 +2831,10 @@ ul.latestnews li {
 	}
 	#share {
 		position: absolute;
-		width: 138px;
-		right: 0;
-		top: 40px;
+		width: 100%;
+		/* right: 30px; */
+		left: 13px;
+		top: 60px; /* 40px; */ 
 		text-align: right;
 		border: none;
 	}
@@ -2848,6 +2879,7 @@ ul.latestnews li {
 		display: list-item;
 		line-height: 22px;
 	}
+
 	#search {
 		color: #008DC9;
 	}
@@ -2983,9 +3015,13 @@ ul.latestnews li {
 		font-size: 11px;
 		line-height: 16px;
 	}
+	h2.entry-title {
+	  font-size: 24px;
+	  line-height: 24px;
+	}
 	.newstext, .newstext p {
-	  font-size: 11px;
-	  line-height: 14px;
+	  font-size: 18px;
+	  line-height: 24px;
 	}
 	.news_small {
 		margin: 6px;
@@ -3091,9 +3127,12 @@ ul.latestnews li {
 		width: 290px;
 		margin: 0;
 		text-align: center;
-}
+	}
 	.soc {
 		width: 16%;
+	}
+	.soc a img {
+		height: auto; max-width: 27px;
 	}
 	#getconnected img {
 		width: 36px;
@@ -3109,15 +3148,22 @@ ul.latestnews li {
 		font-size: 11px;
 	}
 	.ftmenu ul {
-		list-style-type: none;
+		list-style-type: square;
 		color: #FFF;
-		margin-left: -14px;
+		margin-left: -1px;
 	}
 	.ftmenu ul li {
 		line-height: 14px;
 	}
 	.ftmenu a {
 		font-size: 10px;
+	}
+	#footr_in .ftmenu {
+		width: 100%;
+		float: none;
+	}
+	#footr_in .ftmenu h3 {
+		margin-top: 10px;
 	}
 	#home_widgets {
 		width: 290px;
@@ -3130,4 +3176,32 @@ ul.latestnews li {
 	#fphighlight_out {
 		display: none;
 	}
+	.fplatestnews {
+		font-size:18px;
+	}
+	.newsrm {
+		font-size: 14px;
+	}
+	p.more_news {
+		font-size: 15px;
+	}
+	#sidebar a {
+		font-size: 14px;
+	}
+	#primary h3, #sidebar h3 {
+		font-size: 18px;
+	}
+	
 }
+
+
+.cse .gsc-control-cse, .gsc-control-cse
+{	
+		padding: 0px !important;
+		}
+
+#content_right
+{
+		margin-top: -10px;
+}		
+	
