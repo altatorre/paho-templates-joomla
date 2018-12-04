@@ -11,10 +11,6 @@ This work is released under GNU General Public License, version 2 (GPL).
 http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
-u.list li a {
-	color: blue;	
-	}
-
 .moduletablegraybg
 {
   clear: both;
@@ -117,13 +113,6 @@ u.list li a {
 .entry-content ul.newsfeed li a {
 	font-weight: bold;
 }
-h2.entry-title {
-	font: 15px/24px Verdana, Arial, sans-serif;
-	font-weight: bold;
-	color: #2255aa;
-	margin-top: 5px;
-	margin-bottom: 12px;
-}
 h1.entry-title {
 	font:  18px/28px Verdana, Arial, sans-serif;
 	font-weight: bold;
@@ -134,6 +123,28 @@ h1.entry-title {
 h1.entry-title a {
 	color: #25A;
 }
+h2 {
+	font: 20px/22px Verdana, Arial, sans-serif;
+	margin-top: 5px;
+	margin-bottom: 12px;
+	font-weight: bold;
+}
+h2.entry-title {
+	font: 15px/24px Verdana, Arial, sans-serif;
+	font-weight: bold;
+	color: #2255aa;
+	margin-top: 5px;
+	margin-bottom: 12px;
+}
+h3 {
+	font: 17px/20px Verdana, Arial, sans-serif;
+	margin-top: 5px;
+	margin-bottom: 12px;
+	font-weight: bold;
+}
+.moduletable h3 {
+	font: 14px/16px Verdana, Arial, sans-serif;
+}
 .entry-meta {
 	font: 11px/25px Verdana, Arial, sans-serif;
 	color: #666;
@@ -143,18 +154,18 @@ h1.entry-title a {
 	color: #222;
 }
 
-/* #primary a , #sidebar a  {
+#primary a, #sidebar a {
 	color: #259;
-} */
-#primary ul /* , #sidebar ul */ {
+}
+#primary ul, #sidebar ul {
 	list-style: none;
 	margin: 0px;
 }
-#primary ul li ul /* , #sidebar ul li ul */ {
+#primary ul li ul, #sidebar ul li ul {
 	list-style: square;
 	margin: 20px;
 }
-#primary h3/* , #sidebar h3 */ {
+#primary h3, #sidebar h3 {
 	font-size: 12px;
 	font-weight: bold;
 	border-bottom: 2px dotted #666;
@@ -171,12 +182,12 @@ h1.entry-title a {
 	padding-bottom: 2px;
 	margin-top: 10px;
 }
-/* #sidebar ul li {
+#sidebar ul li {
 	line-height: 14px;
-} 
+}
 #sidebar a {
 	font-size: 11px;
-} */
+}
 li.mcnews-list { /* Trabajo con el mcnews para el listado completo de noticias 20161108 */
 	padding-bottom: 10px;
 	border-bottom: 1px dotted gray;
@@ -226,33 +237,40 @@ li.mcnews-list { /* Trabajo con el mcnews para el listado completo de noticias 2
 	max-width: 100%;
 	height: auto;
 }
-/* .sidebar .moduletable ul {
+.sidebar .moduletable ul {
 	list-style: square;
 	margin: 0;
 	padding: 0;
 }
 .sidebar .moduletable ul li {
 	margin-left: 15px;
-} */
+}
 ul.children {
 /*	margin-left: 20px;
 	padding-left: 20px; */
 }
 ul.latestnews {
+	list-style-type:none;
 	margin-top: 0;
 	padding-top: 0;
 }
 ul.latestnews li {
-	font-weight: bold;
+	font-weight: none;
 	font-size: 100%;
 }
+
+a.latestnews {
+	font-size:14px !important;
+	font-weight:bold;
+	}
+
 #postmain {
 	clear: both;
 	width: 100%;
 	float: left;
 }
 .newstext, .newstext p {
-	font-size: 12px;
+	font-size: 16px; /* para who-fp */
 	line-height: 17px;
 }
 .newsrm {
@@ -291,7 +309,7 @@ li.latestnews a {
 	font-size: 12px;
 }
 div.moduletable h2 {
-	font-size: 13px;
+	font-size: 15px;
 }
 h1.dm_title {
 	font-size: 18px;	
@@ -389,20 +407,21 @@ h3.dm_title {
 figure {
     display: block;
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 9px;
     margin-left: 0px;
     margin-right: 0px;
 }
 figcaption {
     background: #ECF3F9;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 14px;
     border-left: 1px solid #AAA;
     border-right: 1px solid #AAA;
     border-bottom: 1px solid #AAA;
-    padding: 3px 4px 5px 4px;
-    margin-top: -5px;
+    padding: 9px 4px 5px 4px;
+    margin-top: -2px;
     margin-bottom: 8px;
+	text-align: justify;
 }
 .photo-caption-left, .photo-caption-center, .photo-caption-right {
     background: #ECF3F9;
@@ -426,6 +445,95 @@ figcaption {
 }
 
 /* *** end = photo caption styles = end *** */
+
+/* *** begin = photo hover effect styles = begin = (OR-170719) *** */
+
+.thumbnail:hover {
+    position:relative;
+    top:-25px;
+    left:-35px;
+    width:800px;
+    height:auto;
+    display:block;
+    z-index:999;
+}
+
+ul.img-list {
+  	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	text-align: center;
+}
+
+ul.img-list li {
+  	display: inline-block;
+  	height: auto;
+  	margin: 0 1em 1em 0;
+  	position: relative;
+  	width: 360px;
+}
+span.text-content {
+  	background: rgba(0,0,0,0.5);
+  	color: white;
+	font-size: 20px; 
+	font-weight: 700; 
+	cursor: pointer;
+  	display: table;
+  	height: 248px;
+  	left: 0;
+  	position: absolute;
+  	top: 0;
+	width: 360px;
+	opacity: 0;
+	-webkit-transition: opacity 500ms;
+	-moz-transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	transition: opacity 500ms;
+}
+span.text-content span {
+  	display: table-cell;
+  	text-align: center;
+  	vertical-align: middle;
+}
+ul.img-list li:hover span.text-content {
+	opacity: 1;
+}
+
+/* *** end = photo hover effect styles = end ****/
+
+
+/* *** begin = Pagebreak styles = begin = (OR-170502) *** */
+.pagenavcounter {
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 600;
+	margin-left: 1px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #CCC;
+	margin-bottom: 14px;
+	font-style: italic;
+	color: darkcyan;
+}
+.pagenavbar {
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 600;
+	margin-left: 1px;
+	padding-bottom: 8px;
+	border-top: 1px solid #CCC;
+	margin-top: 14px;
+	font-style: italic;
+	background-color: aliceblue; 
+	color: black;
+	padding: 6px;
+	margin-top: -11px !important;
+}
+/* *** end = Pagebreak styles = end *** */
+
+.table-wrapper {
+	overflow-x: auto;
+	max-width: 100%;
+}
 
 /* -------------------------------- */
 /* Estilos importados do antigo CSS */
@@ -679,9 +787,9 @@ div.paging ul li {
 }
 .w,.w a:link{color:#196AAA;font-weight: bold;}
 .f,.f:link,.f a:link{color:#196AAA;font-weight: normal;font-size: 12px;}
-/* a:visited,.f a:visited{color:#196AAA}
+a:visited,.f a:visited{color:#196AAA}
 a:active,.f a:active{color:#D86422}
-a:hover,.f a:hover{color:#D86422} */
+a:hover,.f a:hover{color:#D86422}
 .t{color:#333333}
 .t{background-color:#ffffff}
 .z{display:none}
@@ -943,6 +1051,10 @@ h3.fpnews {
 	padding-left: 4px;
 	box-shadow: 3px 3px 6px #CCC;
 }
+.moduletablemc {
+	padding: 20px;
+}
+
 .moduletablemc h3 {
 	font-size: 14px;
 	background: #32B6ED;
@@ -951,6 +1063,7 @@ h3.fpnews {
 	margin-top: -5px;
 	padding-bottom: 4px;
 	padding-top: 2px;
+
 }
 #mcmultimedia {
 	width: 100%;
@@ -960,11 +1073,13 @@ h3.fpnews {
 	background: #32B6ED;
 	overflow: hidden;
 	margin-bottom: 12px;
+		padding: 20px;
 }
 #mcmultimedialeft {
 	width: 300px;
 	float: left;
 	margin-top: 0;
+	/* margin: 20px; */
 }
 #mcmultimediaright {
 	width: 248px;
@@ -1044,10 +1159,10 @@ h3.fpnews {
 	padding-left: 0;
 }
 .moduletablemcleft ul li {
-	font-size: 11px;
+	font-size: 14px;
 }
 .moduletablemcleft ul li a {
-	font-size: 11px;
+	font-size: 14px;
 }
 #ytgallery_wrapper {
 	width: 100%;
@@ -1150,7 +1265,7 @@ p.vidinfo {
 	line-height:15px;
 }
 a.toclink {
-	font-size: 12px;
+	font-size: 11px;
 	padding: 0;
 }
 ul.toc {
@@ -1440,8 +1555,8 @@ line-height:95%;
 	font-weight: normal;
 }
 .moduletablenoarrow h3 {
-	font-size: 13px;
-	font-weight: normal;
+	font-size: 16px;
+	font-weight: bold;
 }
 .moduletableh1n1 h3 {
 	color: #259;
@@ -1467,12 +1582,12 @@ line-height:95%;
 .moduletablenoarroworange .colapslist_titlenoarroworange {
 	cursor: default;
 	color: #DD7700;
-	font-size: 13px;
+	font-size: 16px;
 	font-weight: bold;
 }
 .moduletablenoarroworange h3, .colapslist_title_hovernoarroworange {
 	cursor: pointer;
-	font-size: 13px;
+	font-size: 16px;
 	font-weight: bold;
 	color: #D70;
 }
@@ -1576,35 +1691,59 @@ line-height:95%;
 	margin-bottom: 12px !important;
  	box-sizing: border-box;
 }
-.wd-half:nth-child(even) {
+.wd-half:last-child {
 	float: right;
 	margin-right: 0;
 }
-.wd-third {
+.wd-third, .wd-third-left {
 	width: 31%;
 	float: left;
 	margin-left: 0;
-	margin-right: 3.5%;
+	margin-right: 3.4%;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin-bottom: 12px !important;
  	box-sizing: border-box;
 }
-.wd-column:last-child, .wd-quarter:last-child, .wd-third:last-child {
+.wd-third-right {
+	width: 31%;
 	float: right;
-	margin-right: 0;
-}
-.wd-twothirds {
-	width: 62%;
-	float: right;
-	margin-left: 3.5%;
+	margin-left: 0;
 	margin-right: 0;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin-bottom: 12px !important;
  	box-sizing: border-box;
 }
-.wd-twothirds:after {
+.wd-column:last-child, .wd-quarter:last-child, .wd-third:last-child, .wd-third-left:last-child {
+	float: right;
+	margin-right: 0;
+}
+.wd-third-right:last-child {
+	float: left;
+	margin-left: 0;
+}
+.wd-twothirds, .wd-twothirds-right {
+	width: 65.6%;
+	float: right;
+	margin-left: 0;
+	margin-right: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 12px !important;
+ 	box-sizing: border-box;
+}
+.wd-twothirds-left {
+	width: 64.3%;
+	float: left;
+	margin-left: 0;
+	margin-right: 2.3%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 12px !important;
+ 	box-sizing: border-box;
+}
+.wd-twothirds:after, .wd-twothirds-right:after, .wd-twothirds-left:after {
   content: "";
   display: table;
   clear: both;
@@ -1670,17 +1809,38 @@ line-height:95%;
 }
 /* TYPOGRAPHY - TYPOGRAPHY */
 .wd-panel h2 {
-	font-size: 44px;
-	line-height: 40px;
-}
-.wd-panel h3 {
-	font-size: 32px;
-	line-height: 28px;
-}
-.wd-panel h4 {
 	font-size: 15px;
 	line-height: 19px;
+	font-weight: bold;
 }
+.wd-panel h3 {
+	font-size: 14px;
+	line-height: 19px;
+	font-weight: bold;
+}
+.wd-panel h4 {
+	font-size: 13px;
+	line-height: 19px;
+}
+
+.wd-panel .wd-x-large {
+	font-size: 44px !important;
+	line-height: 40px;
+}
+.wd-panel .wd-large {
+	font-size: 26px !important;
+	line-height: 28px;
+}
+.wd-panel .wd-underline {
+	border-bottom: 1px solid silver;
+	padding-bottom: 3px;
+}
+.wd-panel .wd-mod-heading {
+	font-size: 15px !important;
+	font-weight: bold;
+	line-height: 17px;
+}
+
 .wd-bold {
 	font-weight: bold;
 }
@@ -1691,7 +1851,24 @@ line-height:95%;
 	margin-top: 0;
 	margin-bottom: 12px;
 	color: inherit;
-	line-height: 18px;
+	/* navarrojor 20171017
+	line-height: 18px; */
+}
+.wd-panel ul {
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 5px;
+}
+.wd-panel ul ul {
+	list-style-type: none;
+	padding-left: 15px;
+}
+.wd-panel ul li {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 5px;
+}
+.wd-panel ul li:last-child {
+	border-bottom: none;
 }
 /* COLORS - COLORS - COLORS */
 .wd-title-blue {
@@ -1814,6 +1991,46 @@ a.bkbutton:hover {
 a.bkbutton, a.bkbutton:visited {
 	color: #FFF;
 }
+.blueButton {
+	-moz-box-shadow:inset 0px 2px 0px 0px #bbdaf7;
+	-webkit-box-shadow:inset 0px 2px 0px 0px #bbdaf7;
+	box-shadow:inset 0px 2px 0px 0px #bbdaf7;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #0081b8));
+	background:-moz-linear-gradient(top, #79bbff 5%, #0081b8 100%);
+	background:-webkit-linear-gradient(top, #79bbff 5%, #0081b8 100%);
+	background:-o-linear-gradient(top, #79bbff 5%, #0081b8 100%);
+	background:-ms-linear-gradient(top, #79bbff 5%, #0081b8 100%);
+	background:linear-gradient(to bottom, #79bbff 5%, #0081b8 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#0081b8',GradientType=0);
+	background-color:#79bbff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff !important;
+	font-family:Verdana;
+	font-size:14px;
+	font-weight:bold;
+	padding:8px 30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528fcc;
+}
+.blueButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0081b8), color-stop(1, #79bbff));
+	background:-moz-linear-gradient(top, #0081b8 5%, #79bbff 100%);
+	background:-webkit-linear-gradient(top, #0081b8 5%, #79bbff 100%);
+	background:-o-linear-gradient(top, #0081b8 5%, #79bbff 100%);
+	background:-ms-linear-gradient(top, #0081b8 5%, #79bbff 100%);
+	background:linear-gradient(to bottom, #0081b8 5%, #79bbff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0081b8', endColorstr='#79bbff',GradientType=0);
+	background-color:#0081b8;
+}
+.blueButton:active {
+	position:relative;
+	top:1px;
+}
 /* ======================== */
 /* Final: Estilos para Dias Mundiales */
 /* ======================== */
@@ -1825,6 +2042,117 @@ a.bkbutton, a.bkbutton:visited {
 	clear: both;
 	padding-top: 15px !important;
 }
+/* =================== */
+/* Estilos para Health Topics */
+/* =================== */
+.htopics {
+	margin-top: -16px;
+	color:#C60;
+	font: 26px/32px 'Open Sans', sans-serif;
+}
+.htsub {
+	color:#25A;
+	font: 18px/20px 'Open Sans', sans-serif;
+	margin-bottom: 25px;
+}
+.htdef {
+ 	border-bottom: 1px solid #DDD;
+	margin-bottom:18px;
+	font-size:12px;
+	font-style: italic;	
+}
+#htphoto {
+	float: left;
+	margin: 2px 8px 6px 0;
+}
+
+#htphoto p.htcaption {
+	color:#999;
+	font-size:10px;
+	margin: -5px 0 0 0;
+}
+#htblurb::after {
+	clear: both;
+}
+.htheader {
+	background: #FFF;
+	color: #C60;
+	font-size: 14px;
+	font: 16px/19px 'Open Sans', sans-serif;
+	margin-top:10px;
+	margin-bottom: 12px;
+	border-bottom: 1px solid #AAA;
+}
+#htpahowho {
+	clear: both;
+	width: 99.6%;
+	float: left;
+	border:1px solid #CCC;
+	margin-bottom: 12px;
+}
+#htpahowho:after {
+	clear: both;
+}
+#htpaho {
+	width: 48%;
+	float: left;
+	margin: 1%;
+}
+#htwho {
+	width: 48%;
+	float: right;
+	margin: 1%;
+}
+.httopics {
+	width: 40%;
+	height: 250px;
+	float: left; 
+	margin: 20px;
+}
+.httopics ul.categorias {
+	background: #EFF3FC;
+	list-style-type: none;
+	margin-top: -12px;
+	margin-left: 0;
+	margin-bottom: 12px;
+	padding-top: 1px;
+	padding-left: 2px;
+	padding-bottom: 4px;
+	line-height: 13px;
+}
+.httopics ul.categorias li {
+	display: inline;
+	margin: 0;
+	font-size: 11px;
+}
+.httopics ul.categorias li::after {
+	content: " | ";
+}
+.httopics ul.categorias li:last-child::after {
+	content: " ";
+}
+.httopics ul.categorias li a {
+	font-size: 10px;
+}
+.htlatest {
+	margin-top: -5px;
+	margin-bottom: 2px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #25A;
+}
+
+#gov-bodies-text h2 {
+	font-size:12px;
+}
+
+#gov-bodies-text a {
+	text-decoration:underline;
+}
+
+/* ========================= */
+/* Fim dos estilos para Health Topics */
+/* ========================= */
 .ytGalleryCell-l {
 	clear: both;
 	width: 48%;
@@ -1874,6 +2202,11 @@ a.bkbutton, a.bkbutton:visited {
   margin-left: -20px;
 }
 #innercontent { padding-right: 0; }
+
+#innercontent h2 {
+	/* font-weight: bold;	*/
+} 
+
 /********************************************************
  Estilos para el slideshow
  ****************************************************** */
@@ -1881,17 +2214,18 @@ a.bkbutton, a.bkbutton:visited {
 #slides {
    width: 100%;
    height: 0;
-   padding-bottom: 35%;
+   padding-bottom: 30%; /* define el alto del cuadro externo */
    position: relative;
-   margin: -20px 0 18px 0;
-   background: #FFF;
+   /* margin: -20px 0 18px 0; */
+   /* background: #ccc; */
    border: 1px solid #CCC;
    overflow: hidden;
 }
+
 #big_slide {
-   width: 800%;
+   width: 820%;
    height: 0;
-   padding-bottom: 37%;
+   padding-bottom: 37%; /* define el clipping de la foto. */
    overflow-y: hidden;
    position: absolute;
    top: 0;
@@ -1986,11 +2320,812 @@ a.bkbutton, a.bkbutton:visited {
 }
 #sld_crc {
    position: absolute;
-   width: 370px; 
+   width: 370px;
    height: 22px;
    right: 0;
-   top: 293px;
+   top: 263px;
    text-align: center;
    z-index: 9100;
 }
 .mascara { display: none; }
+	#stories {
+		position: relative;
+		width: 820px;
+		height: 460px;
+		float: left;
+		overflow: hidden;
+		background: #000;
+		border-top: 5px solid #000;
+		border-bottom: 5px solid #000;
+	}
+	#big_story {
+		position: absolute;
+		width: 20000px;
+		height: 460px;
+		left: 0;
+		top: 0;
+	}
+	.slide_container {
+		position: relative;
+		width: 820px;
+		height: 460px;
+		float: left;
+	}
+	.stories_title {
+		width: 820px;
+		height: 30px;
+		position: absolute;
+		top: 0;
+		left: 5px;
+	}
+	p.stories {
+		margin-top: 0;
+		color: #EEE;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.stories_slide {
+		width: 580px;
+		height: 387px;
+		position: absolute;
+		left: 5px;
+		top: 30px;
+	}
+	.stories_slide img {
+		width: 580px;
+		height: 387px;
+	}
+	.stories_control {
+		position: absolute;
+		width: 585px;
+		height: 40px;
+		left: 0;
+		top: 420px;
+	}
+	.control_left {
+		width: 40px;
+		float: left;
+		margin-left: 5px;
+	}
+	.control_right {
+		width: 40px;
+		float: right;
+	}
+	.stories_caption {
+		position: absolute;
+		width: 225px;
+		height: 430px;
+		top: 32px;
+		left: 590px;
+		font-size: 18px;
+		line-height: 24px;
+		color: #EEE;
+	}	
+
+/*  Estilo para plugin slideshow */
+
+#ssframe { height: 530px; }	
+	
+	
+	
+/* ========================================= */
+/* ESTILOS PARA TORNAR O TEMPLATE RESPONSIVO */
+/* ========================================= */
+
+/* ================================================================================ */
+/* Para janelas acima de 1024 pixels de largura                                     */
+/* ================================================================================ */
+
+@media screen and (min-width: 990px) {
+}
+
+/* ================================================================================ */
+/* Para janelas acima de 768 pixels de largura mas menos de 1024 pixels            */
+/* ================================================================================ */
+
+@media screen and (min-width: 768px) and (max-width: 989px) {
+	#big_slide {
+		width: 815%;
+	}
+	#big_slide h2 {
+		font-size: 13px;
+	line-height: 18px;
+	}
+	#sld_crc {
+		top: 193px;
+	}
+	#stories {
+		position: relative;
+		width: 610px;
+		height: 340px;
+		float: left;
+		overflow: hidden;
+		background: #000;
+		border-top: 5px solid #000;
+		border-bottom: 5px solid #000;
+	}
+	#big_story {
+		position: absolute;
+		width: 20000px;
+		height: 340px;
+		left: 0;
+		top: 0;
+	}
+	.slide_container {
+		position: relative;
+		width: 610px;
+		height: 340px;
+		float: left;
+	}
+	.stories_title {
+		width: 610px;
+		height: 25px;
+		position: absolute;
+		top: 0;
+		left: 5px;
+	}
+	p.stories {
+		margin-top: 0;
+		color: #EEE;
+		font-size: 18px;
+		font-weight: bold;
+	}
+	.stories_slide {
+		width: 400px;
+		height: 268px;
+		position: absolute;
+		left: 5px;
+		top: 25px;
+	}
+	.stories_slide img {
+		width: 400px;
+		height: 268px;
+	}
+	.stories_control {
+		position: absolute;
+		width: 405px;
+		height: 40px;
+		left: 0;
+		top: 297px;
+	}
+	.control_left {
+		width: 40px;
+		float: left;
+		margin-left: 5px;
+	}
+	.control_right {
+		width: 40px;
+		float: right;
+	}
+	.stories_caption {
+		position: absolute;
+		width: 188px;
+		height: 305px;
+		top: 27px;
+		left: 415px;
+		font-size: 15px;
+		line-height: 18px;
+		color: #EEE;
+	}	
+	/* ==================== */
+	/* Estilos para Dias Mundiales */
+	/* ==================== */
+	.wd-img {
+		width: 100%;
+		height: auto;
+	}
+	.wd-column, .wd-quarter, .wd-half {
+		width: 47.5%;
+		float: left;
+		margin-left: 0;
+		margin-right: 1%;
+	}
+	.wd-column:nth-child(odd), .wd-quarter:nth-child(odd) {
+		clear: both;
+	}
+	.wd-column:nth-child(even), .wd-quarter:nth-child(even), .wd-half:nth-child(even) {
+		float: right;
+		margin-right: 0;
+	}
+	.wd-third, .wd-third-left {
+		width: 32%;
+		margin-right: 2%;
+	}
+	.wd-third-right {
+		width: 32%;
+		margin-left: 2%;
+	}
+	.wd-twothirds, .wd-twothirds-right {
+		width: 66%;
+		margin-left: 0;
+	}
+	.wd-twothirds-left {
+		width: 66%;
+		margin-right: 0;
+	}
+	.wd-border {
+		margin-top: -13px;
+	}
+	.wd-border:first-child {
+		margin-top: -13px;
+	}
+	.wd-border-round {
+	border-radius: 7px;
+	}
+.wd-panel h2 {
+	font-size: 15px;
+	line-height: 19px;
+	font-weight: bold;
+}
+.wd-panel h3 {
+	font-size: 14px;
+	line-height: 19px;
+	font-weight: bold;
+}
+.wd-panel h4 {
+	font-size: 13px;
+	line-height: 19px;
+}
+	.wd-panel p {
+		margin-bottom: 16px;
+	}
+	.wd-pull-up {
+		margin-top: -16px;
+	}
+	#ssframe { height: 410px; }		
+}
+
+/* ================================================================================ */
+/* Para janelas abaixo de 640 pixels de largura mas menos de 768 pixels                                                     */
+/* ================================================================================ */
+
+@media screen and (min-width: 640px) and (max-width: 767px) {
+	#big_slide {
+		width: 810%;
+	}
+	#big_slide h2 {
+	font-size: 12px;
+		line-height: 14px;
+	}
+	#sld_crc {
+		top: 153px;
+	}
+	#stories {
+		position: relative;
+		width: 600px;
+		height: 340px;
+		float: left;
+		overflow: hidden;
+		background: #000;
+		border-top: 5px solid #000;
+		border-bottom: 5px solid #000;
+	}
+	#big_story {
+		position: absolute;
+		width: 20000px;
+		height: 340px;
+		left: 0;
+		top: 0;
+	}
+	.slide_container {
+		position: relative;
+		width: 600px;
+		height: 340px;
+		float: left;
+	}
+	.stories_title {
+		width: 600px;
+		height: 25px;
+		position: absolute;
+		top: 0;
+		left: 5px;
+	}
+	p.stories {
+		margin-top: 0;
+		color: #EEE;
+		font-size: 18px;
+		font-weight: bold;
+	}
+	.stories_slide {
+		width: 400px;
+		height: 268px;
+		position: absolute;
+		left: 5px;
+		top: 25px;
+	}
+	.stories_slide img {
+		width: 400px;
+		height: 268px;
+	}
+	.stories_control {
+		position: absolute;
+		width: 405px;
+		height: 40px;
+		left: 0;
+		top: 297px;
+	}
+	.control_left {
+		width: 40px;
+		float: left;
+		margin-left: 5px;
+	}
+	.control_right {
+		width: 40px;
+		float: right;
+	}
+	.stories_caption {
+		position: absolute;
+		width: 178px;
+		height: 305px;
+		top: 27px;
+		left: 415px;
+		font-size: 15px;
+		line-height: 18px;
+		color: #EEE;
+	}	
+	/* ==================== */
+	/* Estilos para Dias Mundiales 640 */
+	/* ==================== */
+	.wd-img {
+		width: 100%;
+		height: auto;
+	}
+	.wd-column, .wd-quarter, .wd-half {
+		width: 47.5%;
+		float: left;
+		margin-left: 0;
+		margin-right: 1%;
+	}
+	.wd-column:nth-child(odd), .wd-quarter:nth-child(odd) {
+		clear: both;
+	}
+	.wd-column:nth-child(even), .wd-quarter:nth-child(even), .wd-half:nth-child(even) {
+		float: right;
+		margin-right: 0;
+	}
+	.wd-third, .wd-third-left {
+		width: 32%;
+		margin-right: 2%;
+	}
+	.wd-third-right {
+		width: 32%;
+		margin-left: 2%;
+	}
+	.wd-twothirds, .wd-twothirds-right {
+		width: 66%;
+		margin-left: 0;
+	}
+	.wd-twothirds-left {
+		width: 66%;
+		margin-right: 0;
+	}
+	.wd-border {
+		margin-top: -13px;
+	}
+	.wd-border:first-child {
+		margin-top: -13px;
+	}
+	.wd-border-round {
+	border-radius: 7px;
+	}
+.wd-panel h2 {
+	font-size: 15px;
+	line-height: 19px;
+	font-weight: bold;
+}
+.wd-panel h3 {
+	font-size: 14px;
+	line-height: 19px;
+	font-weight: bold;
+}
+.wd-panel h4 {
+	font-size: 13px;
+	line-height: 19px;
+}
+	.wd-panel p {
+		margin-bottom: 16px;
+	}
+	.wd-pull-up {
+		margin-top: -16px;
+	}
+		/* modulos de las paginas wd */
+	.colapslist_main p, .colapslist_mainnoarrow p, .colapslist_mainnoarroworange p {
+		font-size: 16px !important;
+	}
+	#mcnewsright p {
+		font-size: 16px;
+	}
+	#ssframe { height: 420px; }		
+}
+
+/* ================================================================================ */
+/* Para janelas acima de 480 pixels de largura mas menos de 640 pixels              */
+/* ================================================================================ */
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+	#big_slide {
+		width: 806%;
+	}
+	.fp_slsh_foto img, .fp_slsh_foto_margin img {
+		display: none;
+	}
+	.fp_slsh_texto {
+		width: 12%; 
+	}
+	#big_slide h2 {
+		font-size: 13px;
+		line-height: 15px;
+	}
+	#sld_crc {
+		top: 110px;
+	}
+	#stories {
+		position: relative;
+		width: 450px;
+		height: 500px;
+		float: left;
+		overflow: hidden;
+		background: #000;
+		border-top: 5px solid #000;
+		border-bottom: 5px solid #000;
+	}
+	#big_story {
+		position: absolute;
+		width: 20000px;
+		height: 500px;
+		left: 0;
+		top: 0;
+	}
+	.slide_container {
+		position: relative;
+		width: 450px;
+		height: 500px;
+		float: left;
+	}
+	.stories_title {
+		width: 450px;
+		height: 25px;
+		position: absolute;
+		top: 0;
+		left: 5px;
+	}
+	p.stories {
+		margin-top: 0;
+		color: #EEE;
+		font-size: 18px;
+		font-weight: bold;
+	}
+	.stories_slide {
+		width: 440px;
+		height: 294px;
+		position: absolute;
+		left: 5px;
+		top: 25px;
+	}
+	.stories_slide img {
+		width: 440px;
+		height: 294px;
+	}
+	.stories_control {
+		position: absolute;
+		width: 445px;
+		height: 40px;
+		left: 0;
+		top: 322px;
+	}
+	.control_left {
+		width: 40px;
+		float: left;
+		margin-left: 5px;
+	}
+	.control_right {
+		width: 40px;
+		float: right;
+	}
+	.stories_caption {
+		position: absolute;
+		width: 440px;
+		height: 130px;
+		top: 362px;
+		left: 5px;
+		font-size: 14px;
+		line-height: 18px;
+		color: #EEE;
+	}	
+	/* ==================== */
+	/* Estilos para Dias Mundiales */
+	/* ==================== */
+
+	.wd-column, .wd-quarter {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.wd-half {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.wd-third, .wd-third-left {
+		width: 100%;
+		margin-right: 0;
+	}
+	.wd-third-right {
+		width: 100%;
+		margin-left: 0;
+	}
+	.wd-twothirds, .wd-twothirds-right {
+		width: 100%;
+		margin-left: 0;
+	}
+	.wd-twothirds-left {
+		width: 100%;
+		margin-right: 0;
+	}
+	.wd-border {
+		margin-top: -13px;
+	}
+	.wd-border:first-child {
+		clear: both;
+		margin-top: 1px;
+	}
+	.wd-border-round {
+	border-radius: 7px;
+	}
+.wd-panel h2 {
+	font-size: 15px;
+	line-height: 19px;
+	font-weight: bold;
+}
+.wd-panel h3 {
+	font-size: 14px;
+	line-height: 19px;
+	font-weight: bold;
+}
+.wd-panel h4 {
+	font-size: 13px;
+	line-height: 19px;
+}
+	.wd-panel p {
+		margin-top: 8px;
+		margin-bottom: 16px;
+	}
+	.wd-pull-up {
+		margin-top: -16px;
+	}
+		/* modulos de las paginas wd */
+	.colapslist_main p, .colapslist_mainnoarrow p, .colapslist_mainnoarroworange p {
+		font-size: 16px !important;
+	}
+	#mcnewsright p {
+		font-size: 16px;
+	}
+	#ssframe { height: 340px; }	
+}
+
+/* ================================================================================ */
+/* Para janelas abaixo de 480 pixels de largura (na pratica, 320px)                 */
+/* ================================================================================ */
+
+@media screen and (max-width: 479px) {
+	#slides {
+		padding-bottom: 54%; /* define el alto del cuadro externo */
+	}
+	#big_slide {
+		width: 790%;
+		padding-bottom: 50%; /* define el clipping de la foto. */
+	}
+	.fp_slsh_foto img, .fp_slsh_foto_margin img {
+		display: none;
+	}
+	.fp_slsh_texto {
+		width: 12%; 
+	}
+	#big_slide h2 {
+		font-size: 12px;
+		line-height: 14px;
+	}
+	#sld_crc {
+		top: 133px;
+	}
+	#stories {
+		position: relative;
+		width: 300px;
+		height: 410px;
+		float: left;
+		overflow: hidden;
+		background: #000;
+		border-top: 5px solid #000;
+		border-bottom: 5px solid #000;
+	}
+	#big_story {
+		position: absolute;
+		width: 20000px;
+		height: 410px;
+		left: 0;
+		top: 0;
+	}
+	.slide_container {
+		position: relative;
+		width: 300px;
+		height: 410px;
+		float: left;
+	}
+	.stories_title {
+		width: 290px;
+		height: 20px;
+		position: absolute;
+		top: 0;
+		left: 5px;
+	}
+	p.stories {
+		margin-top: 0;
+		color: #EEE;
+		font-size: 13px;
+		line-height: 12px;
+		font-weight: bold;
+	}
+	.stories_slide {
+		width: 290px;
+		height: 294px;
+		position: absolute;
+		left: 5px;
+		top: 20px;
+	}
+	.stories_slide img {
+		width: 290px;
+		height: 194px;
+	}
+	.stories_control {
+		position: absolute;
+		width: 295px;
+		height: 32px;
+		left: 0;
+		top: 218px;
+	}
+	.control_left {
+		width: 32px;
+		float: left;
+		margin-left: 5px;
+	}
+	.control_right {
+		width: 32px;
+		float: right;
+	}
+	.control_left img, .control_right img {
+		width: 32px;
+		height: 32px;
+	}
+	.stories_caption {
+		position: absolute;
+		width: 290px;
+		height: 146px;
+		top: 256px;
+		left: 5px;
+		font-size: 13px;
+		line-height: 16px;
+		color: #EEE;
+	}	
+	/* ==================== */
+	/* Estilos para Dias Mundiales */
+	/* ==================== */
+
+	.wd-column, .wd-quarter {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.wd-half {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.wd-third, .wd-third-left {
+		width: 100%;
+		margin-right: 0;
+	}
+	.wd-third-right {
+		width: 100%;
+		margin-left: 0;
+	}
+	.wd-twothirds, .wd-twothirds-right {
+		width: 100%;
+		margin-left: 0;
+	}
+	.wd-twothirds-left {
+		width: 100%;
+		margin-right: 0;
+	}
+	.wd-border {
+		margin-top: -13px;
+	}
+	.wd-border:first-child {
+		clear: both;
+		margin-top: 1px;
+	}
+	.wd-border-round {
+	border-radius: 7px;
+	}
+.wd-panel h2 {
+	font-size: 18px;
+	line-height: 19px;
+	font-weight: bold;
+}
+.wd-panel h3 {
+	font-size: 16px;
+	line-height: 19px;
+	font-weight: bold;
+}
+.wd-panel h4 {
+	font-size: 14px;
+	line-height: 19px;
+}
+	.wd-panel p {
+		margin-top: 8px;
+		margin-bottom: 16px;
+	}
+	.wd-pull-up {
+		margin-top: -16px;
+	}
+	#ssframe { height: 210px; }
+	
+}
+
+/* para el com_topics (readmore and readall) */
+.docmanthumbnail, .doc_description img {
+		max-width: 100px;
+		max-height: 100px;
+		box-shadow: 2px 2px 2px #888888;
+}
+.docmanthumbnail {
+		padding: 5px;
+		vertical-align: top;
+		float: left;
+}
+
+.doc_description img {
+	height: auto;
+}
+li.lidocman {
+  clear: both; 
+  padding-top: 10px; 		
+}
+.lidocman a {
+	font-weight: 600;
+}
+
+.listdoctopics {
+	column-count: 2;
+	-moz-column-count:2;
+	-webkit-column-count:2;
+	-webkit-perspective:1;
+}
+
+ /* http://blog.room34.com/archives/5454 */
+.listdoctopics > * {
+  column-break-inside: avoid;
+  page-break-inside: avoid;           /* Theoretically FF 20+ */
+  break-inside: avoid-column;         /* IE 11 */
+  -webkit-column-break-inside: avoid;
+  /* display: inline-block; */
+  width: 100%;
+
+}
+
+/*  https://stackoverflow.com/questions/7785374/how-to-prevent-column-break-within-an-element */
+/* https://stackoverflow.com/questions/41985733/column-count-is-not-working-in-chrome */
+.listdoctopics ul {
+    margin: 0;
+    -webkit-column-break-inside: avoid; /* Chrome, Safari */
+    page-break-inside: avoid;           /* Theoretically FF 20+ */
+    break-inside: avoid-column;         /* IE 11 */
+    display:table;                      /* Actually FF 20+ */
+}
+
+@media (max-width: 640px) {
+	.listdoctopics {
+		column-count: 1;
+		-moz-column-count:1;
+		-webkit-column-count:1;
+	}
+}
