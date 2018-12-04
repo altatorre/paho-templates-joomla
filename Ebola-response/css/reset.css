@@ -1,176 +1,140 @@
-/* -------------------------------------------------------------- 
-   Reset default browser CSS.
-   Based on work by Eric Meyer:
-   http://meyerweb.com/eric/tools/css/reset/index.html
--------------------------------------------------------------- */
+/* -------------------------------------------------------------- Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html -------------------------------------------------------------- */
 /* v1.0 | 20080212 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
+ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     outline: 0;
+     font-size: 100%;
+     vertical-align: baseline;
+     background: transparent;
 }
-body {
-	line-height: 1;
+ body {
+     line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ ol, ul {
+     list-style: none;
 }
-blockquote, q {
-	quotes: none;
+ blockquote, q {
+     quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+ blockquote:before, blockquote:after, q:before, q:after {
+     content: '';
+     content: none;
 }
-
 /* remember to define focus styles! */
-:focus {
-	outline: 0;
+ :focus {
+     outline: 0;
 }
-
 /* remember to highlight inserts somehow! */
-ins {
-	text-decoration: none;
+ ins {
+     text-decoration: none;
 }
-del {
-	text-decoration: line-through;
+ del {
+     text-decoration: line-through;
 }
-
 /* tables still need 'cellspacing="0"' in the markup */
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+ table {
+     border-collapse: collapse;
+     border-spacing: 0;
 }
-
-a img { border: none; }
-
-
-/* -------------------------------------------------------------- 
-   
-   Rebuild the default browser styles
-   
-   Based on work by Blueprint CSS   
-   http://code.google.com/p/blueprintcss/
-     
--------------------------------------------------------------- */   
-
-
-body {
-  background: #fff;	
+ a img {
+     border: none;
 }
-body, input, textarea {
-	color: #111;    
-	font: 12px Arial,sans-serif;
-	line-height: 1.5;
+/* -------------------------------------------------------------- Rebuild the default browser styles Based on work by Blueprint CSS http://code.google.com/p/blueprintcss/ -------------------------------------------------------------- */
+ body {
+     background: #fff;
 }
-
-
-/* Headings
--------------------------------------------------------------- */
-
-h1,h2,h3,h4,h5,h6 { 
-	font-weight: normal;
-	clear: both;
+ body, input, textarea {
+     color: #111;
+     font: 12px Arial,sans-serif;
+     line-height: 1.5;
 }
-hr {
-  background-color: #999;
-  border:0;
-  height: 1px;
-	margin-bottom: 1.5em;
+/* Headings -------------------------------------------------------------- */
+ h1,h2,h3,h4,h5,h6 {
+     font-weight: normal;
+     clear: both;
 }
-
-
-/* Text elements
--------------------------------------------------------------- */
-
-p {
-	margin-bottom: 1.5em;
+ hr {
+     background-color: #999;
+     border:0;
+     height: 1px;
+     margin-bottom: 1.5em;
 }
-ul {
-	margin: 0 0 1.5em 2.5em;
+/* Text elements -------------------------------------------------------------- */
+ p {
+     margin-bottom: 1.5em;
 }
-ol {
-	margin: 0 0 1.5em 2.5em;
+ ul {
+     margin: 0 0 1.5em 2.5em;
 }
-ul {
-	list-style:disc;
+ ol {
+     margin: 0 0 1.5em 2.5em;
 }
-ol {
-	list-style-type: decimal;
+ ul {
+     list-style:disc;
 }
-ol ol {
-	list-style:upper-alpha;
+ ol {
+     list-style-type: decimal;
 }
-ol ol ol {
-	list-style:lower-roman;
+ ol ol {
+     list-style:upper-alpha;
 }
-ol ol ol ol {
-	list-style:lower-alpha;
+ ol ol ol {
+     list-style:lower-roman;
 }
-ul ul, ol ol, ul ol, ol ul {
-	margin-bottom:0;
+ ol ol ol ol {
+     list-style:lower-alpha;
 }
-dl	{
-	margin:0 1.5em;
+ ul ul, ol ol, ul ol, ol ul {
+     margin-bottom:0;
 }
-dt {
-	font-weight: bold;
+ dl {
+     margin:0 1.5em;
 }
-dd {
-	margin-bottom: 1.5em;
+ dt {
+     font-weight: bold;
 }
-strong {
-	font-weight: bold;
+ dd {
+     margin-bottom: 1.5em;
 }
-cite, em, i {
-	font-style: italic;
+ strong {
+     font-weight: bold;
 }
-blockquote {
-	margin: 0 3em;
+ cite, em, i {
+     font-style: italic;
 }
-blockquote em, blockquote i, blockquote cite {
-	font-style: normal;
+ blockquote {
+     margin: 0 3em;
 }
-pre {
-	font: 11px Monaco, monospace;
-	line-height: 1.5;
-	margin-bottom: 1.5em;
+ blockquote em, blockquote i, blockquote cite {
+     font-style: normal;
 }
-code {
-	font: 11px Monaco, monospace;
+ pre {
+     font: 11px Monaco, monospace;
+     line-height: 1.5;
+     margin-bottom: 1.5em;
 }
-abbr, acronym {
-  border-bottom: 1px dotted #666;
-  cursor: help;
+ code {
+     font: 11px Monaco, monospace;
 }
-ins {
-	text-decoration: none;
+ abbr, acronym {
+     border-bottom: 1px dotted #666;
+     cursor: help;
 }
-sup,
-sub {
-	height: 0;
-	line-height: 1;
-	vertical-align: baseline;
-	position: relative;
-	
+ ins {
+     text-decoration: none;
 }
-sup {
-	bottom: 1ex;
+ sup, sub {
+     height: 0;
+     line-height: 1;
+     vertical-align: baseline;
+     position: relative;
 }
-sub {
-	top: .5ex;
+ sup {
+     bottom: 1ex;
 }
+ sub {
+     top: .5ex;
+}
+ 
