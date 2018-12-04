@@ -66,7 +66,7 @@ if (!defined ('_JA_SPLIT_MENU_CLASS')) {
 		function genMenuHead () {
 			?>
 			<link href="<?php echo $this->getParam('menupath'); ?>/ja_scriptdlmenu/ja.scriptdlmenu.css" rel="stylesheet" type="text/css" />
-			<script src="<?php echo $this->getParam('menupath'); ?>/ja_scriptdlmenu/ja.scriptdlmenu.js" language="javascript" type="text/javascript" ></script>
+			<script src="<?php echo $this->getParam('menupath'); ?>/ja_scriptdlmenu/ja.scriptdlmenu.js" type="text/javascript" ></script>
 			<?php
 		}
 

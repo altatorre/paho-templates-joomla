@@ -46,7 +46,7 @@ if (!defined ('_JA_CSS_MENU_CLASS')) {
 		function genMenuHead () {
 			?>
 			<link href="<?php echo $this->getParam('menupath'); ?>/ja_cssmenu/ja.cssmenu.css" rel="stylesheet" type="text/css" />
-			<script src="<?php echo $this->getParam('menupath'); ?>/ja_cssmenu/ja.cssmenu.js" language="javascript" type="text/javascript"></script>
+			<script src="<?php echo $this->getParam('menupath'); ?>/ja_cssmenu/ja.cssmenu.js" type="text/javascript"></script>
 			<?php
 		}
 

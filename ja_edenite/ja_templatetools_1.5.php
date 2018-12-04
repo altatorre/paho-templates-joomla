@@ -240,13 +240,13 @@ class JA_Tools {
 		$html = "";
 		if ($this->getParam(JA_TOOL_MENU)== '2') {
 				$html = '<link href="'.$this->templateurl().'/ja_menus/ja_cssmenu/ja-sosdmenu.css" rel="stylesheet" type="text/css" />
-					<script language="javascript" type="text/javascript" src="'. $this->templateurl().'/ja_menus/ja_cssmenu/ja.cssmenu.js"></script>';
+					<script type="text/javascript" src="'. $this->templateurl().'/ja_menus/ja_cssmenu/ja.cssmenu.js"></script>';
 		} else if ($this->getParam(JA_TOOL_MENU) == 3) {
 			$html = '<link href="'.$this->templateurl().'/ja_menus/ja_scriptdlmenu/ja-scriptdlmenu.css" rel="stylesheet" type="text/css" />
-					<script language="javascript" type="text/javascript" src="'.$this->templateurl().'/ja_menus/ja_scriptdlmenu/ja-scriptdlmenu.js"></script>';
+					<script type="text/javascript" src="'.$this->templateurl().'/ja_menus/ja_scriptdlmenu/ja-scriptdlmenu.js"></script>';
 		} else if ($this->getParam(JA_TOOL_MENU) == 4) {
 			$html = '<link href="'.$this->templateurl().'/ja_menus/ja_moomenu/ja-moomenu.css" rel="stylesheet" type="text/css" />
-						<script language="javascript" type="text/javascript" src="'.$this->templateurl().'/ja_menus/ja_moomenu/ja.moomenu.js"></script>';
+						<script type="text/javascript" src="'.$this->templateurl().'/ja_menus/ja_moomenu/ja.moomenu.js"></script>';
 		} else { //Default
 				$html = '<link href="'.$this->templateurl().'/ja_menus/ja_splitmenu/ja-splitmenu.css" rel="stylesheet" type="text/css" />';
 		}

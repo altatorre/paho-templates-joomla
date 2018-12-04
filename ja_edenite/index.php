@@ -26,7 +26,7 @@ include_once (dirname(__FILE__).DS.'ja_vars_1.5.php');
 <link rel="stylesheet" href="<?php echo $tmpTools->templateurl(); ?>/css/template.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $tmpTools->templateurl(); ?>/css/typo.css" type="text/css" />
 
-<script language="javascript" type="text/javascript" src="<?php echo $tmpTools->templateurl(); ?>/js/ja.script.js"></script>
+<script type="text/javascript" src="<?php echo $tmpTools->templateurl(); ?>/js/ja.script.js"></script>
 <script type="text/javascript" src="http://new.paho.org/hq/media/system/js/language.js"></script>
 <!-- Menu head -->
 <?php $jamenu->genMenuHead(); ?>
@@ -140,6 +140,12 @@ var siteurl = '<?php echo $tmpTools->baseurl();?>';
 
 		<div id="ja-current-content" class="clearfix">
 
+		<?php if ($this->countModules('ww_premain')) { ?>
+			<div id="ja-premain" style="float: left">
+				<jdoc:include type="modules" name="ww_premain" style="xhtml" />
+			</div>
+		<?php } ?>
+
 			<jdoc:include type="component" />
 	
 			<?php if($this->countModules('ww_banner')) : ?>
@@ -241,7 +247,16 @@ if( $botsl ) {
 </div>
 
 <jdoc:include type="modules" name="ww_debug" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-44374338-1', 'paho.org');
+  ga('send', 'pageview');
+
+</script>
 </body>
 
 </html>

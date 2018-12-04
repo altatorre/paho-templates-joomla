@@ -52,7 +52,7 @@ if (!defined ('_JA_MOO_MENU_CLASS')) {
 		function genMenuHead () {
 			?>
 			<link href="<?php echo $this->getParam('menupath'); ?>/ja_moomenu/ja.moomenu.css" rel="stylesheet" type="text/css" />
-			<script src="<?php echo $this->getParam('menupath'); ?>/ja_moomenu/ja.moomenu.js" language="javascript" type="text/javascript" ></script>
+			<script src="<?php echo $this->getParam('menupath'); ?>/ja_moomenu/ja.moomenu.js" type="text/javascript" ></script>
 			<?php
 		}
 	}

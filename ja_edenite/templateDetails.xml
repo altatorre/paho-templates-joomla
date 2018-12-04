@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <install version="1.5" type="template">
-	<name>JA_Edenite = Wellness Week</name>
+	<name>JA_Edenite - Wellness Week</name>
 	<creationDate>21 March 08</creationDate>
 	<author>JoomlArt.com</author>
 	<copyright>JoolArt Design Team</copyright>
@@ -44,6 +44,7 @@
 		<position>ww_right</position>
 		<position>ww_top</position>
 		<position>ww_topsl</position>
+		<position>ww_premain</position>
 		<position>ww_user1</position>
 		<position>ww_user2</position>
 		<position>ww_user3</position>
