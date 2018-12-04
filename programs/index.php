@@ -31,6 +31,7 @@ $doc->addScript(JUri::base() . '/templates/' . $this->template . '/js/jquery.mai
 			swf: 'swf/',
 		}
 	</script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<jdoc:include type="head" />
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
@@ -62,52 +63,19 @@ $doc->addScript(JUri::base() . '/templates/' . $this->template . '/js/jquery.mai
 						  <span class="icon-bar"></span>
 						  <span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="<?php echo $this->baseurl; ?>"><img src="<?php echo JUri::base() . '/templates/' . $this->template; ?>/images/logo.png" alt="<?php echo $sitename; ?>"></a>
+						<div class="top_banner">
+							<jdoc:include type="modules" name="banners" style="raw" />
+						</div>
 						<jdoc:include type="modules" name="language_switcher_mobile" />
 					  </div>
 					  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						  <jdoc:include type="modules" name="header" />
+						  <jdoc:include type="modules" name="header" style="xhtml" />
 					  </div>
 					</div>
 				  </nav>
 				</div>
 			  </header>
-			</div>
-			<?php if($tpl->is_front_page()): ?>
-				<jdoc:include type="modules" name="home_top" />
-				<?php if($this->countModules('home_more_news') || $this->countModules('home_events')): ?>
-				<div class="container1 row">
-					<?php if($this->countModules('home_more_news')): ?>
-					<div class="col-xs-12">
-					  <h2><?php echo JText::_('MORE_NEWS'); ?></h2>
-					</div>
-					<?php endif; ?>
-					<div class="clearfix"></div>
-					<div class="col-xs-12">
-						<jdoc:include type="modules" name="home_more_news" />
-						<?php if($this->countModules('home_events')): ?>
-						<div class="tabs-holder">
-						  <!-- Nav tabs -->
-						  <ul class="nav nav-tabs" role="tablist">
-							<li class="active"><a href="#tab1" role="tab" data-toggle="tab"><?php echo JText::_('TAB_EPIDEMIOLOGICAL'); ?></a></li>
-							<li><a href="#tab2" role="tab" data-toggle="tab"><?php echo JText::_('TAB_UPCOMING'); ?></a></li>
-						  </ul>
-						  <!-- Tab panes -->
-						  <div class="tab-content">
-							<jdoc:include type="modules" name="home_events" style="events" />
-						  </div>
-						</div>
-						<?php endif; ?>
-					</div>
-				</div>
-				<?php endif; ?>
-				<jdoc:include type="modules" name="home_bottom" style="clear" />
-				<div class="container3 row">
-				  <div class="col-xs-12">
-					<jdoc:include type="modules" name="home_twitter_row" style="xhtml" />
-				  </div>
-				</div>
-			<?php else: ?>
+			</div><!-- end of class row -->
 				<div id="main">
 					<div class="row">
 						<?php if($view == 'article'): ?>
@@ -118,39 +86,68 @@ $doc->addScript(JUri::base() . '/templates/' . $this->template . '/js/jquery.mai
 								<div class="text-block">
 									<jdoc:include type="message" />
 									<jdoc:include type="component" />
-								</div>
-							</div>
+								</div><!-- end of text-block -->
+							</div><!-- end of content -->
 						<?php endif; ?>
-					</div>
-					<jdoc:include type="modules" name="inner_after_content" style="clear" />
+
+					</div><!-- end of class row -->
+					<jdoc:include type="modules" name="inner_after_content1" style="xhtml" />
+					<jdoc:include type="modules" name="inner_after_content2" style="xhtml" />
+					<?php if($this->countModules('inner_ac_left') || $this->countModules('inner_ac_center') || $this->countModules('inner_ac_right')): ?>
+					<div class="row threecolumns">
+						<?php if($this->countModules('inner_ac_left')): ?>
+						<div class="col-sm-4">
+						  <jdoc:include type="modules" name="inner_ac_left" style="xhtml" />
+						</div><!-- end of class col-sm-4 -->
+						<?php endif; ?>
+						<?php if($this->countModules('inner_ac_center')): ?>
+						<div class="col-sm-4">
+						  <jdoc:include type="modules" name="inner_ac_center" style="xhtml" />
+						</div><!-- end of class col-sm-4 -->
+						<?php endif; ?>
+						<?php if($this->countModules('inner_ac_right')): ?>
+						<div class="col-sm-4">
+						  <jdoc:include type="modules" name="inner_ac_right" style="xhtml" />
+						</div><!-- end of class col-sm-4 -->
+						<?php endif; ?>
+					</div><!-- end of class row threecolumns -->
+					<?php endif; ?>
+					<jdoc:include type="modules" name="postcols" style="clear" />
 					<?php if($this->countModules('inner_bottom_twocol')): ?>
 					<div class="twocolumns1 row">
-						<jdoc:include type="modules" name="inner_bottom_twocol" style="clear" />
-					</div>
+						<jdoc:include type="modules" name="inner_bottom_twocol" style="xhtml" />
+					</div><!-- end of class twocolumns1 row -->
 					<?php endif; ?>
-				</div>
-			<?php endif; ?>
+					<?php if($this->countModules('videos_area')): ?>
+					<div class="videos-area row">
+						<jdoc:include type="modules" name="videos_area" style="xhtml" />
+					</div><!-- end of class twocolumns1 row -->
+					<?php endif; ?>
+				</div><!-- end of class main -->
 			<footer id="footer">
 			  <div class="footer-holder row">
 				<div class="col-xs-12">
 				  <div class="brand">
 					<a href="<?php echo $this->baseurl; ?>"><img src="<?php echo JUri::base() . '/templates/' . $this->template; ?>/images/logo1.png" alt="<?php echo $sitename; ?>" width="200" height="36"></a>
-				  </div>
+				  </div><!-- end of class brand -->
 				  <?php if($this->countModules('footer_menu')): ?>
 				  <nav class="add-nav">
 					<jdoc:include type="modules" name="footer_menu" />
 				  </nav>
 				  <?php endif; ?>
-				</div>
-			  </div>
+				</div><!-- end of class col-xs-12 -->
+			  </div><!-- end of class footer-holder row -->
 			  <div class="holder row hidden-xs">
 				<div class="col-xs-12">
 					<jdoc:include type="modules" name="footer" />
-				</div>
-			  </div>
+				</div><!-- end of class col-xs-12 -->
+			  </div><!-- end of class holder row hidden-xs -->
 			</footer>
-		</div>
+		</div><!-- end of class container -->
 		<jdoc:include type="modules" name="debug" />
-	</div>
+	</div><!-- end of wrapper -->
+		<div id="site-info">
+			<jdoc:include type="modules" name="site_info" style="raw" />
+		</div><!-- end of #site-info -->
 </body>
 </html>

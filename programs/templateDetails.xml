@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.0" type="template" client="site">
 	<name>Programs</name>
@@ -37,9 +37,16 @@
 		<position>footer_menu</position>
 		<position>inner_left</position>
 		<position>inner_under_content</position>
-		<position>inner_after_content</position>
+		<position>inner_after_content1</position>
+		<position>inner_after_content2</position>
+		<position>inner_ac_left</position>
+		<position>inner_ac_center</position>
+		<position>inner_ac_right</position>
+		<position>postcols</position>
 		<position>inner_bottom_twocol</position>
+		<position>videos-area</position>
 		<position>footer</position>
+		<position>site_info</position>
 		<position>debug</position>
 	</positions>
 	

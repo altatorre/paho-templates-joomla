@@ -25,7 +25,6 @@ JHtml::_('behavior.caption');
 	<?php /*if ($this->params->get('show_page_heading', 1)) : ?>
 		<h1><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
 	<?php endif;*/ ?>
-
 <?php
 if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->paginationposition && $this->item->paginationrelative)
 {
@@ -92,7 +91,7 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 	
 	<?php $inner_left = JHTML::_('content.prepare', '{loadposition inner_left}');
 	if($inner_left): ?>
-	<div id="sidebar" class="col-md-4">
+	<div id="sidebar" class="col-md-4"><!-- \html\com_content\article\default.php -->
 		<?php echo $inner_left; ?>
 	</div>
 	<?php endif; ?>

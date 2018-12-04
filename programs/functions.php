@@ -16,11 +16,11 @@ class Joomla_Template {
 	}
 
 	function base_url() {
-		return JURI::base();
+		return JUri::base();
 	}
 
 	function template_url() {
-		return JURI::base()."templates/".$this->template;
+		return JUri::base()."templates/".$this->template;
 	}
 
 	function is_home() {
