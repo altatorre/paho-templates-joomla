@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="template">
+	<name>yoo_scoop</name>
+	<version>1.5.0</version>
+	<creationDate>February 2009</creationDate>
+	<author>YOOtheme</author>
+	<authorEmail>info@yootheme.com</authorEmail>
+	<authorUrl>http://www.yootheme.com</authorUrl>
+    <copyright>Copyright (C) 2007 - 2009 YOOtheme GmbH</copyright>
+    <license></license>
+	<description><![CDATA[
+<img src="../templates/yoo_scoop/template_thumbnail.png" align="right" style="margin: 0px 0px 10px 10px;" />
+
+<div style="font-size: 13px;">
+Scoop is the March 2009 template of the YOOtheme club.
+<br /><br /><span style="color: #ff0000;"><b>NOTE: It is not free or public. This template is for members of the YOOtheme club only.</b></span>
+<br /><br />YOOtheme website<br /><a href="http://www.yootheme.com/">http://www.yootheme.com</a>.
+<br /><br />YOOtheme demo server<br /><a href="http://demo.yootheme.com/">http://demo.yootheme.com</a>.
+<br /><br />YOOtools website<br /><a href="http://www.yootools.com/">http://www.yootools.com</a>.
+<br /><br />Help for all YOOtheme products: YOOtorials website<br /><a href="http://www.yootorials.com/">http://www.yootorials.com</a>.
+</div>
+
+<h3 style="clear: both;">Changelog</h3>
+
+<b>1.5.0</b><br />
+<div style="margin: 0px 0px 0px 10px;">
+- Initial Release<br />
+</div>
+<br /><br />
+
+]]></description>
+	<files>
+		<filename>component.php</filename>
+		<filename>raw.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>apple_touch_icon.png</filename>
+		<filename>index.php</filename>
+		<filename>params.ini</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>html</folder>
+		<folder>lib</folder>
+		<folder>css</folder>
+		<folder>images</folder>
+	</files>
+	<positions>
+		<position>absolute</position>
+		<position>topmenu</position>
+		<position>search</position>
+		<position>logo</position>
+		<position>menu</position>
+		<position>banner</position>
+		<position>toolbar</position>
+		<position>header-left</position>
+		<position>header-right</position>
+		<position>breadcrumbs</position>
+		<position>left</position>
+		<position>right</position>
+		<position>footer</position>
+		<position>top</position>
+		<position>top-equal</position>
+		<position>top-goldenratio</position>
+		<position>main-top-equal</position>
+		<position>main-top-goldenratio</position>
+		<position>content-top-equal</position>
+		<position>content-top-goldenratio</position>
+		<position>content-bottom-equal</position>
+		<position>content-bottom-goldenratio</position>
+		<position>main-bottom-equal</position>
+		<position>main-bottom-goldenratio</position>
+		<position>bottom</position>
+		<position>bottom-equal</position>
+		<position>bottom-goldenratio</position>
+		<position>content1</position>
+		<position>content2</position>
+		<position>content3</position>
+		<position>content4</position>
+		<position>content5</position>
+		<position>content6</position>
+		<position>content7</position>
+		<position>content8</position>
+		<position>content9</position>
+		<position>debug</position>
+	</positions>
+	<params>
+		<param name="color" type="list" default="default" label="Template Color" description="Used color for template">
+			<option value="default">White</option>
+			<option value="color">Color</option>
+			<option value="wood">Wood</option>
+			<option value="stripeslight">Stripes Light</option>
+			<option value="stripesdark">Stripes Dark</option>
+			<option value="dotted">Dotted</option>
+		</param>
+		<param name="item1Color" type="list" default="default" label="Item1 Color" description="Used color when menu item1 is active">
+			<option value="red">Red</option>
+			<option value="green">Green</option>
+			<option value="pink">Pink</option>
+			<option value="orange">Orange</option>
+			<option value="blue">Blue</option>
+			<option value="yellow">Yellow</option>
+			<option value="lilac">Lilac</option>
+			<option value="turquoise">Turquoise</option>
+			<option value="black">Black</option>
+		</param>
+		<param name="item2Color" type="list" default="blue" label="Item2 Color" description="Used color when menu item2 is active">
+			<option value="red">Red</option>
+			<option value="green">Green</option>
+			<option value="pink">Pink</option>
+			<option value="orange">Orange</option>
+			<option value="blue">Blue</option>
+			<option value="yellow">Yellow</option>
+			<option value="lilac">Lilac</option>
+			<option value="turquoise">Turquoise</option>
+			<option value="black">Black</option>
+		</param>
+		<param name="item3Color" type="list" default="lilac" label="Item3 Color" description="Used color when menu item3 is active">
+			<option value="red">Red</option>
+			<option value="green">Green</option>
+			<option value="pink">Pink</option>
+			<option value="orange">Orange</option>
+			<option value="blue">Blue</option>
+			<option value="yellow">Yellow</option>
+			<option value="lilac">Lilac</option>
+			<option value="turquoise">Turquoise</option>
+			<option value="black">Black</option>
+		</param>
+		<param name="item4Color" type="list" default="orange" label="Item4 Color" description="Used color when menu item4 is active">
+			<option value="red">Red</option>
+			<option value="green">Green</option>
+			<option value="pink">Pink</option>
+			<option value="orange">Orange</option>
+			<option value="blue">Blue</option>
+			<option value="yellow">Yellow</option>
+			<option value="lilac">Lilac</option>
+			<option value="turquoise">Turquoise</option>
+			<option value="black">Black</option>
+		</param>
+		<param name="item5Color" type="list" default="green" label="Item5 Color" description="Used color when menu item5 is active">
+			<option value="red">Red</option>
+			<option value="green">Green</option>
+			<option value="pink">Pink</option>
+			<option value="orange">Orange</option>
+			<option value="blue">Blue</option>
+			<option value="yellow">Yellow</option>
+			<option value="lilac">Lilac</option>
+			<option value="turquoise">Turquoise</option>
+			<option value="black">Black</option>
+		</param>
+		<param name="item6Color" type="list" default="default" label="Item6 Color" description="Used color when menu item6 is active">
+			<option value="red">Red</option>
+			<option value="green">Green</option>
+			<option value="pink">Pink</option>
+			<option value="orange">Orange</option>
+			<option value="blue">Blue</option>
+			<option value="yellow">Yellow</option>
+			<option value="lilac">Lilac</option>
+			<option value="turquoise">Turquoise</option>
+			<option value="black">Black</option>
+		</param>
+		<param name="item7Color" type="list" default="default" label="Item7 Color" description="Used color when menu item7 is active">
+			<option value="red">Red</option>
+			<option value="green">Green</option>
+			<option value="pink">Pink</option>
+			<option value="orange">Orange</option>
+			<option value="blue">Blue</option>
+			<option value="yellow">Yellow</option>
+			<option value="lilac">Lilac</option>
+			<option value="turquoise">Turquoise</option>
+			<option value="black">Black</option>
+		</param>
+		<param name="item8Color" type="list" default="default" label="Item8 Color" description="Used color when menu item8 is active">
+			<option value="red">Red</option>
+			<option value="green">Green</option>
+			<option value="pink">Pink</option>
+			<option value="orange">Orange</option>
+			<option value="blue">Blue</option>
+			<option value="yellow">Yellow</option>
+			<option value="lilac">Lilac</option>
+			<option value="turquoise">Turquoise</option>
+			<option value="black">Black</option>
+		</param>
+		<param name="item9Color" type="list" default="default" label="Item9 Color" description="Used color when menu item9 is active">
+			<option value="red">Red</option>
+			<option value="green">Green</option>
+			<option value="pink">Pink</option>
+			<option value="orange">Orange</option>
+			<option value="blue">Blue</option>
+			<option value="yellow">Yellow</option>
+			<option value="lilac">Lilac</option>
+			<option value="turquoise">Turquoise</option>
+			<option value="black">Black</option>
+		</param>
+		<param name="item10Color" type="list" default="default" label="Item10 Color" description="Used color when menu item10 is active">
+			<option value="red">Red</option>
+			<option value="green">Green</option>
+			<option value="pink">Pink</option>
+			<option value="orange">Orange</option>
+			<option value="blue">Blue</option>
+			<option value="yellow">Yellow</option>
+			<option value="lilac">Lilac</option>
+			<option value="turquoise">Turquoise</option>
+			<option value="black">Black</option>
+		</param>
+		<param name="width" type="text" size="10" default="860" label="Template Width" description="Set the template width in pixels" />
+		<param name="layout" type="list" default="left" label="Layout Style" description="Left column is aligned to the left/right">
+			<option value="left">Left</option>
+			<option value="right">Right</option>
+		</param>
+		<param name="date" type="radio" default="1" label="Show Date" description="Show/Hide the date">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="loadMootools" type="radio" default="1" label="Enable Mootools" description="Enable/Disable Mootools 1.11 javascript library">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="loadJavascript" type="radio" default="1" label="Enable Javascripts" description="Enable/Disable all the templates javascripts">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="gzip" type="radio" default="0" label="Enable CSS/JS gzip" description="Enable/Disable the templates gzip compression for css and javascripts">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+	</params>
+</install>

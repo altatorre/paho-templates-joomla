@@ -1,0 +1,116 @@
+/* extensions.css, Copyright (C) 2007 - 2010 YOOtheme GmbH */
+
+#left #form-login fieldset {
+	border: none;
+}
+
+/*
+ * YOOsearch
+ */
+
+#page div.yoo-search div.resultbox {
+	position: absolute;
+	right: 0px;
+	top: 32px;
+	z-index: 20;
+}
+
+/*
+ * YOOtweet
+ */
+
+#page div.list div.yoo-tweet ul li {
+	border-top: none;
+}
+
+#page div.list div.yoo-tweet ul li.first {
+	border: none;
+}
+
+#page div.list div.yoo-tweet ul li.odd {
+	background: url(../images/article_separator.png) 50% 100% repeat-x;
+}
+
+#page div.list div.yoo-tweet ul li.even {
+	background: url(../images/article_separator.png) 50% 100% repeat-x;
+}
+
+/*
+ * YOOcarousel
+ */
+
+div.mod-border div.yoo-carousel {
+	margin: -10px -15px -10px -15px;
+}
+
+/*
+ * YOOlogin
+ */
+
+ 
+/* quick */
+#menu span.quick span.yoo-login { 
+}
+
+#menu span.quick span.yoo-login span.login {
+	width: 231px;
+}
+
+#menu span.quick span.yoo-login span.login span.login-button-text,
+#menu span.quick span.yoo-login span.login span.login-button-icon {
+	margin-right: 0px;
+}
+
+#menu span.quick span.yoo-login span.login span.lostpassword, 
+#menu span.quick span.yoo-login span.login span.lostusername,
+#menu span.quick span.yoo-login span.login span.registration {
+	margin-top: 5px;
+}
+
+#menu span.quick span.yoo-login span.logout {
+	margin-top: 10px;
+	overflow: visible;
+}
+
+#menu span.quick span.yoo-login span.logout span.logout-button-text,
+#menu span.quick span.yoo-login span.logout span.logout-button-icon {
+	margin-right: 0px;
+}
+
+/* nifty quick */
+#menu span.niftyquick span.yoo-login { 
+}
+
+#menu span.niftyquick span.yoo-login span.login {
+	width: 268px;
+	height: 50px;
+}
+
+#menu span.niftyquick span.yoo-login span.login span.login-button {
+	margin-right: 0px;
+}
+
+#menu span.niftyquick span.yoo-login span.login span.lostpassword, 
+#menu span.niftyquick span.yoo-login span.login span.lostusername,
+#menu span.niftyquick span.yoo-login span.login span.registration {
+	margin-top: 5px;
+}
+
+#menu span.niftyquick span.yoo-login span.logout {
+	margin-top: 10px;
+	overflow: visible;
+}
+
+#menu span.niftyquick span.yoo-login span.logout span.logout-button {
+	margin-right: 0px;
+}
+
+ 
+#menu span.niftyquick span.yoo-login span.login span.username input,
+#menu span.niftyquick span.yoo-login span.login span.password input {
+	width: 95%;
+	height: 12px;
+	background: #ffffff;
+	border: 1px solid #ffffff;
+	overflow: hidden;
+}

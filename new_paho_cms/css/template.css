@@ -1,0 +1,1391 @@
+/* Sección 1 */
+
+/* Define los parámetros generales de la letra: margen, rellenado, tipo de letra, align left, color */
+body {
+  height: 100%;
+  padding: 0px;
+  font-family:  Verdana,Arial,Helvetica,sans-serif; 
+  font-size:0.8em;
+  text-align: left;
+  color: #000;
+  margin: 0px;
+  background-color: #FFF;
+}
+
+/* Columna principal */
+div#col_cntnr {
+  border: 1px solid #FFF;
+  width:808px;
+  margin: 8px auto 12px auto;
+  background-image:url(../images/pahopage_bg.png);
+  background-repeat: repeat-y;
+}
+
+.syndicate {
+  padding-bottom:10px;
+  margin-bottom:-2px;
+}
+
+#buttons_language {
+  height:28px;
+}
+
+#jflanguageselection {
+  margin-top:4px;
+  color:white;
+}
+
+.jflanguageselection ul li {
+  margin-right: 10px;
+  color:white;
+}
+
+#jflanguageselection a {
+  display:block;
+  margin-right: 10px;
+  color:white;
+}
+
+img {
+  border: 0px;
+}
+
+hr {
+  color: #C1C1C1;
+}
+
+.clr {
+  clear: both;
+}
+
+/* Sección 2 del css */
+
+/* Pone el fondo y la forma del menú de Lenguage y accesibilidad y el color de la letra blanca 
+   Define el ancho de la ventana. Comienza a crear el espacio donde se van a mostrar las cosas.
+   Crea la flotación de los elementos hacia la izquierda.  */
+#buttons_outer {
+  background: #ffffff url(../images/pi_language_bar_bg.jpg) no-repeat;
+  width: 808px;
+  margin: 0px;
+  float: left;
+  color: #ffffff;
+}
+
+/*  */
+#buttons_inner 
+{
+  height: 28px;
+  color: #ffffff;
+}
+
+/* Pone los botones de idioma a la derecha. */
+#buttons_language {
+  float: right;
+  margin: 0px;
+  padding: 0px;
+  width: auto;
+  color: #ffffff;
+}
+
+/* texto del bread crumb. Fondo gris y tamano de letra mas pequeno */
+#pathway_text {
+  overflow: hidden;
+  display: block;
+  background:#efefef;
+  padding: 4px 0px 10px 10px;
+  margin-bottom: 2px;
+  font-size: .85em;
+}
+
+#pathway_text img {
+  margin-left: 2px;
+  margin-right: 5px;
+  margin-top: 6px;
+}
+
+.blog_more, .rss_list, .mostread, .latestevent, .ftr { /* cambio jc incluidos para mejor visibilidad */
+  font-size: 1em;
+}
+
+#header 
+{
+  background-color: #ffffff;
+  float: left;
+  padding: 0px;
+  margin-right: 0px;
+  width: 808px;
+  height: 93px;
+}
+
+/* Seccion 3 */
+
+/* Dimensiones alrededor de la caja de busqueda. */
+#top_outer {
+  background-color: #ffffff;
+  width: 808px;
+  float:left;
+}
+
+#top_inner 
+{
+  overflow: hidden;
+  background: #ffffff;
+  margin: 0px;
+  padding: 0px;
+}
+
+#top_inner_right_box {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-align:center;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.textfield {
+  background:#FFFFFF url(../images/search_icon.gif) no-repeat 4px 4px;
+  padding-left: 22px;
+  width:140px;
+  margin-bottom: 0px;
+}
+
+.search {
+  margin: 0px;
+  padding: 0px;
+}
+  
+/* Menu de barra horizontal */
+#top_inner_menu {
+  overflow: hidden;
+  width: 808px;
+  height: 25px;
+  margin-top: 0px;
+  background-color: #6788a7;
+  background-image:url(../images/pi_topmenu_bar_bg.jpg);
+  background-repeat: no-repeat;
+}
+
+#top_inner_menu_buttons {
+  text-align: right;
+  margin: 0px;
+  padding: 2px;
+  padding-right: 8px;
+  width: auto;
+}
+
+#top_inner_menu_buttons ul { 
+  list-style-type: none;
+  display: inline;
+}
+
+#top_inner_menu_buttons li {
+  font-weight: bold;
+  margin-left: 12px;
+  display: inline;
+}
+
+#top_inner_menu_buttons a { 
+  font-size: .95em;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Menu de accesibilidad */
+#fwrfId
+{
+	margin: 0px;
+	padding-top: 4px;
+	padding-right: 5px;
+	padding-left: 5px;
+	margin-right: 5px;
+	width: auto;
+	color: #FFFFFF;
+}
+
+#fwrfId a
+{
+	margin: 0px;
+	padding-top: 4px;
+	padding-right: 5px;
+	color: #FFFFFF;
+	text-decoration:none;
+}
+
+/* seccion 4 */
+
+
+/* Menu izquierdo */
+/* Color de fondo de los menus de la izquierda  */
+
+#left_inner {
+  width: 138px;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+#left_inner .moduletable h3 {
+  margin: 0px;
+  padding: 6px 4px 6px 4px;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #F0F0F0;
+  background-color: #225588;
+  background-image:url(../images/pi_topmenu_bar_bg.jpg);
+  background-repeat: no-repeat;
+}
+
+#left_inner_menu1, #left_inner_menu4
+{
+	width: 138px;
+	/* background-color: #BBD6EF; antiguo #e6eef9; ver en color.css */
+	border: 0;
+}
+
+/* estilo principal de la letra en el men'u */
+#left_inner_menu1 a.mainlevel:link, #left_inner_menu1 a.mainlevel:visited 
+{
+	/* background-color: #BBD6EF; ver en color.css */
+	/* background-color: #e6eef9; */
+	vertical-align: middle;
+	/* font-size: 11pt;  Este era el original pero se ve muy peque~no en algunos browsers */
+	 font-size:9pt; 
+	font-weight: bold;
+	/* color: #134A81; ver en color.css */
+	/* color:  #6788a7; */
+	text-align: left;
+	padding-top: 5px;
+	padding-left: 6px;
+	width: 134px;
+	text-decoration: none;
+	border-bottom: 1px solid #ffffff;
+}
+
+#left_inner_menu1 a.mainlevel:active
+{
+	/* background-color: white; ver color.css */
+	vertical-align: middle;
+	/*font-size: 11pt;*/
+	font-size: 9pt;
+	font-weight: bold;
+	/* color: #6788a7; */
+	/* color: #666666; ver color.css */
+	text-align: left;
+	padding-top: 5px;
+	padding-left: 6px;
+	width: 134px;
+	text-decoration: none;
+	border-bottom: 1px solid #ffffff;
+}
+
+/* mouse sobre la opci'on menu principal */
+/* fondito naranja */
+#left_inner_menu1 a.mainlevel:hover 
+{
+	text-decoration: underline;
+	color: #6788a7;
+	border-bottom: 1px solid #ffffff;
+}
+
+#left_inner_menu1 a.mainlevel#active_menu 
+{
+	color:#6788a7;
+	border-bottom: 1px solid #ffffff;
+	background: white;
+}
+
+#left_inner_menu1 a.mainlevel#active_menu:hover 
+{
+	color: #856625;
+	border-bottom: 1px solid #ffffff;	
+} ver color.css */
+
+/* menu highlight */
+#left_inner_menu2 
+{
+	width: 138px;  /* 138 cambio en el dsssi 20080801 */
+	/* background-color: #BBD6EF; ver color.css */
+}
+
+#left_inner_menu2 .moduletable, #left_inner_menu3 .moduletable, #left_inner_menu4 .moduletable
+{
+	font-weight: normal;
+}
+
+#left_inner_menu2 a.mainlevel:link, #left_inner_menu2 a.mainlevel:visited 
+{
+	/* background-color: #BBD6EF; ver color.css */
+	vertical-align: middle;
+	font-size: 11pt; /* Este era el original pero se ve muy peque~no en algunos browsers */
+	font-size:9pt;
+	font-weight: bold;
+	color: #134A81;
+	text-align: left;
+	padding-top: 5px;
+	padding-left: 6px;
+	padding-right: 10px;
+	width: 128px;  /* 138 cambio en el dsssi 20080801 */
+	text-decoration: none;
+	border-bottom: 1px solid #ffffff;
+}
+
+#left_inner_menu2 a.mainlevel:hover 
+{
+	text-decoration: underline;
+	color: #134A81;
+	border-bottom: 1px solid #ffffff;
+}
+
+/* #left_inner_menu2 a.mainlevel#active_menu 
+{
+	color:#6788a7;
+	border-bottom: 1px solid #ffffff;
+	background: white;
+}
+
+#left_inner_menu2 a.mainlevel#active_menu:hover 
+{
+	color: #6788a7;
+	border-bottom: 1px solid #ffffff;	
+} ver color.css */
+
+/* Hasta aqui los menus van todos ape~nuscados uno sobre otro. */
+
+/* componente feeds */
+#left_inner_menu3 
+{ 
+	/* background: #BBD6EF /*url(../images/pi_left_menu3_bg.jpg) repeat ver color.css */
+	width: 138px;
+}
+
+a.mainlevel:link, a.mainlevel:visited 
+{
+	float: right;
+	font-size: 11pt;
+	font-weight: bold;
+	text-align: left;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 20px;
+	text-decoration: none;
+}
+
+a.mainlevel:hover 
+{
+	/* background-position: 0px -25px; ver color.css */
+	text-decoration: none;
+	color: #fff;
+}
+
+a.mainlevel#active_menu 
+{
+	color:#fff;
+	font-weight: bold;
+}
+
+/* a.mainlevel#active_menu:hover 
+{
+	color: #fff;
+} ver color.css */
+
+/* colores de los submenus */
+a.sublevel:link, a.sublevel:visited 
+{
+	padding-left: 1px;
+	vertical-align: middle;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #134A81;
+	text-align: left;
+}
+
+a.sublevel:hover 
+{
+	color: #6788a7;
+	text-decoration: underline;
+}
+
+/* a.sublevel#active_menu 
+{
+	color: #333;
+} ver color.css */
+
+
+
+/* Sección 5 */
+
+/* posicionamiento del contenido central */ 
+#content_outer 
+{
+  margin-left: 0px;
+  margin-top: 0px;
+  float: left; /* Esto es inutil para Internet Explorer pero necesario para Mozilla y Netscape */
+  width: 670px; /*  Ancho de columna central con derecha  */
+}
+
+#content_inner
+{
+  width: 502px; /*  Ancho de columna central  */
+  float: left;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+  text-align:left;
+}
+
+.article-content {
+  font-size:1em;
+}
+
+/* Seccion 6 */
+
+/* menu de la derecha */
+
+#right_outer 
+{
+  width: 138px;
+  float: right;
+  background-color: transparent;
+  padding: 0px;
+  text-align: right;
+}
+
+#right_inner 
+{
+  text-align: left;
+}
+
+/* blog de la directora */
+
+#right_inner_menu1 
+{
+  /* blog de la directora */
+  /* background: #c03f40 url(../images/pi_directors_blog.jpg) repeat-x;	*/
+  background: #ffffff; /* url(../images/pi_directors_blog3.jpg) repeat-x; */
+  width: 138px;
+  padding-bottom: 10px;
+  color: #ffffff;
+  font-size:105%;
+}
+
+#right_inner_menu1 a.mainlevel:link, #right_inner_menu1 a.mainlevel:visited 
+{
+  background: #ffffff;
+  vertical-align: middle;
+  font-size:100%;
+  font-weight: bold;
+  color: #6788a7;
+  text-align: left;
+  padding-top: 5px;
+  padding-left: 6px;
+  width: 132px;
+  text-decoration: none;
+}
+
+#right_inner_menu1 a.mainlevel:hover 
+{
+  background-position: 0px -25px;
+  text-decoration: none;
+  color: #6788a7;
+}
+
+#right_inner_menu1 a.mainlevel#active_menu 
+{
+  color:#6788a7;
+  font-weight: bold;
+}
+
+#right_inner_menu1 a.mainlevel#active_menu:hover 
+{
+  color: #856625;
+}
+
+/* titulos de los perfiles */
+#right_inner_menu1  .moduletable {
+  color:black;
+}
+
+.moduletable h3 {
+  letter-spacing:-1px;
+}
+
+#right_inner_menu1 h3, #rss h3, #right_inner_menu1  .moduletable h3
+{
+  color:#CC6600; 
+  display:block;
+  clear:both;
+  text-align: left;
+  margin: 20px 0px 6px 0px; */
+  font-size:105%;
+  font-weight: bold;
+  width: 138px;	
+}
+
+.premain {
+  width:480px;
+  float:left;
+  margin-left:10px;
+}
+
+#legals .moduletable h3
+{
+	text-align: center;
+}
+
+/* menu de usuario */
+
+.user_inner_title
+{
+	color: #cc6600;
+	font-size:110%;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.user1_inner 
+{
+	border-right: 1px dashed #cccccc;
+	float: none !important;
+	float: left;
+	margin: 0px;
+}
+
+.user2_inner 
+{
+	border: 0px solid #cccccc;
+	float: none !important;
+	float: left;
+	margin: 0px;
+}
+/* imagenes dentro del contenido */
+div.mosimage 
+{
+  border: 1px solid #ccc;
+}
+
+.mosimage 
+{
+  border: 1px solid #cccccc;
+  margin: 5px
+}
+
+.mosimage_caption 
+{
+  margin-top: 2px;
+  background: #efefef;
+  padding: 1px 2px;
+  color: #666;
+	font-size:90%;
+  border-top: 1px solid #cccccc;
+}
+
+.article_separator {
+
+}
+
+ul
+{
+	margin-left:8px;
+	padding-left:8px;
+}
+
+li
+{
+	line-height: 15px;
+}
+
+span.article_seperator 
+{
+	display: block;
+	height: 8px;
+}
+
+#rss_left
+{
+	width:230px;
+	float:left;
+	margin-right:20px;
+}
+
+#rss_right
+{
+	width:230px;
+    float:left;
+}
+
+.maintitle 
+{
+	color: #ffffff;
+	font-size: 40px;
+	padding-left: 15px;
+	padding-top: 20px;
+}
+
+.error 
+{
+	font-style: italic;
+	padding: 5px;
+	color: #cccccc;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.back_button 
+{
+	float: left;
+	text-align: center;
+	font-size: 11px;
+	font-weight: bold;
+	width: auto;
+	padding: 0px 0px;
+	padding-top: 10px;
+	line-height: 20px;
+	margin: 1px;
+}
+
+
+.pagenav 
+{
+	text-align: center;
+	font-size: 11px;
+	font-weight: bold;
+	border: 3px double #cccccc;
+	width: auto;
+	background: url(../images/button_bg.png) repeat-x;
+	padding: 0px 10px;
+	line-height: 20px;
+	margin: 1px;
+}
+
+.pagenavbar 
+{
+	margin-right: 10px;
+	float: right;
+}
+
+/* Ya tiene el barra de menu blanca y los lis todavia no */
+
+#footer 
+{
+    background-color: #6788a6;
+	text-align: center;
+	padding: 3px;
+}
+
+td 
+{
+	text-align: left;
+}
+
+
+a:link, a:visited 
+{
+	color: #6788a7;
+	color: #134A81;
+	text-decoration: none;
+}
+
+a:hover 
+{
+	color: #900; 	
+	text-decoration: underline;
+}
+
+
+/*  Seccion 07  */
+
+/*  Control del contenido */
+
+table.contentpaneopen 
+{
+	width: 100%;
+	padding: 0px;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	margin: 0px;
+	margin-top: 10px;
+	background: #ffffff;
+	font-size: 1.02em;
+}
+
+table.contentpaneopen img 
+{
+	margin: 10px 10px 5px 0px; 
+}
+
+table.contentpaneopen td 
+{
+	padding-right: 5px;
+}
+
+table.contentpaneopen td.componentheading 
+{
+	padding-left: 4px;
+}
+
+
+
+/* cajas de busqueda */
+
+.inputbox 
+{
+	padding: 2px;
+	border:solid 1px #cccccc;
+	background-color: #ffffff;
+         /*width: 250px;
+         height: 16px;*/
+}
+.inputbox1 
+{
+	padding: 2px;
+	border:solid 1px #cccccc;
+	background-color: #ffffff;
+         width: 100px;
+         height: 16px;
+         margin-left: 10px;
+}
+
+.inputbox_search 
+{
+	padding-top: 0px;
+	margin-top: 2px;
+	vertical-align: top;
+	border: solid 1px #cccccc;
+	background-color: #ffffff;
+}
+
+
+a.readon 
+{
+        display: block;
+	font-size: 10px;
+	font-weight: normal;
+	color: #134a81;
+	text-decoration: underline;
+	margin-top: 0px;
+}
+
+table.searchinto 
+{
+	width: 100%;
+}
+
+table.searchintro td 
+{
+	font-weight: bold;
+}
+
+table.moduletable 
+{
+	width: 100%;
+	margin-bottom: 5px;
+	padding: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+
+
+#rss h3
+{
+width: 100%;
+}
+
+
+div.moduletable 
+{
+	padding: 0px;
+	margin-bottom: 2px;
+	color: #000000;
+}
+
+/* Titulos de los módulos */
+table.moduletable th, div.moduletable h3 
+{
+	color: #CC6648;
+	text-align: left;
+	font-weight: bold;
+	margin: 20px 0 6px 0;
+	font-size:1em;
+}
+
+table.moduletable th 
+{
+	color:#CC6600;
+	text-align: left;
+	padding-left: 4px;
+	height: 21px;
+	font-weight: normal;
+	width: 138px;	
+	}
+
+table.pollstableborder td 
+{
+	padding: 0px;
+	color: #000000;
+	width: 90%;
+	text-align: left;
+	float: left;
+}
+
+.poll
+{
+	color: #000000;
+	font-size: 11px;
+}
+
+
+.button 
+{
+  color: #c64934;
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  border: 1px solid #ffffff;
+  width: auto;
+  background: url(../images/button_bg.png) repeat-x;
+  height: 24px;
+}
+
+
+table.moduletable th 
+{
+    color:#CC6600;
+	text-align: left;
+	padding-left: 4px;
+	height: 21px;
+	font-weight: normal;
+	width: 138px;	
+
+	}
+
+
+.sectiontableentry1 
+{
+	background-color : #f9f9f9;
+	border-bottom: 1px solid #c03f40;
+	padding-top: 0px;
+	text-align: left;
+}
+
+.sectiontableentry2 
+{
+	background-color : #f9f9f9;
+	border-bottom: 1px solid #c03f40;
+	padding-top: 0px;
+	text-align: left;
+	width: 90%;
+}
+
+
+.createdate 
+{
+	height: 15px;
+	padding-bottom: 10px;
+	color: #4f8cc1;
+	font-size: 70%;
+	text-transform: capitalize;
+}
+
+.modifydate 
+{
+	height: 15px;
+	padding-top: 10px;
+	color: #999999;
+	font-size: 11px;
+}
+
+
+.contentheading {
+  color: #134A81;
+  font-weight: bold;
+  font-size:1.15em;
+  padding-bottom:2px;
+  clear:both;
+}
+
+.content_rating {
+	color:silver;
+	font-size: 10px;
+}
+
+.content_vote { font-size: 10px; }
+
+/* EStos sirven cuando se enlaza al resultado de un componente */
+.componentheading 
+{
+	background: url(../images/pi_content_title_bg.jpg) repeat-x;
+	color: #776655;
+	text-align: left;
+	padding-top: 4px;
+	padding-left: 4px;
+	font-weight: bold;
+	font-size:110%;
+}
+
+.contentcolumn 
+{
+	padding-right: 5px;
+}
+
+/* enlaces en los resultados de los componentes 
+.category, .contentdescription {
+	font-size: 11px;
+}*/
+
+table.contentpane 
+{
+	background-color: #ffffff;
+	width: 100%;
+	padding: 0px;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	margin: 0px;
+}
+
+/* tamaño de las letras en los resultados de los componentes */
+table.contentpane td 
+{
+	margin: 0px;
+	padding: 0px;
+	font-size:11px;
+}
+
+table.contentpane td.componentheading 
+{
+	padding-left: 4px;
+}
+
+.itemdescription{
+	position:relative;
+	left:5px;
+}
+
+
+/* Caja gris de contenidos */
+
+
+#content_inner_grey_box 
+{
+	background: #ffffff url(../images/pi_content_grey_box_bg.jpg) repeat-x;
+	overflow: hidden;
+	height: 146px;
+	width: 511px;
+	padding-bottom: 40px;
+}
+
+#content_inner_grey_box p 
+{
+	color: #828487;
+	/* font-size: 11px; */
+	text-align: left;
+	padding-left: 4px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#content_inner_grey_box h3 
+{
+	color: #405b73;
+	/* font-size: 12px; */
+	font-weight: bold;
+	text-align: left;
+	padding-left: 4px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#content_inner_grey_box a, content_inner_grey_box a.mainlevel:link, #content_inner_grey_box a.mainlevel:visited 
+{
+	display: block;
+	vertical-align: middle;
+	font-size: 11px;
+	font-weight: bold;
+	color: #4e6983;
+	margin-right: 10px;
+	text-align: left;
+	text-decoration: none;
+}
+
+#content_inner_grey_box a.mainlevel:hover 
+{
+	text-decoration: none;
+	color: #4e6983;
+}
+
+#content_inner_grey_box a.mainlevel#active_menu 
+{
+	color:#4e6983;
+	font-weight: bold;
+}
+
+#content_inner_grey_box a.mainlevel#active_menu:hover 
+{
+	color: #856625;
+}
+
+/* creo que no se usa
+#content_inner_list 
+{
+	width: 450px;
+	padding-bottom: 40px;
+}
+
+#content_inner_list .list 
+{ 
+	background: #ffffff url(../images/pi_bullet_list.jpg) 0 4px no-repeat;
+	border-bottom: 1px #cccccc dashed;
+	padding-left: 10px;
+	padding-bottom: 20px;
+	float: none;
+	font-size: 11px;
+}
+*/
+
+/* Menu inferior y menu de information sources.  */
+.mainlevel-footer, .mainlevel-vhl
+{
+	font-size: 9pt;
+}
+
+.menu {
+       font-size: 9pt;
+}
+
+.moduletableotherlinks h3 {
+        width: 480px;
+        padding-left: 8px;
+        background-color: #999;
+        color: #FFF;
+}
+
+.latest_event {
+	color:#134A81;
+	margin-left: 6px;
+	margin-right: 6px;
+	font-size: 12px;
+}
+
+.latest_event a 
+{
+	color:#134A81;
+	font-weight: bold;
+}
+
+.mainlevel-vhl 
+{
+background: #ffffff;
+color:blue;
+line-height:21px /*150%*/;
+margin-top: 15px;
+}
+
+table.moduletable-footer 
+{
+	background: silver;
+	display: inline;
+	font-size:10px;
+}
+
+.rss { /* titulos de la rss campus virtual y blogs */
+	background: #ffffff;
+	font-size: 10px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	color: #cc6600;
+} 
+
+/* Titulo de fondo gris */
+
+#buffet h3 {
+	font-size: 11px; 
+	font-weight: bold; 
+	color: #FFFFFF; 
+	width: 99%;
+	padding: 2px 0 2px 4px; 
+	margin: 0; 
+	
+	background-color: #999999;
+}
+
+#buffet h3 a {
+	color: white;
+}
+
+#buffet {
+		width: 100%; 
+		margin: 10px 0; 
+		background: #EEEEEE;
+}
+
+#buffet img {vertical-align: top; border: none;}
+#buffet ul {list-style: none; margin: 0; padding: 0;}
+#buffet ul li {float: left; padding: 5px; width: 131px;}
+#buffet .credit {display: block; color: #666;font-size: 9px;padding-top: 4px;}
+
+#legals {
+  text-align:center;
+margin-top: 20px;
+}
+
+#content_banner 
+{
+  overflow: hidden;
+  display: block;
+  line-height: 25px !important;
+  line-height: 22px;
+  padding-left: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0px solid #ccc;
+  margin-bottom: 2px;
+}
+
+#banner_inner 
+{
+  position:relative;
+  padding: 0px;
+  height: 93px;
+  width: 808px;
+}
+
+#link_ops {
+    position:absolute;
+	top:0px;
+	left:0px;
+	width:165px;
+	height:93px;
+}
+
+#link_oms {
+	position:absolute;
+	top:0px;
+	left:165px;
+	width:190px;
+	height:93px;
+}
+
+#link_promo {
+	position:absolute;
+	top:0px;
+	left:355px;
+	width:200px;
+	height:93px;
+}
+
+#poweredby_inner 
+{
+	float: left;
+	padding: 0px;
+	margin-left: 0px;
+	height: 93px;
+	width: 242px;
+}
+
+/* Tablas de contenido */
+
+table.contenttoc 
+{
+	border: 1px solid #cccccc;
+	padding: 2px;
+	margin-left: 2px;
+	margin-bottom: 2px;
+}
+
+table.contenttoc td {
+	padding: 2px;
+}
+
+table.contenttoc th {
+	background: url(../images/subhead_bg.png) repeat-x;
+	color: #666666;
+	text-align: left;
+	padding-top: 2px;
+	padding-left: 4px;
+	height: 21px;
+	font-weight: bold;
+	font-size: 10px;
+}
+
+.hrnvtd {font-size:10px; font-weight:bold; background-color:#EEEEEE; padding-top:3px;padding-bottom:3px;color:#666666;}
+a.hrnv:link{text-decoration:none;color:#134A81;}
+a.hrnv:active{text-decoration:none;color:#134A81;}
+a.hrnv:visited{text-decoration:none;color:#134A81;}
+a.hrnv:hover{text-decoration:underline;color:#134A81;}
+a.hrnvon:link{font-weight:bold;text-decoration:none;color:#666666;}
+a.hrnvon:active{font-weight:bold;text-decoration:none;color:#666666;}
+a.hrnvon:visited{font-weight:bold;text-decoration:none;color:#666666;}
+a.hrnvon:hover{font-weight:bold;text-decoration:underline;color:#666666;}
+.ftr {font-size:9pt;color:#666666;}
+a.ftr:link{text-decoration:underline;color:#134A81;}
+a.ftr:active{color:#999999;}
+a.ftr:visited{color:#666666;}
+
+/* Media Center */
+
+#eventboxtext { font-size: 11px; margin-top: 2px; }
+#gen-menu { height: 38px; }
+#gen-menu li { height: 10px; }
+#content { border: 0; }
+#eventbox { padding:4px; margin-top:10px; border-color: #e0d9c0; border-width: 1px 1px 1px 1px; border-style: solid; }
+#event { padding:0px; background-color:#f3eee3; width:100%; height:100%; }
+#eventcontent { font-size:11px; text-align:left; padding:5px; }
+#eventtitle { font-size: 10pt; color: #3C3008; font-weight: bold; margin-top: 2px; margin-bottom: 4px; }
+#titlebox { padding:2px; margin-top:14px; margin-bottom: 12px; border: 3px double #69C; width:545px; }
+#titlebody { padding:0px; background-color:#369; width:100%; height:100%; }
+#titlecontent { font-size: 11pt; letter-spacing: 2px; text-align:center; padding:6px; color: #FFF; font-weight: bold; }
+#mediatitle { font-size: 10pt; font-weight: bold; letter-spacing: 2px; color: #c05500; width: 542px; padding-bottom: 3px; border-bottom: 2px solid #369; padding-left: 6px; border-left: 1px solid #369; margin-top: 12px; margin-bottom: 12px; }
+#fotoboxl { width: 175px; float: left; margin: 0 12px 10px 0; }
+#newstitle { font-size: 12px; font-weight: bold; }
+#mainews { font-size: .8em; margin-top: 8px; }
+
+.texto { padding: 3px; color: #000000; border: 1px solid #CFD3DF; background-color: #FFF; display: none; margin-top: 0; margin-bottom: 6px; font-size: 8pt; }
+.headln { margin-bottom: 0; margin-top: 2px; padding-bottom: 4px; color: #333; font-size: 8pt; font-weight: bold; }
+.mediasmall { font-size: 11px; }
+.mediaheadline { font-size: 14px; font-weight: bold; }
+.mediaheadlinetext { font-size: 11px; }
+
+#video ul { list-style-type: decimal-leading-zero; }
+#video li { padding-bottom: 10px; }
+
+/* Photo Gallery */
+
+#frame1 {
+position:relative;
+width:138px;
+height:94px;
+background-image: url(null.gif);
+background-repeat:no-repeat;
+border-bottom: 1px solid rgb(204, 204, 204);
+padding-bottom: 18px;
+}
+#slide1 {
+position:absolute;
+top:0;
+left:0;
+display:block;
+width:138px;
+height:94px;
+background-image: url(null.gif);
+background-repeat:no-repeat;
+filter:alpha(opacity=100);
+-moz-opacity:1;
+}
+
+#mediareader {
+font-size:90%;
+margin-top: -12px;
+margin-bottom: 12px;
+border-bottom: 1px solid rgb(204, 204, 204);
+padding-bottom: 18px;
+}
+
+#mediareader li {
+padding-left: 0px;
+background-image: url(http://devserver.paho.org/leite/images/stories/PIN/null.gif);
+line-height:105%;
+margin-bottom:8px;
+}
+
+#presslist {
+font-size:0.9em;
+margin-right: 10px;
+}
+
+#presslist ul {
+padding-left: 0px;
+margin-left: 0px;
+list-style-type: none;
+}
+
+#presslist li {
+padding-left: 0px;
+margin-left: 0px;
+background-image: url(http://devserver.paho.org/leite/images/stories/PIN/null.gif);
+margin-bottom:6px;
+border-bottom: 1px solid rgb(204, 204, 204);
+padding-bottom: 10px;
+}
+
+.oneclick_mod {
+  width: 254px;
+  height: 310px;
+  padding: 0px;
+  margin-bottom: 10px;
+  border: 1px solid #C1C9CF;
+}
+.oneclick_title {
+  background-color: #E1E9EF;
+  color: #036;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0px;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #C1C9CF;
+}
+.oneclick_content {
+  border:1px solid white;
+  width: 244px;
+  height: 277px;
+  margin: 4px;
+  padding: 0px;
+}
+.oneclick_content p {
+  font-size: 11px;
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+#left_inner .menu  li {
+list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+#left_inner .menu  li ul {
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+#left_inner .menu  li ul li {
+  background-image: url(../images/indent1.png);
+  background-repeat: no-repeat;
+  background-position: 1px 4px;
+}
+
+#left_inner .menu  li ul li a {
+  display: block;
+  width: 118px;
+  margin-left: 12px;
+  padding-left: 4px;
+}
+
+#left_inner .menu li ul li a:hover {
+  display: block;
+  width: 118px;
+  background-color: #D6D6D6;
+  color: #D14A13;
+  margin-left: 12px;
+  padding-left: 4px;
+}
+
+#content_inner div ul li {
+  margin-bottom: 8px;
+}
+
+#content_inner div ul li a.category {
+  font-size: 1.2em;
+}
+
+.moduletablefprss {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+a.mainlevel-footer {
+  font-size: 8pt;
+}

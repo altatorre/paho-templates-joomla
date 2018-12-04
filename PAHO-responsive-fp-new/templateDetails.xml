@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.5/template-install.dtd">
+<install version="1.5" type="template">
+	<name>PAHO Responsive FP</name>
+	<creationDate>2014-03-06</creationDate>
+	<author>Paulo Leite</author>
+	<authorEmail>leitepau@paho.org</authorEmail>
+	<authorUrl>http://www.paho.org</authorUrl>
+	<copyright>PAHO/WHO 2010</copyright>
+	<license>GNU/GPL</license>
+	<version>1.0.0</version>
+	<description>PAHO Responsive Template to be used just on the front page of the site.</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>index.html</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>css/reset.css</filename>
+		<filename>css/style.css</filename>
+		<filename>css/index.html</filename>
+		<filename>images/mobile_menu_icon.png</filename>
+		<filename>images/flecha.png</filename>
+		<filename>images/index.html</filename>
+		<filename>js/index.html</filename>
+		<filename>js/css3-mediaqueries.js</filename>
+		<filename>html/index.html</filename>
+		<filename>html/com_content/index.html</filename>
+		<filename>html/com_content/frontpage/index.html</filename>
+		<filename>html/com_content/frontpage/default.php</filename>
+	</files>
+	<positions>
+		<position>banner</position>
+		<position>countries</position>
+		<position>footer_left</position>
+		<position>ftmenu1</position>
+		<position>ftmenu2</position>
+		<position>ftmenu3</position>
+		<position>innerleft_fp</position>
+		<position>innercenter_fp</position>
+		<position>innerright_fp</position>
+		<position>left</position>
+		<position>left1</position>
+		<position>language</position>
+		<position>right_fp</position>
+		<position>site_info</position>
+		<position>slideshow</position>
+		<position>user4</position>
+	</positions>
+</install>

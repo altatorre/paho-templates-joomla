@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mosinstall type="template" version="1.0.0">
+	<name>one_click</name>
+	<creationDate>05/11/2009</creationDate>
+	<author>Juan Carlos Diaz</author>
+	<copyright>OPS/OMS</copyright>
+    <authorEmail>diazjuan@paho.org</authorEmail>
+    <authorUrl>http://www.paho.org</authorUrl>
+	<version>1.0</version>
+	<description>The Pan American Health Organization homepage template for one_click sites</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>template_thumbnail.png</filename>
+	</files>
+	<css>
+		<filename>css/template_css.css</filename>
+	</css>
+</mosinstall>

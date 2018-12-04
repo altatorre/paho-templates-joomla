@@ -1,0 +1,712 @@
+/*  */
+
+h4 {   color:#0066cc;  }
+
+body { 
+	color:#000000;
+	background: #ffffff;
+}	
+
+/* Resaltado */
+.highlight 
+{
+	background-color: Yellow;
+	color: Blue;
+}
+
+.code 
+{
+	background-color: #ddd;
+	border: 1px solid #bbb;
+}
+
+form 
+{
+	color: #000000;
+}
+
+/* Define algunas medidas de la distribución y el fondo de las páginas. Hace que el fondo se repita hacia abajo. */
+.outline 
+{
+	background: #ffffff url(../images/pi_cms_bg2.jpg) center -20px repeat-y;
+}
+
+/* Pone el fondo y la forma del menú de Lenguage y accesibilidad y el color de la letra blanca 
+	Define el ancho de la ventana. Comienza a crear el espacio donde se van a mostrar las cosas.
+	Crea la flotación de los elementos hacia la izquierda.  */
+#buttons_outer 
+{
+	background: #ffffff url(../images/pi_language_bar_bg.jpg) no-repeat;	
+    color: #ffffff;
+}
+
+/*  */
+#buttons_inner 
+{
+	border: 0px solid #cccccc;
+	color: #ffffff;
+}
+
+#button_search
+{
+	color: #ffffff;
+}
+
+/* Pone los botones de idioma a la derecha. */
+#buttons_language 
+{
+    color: #ffffff;
+}
+
+/* Botones de lenguaje, que son vi~netas. */
+#buttons_language>ul#mainlevel-nav li a 
+{ 
+	color: #ffffff;
+}
+
+/* texto del bread crumb. Fondo gris y tama~n o de letra m'as pequeno */
+#pathway_text 
+{
+	background:#efefef;
+	border: 0px solid #ccc;
+}
+
+.rss_list, li.mostread, .pictmenu, .pagenav_prev, .pagenav_next, .moduletable li
+{ 
+	background: #ffffff /* url(../images/pi_bullet_list.jpg) 0 4px no-repeat */;
+}
+
+ul#mainlevel-nav li
+{
+	background-image: none;
+	border-right: 0px solid #cccccc;
+}
+
+
+ul#mainlevel-nav li a
+{
+	color: #ffffff;
+	background: transparent;
+}
+
+ul#mainlevel-nav li a:hover
+{
+	color: #ffff00;
+	background: #c64934;
+}
+
+#search_outer 
+{
+	background: #ffffff;
+}
+
+#search_inner 
+{
+ 	border: 1px solid #cccccc;
+}
+
+#search_inner .inputbox 
+{
+	color: #c64934;
+}
+
+#header_outer 
+{
+	background-color: #ffffff;
+}
+
+#header 
+{
+	background-color: #ffffff;
+}
+
+#top_outer
+{
+	background-color: #ffffff; 
+}
+
+/* Dimensiones alrededor de la caja de busqueda. */
+#top_inner 
+{
+	background: #ffffff;
+}
+
+#top_inner_right_box p 
+{
+	color: #6788a7;
+}
+
+/* Menu de barra horizontal */
+#top_inner_menu 
+{
+	background-color: #6788a7;
+}
+
+#top_inner_menu_buttons 
+{
+	color: #ffffff;
+}
+
+#top_inner_menu_buttons>ul#mainlevel-nav li a 
+{ 
+	color: #ffffff;
+}
+
+/* Menu de accesibilidad */
+#fwrfId
+{
+	color: #FFFFFF;
+}
+
+#fwrfId a
+{
+	color: #FFFFFF;
+}
+
+#left_outer 
+{
+	background: #ffffff;
+}
+
+/* Color de fondo de los menus de la izquierda  */
+#left_inner 
+{
+	background-color: #ffffff;
+}
+
+/* fondo azul menu principal */
+#left_inner_menu1, #left_inner_menu4
+{
+	background-color: #BBD6EF; /* #e6eef9; */
+}
+
+/* estilo principal de la letra en el men'u */
+#left_inner_menu1 a.mainlevel:link, #left_inner_menu1 a.mainlevel:visited 
+{
+	background-color: #BBD6EF;
+	color: #134A81;
+	border-bottom: 1px solid #ffffff;
+}
+
+#left_inner_menu1 a.mainlevel:active
+{
+	background-color: white;
+	color: #666666;
+	border-bottom: 1px solid #ffffff;
+}
+
+/* mouse sobre la opcion menu principal */
+/* fondito naranja */
+#left_inner_menu1 a.mainlevel:hover 
+{
+	/* background-color: #fbda95; */
+	/* color: #134A81; */
+	color: #9B091A;
+	/* color: #6788a7; */
+	border-bottom: 1px solid #ffffff;	
+}
+
+#left_inner_menu1 a.mainlevel#active_menu 
+{
+	color:#6788a7;
+	/* font-weight: bold; */
+	border-bottom: 1px solid #ffffff;
+	background: white;
+}
+
+#left_inner_menu1 a.mainlevel#active_menu:hover 
+{
+	color: #856625;
+	border-bottom: 1px solid #ffffff;	
+}
+
+/* menu highlight */
+#left_inner_menu2 
+{
+	background-color: #BBD6EF;
+}
+
+#left_inner_menu2 a.mainlevel:link, #left_inner_menu2 a.mainlevel:visited 
+{
+	background-color: #BBD6EF;
+	color: #134A81;
+	border-bottom: 1px solid #ffffff;	
+}
+
+#left_inner_menu2 a.mainlevel:hover 
+{
+	color: #134A81;
+	border-bottom: 1px solid #ffffff;	
+}
+
+#left_inner_menu2 a.mainlevel#active_menu 
+{
+	color:#6788a7;
+	border-bottom: 1px solid #ffffff;
+	background: white;
+}
+
+#left_inner_menu2 a.mainlevel#active_menu:hover 
+{
+	color: #6788a7;
+	border-bottom: 1px solid #ffffff;	
+}
+
+/* componente feeds */
+#left_inner_menu3 
+{ 
+	background: #BBD6EF /*url(../images/pi_left_menu3_bg.jpg) repeat*/;
+}
+
+/* encabezados anaranjados. los pone en su sitio */
+#left_inner_menu1 h3, #left_inner_menu2 h3, #left_inner_menu3 h3 
+{
+	background: #FBDA95; /* #ffffff url(../images/pi_left_menu_h3.jpg) repeat-x; */ /* CAMBIO VLAKOV 11-02-2009 */
+	color: #666666;
+}
+
+/*  define los blancos de la barra de menús. y deja los links blancos a futuro  */
+a.mainlevel:link, a.mainlevel:visited 
+{
+	color: #ffffff;
+}
+
+a.mainlevel:hover 
+{
+	background-position: 0px -25px;
+	color: #fff;
+}
+
+a.mainlevel#active_menu 
+{
+	color:#fff;
+}
+
+a.mainlevel#active_menu:hover 
+{
+	color: #fff;
+}
+
+/* colores de los submenus */
+a.sublevel:link, a.sublevel:visited 
+{
+	color: #134A81;
+}
+
+a.sublevel:hover 
+{
+	color: #6788a7;
+}
+
+a.sublevel#active_menu 
+{
+	color: #333;
+}
+
+/* posicionamiento del contenido central */ 
+#content_outer 
+{
+	background-color: #ffffff; /* Pone un fondo blanco para que iguale los bordes del men'u. */ 
+	/*border-width:1pt;
+	border-style:solid;
+	border-color:black; */
+}
+
+table.content_table 
+{
+	color: #000000;
+}
+
+#right_outer 
+{
+	background-color: #ffffff;
+}
+
+/* blog de la directora */
+#right_inner_menu1 
+{
+	/* background: #c03f40 url(../images/pi_directors_blog.jpg) repeat-x;	*/
+	background: #ffffff /* url(../images/pi_directors_blog3.jpg) repeat-x; */
+	color: #ffffff;
+}
+
+#right_inner_menu1 a.mainlevel:link, #right_inner_menu1 a.mainlevel:visited 
+{
+	background: #ffffff;
+	color: #6788a7;
+}
+
+#right_inner_menu1 a.mainlevel:hover 
+{
+	background-position: 0px -25px;
+	color: #6788a7;
+}
+
+#right_inner_menu1 a.mainlevel#active_menu 
+{
+	color:#6788a7;
+}
+
+#right_inner_menu1 a.mainlevel#active_menu:hover 
+{
+	color: #856625;
+}
+
+/* titulos de los perfiles */
+#right_inner_menu1  .moduletable {
+	color:black;
+}
+
+#right_inner_menu1 h3, #rss h3, .rss h3, .moduletable h3
+{
+    color:#CC6600; 
+}
+
+/* menu de usuario */
+.user_inner_title
+{
+	color: #cc6600;
+}
+
+.user1_inner 
+{
+	border-right: 1px dashed #cccccc;
+}
+
+.user2_inner 
+{
+	border: 0px solid #cccccc;
+}
+
+/* imagenes dentro del contenido */
+div.mosimage 
+{
+  border: 1px solid #ccc;
+}
+
+.mosimage 
+{
+  border: 1px solid #cccccc;
+}
+
+.mosimage_caption 
+{
+  background: #efefef;
+  color: #666;
+}
+
+table td.body_outer 
+{
+	border: 0px solid #cccccc;
+}
+
+.maintitle 
+{
+	color: #ffffff;
+}
+
+.error 
+{
+	color: #cccccc;
+}
+
+.pagenav 
+{
+	border: 3px double #cccccc;
+	background: url(../images/button_bg.png) repeat-x;
+}
+
+#footer 
+{
+	background-color: #6788a6;
+}
+
+a:link, a:visited 
+{
+	color: #0066cc; /* #6788a7; */
+}
+
+a:hover 
+{
+	color: #900; 	
+}
+
+table.contentpaneopen 
+{
+	background: #ffffff;
+}
+
+table.contentpaneopen a {
+	color: #134a81; /* #6788a7; */
+}
+
+/* cajas de busqueda */
+
+.inputbox 
+{
+	border:solid 1px #cccccc;
+	background-color: #ffffff;
+}
+.inputbox1 
+{
+	border:solid 1px #cccccc;
+	background-color: #ffffff;
+}
+
+.inputbox_search 
+{
+	border: solid 1px #cccccc;
+	background-color: #ffffff;
+}
+
+
+a.readon 
+{
+	color: #134a81;
+}
+
+.moduletable, .moduletable p { /* añadido la condicional a p */
+	color:black;	
+}
+
+div.moduletable 
+{
+	color:# 000000;
+}
+
+/* Titulos de los m'odulos */
+table.moduletable th /*, div.moduletable h3 */
+{
+	color: #666666;
+}
+
+table.moduletable th 
+{
+	color:#CC6600;
+}
+
+table.pollstableborder td 
+{
+	color: #000000;
+}
+
+.poll
+{
+	color: #000000;
+}
+
+.button 
+{
+  color: #c64934;
+  border: 1px solid #ffffff;
+  background: url(../images/button_bg.png) repeat-x;
+}
+
+table.moduletable th 
+{
+	color:#CC6600;
+}
+
+.sectiontableentry1 
+{
+	background-color : #f9f9f9;
+	border-bottom: 1px solid #c03f40;
+}
+
+.sectiontableentry2 
+{
+	background-color : #f9f9f9;
+	border-bottom: 1px solid #c03f40;
+}
+
+.createdate 
+{
+	color: #4f8cc1;
+}
+
+.modifydate 
+{
+	color: #999999;
+}
+
+.contentheading
+{
+	color: #134Aaa;
+}
+
+.content_rating {
+	color:silver;
+}
+
+/* Estos sirven cuando se enlaza al resultado de un componente */
+.componentheading 
+{
+	background: url(../images/pi_content_title_bg.jpg) repeat-x; /* se borró el repeat-x 20090820  */
+	color: #666666;
+}
+
+/* Caja gris de contendios */
+
+#content_inner_grey_box 
+{
+	background: #ffffff url(../images/pi_content_grey_box_bg.jpg) repeat-x;
+}
+
+#content_inner_grey_box p 
+{
+	color: #828487;
+}
+
+#content_inner_grey_box h3 
+{
+	color: #405b73;
+}
+
+#content_inner_grey_box a, content_inner_grey_box a.mainlevel:link, #content_inner_grey_box a.mainlevel:visited 
+{
+	color: #4e6983;
+}
+
+#content_inner_grey_box a.mainlevel:hover 
+{
+	color: #4e6983;
+}
+
+#content_inner_grey_box a.mainlevel#active_menu 
+{
+	color:#4e6983;
+}
+
+#content_inner_grey_box a.mainlevel#active_menu:hover 
+{
+	color: #856625;
+}
+
+/* Menu inferior y menu de information sources.  */
+.latest_event {
+	color:#134A81;
+}
+
+.latest_event a 
+{
+	color:#134A81;
+}
+
+.mainlevel-vhl 
+{
+	background: ffffff;
+	color:blue;
+}
+
+table.moduletable-footer 
+{
+	background: silver;
+}
+
+.rss { /* titulos de la rss campus virtual y blogs */
+	background: #ffffff;
+	color: #cc6600;
+} 
+
+/* Titulo de fondo gris */
+
+#buffet h3 {
+	color: #FFFFFF; 
+	background-color: #999999;
+}
+
+#buffet h3 a {
+	color: white;
+}
+
+#buffet {
+		background: #EEEEEE;
+}
+
+table.contenttoc 
+{
+	border: 1px solid #cccccc;
+}
+
+table.contenttoc th {
+	background: url(../images/subhead_bg.png) repeat-x;
+	color: #666666;
+}
+
+.hrnvtd { 
+	background-color:#EEEEEE; 
+	color:#666666;
+}
+
+a.hrnv:link{
+	color:#134A81;
+}
+
+a.hrnv:active{
+	color:#134A81;
+}
+
+a.hrnv:visited{
+	color:#134A81;
+}
+
+a.hrnv:hover{
+	color:#134A81;
+}
+
+a.hrnvon:link{
+	color:#666666;
+}
+
+a.hrnvon:active{
+	color:#666666;
+}
+
+a.hrnvon:visited{
+	color:#666666;
+}
+
+a.hrnvon:hover{
+	color:#666666;
+}
+
+.ftr {
+	color:#666666;
+}
+
+a.ftr:link{
+	color:#134A81;
+}
+
+a.ftr:active{
+	color:#999999;
+}
+
+a.ftr:visited{
+	color:#666666;
+}
+
+.entrycontent {
+	color:blue;
+}
+
+a.mainlevel-user
+{
+	background:orange;
+	color:white;
+	border-top:silver 2px solid;
+	border-left:silver 2px solid;
+	border-right:maroon 2px solid;
+	border-bottom:maroon 2px solid;
+}
+
+a.mainlevel-user:visited
+{
+color:yellow;
+}
+
+a.mainlevel-user:hover
+{
+background:maroon;
+color:yellow;
+}

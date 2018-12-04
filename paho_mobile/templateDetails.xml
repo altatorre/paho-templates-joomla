@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mosinstall type="template" version="1.0.0">
+	<name>paho_mobile</name>
+	<creationDate>03/12/2009</creationDate>
+	<author>Andres Venturino - Cristina Mitchel - Juan Carlos Diaz - Paulo Leite</author>
+	<copyright>OPS/OMS</copyright>
+    <authorEmail>diazjuan@paho.org</authorEmail>
+    <authorUrl>http://www.paho.org</authorUrl>
+	<version>1.0</version>
+	<description>The Pan American Health Organization template for mobile devices.</description>
+	<files>
+		<filename>index.php</filename>
+	</files>
+	<css>
+		<filename>css/template_css.css</filename>
+	</css>
+</mosinstall>

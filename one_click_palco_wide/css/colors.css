@@ -1,0 +1,707 @@
+/*  */
+
+h4 {   color:#0066cc;  }
+
+body { 
+	color:#000000;
+	background: #ffffff;
+}	
+
+/* Resaltado */
+.highlight 
+{
+	background-color: ffe4cc;
+	color: #9B091A;
+}
+
+.code 
+{
+	background-color: #710713;
+	border: 1px solid #710713;
+}
+
+form 
+{
+	color: #710713;
+}
+
+/* Define algunas medidas de la distribución y el fondo de las páginas. Hace que el fondo se repita hacia abajo. */
+.outline 
+{
+	background: #ffffff url(http://new.paho.org/e-palco/images/stories/Corporate/pi_cms_bg2.jpg) center -20px repeat-y;
+}
+
+/* Pone el fondo y la forma del menú de Lenguage y accesibilidad y el color de la letra blanca 
+	Define el ancho de la ventana. Comienza a crear el espacio donde se van a mostrar las cosas.
+	Crea la flotación de los elementos hacia la izquierda.  */
+#buttons_outer 
+{
+	background: #ffffff url(../images/pi_language_bar_bg1024.jpg) no-repeat;	
+    color: #ffffff;
+}
+
+/*  */
+#buttons_inner 
+{
+	border: 0px solid #9B091A;
+	color: #ffffff;
+}
+
+#button_search
+{
+    color: #ffffff;
+}
+
+/* Pone los botones de idioma a la derecha. */
+#buttons_language 
+{
+    color: #ffffff;
+}
+
+/* Botones de lenguaje, que son vi~netas. */
+#buttons_language>ul#mainlevel-nav li a 
+{ 
+	color: #ffffff;
+}
+
+/* texto del bread crumb. Fondo gris y tama~n o de letra m'as pequeno */
+#pathway_text 
+{
+	background:#ffe4cc;
+	border: 0px solid #9B091A;
+}
+
+.rss_list, li.mostread, .pictmenu, .pagenav_prev, .pagenav_next, .moduletable li
+{ 
+	background: #ffffff /* url(../images/pi_bullet_list.jpg) 0 4px no-repeat */;
+}
+
+ul#mainlevel-nav li
+{
+	background-image: none;
+	border-right: 0px solid #cccccc;
+}
+
+
+ul#mainlevel-nav li a
+{
+	color: #ffffff;
+	background: transparent;
+}
+
+ul#mainlevel-nav li a:hover
+{
+	color: #FD9E47;
+	background: #9B091A;
+}
+
+#search_outer 
+{
+	background: #ffffff;
+}
+
+#search_inner 
+{
+ 	border: 1px solid #cccccc;
+}
+
+#search_inner .inputbox 
+{
+	color: #9B091A;
+}
+
+#header_outer 
+{
+	background-color: #ffffff;
+}
+
+#header 
+{
+	background-color: #ffffff;
+}
+
+#top_outer
+{
+	background-color: #ffffff; 
+}
+
+/* Dimensiones alrededor de la caja de busqueda. */
+#top_inner 
+{
+	background: #ffffff;
+}
+
+#top_inner_right_box p 
+{
+	color: #710713;
+}
+
+/* Menu de barra horizontal */
+#top_inner_menu 
+{
+	background-color: #9B091A;
+}
+
+#top_inner_menu_buttons 
+{
+	color: #ffffff;
+}
+
+#top_inner_menu_buttons>ul#mainlevel-nav li a 
+{ 
+	color: #ffffff;
+}
+
+/* Menu de accesibilidad */
+#fwrfId
+{
+	color: #FFFFFF;
+}
+
+#fwrfId a
+{
+	color: #FFFFFF;
+}
+
+#left_outer 
+{
+	background: #ffffff;
+}
+
+/* Color de fondo de los menus de la izquierda  */
+#left_inner 
+{
+	background-color: #ffffff;
+}
+
+/* fondo naranja menu principal */
+#left_inner_menu1 , #left_inner_menu4
+{
+	background-color: #ffcb9c;
+}
+
+/* estilo principal de la letra en el menu */
+#left_inner_menu1 a.mainlevel:link, #left_inner_menu1 a.mainlevel:visited 
+{
+	background-color: #ffcb9c;
+	color: #710713;
+	border-bottom: 1px solid #ffffff;
+}
+
+#left_inner_menu1 a.mainlevel:active
+{
+	background-color: ffe4cc;
+	color: #9B091A;
+	border-bottom: 1px solid #ffffff;
+}
+
+/* mouse sobre la opcion menu principal */
+/* fondito naranja */
+#left_inner_menu1 a.mainlevel:hover 
+{
+	/* background-color: #fbda95; */
+	/* color: #134A81; */
+	color: #9B091A;
+	/* color: #6788a7; */
+	border-bottom: 1px solid #ffffff;	
+}
+
+#left_inner_menu1 a.mainlevel#active_menu 
+{
+	color:#9B091A;
+	/* font-weight: bold; */
+	border-bottom: 1px solid #ffffff;
+	background: FFCB9C;
+}
+
+#left_inner_menu1 a.mainlevel#active_menu:hover 
+{
+	color: #9B091A;
+	border-bottom: 1px solid #ffffff;	
+}
+
+/* menu highlight */
+#left_inner_menu2 
+{
+	background-color: #ffcb9c;
+}
+
+#left_inner_menu2 a.mainlevel:link, #left_inner_menu2 a.mainlevel:visited 
+{
+	background-color: #ffcb9c;
+	color: #710713;
+	border-bottom: 1px solid #ffffff;	
+}
+
+#left_inner_menu2 a.mainlevel:hover 
+{
+	color: #710713;
+	border-bottom: 1px solid #ffffff;	
+}
+
+#left_inner_menu2 a.mainlevel#active_menu 
+{
+	color:#9B091A;
+	border-bottom: 1px solid #ffffff;
+	background: white;
+}
+
+#left_inner_menu2 a.mainlevel#active_menu:hover 
+{
+	color: #ffffff;
+	border-bottom: 1px solid #ffffff;	
+}
+
+/* componente feeds */
+#left_inner_menu3 
+{ 
+	background: #ffcb9c /*url(http://devserver.paho.org/e-palco/images/stories/Corporate/pi_left_menu3_bg.jpg) repeat*/;
+}
+
+/* encabezados anaranjados. los pone en su sitio */
+#left_inner_menu1 h3, #left_inner_menu2 h3, #left_inner_menu3 h3 
+{
+	background: #ffffff url(http://devserver.paho.org/e-palco/images/stories/Corporate/pi_left_menu_h3.jpg) repeat-x;
+	color: #ffffff;
+}
+
+/*  define los blancos de la barra de menús. y deja los links blancos a futuro  */
+a.mainlevel:link, a.mainlevel:visited 
+{
+	color: #ffffff;
+}
+
+a.mainlevel:hover 
+{
+	background-position: 0px -25px;
+	color: #FD9E47;
+}
+
+a.mainlevel#active_menu 
+{
+	color:#710713;
+}
+
+a.mainlevel#active_menu:hover 
+{
+	color: #fff;
+}
+
+/* colores de los submenus */
+a.sublevel:link, a.sublevel:visited 
+{
+	color: #710713;
+}
+
+a.sublevel:hover 
+{
+	color: #9B091A;
+}
+
+a.sublevel#active_menu 
+{
+	color: #710713;
+}
+
+/* posicionamiento del contenido central */ 
+#content_outer 
+{
+	background-color: #ffffff;/* Pone un fondo blanco para que iguale los bordes del men'u. */ 
+	/*border-width:1pt;
+	border-style:solid;
+	border-color:black; */
+}
+
+table.content_table 
+{
+	color: #000000;
+}
+
+#right_outer 
+{
+	background-color: #ffffff;
+}
+
+/* blog de la directora */
+#right_inner_menu1 
+{
+	/* background: #c03f40 url(../images/pi_directors_blog.jpg) repeat-x;	*/
+	background: #ffffff /* url(../images/pi_directors_blog3.jpg) repeat-x; */
+	color: #ffffff;
+}
+
+#right_inner_menu1 a.mainlevel:link, #right_inner_menu1 a.mainlevel:visited 
+{
+	background: #ffffff;
+	color: #9B091A;
+}
+
+#right_inner_menu1 a.mainlevel:hover 
+{
+	background-position: 0px -25px;
+	color: #9B091A;
+}
+
+#right_inner_menu1 a.mainlevel#active_menu 
+{
+	color: #9B091A;
+}
+
+#right_inner_menu1 a.mainlevel#active_menu:hover 
+{
+	color: #9B091A;
+}
+
+/* titulos de los perfiles */
+#right_inner_menu1  .moduletable {
+	color:black;
+}
+
+#right_inner_menu1 h3, #rss h3, .rss h3, .moduletable h3
+{
+	color:#E64C1D;
+}
+
+/* menu de usuario */
+.user_inner_title
+{
+	color: #E64C1D;
+}
+
+.user1_inner 
+{
+	border-right: 1px dashed #cccccc;
+}
+
+.user2_inner 
+{
+	border: 0px solid #cccccc;
+}
+
+/* imagenes dentro del contenido */
+div.mosimage 
+{
+  border: 1px solid #ccc;
+}
+
+.mosimage 
+{
+  border: 1px solid #cccccc;
+}
+
+.mosimage_caption 
+{
+  background: #efefef;
+  color: #666;
+}
+
+table td.body_outer 
+{
+	border: 0px solid #cccccc;
+}
+
+.maintitle 
+{
+	color: #ffffff;
+}
+
+.error 
+{
+	color: #cccccc;
+}
+
+.pagenav 
+{
+	border: 3px double #cccccc;
+	background: url(../images/button_bg.png) repeat-x;
+}
+
+a:link, a:visited 
+{
+	color: #6788a7;
+}
+
+a:hover 
+{
+	color: #900; 	
+}
+
+table.contentpaneopen 
+{
+	background: #ffffff;
+}
+
+table.contentpaneopen a {
+	color: #134a81; /* #6788a7; */
+}
+
+/* cajas de busqueda */
+
+.inputbox 
+{
+	border:solid 1px #cccccc;
+	background-color: #ffffff;
+}
+.inputbox1 
+{
+	border:solid 1px #cccccc;
+	background-color: #ffffff;
+}
+
+.inputbox_search 
+{
+	border: solid 1px #cccccc;
+	background-color: #ffffff;
+}
+
+
+a.readon 
+{
+	color: #134a81;
+}
+
+.moduletable, .moduletable p { /* añadido la condicional a p */
+	color:black;	
+}
+
+div.moduletable 
+{
+	color:# 000000;
+}
+
+/* Titulos de los m'odulos */
+table.moduletable th /*, div.moduletable h3 */
+{
+	color: #666666;
+}
+
+table.moduletable th 
+{
+	color:#CC6600;
+}
+
+table.pollstableborder td 
+{
+	color: #000000;
+}
+
+.poll
+{
+	color: #000000;
+}
+
+.button 
+{
+  color: #c64934;
+  border: 1px solid #ffffff;
+  background: url(../images/button_bg.png) repeat-x;
+}
+
+table.moduletable th 
+{
+	color:#CC6600; 
+}
+
+.sectiontableentry1 
+{
+	background-color : #f9f9f9;
+	border-bottom: 1px solid #c03f40;
+}
+
+.sectiontableentry2 
+{
+	background-color : #f9f9f9;
+	border-bottom: 1px solid #c03f40;
+}
+
+.createdate 
+{
+	color: #4f8cc1;
+}
+
+.modifydate 
+{
+	color: #999999;
+}
+
+.contentheading
+{
+	color: #134A81;
+}
+
+.content_rating {
+	color:silver;
+}
+
+/* Estos sirven cuando se enlaza al resultado de un componente */
+.componentheading 
+{
+	background: url(http://devserver.paho.org/e-palco/images/stories/Corporate/pi_content_title_bg.jpg) repeat-x;
+	color: #666666;
+}
+
+/* Caja gris de contendios */
+
+#content_inner_grey_box 
+{
+	background: #ffffff url(http://devserver.paho.org/e-palco/images/stories/Corporate/pi_content_grey_box_bg.jpg) repeat-x;
+}
+
+#content_inner_grey_box p 
+{
+	color: #ffe4cc;
+}
+
+#content_inner_grey_box h3 
+{
+	color: #9b091A;
+}
+
+#content_inner_grey_box a, content_inner_grey_box a.mainlevel:link, #content_inner_grey_box a.mainlevel:visited 
+{
+	color: #9B091A;
+}
+
+#content_inner_grey_box a.mainlevel:hover 
+{
+	color: #9B091A;
+}
+
+#content_inner_grey_box a.mainlevel#active_menu 
+{
+	color:#9B091A;
+}
+
+#content_inner_grey_box a.mainlevel#active_menu:hover 
+{
+	color: #9B091A;
+}
+
+/* Menu inferior y menu de information sources.  */
+.latest_event {
+	color:#710713;
+}
+
+.latest_event a 
+{
+	color:#710713;
+}
+
+.mainlevel-vhl 
+{
+	background: ffffff;
+	color:#9B091A;
+}
+
+table.moduletable-footer 
+{
+	background: silver;
+}
+
+.rss { /* titulos de la rss campus virtual y blogs */
+	background: #ffffff;
+	color: #710713;
+} 
+
+/* Titulo de fondo gris */
+
+#buffet h3 {
+	color: #FFFFFF; 
+	background-color: #710713;
+}
+
+#buffet h3 a {
+	color: white;
+}
+
+#buffet {
+		background: #ffe4cc;
+}
+
+table.contenttoc 
+{
+	border: 1px solid #cccccc;
+}
+
+table.contenttoc th {
+	background: url(../images/subhead_bg.png) repeat-x;
+	color: #666666;
+}
+
+.hrnvtd { 
+	background-color:#EEEEEE; 
+	color:#666666;
+}
+
+a.hrnv:link{
+	color:#134A81;
+}
+
+a.hrnv:active{
+	color:#134A81;
+}
+
+a.hrnv:visited{
+	color:#134A81;
+}
+
+a.hrnv:hover{
+	color:#134A81;
+}
+
+a.hrnvon:link{
+	color:#666666;
+}
+
+a.hrnvon:active{
+	color:#666666;
+}
+
+a.hrnvon:visited{
+	color:#666666;
+}
+
+a.hrnvon:hover{
+	color:#666666;
+}
+
+.ftr {
+	color:#666666;
+}
+
+a.ftr:link{
+	color:#134A81;
+}
+
+a.ftr:active{
+	color:#999999;
+}
+
+a.ftr:visited{
+	color:#666666;
+}
+
+.entrycontent {
+	color:blue;
+}
+
+a.mainlevel-user
+{
+	background:orange;
+	color:white;
+	border-top:silver 2px solid;
+	border-left:silver 2px solid;
+	border-right:maroon 2px solid;
+	border-bottom:maroon 2px solid;
+}
+
+a.mainlevel-user:visited
+{
+color:yellow;
+}
+
+a.mainlevel-user:hover
+{
+background:maroon;
+color:yellow;
+}
