@@ -8,7 +8,7 @@ class Joomla_Template {
 	function Joomla_Template ($template) {
 		$this->template = $template->template;
 		$this->config = new JConfig();
-		$this->menuitem = &JSite::getMenu();
+		$this->menuitem = JFactory::getApplication()->getMenu();
 	}
 
 	function sitename() {

@@ -7,7 +7,7 @@
 defined('_JEXEC') or die('Restricted access');
 $topic = $this->topics;
 //print_r($topic);
-$document = & JFactory::getDocument();
+$document = JFactory::getDocument();
 $document->setTitle($topic->topic . ' | PAHO' );
 $slug =$topic->alias;
 if ($topic->replacingurl) {

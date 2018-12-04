@@ -2,6 +2,7 @@
 include_once (dirname(__FILE__).'/functions.php');
 global $tpl;
 $tpl = new Joomla_Template($this);
+$sitename = JFactory::getApplication()->get('sitename');
 ?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
@@ -29,7 +30,8 @@ $tpl = new Joomla_Template($this);
 						  <span class="icon-bar"></span>
 						  <span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="<?php echo JUri::root(); ?>"><img src="<?php echo JUri::base() . '/templates/' . $this->template; ?>/images/logo.png" alt="<?php echo $sitename; ?>"></a>
+						<a class="navbar-brand" href="<?php echo JUri::root(); ?>"><img src="<?php echo JUri::base() . '/templates/' . $this->template; ?>/images/logo.png"
+						alt="<?php echo $sitename; ?>"></a>
 						<?php echo JHTML::_('content.prepare', '{loadposition language_switcher_mobile}'); ?>
 					  </div>
 					  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
