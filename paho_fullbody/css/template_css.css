@@ -1112,31 +1112,19 @@ div.moduletable
 /* Titulos de los m'odulos */
 table.moduletable th /*, div.moduletable h3 */
 {
-	color: #666666;
-	text-align: left;
-	padding-left: 2px;
+	font-weight: normal;
+	font-size: 9pt; /* 10pt; */
 	height: 21px;
 	line-height: 21px;
-	font-weight: bold;
 	margin: 0 0 2px 0;
-	font-size: 9pt; /* 10pt; */
-		
-}
-
-
-
-table.moduletable th 
-{
-         color:#CC6600;
+	padding-left: 2px;
 	text-align: left;
-	padding-left: 4px;
-	height: 21px;
-	font-weight: normal;
 	text-transform: uppercase;
-	width: 138px;	
-
+	color:#CC6600;
+	/* width: 138px;	 */
 	}
-	
+
+
 table.pollstableborder td 
 {
 	padding: 0px;
@@ -1164,7 +1152,6 @@ table.pollstableborder td
   background: url(../../paho_cms/images/button_bg.png) repeat-x;
   height: 24px;
 }
-
 
 
 
@@ -1516,9 +1503,10 @@ a { font-size: 9pt; /* 10pt; */}
 .entrycontent {
 	font-size:10pt; color:blue;
 }
+
+
 #countriescol { font-weight:bold;padding:5px;background-color:#DCE6F2 }
 #centerscol { font-size:95%;font-weight:bold;padding:5px;background-color:#E7BCBA }
-#redescol { font-size:95%;font-weight:bold;padding:5px;background-color:#c8dac4 }
 #sitescol { font-size:95%;font-weight:bold;padding:5px;background-color:#EDC7A7 }
 #projectcol { font-weight:bold;padding:5px;background-color:#D1CDB8 }
 #whocol { font-weight:bold;padding:5px;background-color:#B3B7D3 }

@@ -103,7 +103,7 @@ $right = 0;
 					<tr>
 						<td>
 							<div id="banner_inner">
-								<img src="<?php echo $mosConfig_live_site;?>/images/banners/arg_oneclick.jpg" 
+								<img src="<?php echo $mosConfig_live_site;?>/images/banners/banner_<?php echo $mosConfig_lang; ?>_oneclick.jpg" 
 													border="0" alt="Pan American Health Organization/Organización Panamericana de la Salud"   usemap="#Map" />			
 			  					
 								<map name="Map">
@@ -136,7 +136,16 @@ $right = 0;
 				</div>
 
 				<div id="top_inner_menu">
-                                        <div style="width:90px;float:left;margin:6px"><a href="<?php echo $mosConfig_live_site;?>" style="color:#FFF;font-size:12px;font-weight:bold">HOME PAGE</a></div>
+                                        <div style="width:90px;float:left;margin:6px"><a href="
+<?php 
+echo "http://new.paho.org/";
+  if ($mosConfig_lang=="brazilian_portuguese") {
+    echo "bra/";
+  }
+  else {
+    echo "hq/";
+}
+?>" style="color:#FFF;font-size:12px;font-weight:bold">HOME PAGE</a></div>
 					<div id="top_inner_menu_buttons">
 						<?php mosLoadModules ( 'user3', -1); ?>
 				</div>
@@ -165,7 +174,6 @@ $right = 0;
 					<td colspan="<?php echo $colspan; ?>" class="body_outer"><?php mosMainBody(); ?></td>
 					</tr>
                                         </table>
-
 					</td>	
 					<td></td>
 
