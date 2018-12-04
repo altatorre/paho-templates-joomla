@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="template">
+	<name>JA_Edenite = Wellness Week</name>
+	<creationDate>21 March 08</creationDate>
+	<author>JoomlArt.com</author>
+	<copyright>JoolArt Design Team</copyright>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>1.4.0</version>
+	<description>JA Edenite - Wellness Week</description>
+	
+	<files>
+		<filename>component.php</filename>
+		<filename>en-GB.tpl_ja_edenite.ini</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+		<filename>ja_templatetools_1.5.php</filename>
+		<filename>ja_vars_1.5.php</filename>
+		<filename>params.ini</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>admin</folder>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>ja_menus</folder>
+	</files>
+	
+	<languages>
+		<language tag="en-GB">en-GB.tpl_ja_edenite.ini</language>
+	</languages>
+	<administration>
+    	<languages>
+			<language tag="en-GB">admin/en-GB.tpl_ja_edenite.ini</language>
+		</languages>
+    </administration>
+
+	<positions>
+		<position>ww_hornav</position>
+		<position>breadcrumbs</position>
+		<position>ww_banner</position>
+		<position>ww_left</position>
+		<position>ww_right</position>
+		<position>ww_top</position>
+		<position>ww_topsl</position>
+		<position>ww_user1</position>
+		<position>ww_user2</position>
+		<position>ww_user3</position>
+		<position>ww_user4</position>
+		<position>ww_user5</position>
+		<position>ww_user6</position>
+		<position>ww_user7</position>
+		<position>ww_user8</position>
+		<position>ww_user9</position>
+		<position>footer</position>
+		<position>ww_syndicate</position>
+		<position>ww_debug</position>
+	</positions>
+
+	<params>
+		<param name="logoType" type="list" default="image" label="Logo type" description="LOGO TYPE DESCRIPTION">
+			<option value="image">Image</option>
+			<option value="text">Text</option>
+		</param>
+		<param name="logoImage" type="text" default="" size="100" label="Logo image" description="LOGO FILE DESCRIPTION" />
+		<param name="logoText" type="text" default="" size="50" label="Logo text" description="LOGO TEXT DESCRIPTION" />
+		<param name="sloganText" type="text" default="" size="50" label="Slogan" description="SLOGAN DESCRIPTION" />
+
+		<param name="ja_font" type="list" default="3" label="Font size" description="FONT SIZE DESCRIPTION">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+		</param>
+
+		<param name="ja_screen" type="list" default="950" label="Template Width" description="TEMPLATE WIDTH DESCRIPTION">
+			<option value="narrow">Narrow Screen</option>
+			<option value="wide">Wide Screen</option>
+		</param>
+		
+		<param name="ja_color" type="list" default="default" label="Color Variation" description="Color variation to use">
+			<option value="default">Default</option>
+			<option value="red">Red</option>
+			<option value="orange">Orange</option>
+		</param>
+		
+		<param name="menutype" type="menu" default="mainmenu" label="Menu Type" description="MENU TYPE DESCRIPTION" />
+		<param name="ja_menu" type="list" default="2" label="Menu Module" description="MENU'S TYPE">
+		  <option value="split">Split Menu</option>
+		  <option value="css">CSS Menu</option>
+		  <option value="moo">Moo Menu</option>
+		  <option value="dropline">Dropline Menu</option>
+		</param>
+
+		<param name="showComponent" type="radio" default="1" label="Show Component" description="SHOW COMPONENT DESCRIPTION">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+	</params>
+</install>

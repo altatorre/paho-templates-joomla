@@ -1,0 +1,157 @@
+/*
+Template for handheld devices
+Theme Name: PAHO960
+Theme URI: http://www.paho.org/
+Description: A small website framework for Joomla 1.5.
+Author: Paulo Leite
+Author URI: http://www.paho.org/
+Version: 0.1
+Tags: Two-column, static frontpage, easy to costumize
+(c)2013 Pan American Health Organization/World Health Organization.
+This work is released under GNU General Public License, version 2 (GPL).
+http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+*/
+
+body {
+	padding: 0;
+	background-image: none;
+	background-color: #FFF;
+	font: 12px/19px Verdana, Arial, sans-serif;
+	-webkit-text-size-adjust: none;
+	overflow-x: hidden;
+}
+
+/* Basic page styles */
+
+p {
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+a, a:link, a:visited {
+	color: #054877;
+	text-decoration: none;
+}
+a:hover {
+	color: #A50;
+	color: #D62;
+	cursor: pointer;
+}
+ul {
+	margin-left: 8px;
+	padding-left: 8px;
+}
+
+ul ul {
+	margin-left: 8px;
+	padding-left: 8px;
+}
+h1 {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+h2 {
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+h3 {
+	clear:both;
+	font-size: 12px;
+	font-weight: bold;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+h4 {
+	font-size: 10px;
+	font-weight: bold;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+h5 {
+	font-size: 9px;
+	font-weight: bold;
+}
+h6 {
+	font-size: 8px;
+	font-weight: bold;
+}
+
+/* End of basic page styles */
+/*--------------------------*/
+
+#wrapper, #footr_out {
+	width: 100%;
+	width: 480px;
+	margin: 0 auto 0 auto;
+	overflow-x: hidden;
+/*	outline: 1px solid green; */
+	padding: 5px;
+}	
+
+
+#languagebt {
+	text-align: right;
+}
+#languagebt.grid_16 a {
+	display: block;
+	float: right;
+	margin-left: 10px;
+	text-align: right;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+#search input.searchclass {
+	width: 30px;
+}
+
+#slideshowfp, #access, #bbanner, #countries {
+	display: none;
+}
+.banneritem {
+	clear: both;
+	height: 70px;
+	background: url(../../../images/banners/banner2014-1000-en.jpg);
+	background-position: center top;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+#search {
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	padding-bottom: 16px;
+}
+
+#rss_left {
+	width: 49%;
+	float: left;
+}
+
+#rss_center {
+	width: 49%;
+	float: right;
+}
+
+#rss_right {
+	clear: both;
+	width: 49%;
+	float: left;
+}
+
+#rss_left img , #rss_center img, #rss_right img {
+	width: 90%;
+}
+
+#sidebarfp {
+	width: 49%;
+	float: right;
+}
+
+#footr_out {
+	border-top: 2px dotted #AAA;
+}

@@ -1,0 +1,27 @@
+/* CSS Document */
+
+#ja-header {
+	width:100%;
+}
+
+#ja-footer {
+	text-align:center;
+	width:100%;
+}
+
+
+#ja-container2 {
+	width: 100%;
+}
+
+#ja-containerwrap-f #ja-content { 
+	width: 100%;
+}
+
+#ja-current-content { 
+	width: 95%;
+}
+
+.contentpane {
+	width: 100%;
+}

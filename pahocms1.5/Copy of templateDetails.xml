@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.5/template-install.dtd">
+<install version="1.5" type="template">
+        <name>PAHO CMS 1.5</name>
+        <creationDate>2010-06-20</creationDate>
+        <author>Paulo Leite</author>
+        <authorEmail>leitepau@paho.org</authorEmail>
+        <authorUrl>http://www.paho.org</authorUrl>
+        <copyright>PAHO/WHO 2010</copyright>
+        <license>GNU/GPL</license>
+        <version>1.0.0</version>
+        <description>PAHO CMS 1.5</description>
+        <files>
+                <filename>index.php</filename>
+				<filename>index.html</filename>
+                <filename>templateDetails.xml</filename>
+                <filename>template_thumbnail.png</filename>
+                <filename>css/template.css</filename>
+				<filename>css/index.html</filename>
+                <filename>images/pahopage_bg.png</filename>
+                <filename>images/pi_language_bar_bg.jpg</filename>
+                <filename>images/pi_topmenu_bar_bg.jpg</filename>
+                <filename>images/search_icon.gif</filename>
+				<filename>images/column_divider.gif</filename>
+				<filename>images/indent1.png</filename>
+				<filename>images/null.gif</filename>
+				<filename>images/menu_title_bg.png</filename>
+				<filename>images/index.html</filename>
+				<filename>html/index.html</filename>
+				<filename>html/com_content/index.html</filename>
+				<filename>html/com_content/frontpage/index.html</filename>
+                <filename>html/com_content/frontpage/default.php</filename>
+                <filename>html/com_content/frontpage/default_item.php</filename>
+				<filename>html/com_content/category/index.html</filename>
+				<filename>html/com_content/category/blog.php</filename>
+				<filename>html/com_content/category/blog.xml</filename>
+				<filename>html/com_content/category/blog_item.php</filename>
+				<filename>html/com_content/category/blog_links.php</filename>
+				<filename>html/com_content/category/default.php</filename>
+				<filename>html/com_content/category/default.xml</filename>
+				<filename>html/com_content/category/default_items.php</filename>
+        </files>
+        <positions>
+                <position>breadcrumb</position>
+                <position>language</position>
+                <position>left</position>
+                <position>left1</position>
+                <position>left2</position>
+                <position>left3</position>
+                <position>left4</position>
+                <position>left5</position>
+                <position>right</position>
+                <position>right1</position>
+                <position>right2</position>
+                <position>right3</position>
+                <position>right4</position>
+                <position>right5</position>
+                <position>legals</position>
+                <position>postcols</position>
+                <position>top</position>
+                <position>user1</position>
+                <position>user2</position>
+                <position>user3</position>
+                <position>user4</position>
+                <position>user8</position>
+                <position>footer</position>
+				<position>ftmenu1</position>
+				<position>ftmenu2</position>
+				<position>ftmenu3</position>
+				<position>banner</position>
+        </positions>
+</install>

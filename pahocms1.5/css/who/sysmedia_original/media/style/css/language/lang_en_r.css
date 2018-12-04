@@ -1,0 +1,59 @@
+/* --- World Health Organization ----------------------------------------------------- */
+/* --- CSS Framework: Language Extension English -------------------------------------- */
+/* --- Versioning ------------------------------------------------------------------- */
+
+/*<![CDATA[*/
+@media screen {
+
+
+/* header */
+.main-site #branding a {
+background-image: url(../../../resources/who-logo-en.jpg);
+background-repeat: no-repeat;
+}
+
+
+/* footer */
+
+#footer {
+	background-image:url('../../img/footer_emblem-en.gif');
+}
+
+
+}
+
+@media only screen and (max-width:720px) {
+  .main-site #branding a {
+    background-image: url(../../../resources/who-logo-en-white.png);
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+  .main-site #branding a {
+    background-image: url(../../../resources/2x-who-logo-en.gif);
+    background-size: 176px 55px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 720px),
+only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 720px),
+only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 720px),
+only screen and (min-device-pixel-ratio: 2) and (max-width: 720px),
+only screen and (min-resolution: 192dpi) and (max-width: 720px),
+only screen and (min-resolution: 2dppx) and (max-width: 720px) {
+  .main-site #branding a {
+    background-image: url(../../../resources/2x-who-logo-en-white.gif);
+    background-size: 140px 43px; 
+  }
+}
+
+
+
+@media print {
+}
+/*]]>*/
