@@ -81,6 +81,35 @@ h1.blue {
 	font-size: 24px;
 	color: #379;
 }
+.pagination {
+	width: 100%;
+	padding: 4px;
+	background: #DFDFDF;
+}
+.pagination ul {
+	list-style-type: none;
+	margin: 0;
+}
+.pagination ul li {
+	display: inline;
+	margin-right: 20px;
+}
+.pagination ul li:last-child {
+	float: right;
+	margin-left: 20px;
+	margin-right: 0;
+}
+.pagination ul li:nth-last-child(2) {
+	float: right;
+	margin-left: 20px;
+	margin-right: 0;
+}
+.counter {
+	font-size: 10px;
+}
+.pull-right {
+	text-align: right;
+}
 /* ===================================== */
 /* Basic styles for the page's framework */
 /* ===================================== */
@@ -193,6 +222,16 @@ h1.blue {
 }
 .noticia_r {
 	float: right;
+}
+ul.breadcrumb {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+ul.breadcrumb li {
+	display: inline;
+	font-size: 11px;
+	margin-left: 0;
 }
 #countries {
 	clear: both;
@@ -2035,11 +2074,13 @@ line-height:95%;
 		background: #C60;
 		display: block;
 	}
-	#breadcrumbs {
-		background: #FFF;
-		margin: 0;
-		padding-top: 10px;
-		padding-bottom: 10px;
+	#breadcrumbs ul {
+		padding: 10px 0 15px 0;
+	}
+	ul.breadcrumb li {
+		display: inline;
+		font-size: 11px;
+		margin-left: 0px;
 	}
 	.pathway {
 		font-size: 11px;
@@ -2397,3 +2438,46 @@ line-height:95%;
 	width: 47.5%;
 	float: right;
 }
+.ytGalleryCell-l {
+	clear: both;
+	width: 48%;
+	float: left;
+	margin-bottom: 10px;
+}
+.ytGalleryCell-r {
+	clear: none;
+	width: 48%;
+	float: right;
+	margin-bottom: 10px;
+}
+.ytGalleryCell-l img, .ytGalleryCell-r img {
+	border: 1px solid #CCC;
+}
+.ytGalleryCell-l a p, .ytGalleryCell-r a p {
+	line-height: 14px;
+}
+.moduletable h2.ytGallery {
+	font-size: 14px;
+	border-bottom: 2px solid #258;
+	margin-top: -25px;
+}
+.ytGalleryNext {
+	width: 49.5%;
+	float: right;
+	margin-bottom: 8px;
+	text-align: right;
+}
+.ytGalleryPrev {
+	width: 49.5%;
+	float: left;
+	margin-bottom: 8px;
+}
+.ytGalleryNext a, .ytGalleryPrev a {
+	border: 1px solid #CCC;
+	border-radius: 6px;
+	background: #EEE;
+	padding: 3px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
