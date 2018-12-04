@@ -3,7 +3,8 @@
  * @package     Joomla.Site
  * @subpackage  Template.system
  *
- * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
+ * Modificado: Paulo Leite, Juan Carlos Diaz
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -14,6 +15,7 @@ defined('_JEXEC') or die;
  */
 function modChrome_none($module, &$params, &$attribs)
 {
+	echo "\n<!-- Mod: " . $module->title . " - Type: " . $module->module . " - ID: " . $module->id . " -->";
 	echo $module->content;
 }
 
@@ -23,21 +25,22 @@ function modChrome_none($module, &$params, &$attribs)
 function modChrome_html5($module, &$params, &$attribs)
 {
 	$moduleTag      = $params->get('module_tag', 'div');
-	$headerTag      = htmlspecialchars($params->get('header_tag', 'h3'));
+	$headerTag      = htmlspecialchars($params->get('header_tag', 'h3'), ENT_COMPAT, 'UTF-8');
 	$bootstrapSize  = (int) $params->get('bootstrap_size', 0);
 	$moduleClass    = $bootstrapSize != 0 ? ' span' . $bootstrapSize : '';
 
 	// Temporarily store header class in variable
 	$headerClass    = $params->get('header_class');
-	$headerClass    = !empty($headerClass) ? ' class="' . htmlspecialchars($headerClass) . '"' : '';
+	$headerClass    = !empty($headerClass) ? ' class="' . htmlspecialchars($headerClass, ENT_COMPAT, 'UTF-8') . '"' : '';
 
 	if (!empty ($module->content)) : ?>
-		<<?php echo $moduleTag; ?> class="moduletable<?php echo htmlspecialchars($params->get('moduleclass_sfx')) . $moduleClass; ?>">
+		<<?php echo $moduleTag; ?> class="moduletable<?php echo htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8') . $moduleClass; ?>">
 
 		<?php if ((bool) $module->showtitle) :?>
 			<<?php echo $headerTag . $headerClass . '>' . $module->title; ?></<?php echo $headerTag; ?>>
 		<?php endif; ?>
 
+			<?php echo "\n<!-- Mod: " . $module->title . " - Type: " . $module->module . " - ID: " . $module->id . " -->"; ?>
 			<?php echo $module->content; ?>
 
 		</<?php echo $moduleTag; ?>>
@@ -50,7 +53,8 @@ function modChrome_html5($module, &$params, &$attribs)
  */
 function modChrome_table($module, &$params, &$attribs)
 { ?>
-	<table cellpadding="0" cellspacing="0" class="moduletable<?php echo htmlspecialchars($params->get('moduleclass_sfx')); ?>">
+		<?php echo "\n<!-- Mod: " . $module->title . " - Type: " . $module->module . " - ID: " . $module->id . " -->"; ?> 
+	<table role="presentation" style="padding:0px;border-collapse:collapse;border-spacing:0px" class="moduletable<?php echo htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8'); ?>">
 	<?php if ((bool) $module->showtitle) : ?>
 		<tr>
 			<th>
@@ -72,7 +76,7 @@ function modChrome_table($module, &$params, &$attribs)
  */
 function modChrome_horz($module, &$params, &$attribs)
 { ?>
-	<table cellspacing="1" cellpadding="0" width="100%">
+	<table role="presentation" style="border-collapse:collapse;border-spacing:1px;padding:0px;border:0px;width:100%">
 		<tr>
 			<td>
 				<?php modChrome_table($module, $params, $attribs); ?>
@@ -89,16 +93,17 @@ function modChrome_horz($module, &$params, &$attribs)
 function modChrome_xhtml($module, &$params, &$attribs)
 {
 	$moduleTag      = $params->get('module_tag', 'div');
-	$headerTag      = htmlspecialchars($params->get('header_tag', 'h3'));
+	$headerTag      = htmlspecialchars($params->get('header_tag', 'h3'), ENT_COMPAT, 'UTF-8');
 	$bootstrapSize  = (int) $params->get('bootstrap_size', 0);
 	$moduleClass    = $bootstrapSize != 0 ? ' span' . $bootstrapSize : '';
 
 	// Temporarily store header class in variable
 	$headerClass    = $params->get('header_class');
-	$headerClass    = ($headerClass) ? ' class="' . htmlspecialchars($headerClass) . '"' : '';
+	$headerClass    = ($headerClass) ? ' class="' . htmlspecialchars($headerClass, ENT_COMPAT, 'UTF-8') . '"' : '';
 
 	if (!empty ($module->content)) : ?>
-		<<?php echo $moduleTag; ?> class="moduletable<?php echo htmlspecialchars($params->get('moduleclass_sfx')) . $moduleClass; ?>">
+		<?php echo "\n<!-- Mod: " . $module->title . " - Type: " . $module->module . " - ID: " . $module->id . " -->"; ?> 
+		<<?php echo $moduleTag; ?> class="moduletable<?php echo htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8') . $moduleClass; ?>">
 			<?php if ((bool) $module->showtitle) : ?>
 				<<?php echo $headerTag . $headerClass . '>' . $module->title; ?></<?php echo $headerTag; ?>>
 			<?php endif; ?>
@@ -112,7 +117,8 @@ function modChrome_xhtml($module, &$params, &$attribs)
  */
 function modChrome_rounded($module, &$params, &$attribs)
 { ?>
-		<div class="module<?php echo htmlspecialchars($params->get('moduleclass_sfx')); ?>">
+		<?php echo "\n<!-- Mod: " . $module->title . " - Type: " . $module->module . " - ID: " . $module->id . " -->"; ?> 
+		<div class="module<?php echo htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8'); ?>">
 			<div>
 				<div>
 					<div>
@@ -133,6 +139,7 @@ function modChrome_rounded($module, &$params, &$attribs)
 function modChrome_outline($module, &$params, &$attribs)
 {
 	static $css = false;
+
 	if (!$css)
 	{
 		$css = true;
@@ -142,6 +149,7 @@ function modChrome_outline($module, &$params, &$attribs)
 		$doc->addStyleDeclaration(".mod-preview-wrapper { background-color:#eee; border: 1px dotted black; color:#700;}");
 	}
 	?>
+		<?php echo "\n<!-- Mod: " . $module->title . " - Type: " . $module->module . " - ID: " . $module->id . " -->"; ?> 
 	<div class="mod-preview">
 		<div class="mod-preview-info"><?php echo 'Position: ' . $module->position . ' [ Style: ' . $module->style . ']'; ?></div>
 		<div class="mod-preview-wrapper">
