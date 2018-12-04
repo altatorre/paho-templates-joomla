@@ -1,12 +1,6 @@
 /**
- * CSS Document for offline page
- * @version $Id: offline.css 14401 2010-01-26 14:10:00Z louis $
- * @package Joomla
- * @copyright Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
- * @license GNU/GPL, see LICENSE.php
- * Joomla! is free software and parts of it may contain or be derived from the
- * GNU General Public License or other free or open source software licenses.
- * See COPYRIGHT.php for copyright notices and details.
+ * @copyright	Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 body {
@@ -16,7 +10,11 @@ body {
 	text-align: center;
 }
 
-img  { border: 0 none; }
+img  {
+	border: 0 none;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 /* -- id styles ------------------------------------- */
 
@@ -24,6 +22,11 @@ img  { border: 0 none; }
 	margin: 20px auto;
 	width: 400px;
 	padding: 20px;
+}
+
+#frame img {
+	max-width: 100%;
+	height: auto;
 }
 
 #frame form {
@@ -54,10 +57,45 @@ input    { border: 1px solid #0E67A1; }
 input.button 		 { background-color: white; }
 input.button:hover { border-color:  #FC902E; }
 
-
+fieldset.input p {clear: left;}
 
 #frmlogin	      { margin: 0 10px 0 10px;  }
 #frmlogin fieldset.button { text-align: right; }
 
+/* -- message styles ----------------------------------- */
 
+#system-message {
+	margin: 0 auto;
+	padding: 20px 0 0;
+	width: 445px;
+}
 
+.alert {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 1px solid #CCCCCC;
+	padding: 8px 25px 8px 14px;
+	text-align: left;
+}
+
+.alert h4 {
+	color: red;
+	margin: 5px 0;
+}
+
+.alert p {
+	padding: 0px;
+	margin: 0px;
+}
+
+.alert .close {
+	float: right;
+	font-size: 24px;
+	line-height: 18px;
+	position: relative;
+	right: -20px;
+	top: -2px;
+	cursor: pointer;
+}
+.login {
+	margin-top: 5px;
+}
