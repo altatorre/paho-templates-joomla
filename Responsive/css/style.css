@@ -24,6 +24,12 @@ body {
 	-webkit-text-size-adjust: none;
 	overflow-x: hidden;
 }
+.koowa .docman_list__sidebar {
+	display: none;
+}
+.koowa .docman_list__content {
+	width: 100%;
+}
 /* ============== */
 /* Some basic styles */
 /* ============ */
@@ -83,6 +89,39 @@ span.divider {
 	margin-left: 3px;
 	margin-right: 3px;
 }
+.pagination {
+	width: 100%;
+	padding: 4px;
+}
+.pagination ul {
+	list-style-type: none;
+	margin: 0;
+}
+.pagination ul li {
+	display: inline;
+	margin-right: 20px;
+	line-height: 12px;
+}
+.pagination ul li:last-child {
+	float: right;
+	margin-left: 20px;
+	margin-right: 0;
+}
+.pagination ul li:nth-last-child(2) {
+	float: right;
+	margin-left: 20px;
+	margin-right: 0;
+}
+.counter {
+	font-size: 10px;
+	font-weight: bold;
+	border-bottom: 1px solid #999;
+	margin-bottom: 6px;
+}
+.pull-right {
+	text-align: right;
+}
+
 /* ===================================== */
 /* Basic styles for the page's framework */
 /* ===================================== */
@@ -185,6 +224,16 @@ span.divider {
 	background: #008DC9;
 	border-radius: 50%;
 }
+ul.breadcrumb {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+ul.breadcrumb li {
+	display: inline;
+	font-size: 11px;
+	margin-left: 0;
+}
 #main {
 	float: left;
 	margin: 0;
@@ -195,7 +244,7 @@ span.divider {
 }
 .item-page {
 	padding-top: 0;
-	margin-top: -20px;
+	margin-top: 0px;
 }
 .page-header h2 {
 	font-size: 18px;
@@ -213,6 +262,9 @@ span.divider {
 }
 .noticia_r {
 	float: right;
+}
+ul.jemmod {
+	margin-bottom: 18px;
 }
 #countries {
 	clear: both;
@@ -245,6 +297,12 @@ span.divider {
 	left: 0;
 	width: 100%!important;
 	height: 100%!important;
+}
+#postmain {
+	clear: both !important;
+	margin: 0;
+	width: 100%;
+	float: left;
 }
 #postmain {
 	clear: both !important;
@@ -1860,6 +1918,49 @@ line-height:95%;
 /* Fim dos estilos para Health Topics */
 /* ========================= */
 
+.ytGalleryCell-l {
+	clear: both;
+	width: 48%;
+	float: left;
+	margin-bottom: 10px;
+}
+.ytGalleryCell-r {
+	clear: none;
+	width: 48%;
+	float: right;
+	margin-bottom: 10px;
+}
+.ytGalleryCell-l img, .ytGalleryCell-r img {
+	border: 1px solid #CCC;
+}
+.ytGalleryCell-l a p, .ytGalleryCell-r a p {
+	line-height: 14px;
+}
+.moduletable h2.ytGallery {
+	font-size: 14px;
+	border-bottom: 2px solid #258;
+	margin-top: -25px;
+}
+.ytGalleryNext {
+	width: 49.5%;
+	float: right;
+	margin-bottom: 8px;
+	text-align: right;
+}
+.ytGalleryPrev {
+	width: 49.5%;
+	float: left;
+	margin-bottom: 8px;
+}
+.ytGalleryNext a, .ytGalleryPrev a {
+	border: 1px solid #CCC;
+	border-radius: 6px;
+	background: #EEE;
+	padding: 3px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
 /* ========================================= */
 /* ESTILOS PARA TORNAR O TEMPLATE RESPONSIVO */
 /* ========================================= */
@@ -2069,19 +2170,18 @@ line-height:95%;
 		display: block;
 	}
 	#breadcrumbs {
+		width: 100%;
+		float: left;
 		background: #FFF;
 		margin: 0;
-		padding-top: 10px;
-		padding-bottom: 10px;
 	}
-	ul.breadcrumb {
-		margin: 0;
-		list-style-type: none;
+	#breadcrumbs ul {
+		padding: 10px 0 15px 0;
 	}
 	ul.breadcrumb li {
 		display: inline;
 		font-size: 11px;
-		margin-left: 0;
+		margin-left: 0px;
 	}
 	dt.article-info-term {
 		display: none;
@@ -2098,6 +2198,7 @@ line-height:95%;
 	#highlight_out {
 		width: 150px;
 		float: left;
+		margin-top: 0;
 	}
 	#highlight_mid h3 {
 		background: #258;
@@ -2146,17 +2247,18 @@ line-height:95%;
 	#content_left {
 		width: 750px;
 		float:left;
+		margin-top: 20px;
 		margin-left: 0;
 	}
 	#content_right {
 		width: 820px;
 		float:left;
+		margin-top: 20px;
 		margin-left: 10px;
 	}
 	#content_lr {
 		width: 580px;
 		float:left;
-		margin-top: 0;
 		margin-left: 10px;
 		padding: 0;
 	}
@@ -3202,6 +3304,7 @@ line-height:95%;
 		border-radius: 0;
 	}
 	#breadcrumbs {
+		display: none;
 		background: #FFF;
 		margin: 0;
 		padding-top: 4px;
@@ -3681,6 +3784,7 @@ line-height:95%;
 		border-radius: 0;
 	}
 	#breadcrumbs {
+		display: none;
 		background: #FFF;
 		margin: 0;
 		padding-top: 4px;
@@ -4309,6 +4413,7 @@ line-height:95%;
 		border-radius: 0;
 	}
 	#breadcrumbs {
+		display: none;
 		background: #FFF;
 		margin: 0;
 		padding-top: 4px;
