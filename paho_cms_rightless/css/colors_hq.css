@@ -38,7 +38,6 @@ form
 {
 	background: #ffffff url(../images/pi_language_bar_bg.jpg) no-repeat;	
     color: #ffffff;
-	background-color: $FFF;
 }
 
 /*  */
@@ -68,8 +67,9 @@ form
 /* texto del bread crumb. Fondo gris y tama~n o de letra m'as pequeno */
 #pathway_text 
 {
-	background:#efefef;
+/*	background:#efefef;
 	border: 0px solid #ccc;
+*/
 }
 
 .rss_list, li.mostread, .pictmenu, .pagenav_prev, .pagenav_next, .moduletable li
@@ -86,7 +86,7 @@ ul#mainlevel-nav li
 
 ul#mainlevel-nav li a
 {
-/*	color: #ffffff; */
+	color: #ffffff;
 	background: transparent;
 }
 
@@ -222,17 +222,9 @@ ul#mainlevel-nav li a:hover
 }
 
 /* menu highlight */
-#left_inner_menu2
+#left_inner_menu2 
 {
 	background-color: #BBD6EF;
-}
-#left_inner_menu4 {
-	float:left;
-}
-
-#left_inner_menu4 .moduletable
-{
-	background: #BBD6EF;
 }
 
 #left_inner_menu2 a.mainlevel:link, #left_inner_menu2 a.mainlevel:visited 
@@ -371,52 +363,6 @@ table.content_table
     color:#CC6600; 
 }
 
-/*
-#right_inner_menu1 .moduletable {
-	border-bottom: 3px double #FFC368;
-}
-
-#right_inner_menu2 .moduletable {
-	border-bottom: 3px double #FFC368;
-}
-
-#right_inner_menu3 .moduletable {
-	border-bottom: 3px double #FFC368;
-}
-
-#right_inner_menu4 .moduletable {
-	border-bottom: 3px double #FFC368;
-}
-
-#right_inner_menu5 .moduletable {
-	border-bottom: 3px double #FFC368;
-}
-*/
-
-#right_inner_menu1 .moduletable {
-/*	border-bottom: 1px solid #C9C9C9; */
-}
-
-#right_inner_menu2 .moduletable {
-/*	border-bottom: 1px solid #C9C9C9; */
-}
-
-#right_inner_menu3 .moduletable {
-/*	border-bottom: 1px solid #C9C9C9; */
-}
-
-#right_inner_menu4 .moduletable {
-/*	border-bottom: 1px solid #C9C9C9; */
-}
-
-#right_inner_menu5 .moduletable {
-/*	border-bottom: 1px solid #C9C9C9; */
-}
-
-#right_inner_menu3 .moduletable .factbuffet h3 {
-	border-top: 0px solid #FFF;
-}
-
 /* menu de usuario */
 .user_inner_title
 {
@@ -478,16 +424,12 @@ table td.body_outer
 
 a:link, a:visited 
 {
-	color: #0066ee; /* #6788a7; */
+	color: #0066cc; /* #6788a7; */
 }
 
 a:hover 
 {
 	color: #900; 	
-}
-
-td.contentheading a {
-	color: #134a81;
 }
 
 table.contentpaneopen 
@@ -497,7 +439,6 @@ table.contentpaneopen
 
 table.contentpaneopen a {
 	color: #134a81; /* #6788a7; */
-	color: #0055cc;
 }
 
 /* cajas de busqueda */
@@ -672,7 +613,7 @@ table.moduletable-footer
 
 #buffet h3 {
 	color: #FFFFFF; 
-	background-color: #247;
+	background-color: #999999;
 }
 
 #buffet h3 a {
@@ -680,7 +621,7 @@ table.moduletable-footer
 }
 
 #buffet {
-/*		background: #EEEEEE; */
+		background: #EEEEEE;
 }
 
 table.contenttoc 

@@ -3,10 +3,10 @@
 /* Desde Agosto 7 2009 se han movido los colores a un archivo llamado colors.css para poder tener compatibilidad entre templates. */
 @import url(colors_hq.css);
 
-h1 { font-size: 10pt; margin-bottom: 0px; padding-bottom: 0px; }
-h2 { font-size: 10pt; }
-h3 { font-size: 9pt; /* 10pt; */ }
-h4 { font-size: 9pt; }
+h1 { font-size: 9pt; margin-bottom: 0px; padding-bottom: 0px; }
+h2 { font-size: 9pt; }
+h3 { font-size: 8.5pt; /* 10pt; */ }
+h4 { font-size: 8pt; }
 /* h4 {   color:#0066cc;  } ver color.css */
 /* Asigna la altura a 100% */
 html 
@@ -27,9 +27,10 @@ body
 	font-family:  Verdana,Arial,Helvetica,sans-serif; 
     text-align: left;
     margin: 15px;
+	margin-top: 6px;
 	/* color:#000000;
 	background: #ffffff; ver color.css */
-	font-size: 10pt;
+	font-size: 83.9%;
 }
 
 /* Quita los bordes de las imagenes */
@@ -84,7 +85,7 @@ form
 	margin-top: 0px;
   	margin-bottom: 0px;
 	margin-right: 0px;
-	float: left;
+	float: right;
 }
 
 /*  */
@@ -92,8 +93,9 @@ form
 {
 	/* border: 0px solid #cccccc;
 	color: #ffffff;  ver color.css */
-	height: 21px !important;
-	height: 23px;
+	width:808px;
+	float: right;
+	height: 23px !important;
 	font-size:8pt;
 }
 
@@ -111,17 +113,15 @@ form
 #buttons_language 
 {
 	/* color: #ffffff; ver color.css */
-	float: right;
 	margin: 0px;
 	padding: 0px;
-	width: auto;
 }
 
 /* Botones de lenguaje, que son vi~netas. */
 #buttons_language>ul#mainlevel-nav li a 
 { 
 	/* color: #ffffff; ver el color.css */
-	width: auto; 
+/*	width: auto; */
 }
 
 /* texto del bread crumb. Fondo gris y tama~n o de letra m'as pequeno */
@@ -134,10 +134,14 @@ form
 	line-height: 22px; */
 	/* background:#efefef; ver color.css */
 	padding-left: 4px;
-	padding-bottom: 10px;
+	padding-bottom: 6px;
 	/* border: 0px solid #ccc; ver color.css */
-	margin-bottom: 2px;
-	font-size:8pt;
+	margin-bottom: 0px;
+	font-size:7pt;
+}
+
+.pathway {
+    font-size:7pt;
 }
 
 /* pone los contenidos de los UL en letra mas pequeña */
@@ -159,6 +163,11 @@ form
 	font-weight: normal;
 }
 
+.newsfeed div { /* para el rss de centroamerica cambio jc */
+	margin-left: 20px;
+	padding-bottom: 20px;
+	}
+
 #pathway_text img 
 {
 	margin-left: 5px;
@@ -168,21 +177,21 @@ form
 
 #buttons 
 {
-	float: left;
+	float: right;
 	margin: 0px;
 	padding: 0px;
-	width: auto;
+/*	width: auto; */
 }
 
 /* language and accessibilitly: pone horizontal el menú.   */
 #buttons>ul#mainlevel-nav li a 
 { 
-	width: auto; 
+/*	width: auto;  */
 }
 
 ul#mainlevel-nav
 {
-	list-style: none; 
+	list-style-type: none; 
 	padding: 0;
 	margin: 0;
 	font-size: 11pt;
@@ -193,7 +202,7 @@ ul#mainlevel-nav li
 	/* background-image: none; ver color.css */
 	padding-left: 0px;
 	padding-right: 0px;
-	float: left;
+	float: right;
 	margin: 0;
 	font-size: 11pt;
 	line-height: 21px;
@@ -203,9 +212,9 @@ ul#mainlevel-nav li
 
 ul#mainlevel-nav li a
 {
-	display: block;
-	padding-left: 15px;
-	padding-right: 15px;
+	display: inline;
+	padding-left: 20px;
+	padding-right: 10px;
 	text-decoration: none;
 	/* color: #ffffff;
 	background: transparent; ver color.css */
@@ -337,7 +346,7 @@ ul#mainlevel-nav li a
 
 #top_inner_menu_buttons .mainlevel 
 {
-	font-size: 9pt; /* 10pt; */
+	font-size: 8pt; /* 10pt; */
 }
 
 #top_inner_menu_buttons>ul#mainlevel-nav li a 
@@ -404,7 +413,7 @@ ul#mainlevel-nav li a
 	/* background-color: #e6eef9; */
 	vertical-align: middle;
 	/* font-size: 11pt;  Este era el original pero se ve muy peque~no en algunos browsers */
-	 font-size:9pt; 
+	 font-size:8pt; 
 	font-weight: bold;
 	/* color: #134A81; ver en color.css */
 	/* color:  #6788a7; */
@@ -473,7 +482,7 @@ ul#mainlevel-nav li a
 	/* background-color: #BBD6EF; ver color.css */
 	vertical-align: middle;
 	/* font-size: 11pt; /* Este era el original pero se ve muy peque~no en algunos browsers */
-	font-size:9pt;
+	font-size:8pt;
 	font-weight: bold;
 	/* color: #134A81; ver color.css */
 	text-align: left;
@@ -520,18 +529,20 @@ ul#mainlevel-nav li a
 	text-align: left;
 	padding-left: 4px;
 	line-height: 21px;
-	font-weight: normal;
-	font-size: 9pt; /* 10pt; */
-	text-transform: Capitalize; 
+	font-weight: bold;
+	font-size: 8pt; /* 10pt; */
 	margin: 0 0 2px 0;
 }
 
+#left_inner_menu4 {
+    border-bottom:1px solid #BBD6EF;
+}
 /* changed */
 /*  define los blancos de la barra de menús. y deja los links blancos a futuro  */
 a.mainlevel:link, a.mainlevel:visited 
 {
 	float: right;
-	font-size: 11pt;
+	font-size: 8pt;
 	font-weight: bold;
 	/* color: #ffffff; ver color.css */
 	text-align: left;
@@ -603,15 +614,15 @@ a.sublevel:hover
 }
 
 .contentpagetitle {
-	font-size:10pt;	
-	line-height: 15px;
+	font-size:8pt;	
+/*	line-height: 15px; */
 }
 
 /* ancho de la tabla de contenido */
 table.content_table 
 {
 	width: 100%;
-	width: 500px; /* cambio jc original 510 creo que puede liberar presiones internas para que no se descuaderne en IE 6.0 */
+	width: 480px; /* cambio jc original 510 creo que puede liberar presiones internas para que no se descuaderne en IE 6.0 */
 	padding: 0px;
 	margin: 0px;
 	/* color: #000000; ver color.css */
@@ -699,11 +710,10 @@ table.content_table td
     clear:both;
     /* float:left; */
 	text-align: left;
-	padding-top: 12px;
+	padding-top: 6px;
 	padding-left: 0px;
 	padding-bottom: 3px;
-	margin: 0px 0px 3px 0px;
-	
+	margin: 2px 0px 3px 0px;
 	/* height: 21px; */
 	font-weight: bold;
 	/* width: 138px;	*/
@@ -720,7 +730,7 @@ font-weight:bold;
 #left_inner_menu2 .moduletable h3, #left_inner_menu3 .moduletable h3, #left_inner_menu4 .moduletable h3
 {
 	padding-top: 0px;
-	font-weight: normal;
+	font-weight: bold;
 	/* background-color:silver; */
 	/* height:21px; */
 }
@@ -790,7 +800,12 @@ table td.body_outer
 	/* border: 0px solid #cccccc; ver color.css */
 }
 
-.body_outer p  { font-size: 9pt; /* 10pt; */  }
+.body_outer p  {
+	margin-top: 2px;
+	margin-bottom: 8px;
+	font-size: 8pt;
+	 /* 10pt; */  
+}
 
 .maintitle 
 {
@@ -853,22 +868,44 @@ table td.body_outer
 
 /*Bullets del cuerpo de noticias - VHA*/
 
-ul, ul.latestnews, ul.mostread, .moduletable ul {
+ul, ul.mostread, .moduletable ul {
             list-style-type:disc;
             margin-left:8px;
-            padding-left:8px;
+            padding-left:2px;
             /* Cambio 5/27/10 PL */
             /* margin: 0;
             padding: 0;
             list-style: none; */
 }
 
-li.latestnews, li.mostread, .moduletable li {
+ul.latestnews {
+	list-style-type:square;
+	margin-left: 0px;
+	padding-left: 0;
+}
+
+li.latestnews {
+            /* line-height: 15px;  */
+            color: #000;
+            margin-left:0px;
+            padding-left:0px;
+			font-size: 8pt;
+            /* padding-left: 15px;
+            padding-top: 0px; 
+            background-image: url(../images/bullet_1.png);
+            background-repeat: no-repeat;
+            background-position: 0px 2px; */
+}
+a.latestnews2 {
+	font-size: 8pt;
+}
+
+li.mostread, .moduletable li {
             /* line-height: 15px;  */
             color: #0066cc;
             margin-left:0px;
             padding-left:0px;
-font-size: 8pt;
+			font-size: 8pt;
             /* padding-left: 15px;
             padding-top: 0px; 
             background-image: url(../images/bullet_1.png);
@@ -876,12 +913,16 @@ font-size: 8pt;
             background-position: 0px 2px; */
 }
 
+#right_inner_menu5 .moduletable li {
+            margin-bottom:10px;
+}
+
 .rss .moduletable li {
             /* line-height: 15px;  */
             color: #000;
-            margin-left:0px;
-            padding-left:0px;
-font-size: 8pt;
+            margin-left:15px;
+/*            padding-left:15px; */
+			font-size: 8pt;
             /* padding-left: 15px;
             padding-top: 0px; 
             background-image: url(../images/bullet_1.png);
@@ -975,7 +1016,7 @@ table.contentpaneopen td
 {
 	padding-right: 5px;
 	/* text-align:justify; */
-	font-size: 9pt; /* 10pt; */ /* Cambiojc 20090205 para bajar el tama~no de las letras de los pa'ises */
+	font-size: 8pt; /* 10pt; */ /* Cambiojc 20090205 para bajar el tama~no de las letras de los pa'ises */
 }
 
 table.contentpaneopen td.componentheading 
@@ -1021,7 +1062,7 @@ table.contentpaneopen a {
 
 a.readon 
 {
-	font-size: 9pt; /* 10pt; */
+	font-size: 8pt; /* 10pt; */
 	font-weight: normal;
 	/* color: #134a81; ver color.css */
 	text-decoration: underline;
@@ -1166,10 +1207,11 @@ table.moduletable th
 
 .contentheading
 {
-	height: 14px;
+/*	height: 14px; *\
 	/* color: #134A81; ver color.css */
 	font-weight: bold;
 	font-size:14px;
+    margin-top:0px;
 	padding-bottom:0px;
 	/*	line-height: 15px; */
 }
@@ -1191,11 +1233,12 @@ td.contentheading {
 	/* background: url(../images/pi_content_title_bg.jpg) repeat-x;
 	color: #666666; ver color.css */
 	text-align: left;
-	padding-top: 4px;
+	padding: 4px;
+	/* padding-top: 4px;
 	padding-left: 4px;
-	/* height: 21px; */
+	height: 21px; */
 	font-weight: bold;
-	font-size: 9pt; /* 10pt; */ 
+	font-size: 8pt; /* 10pt; */ 
 	text-transform: uppercase;
 }
 
@@ -1361,10 +1404,10 @@ table.moduletable-footer
 /* Titulo de fondo gris */
 
 #buffet h3 {
-	font-size: 9pt; /* 10pt; */
+	font-size: 8pt; /* 10pt; */
 	font-weight: bold; 
 	/* color: #FFFFFF; ver color.css */
-	width: 100%;
+	width: 480px;
 	padding: 2px 0 2px 4px; 
 	margin: 0; 
 	/* background-color: #999999; ver color.css */
@@ -1550,7 +1593,7 @@ a.ftr:visited{
 } ver color.css */
 
 a { 
-	font-size: 9pt; /* 10pt; */ 
+	font-size: 8pt; /* 10pt; */ 
 }
 
 /* main 20090115 */
@@ -1599,6 +1642,23 @@ color:yellow;
 } ver color.css */
 
 .colapslist { font-weight: normal; }
+
+a.colapslistnoarrow {
+	display: block;
+	background-color: #FFF;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #C60;
+	margin-left: -1px;
+	padding-left: -1px;
+}
+.colaps_bulnoarrow {
+	display: none;
+}
+
+.moduletablenoarrow ul li {
+	color: black;
+}
 
 ul.none {list-style-type:none;margin-left:10px;padding-left:10px;background-image:url(http://new.paho.org/hq/images/null.gif)}
 ol.none {list-style-type:none;margin-left:10px;padding-left:10px;background-image:url(http://new.paho.org/hq/images/null.gif)}
@@ -1705,8 +1765,8 @@ div.moduletablepandemic h3 {font-weight: bold;color: #D56648}
     width:478px;
 	font-size:9pt;
 	font-weight:bold;
-	padding-top:4px;
-	padding-bottom:5px;
+	padding-top:2px;
+	padding-bottom:3px;
 	background-color:#225588;
 	color:#FFF;
 	text-align:center;
@@ -1720,21 +1780,83 @@ div.moduletablepandemic h3 {font-weight: bold;color: #D56648}
 	width:478px;
 	border:1px solid #225588;
 }
-table.tablaborde11 {
+
+.moduletablecholera {
+    border-bottom: 1px solid #CCC;
+	margin-bottom: 22px;
+	padding-bottom: 6px;
+    margin-top: 0px;
+    border-top: 1px solid #CCC;
+}
+.colaps_bulptd {
+    background-color: #EEEEF6;
+	width:20px;
+	height:20px;
+    border-bottom: 2px solid #999;
+}
+a.colapslistptd {
+    background-color: #EEEEF6;
+    display:block;
+    font-weight: bold;
+	width:478px;
+	height:20px;
+	margin-bottom: -12px;
+    border-bottom: 2px solid #999;
+}
+.colaps_liptd {
+	list-style-type: none;
+	width: 478px;
+	margin-left: -32px;
+	padding-left: -32px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #CCC;
+	margin-bottom: 10px;
+}
+
+#topnews {
+	width: 480px;
+	float:left;
+	background-color: #EEE;
+	margin-top: 6px;
+	border-bottom: 1px solid #CCC;
+}
+#topnews p {
+	font-size:8pt;
+	padding: 0px 4px 0px 2px;
+}
+#topnews img {
 	margin: 0px;
-	border: 1px solid #cccccc;
+	border: 1px solid #247;
 }
-table.tablaborde11 td {
-	padding: 15px;
-}
-/*ESTILOS WEB2 BOLIVIA*/
-#left_inner_menu2 span.mainlevel
-{
-	text-align: left;
-	padding-left: 4px;
-	line-height: 21px;
-	font-weight: normal;
-	font-size: 7pt; /* 10pt; */
-	margin: 0 0 2px 0;		
+#topnews h1 {
 	font-weight: bold;
+	color: white;
+	background-color: #247;
+	margin: 0px;
+	padding: 6px;
+}
+#topnews a {
+	font-size: 8pt;
+}
+#topnews a.white {
+	font-size: 10pt;
+	color: white;
+}
+.colapslistmemoriam {
+	font-weight: bold;
+	color: #C60;
+}
+
+ul#list_3547 {
+	margin-top: 100px;
+	margin-left: -10px;
+	padding-left: -10px;
+}
+
+ul.colaps_ulnoarrow li {
+	margin-bottom: 6px;
+}
+
+.moduletable .clplst p {
+	font-size: 11px;
 }

@@ -35,7 +35,41 @@ if ( mosCountModules( 'user1' ) + mosCountModules( 'user2' ) == 2) {
 	$user2 = 1;
 	$colspan = 1;
 }
-
+//Cambio vlakov 1006091156 Visualizacion ALT en banner
+$special = 0;
+$alt1 = "Pan American Health Organization";
+$alt2 = "World Health Organization";
+$alt3 = "";
+$url3 = "";
+switch($mosConfig_lang){
+	case 'spanish':
+		$alt1 = "Organización Panamericana de la Salud";
+		$alt2 = "Organización Mundial de la Salud";
+		$alt3 = "Día Mundial del Donante de Sangre 14 de Junio";
+		$url3 = 'http://new.paho.org/hq/index.php?option=com_content&task=blogcategory&id=1163&Itemid=597&lang=es';
+		break;
+	case 'english':
+		$alt1 = "Pan American Health Organization";
+		$alt2 = "World Health Organization";
+		$alt3 = "World Blood Donor Day June 14";
+		$url3 = 'http://new.paho.org/hq/index.php?option=com_content&task=blogcategory&id=1163&Itemid=597';
+		break;
+	case 'french':
+		$alt1 = "Organisation panaméricaine de la Santé";
+		$alt2 = "Organisation mondiale de la Santé";
+		$alt3 = "";
+		break;
+	case 'brazilian_portuguese':
+		$alt1 = "Organização Pan-Americana da Saúde";
+		$alt2 = "Organização Mundial da Saúde";
+		$alt3 = "";
+		break;
+	default:
+		$alt1 = "Pan American Health Organization";
+		$alt2 = "World Health Organization";
+		$url3 = 'http://new.paho.org/hq/index.php?option=com_content&task=blogcategory&id=1163&Itemid=597';
+		break;
+}
 //right based combos
 if ( mosCountModules( 'right' ) and ( empty( $_REQUEST['task'] ) || ( $_REQUEST['task'] != 'edit' && $_REQUEST['task'] != 'new' ) ) ) {
 	$right = 1;
@@ -44,6 +78,11 @@ if ( mosCountModules( 'right' ) and ( empty( $_REQUEST['task'] ) || ( $_REQUEST[
 <meta http-equiv="Content-Type" content="text/html; <?php echo _ISO; ?>" /><!-- sin columna derecha -->
 <link href="<?php echo $mosConfig_live_site;?>/templates/paho_cms_rightless/css/template_css.css" rel="stylesheet" type="text/css" />
 <script language="javascript" src="<?php echo $mosConfig_live_site;?>/templates/<?php echo $cur_template; ?>/mootools.js" type="text/javascript"></script>
+<script language="javascript" src="<?php echo $mosConfig_live_site;?>/includes/js/selectLanguage.js" type="text/javascript"></script>
+<!--[if IE]>
+        <link rel="stylesheet" type="text/css" href="<?php echo $mosConfig_live_site;?>/templates/paho_cms_rightless/css/ie_only.css" />
+<![endif]-->
+
 </head>
 <body>
 <div align="center">
@@ -61,22 +100,19 @@ if ( mosCountModules( 'right' ) and ( empty( $_REQUEST['task'] ) || ( $_REQUEST[
 		  		<div class="clr"></div>
                 
 		  		<div id="header_outer">
-		  			<div id="header">
+		  		<div id="header">
 						<?php if ( mosCountModules ('banner') ) { ?>
-			  				<table border="0" cellpadding="0" cellspacing="0"  width="100%">
-								<tr>
-									<td>
-										<!-- <div id="poweredby_inner">
-											<img src="<?php echo $mosConfig_live_site;?>/templates/paho_cms/images/pi_paho_logo_image.jpg" alt="powered_by.png, 1 kB" title="powered_by" border="0" />
-										</div> -->
-										<div id="banner_inner">
-			  								<?php mosLoadModules( 'banner', -1 ); ?><br />
-										</div>
-									</td>
-								</tr>
-							</table>
+			  		<table border="0" cellpadding="0" cellspacing="0"  width="100%">
+					<tr>
+						<td>
+							<div id="banner_inner">
+                                <?php mosLoadModules ( 'banner', 0); ?>
+							</div>
+						</td>
+					</tr>
+					</table>
 						<?php } ?>
-		  			</div>
+		  		</div>
 		  			
                     <!-- Menu de busca -->
                     
@@ -120,12 +156,12 @@ if ( mosCountModules( 'right' ) and ( empty( $_REQUEST['task'] ) || ( $_REQUEST[
 
 				<!-- Content -->
 
-		 		<div id="content_outer"
+		 		<div id="content_outer">
 					<div id="content_inner">
 			  			<table border="0" cellpadding="0" cellspacing="0" width="100%" class="content_table">
 				<tr valign="top">
 			<td>
-			<table border="0" cellpadding="0" cellspacing="0" width="50%" class="content_table"
+			<table border="0" cellpadding="0" cellspacing="0" width="50%" class="content_table">
                                         <!-- Navegation Guide Breadcrumbs -->
                                         <tr>
 					<td colspan="<?php echo $colspan; ?>">
@@ -150,36 +186,49 @@ if ( mosCountModules( 'right' ) and ( empty( $_REQUEST['task'] ) || ( $_REQUEST[
                                         <!-- News Content -->
                                         
 				<tr>
+					<td colspan="1<?php echo $colspan; ?>" class="body_outer"><?php mosLoadModules ( 'premain', 0 ); ?></td>
+				</tr>
+				<tr>
 					<td colspan="<?php echo $colspan; ?>" class="body_outer"><?php mosMainBody(); ?></td>
 				</tr>
                                         
                                         <!-- RSS -->
-                                                                                
-                                        <?php if (($_SERVER['QUERY_STRING'] == "") || ($_SERVER['QUERY_STRING'] == "option=com_frontpage&Itemid=1") || ($_SERVER['QUERY_STRING'] == "lang=es") || ($_SERVER['QUERY_STRING'] == "lang=es" || ($_SERVER['QUERY_STRING'] == "") || ($_SERVER['QUERY_STRING'] == "option=com_frontpage&Itemid=1") || ($_SERVER['QUERY_STRING'] == "lang=en") || ($_SERVER['QUERY_STRING'] == "lang=en"))) { ?>
+                                        <?php if (($_SERVER['QUERY_STRING'] == "") || ($_SERVER['QUERY_STRING'] == "option=com_frontpage&Itemid=1") ||  (1==1)) { ?>
                                         <tr>
-                                        	<td>
+                                        	<td>                                                                                
 
-	<table>
+	<table width="100%">
+	<tr>
+	<td colspan="5">
+					<?php mosLoadModules ( 'postmain', 0 ); ?>
+	</td>
+	</tr>
 	<tr valign="top" >
 		<td width="50%">                                        	
-            <div id="buffet">
+            <!-- <div id="buffet">
 				<h3><a href="http://campusvirtualsp.org" target="_blank">Campus virtual</a></h3>
-			</div>
+			</div> -->
     		<table>
     		<tr>
-			<td class="rss">
-				<?php mosLoadModules ( 'ext_rss1', -2 ); ?>
+			<td id="rss">
+				<?php mosLoadModules ( 'innerleft', -2 ); ?>
 			</td>
 			</tr>
 			</table>
-	</td><td width="50%">
-			<div id="buffet">
+	</td>
+    <td width="13" align="left" valign="top"><img src="images/shim.gif" alt="" width="13" height="1"></td>
+    <td width="1" valign="top" bgcolor="#cccccc"><img src="images/shim.gif" alt="" width="1" height="1"></td>
+    <td width="13" align="left" valign="top"><img src="images/shim.gif" alt="" width="13" height="1"></td>	
+	
+	
+	<td width="50%">
+			<!-- <div id="buffet">
 				<h3>Virtual Health Library</h3>
-			</div>
+			</div> -->
             <table>
             <tr>
-				<td class="rss">			        
-			        <?php mosLoadModules ( 'user5', -1 );  ?>
+				<td id="rss">			        
+			        <?php mosLoadModules ( 'innerright', -2 );  ?>
 				</td>
 			</tr>
 			</table>
@@ -196,14 +245,21 @@ if ( mosCountModules( 'right' ) and ( empty( $_REQUEST['task'] ) || ( $_REQUEST[
 		</td>
 	</tr>
 	</table>
+	<?php }  ?>
+	<?php if (($_SERVER['QUERY_STRING'] != "option=com_frontpage&Itemid=1")) { ?>
+	<table>
+	<tr><td id="rss"><?php mosLoadModules ( 'postcols', -2 );  ?></td></tr>
+	</table>
+			
 		</td>
 		</tr>
+
                                         <?php } ?>
 
 				</table>
 			</td>
-			<td background="<?php echo $mosConfig_live_site;?>/templates/paho_cms/images/spacer1.gif" bgcolor="silver" width="1" style="width:1px;"><img src="<?php echo $mosConfig_live_site;?>/templates/paho_cms/images/spacer1.gif" /></td>
-			
+			<!-- <td background="<?php echo $mosConfig_live_site;?>/templates/paho_cms/images/spacer1.gif" bgcolor="#FFF" width="1" style="width:1px;"><img src="<?php echo $mosConfig_live_site;?>/templates/paho_cms/images/spacer1.gif" /></td> -->
+			<td></td>
 	                       		<!-- Right menu zone -->
                                
 							

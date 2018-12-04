@@ -1,0 +1,145 @@
+/* Estilos para PAHO Today */
+
+#ptfoto_left{ 
+	width: 200px;
+	padding:4px; 
+	float: left; 
+	font-size:7pt; 
+	margin: 0pt 12px 10px 0pt;
+	border:1px solid black; 
+}
+
+#ptfoto_right{ 
+	width: 200px;
+	padding:4px; 
+	float: right; 
+	font-size:7pt; 
+	margin: 0pt 0pt 10px 12px;
+	border:1px solid black; 
+}
+
+#ptmenucontainer {
+	width: 162px;
+	float: right;
+	margin: 0pt;
+	padding: 0pt;
+}
+
+#ptmenucontainer ul {
+	width: 162px;
+	margin-left: -12px;
+	padding-left: -12px;
+	list-style: none;
+	border-bottom: 16px solid #4c8FCD;
+}
+
+#ptmenucontainer a {
+	display: block;
+	padding: 2px 3px 3px 0px;
+	width: 162px;
+	background-color: #D7E2F3;
+	background: url('http://devserver.paho.org/leite/images/stories/PIN/bg_menu1.gif');
+	border-bottom: 1px solid #fff;
+}
+
+#ptmenucontainer a:link, #menucontainer a:visited {
+	color: #333;
+	font-size: 8pt;
+	text-decoration: none;
+}
+
+#ptmenucontainer a:hover {
+	background-color: #4C8FCD;
+	background: url('http://devserver.paho.org/leite/images/stories/PIN/bg_menu2.gif');
+	color: #fff;
+}
+
+#ptmenucontainer li {
+	margin-bottom: 0;
+	margin-top: 0;
+	list-style: none;
+}
+
+#active a:link, #active a:visited, #active a:hover {
+	background-color: #dfdfdf;
+	background-image:  url('http://devserver.paho.org/leite/images/stories/PIN/bg_menu3.gif');
+	color: #999; /* */
+}
+
+#ptodaycontent {
+	width: 480px;
+	margin-right: 152px;
+}
+
+.pt_head {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 16px;
+	margin-top: 0px;
+}
+
+.pt_subhead {
+	font-size: 16px;
+	color: #369;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.pt_lead {
+	font-size: 15px;
+	color: #000;
+	font-style: italic;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+
+.pt_top {
+	font-family: Verdana, Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif;
+	font-weight: bold;
+	font-size: 13pt;
+	margin-top: -5px;
+	margin-bottom: 0;
+}
+
+.pt_inter {
+	font-family: Verdana, Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif;
+	font-weight: bold;
+	font-size: 13pt;
+	margin-top: 15px;
+	margin-bottom: -8px;
+	color: #00A2E6;
+}
+
+.ptheadline {
+	font-family: Verdana, Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif;
+	font-weight: bold;
+	font-size: 18pt;
+	line-height: 120%;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.ptsubtitle {
+	font-family: Verdana, Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif;
+	font-weight: bold;
+	font-size: 11pt;
+	color: #000;
+}
+
+.pt_subhead
+{
+	font-family: Verdana, Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif;
+	font-size: 16px;
+	color: #369;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.ptp {
+	font-family: Verdana, Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif;
+	font-size: 10pt;
+	line-height: 110%;
+}
+
+
+/* --- Final de los estilos para PAHO Today --- */

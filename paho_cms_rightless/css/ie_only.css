@@ -1,0 +1,29 @@
+#vwa_eng {
+    width: 658px;
+	margin-top: 0px;
+	background: url('http://new.paho.org/hq/images/stories/AD/FCH/IM/VWA2011/vwa2011_topright-eng.png') no-repeat scroll right top transparent;
+}
+
+#vwa_spa {
+    width: 658px;
+	margin-top: 0px;
+	background: url('http://new.paho.org/hq/images/stories/AD/FCH/IM/VWA2011/vwa2011_topright.png') no-repeat scroll right top transparent;
+}
+
+#vwa_eng_bt {
+    width: 658px;
+    height: 250px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background: url('http://new.paho.org/hq/images/stories/AD/FCH/IM/VWA2011/vwa2011_topright-eng.png') no-repeat scroll right top transparent;
+}
+
+#vwa_spa_bt {
+    width: 658px;
+    height: 250px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background: url('http://new.paho.org/hq/images/stories/AD/FCH/IM/VWA2011/vwa2011_topright.png') no-repeat scroll right top transparent;
+}
+
+
