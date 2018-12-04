@@ -10,10 +10,12 @@
 defined('_JEXEC') or die;
 
 // Create shortcut
-$urls = json_decode($this->item->urls);
+//$urls = json_decode($this->item->urls);
+$urls = "";
 
 // Create shortcuts to some parameters.
-$params = $this->item->params;
+//$params = $this->item->params;
+$params = $this->params;
 if ($urls && (!empty($urls->urla) || !empty($urls->urlb) || !empty($urls->urlc))) :
 ?>
 <div class="content-links">
