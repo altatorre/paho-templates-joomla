@@ -14,8 +14,8 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 // Create shortcuts to some parameters.
 //$params  = $this->item->params;
 $params  = $this->params;
-$images  = json_decode($this->item->images);
-$urls    = json_decode($this->item->urls);
+//$images  = json_decode($this->item->images);
+//$urls    = json_decode($this->item->urls);
 //$canEdit = $params->get('access-edit');
 $canEdit	= ($this->user->authorize('com_content', 'edit', 'content', 'all') || $this->user->authorize('com_content', 'edit', 'content', 'own'));
 $user    = JFactory::getUser();
@@ -24,7 +24,7 @@ $info = 1;
 JHtml::_('behavior.caption');
 
 ?>
-<div class="item-page<?php echo $this->pageclass_sfx?>">
+<div class="item-page<?php echo $this->article->pageclass_sfx?>">
 	<?php /*if ($this->params->get('show_page_heading', 1)) : ?>
 		<h1><?php echo $this->escape($this->params->get('page_heading')); ?><?php echo $this->escape($this->params->get('page_title'));  ?></h1>
 	<?php endif;*/ ?>
@@ -63,18 +63,28 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 	<?php if ( $params->get('show_title') ||   
 	(($this->params->get('show_author')) && ($this->article->author != ""))) : ?>
 	<div class="heading col-xs-12">
-		<h1>
+		<?php $h1aux="<h1>" ?>
+		<!-- <h1>
 			<?php if ($this->_models['article']->_article->state == 0): ?>
-				<span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
+				<span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>		
+			<?php 	$h1aux.="<span class=\"label label-warning\">".JText::_('JUNPUBLISHED')."</span> "; ?>
 			<?php endif; ?>
 			<?php if ($params->get('show_title')) : ?>
 				<?php if ($params->get('link_titles') && !empty($this->item->readmore_link)) : ?>
 					<a href="<?php echo $this->item->readmore_link; ?>"> <?php echo $this->escape($this->_models['article']->_article->title); ?></a>
+					<?php 	$h1aux.="<a href=\"" . $this->item->readmore_link . "\"> " . $this->escape($this->_models['article']->_article->title) . "</a>"; ?>
 				<?php else : ?>
 					<?php echo $this->escape($this->_models['article']->_article->title); ?>
+					<?php 	$h1aux.=$this->escape($this->_models['article']->_article->title); ?>
 				<?php endif; ?>
 			<?php endif; ?>
-		</h1>
+		</h1> -->
+			<?php 	$h1aux.="</h1>";
+				if ((stripos($h1aux, "}</h1>")) && (stripos($h1aux, " - {"))) { 
+						$h1aux = str_replace(' - {', '</h1>'."\n".'<h2>', $h1aux);
+						$h1aux = str_replace('}</h1>', '</h2>', $h1aux);
+				}
+				echo $h1aux;?>
 			<?php if ($params->get('show_author') && !empty($this->item->author )) : ?>
 
 				<?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
@@ -176,15 +186,21 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 	$mylanguage = $mydocument->getLanguage();
 	$organization = "PAHO WHO";
 	if ($mylanguage == "es-es") $organization = "OPS OMS";
+	$mytitle_og = $mytitle . " | " . $organization;
 	$mytitle = $organization . " | " . $mytitle;
 	$mydocument->setTitle($mytitle);
-	$mypubdate = $mydocument->_metaTags['standard']['dcterms.issued'];
+	if (empty($mydocument->_metaTags['standard']['DCTERMS.issued'])) { 
+		$mypubdate="";
+	} else { 
+		$mypubdate=$mydocument->_metaTags['standard']['DCTERMS.issued'];
+	}
+	//$mypubdate = $mydocument->_metaTags['standard']['DCTERMS.issued'];
 	if (($mypubdate == '0000-00-00 00:00:00') || ($mypubdate == '')) $mypubdate = $this->article->created;
-	if ($mypubdate < $this->article->publish_up) {
+	if ($mypubdate <= $this->article->publish_up) {
 		$mypubdate=$this->article->publish_up;
 		if (($mypubdate == '0000-00-00 00:00:00') || ($mypubdate == '')) $mypubdate = $this->article->publish_up;
 		if (($mypubdate == '0000-00-00 00:00:00') || ($mypubdate == '')) $mypubdate = $this->article->created;
-		$mydocument->setMetaData( 'dcterms.issued', $mypubdate );
+		$mydocument->setMetaData( 'DCTERMS.issued', $mypubdate );
 		$date1 = date_create($mypubdate);
 		$date2 = date_format($date1, 'Y-m-d');
 		$mydocument->setMetaData( 'review_date', $date2 );
@@ -205,21 +221,70 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 	$mydescription = implode(" ", $desc);
 	$mydescription = htmlentities($mydescription, ENT_COMPAT, "UTF-8");
 
+$images = new stdClass();
+$query = "SELECT * FROM #__cf_values where article_id = '".$this->article->id."' and field_id = 1";
+$db = &JFactory::getDBO();
+$db->setQuery($query);
+$newogtagimages = "";
+$newtwittertagimages = "";
+$rowsimages = $db->loadObject();
+if ($rowsimages) {
+	$images->image_intro=$rowsimages->value;
+			// http://php.net/manual/en/function.strpos.php
+	if (strpos(" ".$images->image_intro, "http") === false) { $images->image_intro = "http://www.paho.org/hq/". $images->image_intro; }
+	$newogtagimages .= "	<link rel=\"image_src\" type=\"image/png\" href=\"".$images->image_intro."\" />
+	<meta property=\"og:image\" content=\"".$images->image_intro."\" />
+	<meta property=\"og:image:width\" content=\"300\" />
+	<meta property=\"og:image:height\" content=\"300\" />
+<meta property=\"og:image:height3\" content=\"300\" />
+";
+	$newtwittertagimages .= "  <meta name=\"twitter:image:src\" content=\"".$images->image_intro."\" />
+";
+} 
+
+
 //	$mydescription = substr($mydescription,0,159) . "...";
 	$mydocument->setMetaData( 'description', $mydescription );
-	$newtag = "<meta property=\"og:title\" content=\"$mytitle\" />
+	$newogtag = "<meta property=\"og:title\" content=\"".$mytitle_og."\" />
 	<meta property=\"og:site_name\" content=\"Pan American Health Organization / World Health Organization\"/>
 	<meta property=\"og:type\" content=\"article\" />
 	<meta property=\"og:description\" content=\"".$mydocument->description."\" />
-	<link rel=\"image_src\" type=\"image/png\" href=\"http://www.paho.org/hq/images/logo-ops.png\" />
+	";
+	$newtwittertag = "  <meta name=\"twitter:title\" content=\"".$mytitle_og."\"/>
+  <meta name=\"twitter:description\" content=\"".$mydescription."\" />
+
+	";
+
+	$newogtagimages_default = "<link rel=\"image_src\" type=\"image/png\" href=\"http://www.paho.org/hq/images/logo-ops.png\" />
 	<meta property=\"og:image\" content=\"http://www.paho.org/hq/images/logo-ops.png\" />
-	<meta property=\"og:image:width\" content=\"200\" />
-	<meta property=\"og:image:height\" content=\"200\" />
+	<meta property=\"og:image:width\" content=\"800\" />
+	<meta property=\"og:image:height\" content=\"750\" />
 	<meta property=\"og:image\" content=\"http://www.paho.org/hq/images/logo-paho.png\" />
-	<meta property=\"og:image:width\" content=\"200\" />
-	<meta property=\"og:image:height\" content=\"200\" />
+	<meta property=\"og:image:width\" content=\"800\" />
+	<meta property=\"og:image:height\" content=\"750\" />
 ";
-	$mydocument->addCustomTag( $newtag );
+	$newtwittertagimages_default = "  <meta name=\"twitter:image:src\" content=\"http://www.paho.org/hq/images/logo-paho.png\" />
+";
+	if ($newogtagimages != "") {
+		$newogtag .= $newogtagimages;
+	}	else {
+		$newogtag .= $newogtagimages_default;
+	}
+	$mydocument->addCustomTag( $newogtag );
+
+	if ($newtwittertagimages != "") {
+		$newtwittertag .= $newtwittertagimages;
+	}	else {
+		$newtwittertag .= $newtwittertagimages_default;
+	}
+	$mydocument->addCustomTag( $newtwittertag );
+		// https://findmyfbid.com
+		// default app. https://stackoverflow.com/questions/38541027/facebook-share-app-id-missing
+	$fbid = "<meta property=\"fb:app_id\" content=\"1906460059619279\">
+		<meta property=\"article:author\" content=\"https://www.facebook.com/pahowho\" />
+		<meta property=\"author\" content=\"https://www.facebook.com/pahowho\" />
+";
+	$mydocument->addCustomTag( $fbid ); 
 ?>
 	<span class="updated" style="display:none"><?php echo $this->article->modified; ?></span>
 
@@ -367,6 +432,6 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 			echo $this->item->pagination;
 		?>
 			<?php endif; ?>
-			<?php echo $this->item->event->afterDisplayContent; ?>
+			<?php echo $this->article->event->afterDisplayContent; ?>
 	</div>
 </div>
