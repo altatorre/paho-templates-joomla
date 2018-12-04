@@ -1,74 +1,83 @@
-<?php // no direct access
-defined('_JEXEC') or die('Restricted access');
+<?php
+defined('_JEXEC') or die;
 
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
-JHtml::_('behavior.caption');
 
-$iitems = $this->items;
-$iintro	= $this->params->get('num_intro_articles');
-$links	= $this->params->get('num_links');
+JHtml::_('behavior.caption');
 ?>
-<div id="noticias">
-	<div id="noticias_col_um"><!-- CA:<?php echo count($iitems); ?> -->
-<?php
-$cuentamax = count($iitems);
-if ($cuentamax > 20) { $cuentamax = 13; }
-for ($ii = 0; $ii < $cuentamax; $ii++) {
-		// cambio jc 20140403 publicacion del metadato dcterms.issued para buscador.
-		// @ variables: $row | $this->item | $this->article | $iitems[$ii]
-		// @ atributos: modified | publish_up 
-	$mydocument = JFactory::getDocument();
-		// http://stackoverflow.com/questions/4261133/php-notice-undefined-variable-and-notice-undefined-index
-	$mypubdate = isset($mydocument->_metaTags['dcterms.issued']) ? $mydocument->_metaTags['dcterms.issued'] : '0000-00-00 00:00:00';
-	if ($mypubdate == '0000-00-00 00:00:00') $mypubdate = $iitems[$ii]->created;
-	if ($mypubdate < $iitems[$ii]->modified) { 
-		$mypubdate=$iitems[$ii]->modified;
-		if ($mypubdate == '0000-00-00 00:00:00') $mypubdate = $iitems[$ii]->publish_up;
-		if ($mypubdate == '0000-00-00 00:00:00') $mypubdate = $iitems[$ii]->created;
-		$mydocument->setMetaData( 'dcterms.issued', $mypubdate ); 
-		$date1 = date_create($mypubdate);
-		$date2 = date_format($date1, 'Y-m-d');
-		$mydocument->setMetaData( 'review_date', $date2 ); 
-	}
-	$mydescription = $mydocument->description;
-	$lengthdescription = strlen($mydescription);
-	if ($lengthdescription < 159) {
-		$mydescription .= strip_tags ($iitems[$ii]->title.". ");
-		$mydescription = str_replace("&nbsp;", " ", $mydescription);
-		$mydescription = str_replace("\r\n", " ", $mydescription);
-		$mydescription = str_replace("\t", " ", $mydescription);
-		$mydescription = str_replace("  ", " ", $mydescription);
-		$mydescription = str_replace("  ", " ", $mydescription);
-		$mydescription = str_replace("  ", " ", $mydescription);
-	}
-	$mydescription = substr($mydescription,0,159);
-	$mydocument->setMetaData( 'description', $mydescription );
-//	$sysitemid = (int) JApplication::getItemid($iitems[$ii]->slug);
-//print_r($this->items);
-	if ($ii < $iintro) {
-?>
-		<div class="noticias_intro hentry">
-			<h2 class="news entry-title"><a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($iitems[$ii]->slug, $iitems[$ii]->catid, $iitems[$ii]->language)); ?>"><?php echo $iitems[$ii]->title; ?></a></h2>
-			<span class="author vcard" style="display:none"><a class="url fn org" href="http://www.paho.org/">PAHO/WHO</a></span>
-			<span class="updated" style="display:none"><?php echo $mypubdate; ?></span>
-			<div class="newstext entry-summary"><?php echo $iitems[$ii]->introtext; ?></div>
-			<div class="newsrm"><a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($iitems[$ii]->slug, $iitems[$ii]->catid, $iitems[$ii]->language)); ?>" itemprop="url"><?php echo JText::_("Read more...",$jsSafe = true); ?></a></div>
-		</div><!-- end of .noticias_intro -->
-<?php
-	}
-	if ($ii == $iintro) {
+<?php if ($this->params->get('show_page_heading') != 0) : ?>
+	<div class="page-header">
+		<h1>
+			<?php echo $this->escape($this->params->get('page_heading')); ?>
+		</h1>
+	</div>
+<?php endif; ?>
+
+	<?php $leadingcount = 0; ?>
+
+			<div class="twocolumns row">	
+	<?php if (!empty($this->lead_items)) : ?>
+			<?php 	foreach ($this->lead_items as &$item) : ?>
+					<?php
+						$this->item = &$item;
+						$this->item->number = $leadingcount;
+						echo $this->loadTemplate('item');
+					?>
+				<?php
+					$leadingcount++;
+				?>
+			<?php endforeach; ?>
+	<?php endif; ?>
+</div><!-- end of twocolumns row -->
+	<?php
+		$introcount = (count($this->intro_items));
+		$counter = 0;
 	?>
-	</div><!-- end of #noticias_col_um -->
-	<div id="noticias_col_dois">
-	<p class="more_news"><?php echo JText::_("More News",$jsSafe = true); ?></p>
-<?php
-	}
-	if ($ii >= $iintro) {
-?>
-			<p class="noticias_links hentry"><a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($iitems[$ii]->slug, $iitems[$ii]->catid, $iitems[$ii]->language)); ?>" itemprop="url"><span class="entry-title"><?php echo $iitems[$ii]->title; ?></span></a><span class="updated" style="display:none"><?php echo $iitems[$ii]->publish_up; ?></span><span class="author vcard" style="display:none"><a class="url fn org" href="http://www.paho.org/">PAHO/WHO</a></span></p>
-<?php
-	}
-}	// End of foreach loop
-?>
-	</div><!-- end of #noticias_col_dois -->
-</div><!-- end of #noticias -->
+	<?php if (!empty($this->intro_items)) : ?>
+		<?php foreach ($this->intro_items as $key => &$item) : ?>
+
+			<?php
+			$key = ($key - $leadingcount) + 1;
+			$rowcount = (((int) $key - 1) % (int) $this->columns) + 1;
+			$row = $counter / $this->columns;
+
+			if ($rowcount == 1) : ?>
+
+			<div class="items-row cols-<?php echo (int) $this->columns;?> <?php echo 'row-'.$row; ?> row-fluid">
+			<?php endif; ?>
+				<div class="item column-<?php echo $rowcount;?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?> span<?php echo round((12 / $this->columns));?>">
+				<?php
+						$this->item = &$item;
+						echo $this->loadTemplate('item');
+				?>
+				</div>
+				<?php $counter++; ?>
+
+				<?php if (($rowcount == $this->columns) or ($counter == $introcount)): ?>
+
+			</div>
+			<?php endif; ?>
+		<?php endforeach; ?>
+	<?php endif; ?>
+	<?php if (!empty($this->link_items)) : ?>
+		<div class="container1 row">
+        <div class="col-xs-12">
+          <h2><?php echo JText::_( 'MORE_NEWS' ); ?></h2>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-xs-12">
+          <div class="threecolumns">
+		<?php echo $this->loadTemplate('links'); ?>
+			</div>
+	<?php endif; ?>
+	<?php if ($this->params->def('show_pagination', 2) == 1  || ($this->params->get('show_pagination') == 2 && $this->pagination->pagesTotal > 1)) : ?>
+		<div class="pagination">
+			<?php if ($this->params->def('show_pagination_results', 1)) : ?>
+				<p class="counter pull-right">
+					<?php echo $this->pagination->getPagesCounter(); ?>
+				</p>
+			<?php  endif; ?>
+			<?php echo $this->pagination->getPagesLinks(); ?>
+		</div>
+	<?php endif; ?>
+
