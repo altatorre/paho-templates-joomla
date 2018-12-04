@@ -17,13 +17,13 @@ defined('_JEXEC') or die('Restricted access'); ?>
 		<table role="presentation" style="background-color:#EEEEEE; width:100%; padding:10px">
 		<tr>
 		<?php if ($this->params->get('filter')) : ?>
-			<td align="left" width="60%" nowrap="nowrap">
+			<td style="text-align:left" width="60%" nowrap="nowrap">
 				<?php echo JText::_($this->params->get('filter_type') . ' Filter').'&nbsp;'; ?>
 				<input type="text" name="filter" value="<?php echo $this->escape($this->lists['filter']);?>" class="inputbox" onchange="document.adminForm.submit();" />
 			</td>
 		<?php endif; ?>
 		<?php if ($this->params->get('show_pagination_limit')) : ?>
-			<td align="right" width="40%" nowrap="nowrap">
+			<td style="text-align:right" width="40%" nowrap="nowrap">
 			<?php
 				echo '&nbsp;&nbsp;&nbsp;'.JText::_('Display Num').'&nbsp;';
 				echo $this->pagination->getLimitBox();

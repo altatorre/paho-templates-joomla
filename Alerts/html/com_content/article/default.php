@@ -1,7 +1,6 @@
 <?php // no direct access
 defined('_JEXEC') or die('Restricted access');
-
-$canEdit	= ($this->user->authorize('com_content', 'edit', 'content', 'all') || $this->user->authorize('com_content', 'edit', 'content', 'own'));
+//$canEdit	= ($this->user->authorize('com_content', 'edit', 'content', 'all') || $this->user->authorize('com_content', 'edit', 'content', 'own'));
 ?><div class="hentry"><?php
 if ($this->params->get('show_page_title', 1) && $this->params->get('page_title') != $this->article->title) :
 	?><h1 class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>"><?php

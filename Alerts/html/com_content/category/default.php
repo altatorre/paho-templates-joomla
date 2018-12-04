@@ -7,11 +7,11 @@ $cparams =& JComponentHelper::getParams('com_media');
 	<?php echo $this->escape($this->params->get('page_title')); ?>
 </h1>
 <?php endif; ?>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" class="contentpane<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:center" class="contentpane<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
 <tr>
-	<td valign="top" class="contentdescription<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>" colspan="2">
+	<td style="vertical-align:top" class="contentdescription<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>" colspan="2">
 	<?php if ($this->category->image) : ?>
-		<img src="<?php echo $this->baseurl . '/' . $cparams->get('image_path') . '/'. $this->category->image;?>" align="<?php echo $this->category->image_position;?>" hspace="6" alt="<?php echo $this->category->image;?>" />
+		<img src="<?php echo $this->baseurl . '/' . $cparams->get('image_path') . '/'. $this->category->image;?>" style="float:<?php echo $this->category->image_position;?>" hspace="6" alt="<?php echo $this->category->image;?>" />
 	<?php endif; ?>
 	<?php echo $this->category->description; ?>
 </td>

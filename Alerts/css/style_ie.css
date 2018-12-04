@@ -91,6 +91,9 @@ h1.blue {
 #language {
 	text-align: right;
 }
+#language .mod-languagesengspa ul.lang-inline li:nth-child(3), #language .mod-languagesengspa ul.lang-inline li:nth-child(4) {
+	display: none;
+}
 #header {
 	width: 980px;
 	clear: both;
@@ -2040,6 +2043,15 @@ line-height:95%;
 		margin: 0;
 		padding-top: 10px;
 		padding-bottom: 10px;
+	}
+	ul.breadcrumb {
+		margin: 0;
+		list-style-type: none;
+	}
+	ul.breadcrumb li {
+		display: inline;
+		font-size: 11px;
+		margin-left: 0;
 	}
 	.pathway {
 		font-size: 11px;
