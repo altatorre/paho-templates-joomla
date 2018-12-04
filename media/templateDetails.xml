@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+	<name>Media Center</name>
+	<creationDate>2015-10-06</creationDate>
+	<author>Paulo Leite</author>
+	<authorEmail>leitepau@paho.org</authorEmail>
+	<authorUrl>http://www.paho.org</authorUrl>
+	<copyright>PAHO/WHO 2015</copyright>
+	<license>GNU/GPL</license>
+	<version>1.0.0</version>
+	<description>Responsive Template for the Media Center page of the site.</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>index.html</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>css</folder>
+		<filename>css/ripple.css</filename>
+		<filename>css/style.css</filename>
+		<filename>css/w3-theme-light-blue.css</filename>
+		<filename>css/index.html</filename>
+		<folder>html</folder>
+		<filename>html/index.html</filename>
+		<filename>html/com_content/index.html</filename>
+		<folder>images</folder>
+		<filename>images/mobile_menu_icon.png</filename>
+		<filename>images/flecha.png</filename>
+		<filename>images/index.html</filename>
+	</files>
+	<positions>
+		<position>banner</position>
+		<position>breadcrumbs</position>
+		<position>flag</position>
+
+		<position>slideshow</position>
+		<position>highlights</position>
+
+		<position>innerleft</position>
+		<position>innercenter</position>
+		<position>innerright</position>
+		<position>left</position>
+		<position>left1</position>
+
+		<position>language</position>
+		<position>postcols</position>
+		<position>postmain</position>
+
+		<position>right</position>
+
+		<position>site_info</position>
+		<position>user4</position>
+		<position>footer_left</position>
+		<position>ftmenu1</position>
+		<position>ftmenu2</position>
+		<position>ftmenu3</position>
+	</positions>
+</extension>

@@ -1,0 +1,98 @@
+.clear {
+	clear: both;
+}
+.bannergroup {
+	width: 100%;
+	float: left;
+	background-color: #FFF;
+	text-align: center;
+}
+.banneritem {
+	margin: 0 auto;
+	text-align: center;
+	background-color: #FFF;
+}
+.nav {
+	margin-top: 0;
+	background: #2196f3;
+}
+.nav li {
+	display: inline;
+}
+.nav a {color: #FFF}
+#bbanner {
+	text-align: center;
+}
+#bnrimg {
+	position: relative;
+	border: 0;
+}
+	#bnrimg img {
+		border: 0;
+		height: 50px !important;
+		width: auto !important;
+	}
+	#link_paho {
+		display: none;
+		position: absolute;
+		top: 3px;
+		left: 0;
+	}
+	#link_paho img {
+		width: 162px;
+		height: 59px;
+		border: 0;
+	}
+	#link_who {
+		display: none;
+		position: absolute;
+		top: 2px;
+		left: 190px;
+	}
+	#link_who img {
+		width: 159px;
+		height: 62px;
+		border: 0;
+}
+	#link_ops {
+		position: absolute;
+		top: 2px;
+		left: 0;
+	}
+	#link_ops img {
+		width: 149px;
+		height: 50px;
+		border: 0;
+	}
+	#link_oms {
+		position: absolute;
+		top: 2px;
+		left: 176px;
+	}
+	#link_oms img {
+		width: 173px;
+		height: 62px;
+		border: 0;
+	}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 1px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+a {
+	color: #2196f3;
+	text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+ 
