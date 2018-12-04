@@ -71,10 +71,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MDCJXB');</script>
 <!-- End Google Tag Manager -->
 <?php
- $menu = & JSite::getMenu();
+ $menu = JFactory::getApplication()->getMenu();
 if ($menu->getActive() == $menu->getDefault()) {
-	$conf =& JFactory::getConfig();
-	$sitename = $conf->getValue('config.sitename');
+	//$conf = JFactory::getConfig();
+	//$sitename = $conf->getValue('config.sitename');
+	$sitename = JFactory::getApplication()->get('sitename');
 	echo "<h1 style=\"display:none\">".$sitename,"</h1>"; 
 }
 ?>

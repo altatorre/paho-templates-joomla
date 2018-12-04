@@ -12,7 +12,7 @@ for ($i = 0; $i < count($items); $i++) {
 		// cambio jc 20140403 publicacion del metadato dcterms.issued para buscador.
 		// @ variables: $row | $this->item | $this->article | $items[$i]
 		// @ atributos: modified | publish_up 
-	$mydocument =& JFactory::getDocument();
+	$mydocument = JFactory::getDocument();
 	$mypubdate = $mydocument->_metaTags['standard']['dcterms.issued'];
 	if ($mypubdate == '0000-00-00 00:00:00') $mypubdate = $items[$i]->created;
 	if ($mypubdate < $items[$i]->modified) { 
