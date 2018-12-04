@@ -63,7 +63,7 @@
 		// get url for article
 
 
-		$db_can	=& JFactory::getDBO();
+		$db_can	= JFactory::getDBO();
 		$query_can =
 		"SELECT a.title AS title, c.title AS category, a.sectionid as sectionid, " .
 			" CASE WHEN CHAR_LENGTH(a.alias) THEN CONCAT_WS(':', a.id, a.alias) ELSE a.id END as slug, " .
@@ -201,4 +201,33 @@
 		
 	<?php
 	}
+
+	/*  mysql_connect('hq-int-sql-01', 'commondb', 'xUWyH!7uZgPw');
+	mysql_set_charset('utf8'); 
+	$ipaddress=$_SERVER['REMOTE_ADDR'];
+	$referer=$_SERVER['HTTP_REFERER'];
+	$useragent = $_SERVER['HTTP_USER_AGENT'];
+	$db = mysql_select_db('commondb');
+	$canonica = str_replace( "&amp;", "&", $canonical_value);
+	$URL_real = $base_url.$_SERVER['REQUEST_URI'];
+
+		// uso de filter_var http://code.tutsplus.com/tutorials/sanitize-and-validate-data-with-php-filters--net-2595
+	$URL_real = filter_var($URL_real, FILTER_SANITIZE_STRING);
+	$canonica = filter_var($canonica, FILTER_SANITIZE_STRING);
+
+
+	if(!$db) {
+		die("Unable to select database");
+	}
+
+	$query = "INSERT INTO `commondb`.`url_canonicas` ( URL_real, URL_canonica, referrer,  user_agent, ip_remota, created  )  " .
+			" VALUES ( '".$URL_real."' , '$canonica', '$referer', '$useragent', '$ipaddress', '".date('Y-m-d H:i:s', time())."' ) "; 
+	$result=mysql_query($query);
+	if (!$result) {
+    	//die('Invalid query: ' . mysql_error());
+		echo "<!-- <h3>Se ha producido un error al enviar su solicitud.</h3>". $query . " -->";
+	}   */
+
+
+	?>
 

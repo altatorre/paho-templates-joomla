@@ -63,7 +63,7 @@
 		// get url for article
 
 
-		$db	=& JFactory::getDBO();
+		$db	= JFactory::getDBO();
 		$query =
 		"SELECT a.title AS title, c.title AS category, a.sectionid as sectionid, " .
 			" CASE WHEN CHAR_LENGTH(a.alias) THEN CONCAT_WS(':', a.id, a.alias) ELSE a.id END as slug, " .

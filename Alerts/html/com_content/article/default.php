@@ -57,7 +57,7 @@ if ($this->params->get('show_page_title', 1) && $this->params->get('page_title')
 		// @ variables: $row | $this->item | $this->article
 		// @ atributos: modified | publish_up 
 		// http://stackoverflow.com/questions/16171686/list-of-standard-w3c-meta-tags
-	$mydocument =& JFactory::getDocument();
+	$mydocument = JFactory::getDocument();
 	$mypubdate = $mydocument->_metaTags['standard']['dcterms.issued'];
 	if ($mypubdate == '0000-00-00 00:00:00') $mypubdate = $this->article->created;
 	if ($mypubdate < $this->article->modified) {
