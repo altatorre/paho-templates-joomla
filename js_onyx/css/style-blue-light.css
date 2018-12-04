@@ -7,10 +7,12 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */.clearfix{
-*zoom:1
+
+ *zoom:1
+ 
 }
 
-.clearfix:before,.clearfix:after{
+ .clearfix:before,.clearfix:after{
 display:table;
 content:"";
 line-height:0
@@ -189,7 +191,6 @@ widows:3
 h2,h3{
 page-break-after:avoid
 }
-
 
 }
 
@@ -3043,6 +3044,7 @@ button.btn.btn-large,input[type="submit"].btn.btn-large{
 
 button.btn.btn-small,input[type="submit"].btn.btn-small{
 *padding-top:3px;
+
 *padding-bottom:3px
 }
 
@@ -4985,7 +4987,6 @@ to{
 background-position:0 0
 }
 
-
 }
 
 @-moz-keyframes progress-bar-stripes{
@@ -4996,7 +4997,6 @@ background-position:40px 0
 to{
 background-position:0 0
 }
-
 
 }
 
@@ -5009,7 +5009,6 @@ to{
 background-position:0 0
 }
 
-
 }
 
 @-o-keyframes progress-bar-stripes{
@@ -5021,7 +5020,6 @@ to{
 background-position:40px 0
 }
 
-
 }
 
 @keyframes progress-bar-stripes{
@@ -5032,7 +5030,6 @@ background-position:40px 0
 to{
 background-position:0 0
 }
-
 
 }
 
