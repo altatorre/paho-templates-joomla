@@ -6143,8 +6143,8 @@ ul.grrd-list li:hover span.grrd-text-content {
 
 ul.lang-inline {
 	list-style: none;
-	margin-top: 10px;
 	margin-right: 10px;
+	margin-top: -15px!important;
 	max-width:300px;
 	float: right;
 	clear: none;
@@ -6164,7 +6164,6 @@ ul.lang-inline li, ul.lang-inline-short li {
 }
 ul.lang-inline a, ul.lang-inline-short a {
 	font-size: 12px;
-	color: #FFF;
 }
 
 

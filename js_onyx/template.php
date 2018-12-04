@@ -27,13 +27,14 @@ defined('_JEXEC') or die('Restricted access');
 		?>
 		<!-- toolbar -->
 		<w:nav containerClass="<?php echo $wrightContainerClass ?>" rowClass="<?php echo $wrightGridMode ?>" wrapClass="<?php echo $onyxToolbarDisplayed; ?> navbar-inverse" type="toolbar" name="toolbar" />
-		<?php
+    <?php
 			endif;
 		?>
 		<div class="<?php echo $wrightContainerClass; ?>">
 			<!-- header -->
 			<header id="header">
 				<div class="<?php echo $wrightGridMode; ?> clearfix">
+          <jdoc:include type="modules" name="language" />
 					<w:logo name="menu" />
 					<div class="clear"></div>
 				</div>
