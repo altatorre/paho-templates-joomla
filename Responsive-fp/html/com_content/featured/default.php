@@ -17,8 +17,9 @@ for ($ii = 0; $ii < $cuentamax; $ii++) {
 		// cambio jc 20140403 publicacion del metadato dcterms.issued para buscador.
 		// @ variables: $row | $this->item | $this->article | $iitems[$ii]
 		// @ atributos: modified | publish_up 
-	$mydocument =& JFactory::getDocument();
-	$mypubdate = $mydocument->_metaTags['standard']['dcterms.issued'];
+	$mydocument = JFactory::getDocument();
+		// http://stackoverflow.com/questions/4261133/php-notice-undefined-variable-and-notice-undefined-index
+	$mypubdate = isset($mydocument->_metaTags['dcterms.issued']) ? $mydocument->_metaTags['dcterms.issued'] : '0000-00-00 00:00:00';
 	if ($mypubdate == '0000-00-00 00:00:00') $mypubdate = $iitems[$ii]->created;
 	if ($mypubdate < $iitems[$ii]->modified) { 
 		$mypubdate=$iitems[$ii]->modified;
