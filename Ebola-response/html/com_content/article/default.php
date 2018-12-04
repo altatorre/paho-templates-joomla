@@ -1,133 +1,284 @@
-<?php // no direct access
-defined('_JEXEC') or die('Restricted access');
-//$canEdit	= ($this->user->authorize('com_content', 'edit', 'content', 'all') || $this->user->authorize('com_content', 'edit', 'content', 'own'));
-if ($this->params->get('show_page_title', 1) && $this->params->get('page_title') != $this->article->title) :
-?><h1 class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>"><?php
-	echo $this->escape($this->params->get('page_title'));
-?></h1><!-- componentheading -->
-<?php endif; ?>
-<?php if ($canEdit || $this->params->get('show_title') || $this->params->get('show_pdf_icon') || $this->params->get('show_print_icon') || $this->params->get('show_email_icon')) : ?>
-<div class="contentpaneopen<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
-	<?php if ($this->params->get('show_title')) : ?>
-	<h1 class="contentheading<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
-		<?php if ($this->params->get('link_titles') && $this->article->readmore_link != '') : ?>
-		<a href="<?php echo $this->article->readmore_link; ?>" class="contentpagetitle<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
-			<?php echo $this->escape($this->article->title); ?></a>
-		<?php else : ?>
-			<?php echo $this->escape($this->article->title); ?>
-		<?php endif; ?>
-	</h1><!-- contentheading -->
+<?php
+/**
+ * @package     Joomla.Site
+ * @subpackage  com_content
+ *
+ * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+defined('_JEXEC') or die;
+
+JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
+
+// Create shortcuts to some parameters.
+$params  = $this->item->params;
+$images  = json_decode($this->item->images);
+$urls    = json_decode($this->item->urls);
+$canEdit = $params->get('access-edit');
+$user    = JFactory::getUser();
+$info    = $params->get('info_block_position', 0);
+
+// Check if associations are implemented. If they are, define the parameter.
+$assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associations'));
+JHtml::_('behavior.caption');
+
+?>
+<div class="item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Article">
+	<meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" />
+	<?php if ($this->params->get('show_page_heading')) : ?>
+	<div class="page-header">
+		<h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
+	</div>
+	<?php endif;
+	if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->paginationposition && $this->item->paginationrelative)
+	{
+		echo $this->item->pagination;
+	}
+	?>
+
+	<?php // Todo Not that elegant would be nice to group the params ?>
+	<?php $useDefList = ($params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_create_date')
+	|| $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author') || $assocParam); ?>
+
+	<?php if (!$useDefList && $this->print) : ?>
+		<div id="pop-print" class="btn hidden-print">
+			<?php echo JHtml::_('icon.print_screen', $this->item, $params); ?>
+		</div>
+		<div class="clearfix"> </div>
 	<?php endif; ?>
-	<div id="article-icons">
+	<?php if ($params->get('show_title') || $params->get('show_author')) : ?>
+	<div class="page-header">
+
+	<?php if ($this->params->get('show_page_heading')) : ?>		
+		<h2 itemprop="headline">
+			<?php if ($params->get('show_title')) : ?>
+				<?php echo $this->escape($this->item->title); ?>
+			<?php endif; ?>
+		</h2>
+	<?php endif; ?>
+	<?php if (!$this->params->get('show_page_heading')) : ?>		
+		<h1 itemprop="name">
+			<?php if ($params->get('show_title')) : ?>
+				<?php echo $this->escape($this->item->title); ?>
+			<?php endif; ?>
+		</h1>
+	<?php endif; ?>
+		<?php if ($this->item->state == 0) : ?>
+			<span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
+		<?php endif; ?>
+		<?php if (strtotime($this->item->publish_up) > strtotime(JFactory::getDate())) : ?>
+			<span class="label label-warning"><?php echo JText::_('JNOTPUBLISHEDYET'); ?></span>
+		<?php endif; ?>
+		<?php if ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate())) && $this->item->publish_down != JFactory::getDbo()->getNullDate()) : ?>
+			<span class="label label-warning"><?php echo JText::_('JEXPIRED'); ?></span>
+		<?php endif; ?>
+	</div>
+	<?php endif; ?>
 	<?php if (!$this->print) : ?>
-		<?php if ($this->params->get('show_pdf_icon')) : ?>
-		<div class="buttonheading">
-		<?php echo JHTML::_('icon.pdf',  $this->article, $this->params, $this->access); ?>
-		</div>
-		<?php endif; ?>
-
-		<?php if ( $this->params->get( 'show_print_icon' )) : ?>
-		<div class="buttonheading">
-		<?php echo JHTML::_('icon.print_popup',  $this->article, $this->params, $this->access); ?>
-		</div>
-		<?php endif; ?>
-
-		<?php if ($this->params->get('show_email_icon')) : ?>
-		<div class="buttonheading">
-		<?php echo JHTML::_('icon.email',  $this->article, $this->params, $this->access); ?>
-		</div>
-		<?php endif; ?>
-		<?php if ($canEdit) : ?>
-		<div class="buttonheading">
-			<?php echo JHTML::_('icon.edit', $this->article, $this->params, $this->access); ?>
-		</div>
+		<?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
+			<?php echo JLayoutHelper::render('joomla.content.icons', array('params' => $params, 'item' => $this->item, 'print' => false)); ?>
 		<?php endif; ?>
 	<?php else : ?>
-		<div class="buttonheading">
-		<?php echo JHTML::_('icon.print_screen',  $this->article, $this->params, $this->access); ?>
-		</div>
-<?php endif; ?>
-	</div><!-- article-icons -->
-</div>
-<?php endif; ?>
+		<?php if ($useDefList) : ?>
+			<div id="pop-print" class="btn hidden-print">
+				<?php echo JHtml::_('icon.print_screen', $this->item, $params); ?>
+			</div>
+		<?php endif; ?>
+	<?php endif; ?>
+
+	<?php // Content is generated by content plugin event "onContentAfterTitle" ?>
+	<?php echo $this->item->event->afterDisplayTitle; ?>
+
+	<?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
+		<?php // Todo: for Joomla4 joomla.content.info_block.block can be changed to joomla.content.info_block ?>
+		<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?>
+	<?php endif; ?>
+
+	<?php if ($info == 0 && $params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
+		<?php $this->item->tagLayout = new JLayoutFile('joomla.content.tags'); ?>
+
+		<?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?>
+	<?php endif; ?>
+
 <?php 
 		// cambio jc 20140321 publicacion del metadato dcterms.issued para buscador.
 		// @ variables: $row | $this->item | $this->article
 		// @ atributos: modified | publish_up 
-	$mydocument =& JFactory::getDocument();
-	$mypubdate = $mydocument->_metaTags['standard']['dcterms.issued'];
-	if ($mypubdate == '0000-00-00 00:00:00') $mypubdate = $this->article->created;
-	if ($mypubdate < $this->article->modified) {
-		$mypubdate=$this->article->modified;
-		if ($mypubdate == '0000-00-00 00:00:00') $mypubdate = $this->article->publish_up;
-		if ($mypubdate == '0000-00-00 00:00:00') $mypubdate = $this->article->created;
-		$mydocument->setMetaData( 'dcterms.issued', $mypubdate );
+		// http://stackoverflow.com/questions/16171686/list-of-standard-w3c-meta-tags
+		// https://docs.joomla.org/J3.x:Adding_JavaScript_and_CSS_to_the_page
+	$mydocument = JFactory::getDocument();
+	$mytitle = $mydocument->getTitle();
+	$mylanguage = $mydocument->getLanguage();
+	$current_lang = JFactory::getLanguage()->getTag();
+	$organization = '';
+	if (($current_lang == 'es-ES') || ($current_lang == 'fr-FR')) $organization = 'OPS/OMS';
+	if (($current_lang == 'en-GB') || ($current_lang == 'en-US')) $organization = 'PAHO/WHO';
+	if ($current_lang == 'pt-BR') $organization = 'OPAS/OMS';
+	$mytitle_og = $mytitle . " | " . $organization;
+	$mypubdate = $mydocument->getMetaData('DCTERMS.issued');
+	if (($mypubdate == '0000-00-00 00:00:00') || ($mypubdate == '')) $mypubdate = $this->item->created;
+	if ($mypubdate <= $this->item->publish_up) {
+		$mypubdate=$this->item->publish_up;
+		if (($mypubdate == '0000-00-00 00:00:00') || ($mypubdate == '')) $mypubdate = $this->item->publish_up;
+		if (($mypubdate == '0000-00-00 00:00:00') || ($mypubdate == '')) $mypubdate = $this->item->created;
+		$mydocument->setMetaData( 'DCTERMS.issued', $mypubdate );
 		$date1 = date_create($mypubdate);
 		$date2 = date_format($date1, 'Y-m-d');
 		$mydocument->setMetaData( 'review_date', $date2 );
 	}
+	$mydescription = $mydocument->description;
+	$lengthdescription = strlen($mydescription);
+	if ($lengthdescription < 159) {
+		$mydescription .= strip_tags ($this->item->text.". ");
+		$mydescription = str_replace("&nbsp;", " ", $mydescription);
+		$mydescription = str_replace("\r\n", " ", $mydescription);
+		$mydescription = str_replace("\t", " ", $mydescription);
+		$mydescription = str_replace("&amp;amp;", "&amp;", $mydescription);
+		$mydescription = str_replace("  ", " ", $mydescription);
+		$mydescription = str_replace("  ", " ", $mydescription);
+		$mydescription = str_replace("  ", " ", $mydescription);
+	}
+	$desc = explode(' ', $mydescription);
+	$desc = array_slice($desc, 0, 29);
+	$mydescription = implode(" ", $desc);
+	$mydescription = htmlentities($mydescription, ENT_COMPAT, "UTF-8");
+
+
+$newogtagimages = "";
+$newtwittertagimages = "";
+if ($images->image_intro) {
+	$newogtagimages .= "	<link rel=\"image_src\" type=\"image/png\" href=\"".$images->image_intro."\" />
+	<meta property=\"og:image\" content=\"".$images->image_intro."\" />
+	<meta property=\"og:image:width\" content=\"300\" />
+	<meta property=\"og:image:height\" content=\"300\" />
+";
+	$newtwittertagimages .= "  <meta name=\"twitter:image:src\" content=\"".$images->image_intro."\" />
+";
+} 
+
+
+//	$mydescription = substr($mydescription,0,159) . "...";
+	$mydocument->setMetaData( 'description', $mydescription );
+	$newogtag = "<meta property=\"og:title\" content=\"".$mytitle_og."\" />
+	<meta property=\"og:site_name\" content=\"Pan American Health Organization / World Health Organization\"/>
+	<meta property=\"og:type\" content=\"article\" />
+	<meta property=\"og:description\" content=\"".$mydocument->description."\" />
+	";
+	$newtwittertag = "  <meta name=\"twitter:title\" content=\"".$mytitle_og."\"/>
+  <meta name=\"twitter:description\" content=\"".$mydescription."\" />
+
+	";
+
+	$newogtagimages_default = "<link rel=\"image_src\" type=\"image/png\" href=\"http://www.paho.org/hq/images/logo-ops.png\" />
+	<meta property=\"og:image\" content=\"http://www.paho.org/hq/images/logo-ops.png\" />
+	<meta property=\"og:image:width\" content=\"800\" />
+	<meta property=\"og:image:height\" content=\"750\" />
+	<meta property=\"og:image\" content=\"http://www.paho.org/hq/images/logo-paho.png\" />
+	<meta property=\"og:image:width\" content=\"800\" />
+	<meta property=\"og:image:height\" content=\"750\" />
+";
+	$newtwittertagimages_default = "  <meta name=\"twitter:image:src\" content=\"http://www.paho.org/hq/images/logo-paho.png\" />
+";
+	if ($newogtagimages != "") {
+		$newogtag .= $newogtagimages;
+	}	else {
+		$newogtag .= $newogtagimages_default;
+	}
+	$mydocument->addCustomTag( $newogtag );
+
+	if ($newtwittertagimages != "") {
+		$newtwittertag .= $newtwittertagimages;
+	}	else {
+		$newtwittertag .= $newtwittertagimages_default;
+	}
+	$mydocument->addCustomTag( $newtwittertag );
+		// https://findmyfbid.com
+		// default app. https://stackoverflow.com/questions/38541027/facebook-share-app-id-missing
+	$fbid = "<meta property=\"fb:app_id\" content=\"1906460059619279\">
+		<meta property=\"article:author\" content=\"https://www.facebook.com/pahowho\" />
+		<meta property=\"author\" content=\"https://www.facebook.com/pahowho\" />
+";
+	$mydocument->addCustomTag( $fbid ); 
 ?>
-<?php  if (!$this->params->get('show_intro')) :
-	echo $this->article->event->afterDisplayTitle;
-endif; ?>
-<?php echo $this->article->event->beforeDisplayContent; ?>
-<div class="contentpaneopen<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
-<?php if (($this->params->get('show_section') && $this->article->sectionid) || ($this->params->get('show_category') && $this->article->catid)) : ?>
-<div>
-	<?php if ($this->params->get('show_section') && $this->article->sectionid && isset($this->article->section)) : ?>
-	<span>
-		<?php if ($this->params->get('link_section')) : ?>
-			<?php echo '<a href="'.JRoute::_(ContentHelperRoute::getSectionRoute($this->article->sectionid)).'">'; ?>
-		<?php endif; ?>
-		<?php echo $this->escape($this->article->section); ?>
-		<?php if ($this->params->get('link_section')) : ?>
-			<?php echo '</a>'; ?>
-		<?php endif; ?>
-		<?php if ($this->params->get('show_category')) : ?>
-			<?php echo ' - '; ?>
-		<?php endif; ?>
-	</span>
+	<?php // Content is generated by content plugin event "onContentBeforeDisplay" ?>
+
+	<?php echo $this->item->event->beforeDisplayContent; ?>
+
+	<?php if (isset($urls) && ((!empty($urls->urls_position) && ($urls->urls_position == '0')) || ($params->get('urls_position') == '0' && empty($urls->urls_position)))
+		|| (empty($urls->urls_position) && (!$params->get('urls_position')))) : ?>
+	<?php echo $this->loadTemplate('links'); ?>
 	<?php endif; ?>
-	<?php if ($this->params->get('show_category') && $this->article->catid) : ?>
-	<span>
-		<?php if ($this->params->get('link_category')) : ?>
-			<?php echo '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->article->catslug, $this->article->sectionid)).'">'; ?>
+	<?php if ($params->get('access-view')) : ?>
+	<?php echo JLayoutHelper::render('joomla.content.full_image', $this->item); ?>
+	<?php
+	if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->paginationposition && !$this->item->paginationrelative) :
+		echo $this->item->pagination;
+	endif;
+	?>
+	<?php if (isset ($this->item->toc)) :
+		echo $this->item->toc;
+	endif; ?>
+	<div itemprop="articleBody">
+		<?php echo $this->item->text; ?>
+	</div>
+
+	<?php if ($info == 1 || $info == 2) : ?>
+		<?php if ($useDefList) : ?>
+				<?php // Todo: for Joomla4 joomla.content.info_block.block can be changed to joomla.content.info_block ?>
+			<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'below')); ?>
 		<?php endif; ?>
-		<?php echo $this->escape($this->article->category); ?>
-		<?php if ($this->params->get('link_category')) : ?>
-			<?php echo '</a>'; ?>
+		<?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
+			<?php $this->item->tagLayout = new JLayoutFile('joomla.content.tags'); ?>
+			<?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?>
 		<?php endif; ?>
-	</span>
 	<?php endif; ?>
+
+	<?php
+	if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && !$this->item->paginationrelative):
+		echo $this->item->pagination;
+	?>
+	<?php endif; ?>
+	<?php if (isset($urls) && ((!empty($urls->urls_position) && ($urls->urls_position == '1')) || ($params->get('urls_position') == '1'))) : ?>
+	<?php echo $this->loadTemplate('links'); ?>
+	<?php endif; ?>
+	<?php // Optional teaser intro text for guests ?>
+	<?php elseif ($params->get('show_noauth') == true && $user->get('guest')) : ?>
+	<?php echo JLayoutHelper::render('joomla.content.intro_image', $this->item); ?>
+	<?php echo JHtml::_('content.prepare', $this->item->introtext); ?>
+	<?php // Optional link to let them register to see the whole article. ?>
+	<?php if ($params->get('show_readmore') && $this->item->fulltext != null) : ?>
+	<?php $menu = JFactory::getApplication()->getMenu(); ?>
+	<?php $active = $menu->getActive(); ?>
+	<?php $itemId = $active->id; ?>
+	<?php $link = new JUri(JRoute::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false)); ?>
+	<?php $link->setVar('return', base64_encode(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language))); ?>
+	<p class="readmore">
+		<a href="<?php echo $link; ?>" class="register">
+		<?php $attribs = json_decode($this->item->attribs); ?>
+		<?php
+		if ($attribs->alternative_readmore == null) :
+			echo JText::_('COM_CONTENT_REGISTER_TO_READ_MORE');
+		elseif ($readmore = $attribs->alternative_readmore) :
+			echo $readmore;
+			if ($params->get('show_readmore_title', 0) != 0) :
+				echo JHtml::_('string.truncate', $this->item->title, $params->get('readmore_limit'));
+			endif;
+		elseif ($params->get('show_readmore_title', 0) == 0) :
+			echo JText::sprintf('COM_CONTENT_READ_MORE_TITLE');
+		else :
+			echo JText::_('COM_CONTENT_READ_MORE');
+			echo JHtml::_('string.truncate', $this->item->title, $params->get('readmore_limit'));
+		endif; ?>
+		</a>
+	</p>
+	<?php endif; ?>
+	<?php endif; ?>
+	<?php
+	if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && $this->item->paginationrelative) :
+		echo $this->item->pagination;
+	?>
+	<?php endif; ?>
+	<?php // Content is generated by content plugin event "onContentAfterDisplay" ?>
+	<?php echo $this->item->event->afterDisplayContent; ?>
 </div>
-<?php endif; ?>
-<?php if (($this->params->get('show_author')) && ($this->article->author != "")) : ?>
-<div>
-	<span class="small">
-		<?php JText::printf( 'Written by', ($this->escape($this->article->created_by_alias) ? $this->escape($this->article->created_by_alias) : $this->escape($this->article->author)) ); ?>
-	</span>
-	&nbsp;&nbsp;
-</div>
-<?php endif; ?>
-<?php if ($this->params->get('show_create_date')) : ?>
-<div class="createdate">
-	<?php echo JHTML::_('date', $this->article->created, JText::_('DATE_FORMAT_LC2')) ?>
-</div>
-<?php endif; ?>
-<?php if ($this->params->get('show_url') && $this->article->urls) : ?>
-<div>
-	<a href="http://<?php echo $this->article->urls ; ?>" target="_blank">
-	<?php echo $this->escape($this->article->urls); ?></a>
-</div>
-<?php endif; ?>
-<?php if (isset ($this->article->toc)) : ?>
-	<?php echo $this->article->toc; ?>
-<?php endif; ?>
-<?php echo $this->article->text; ?>
-<?php if ( intval($this->article->modified) !=0 && $this->params->get('show_modify_date')) : ?>
-<div class="modifydate">
-	<?php echo JText::sprintf('LAST_UPDATED2', JHTML::_('date', $this->article->modified, JText::_('DATE_FORMAT_LC2'))); ?>
-</div>
-<?php endif; ?>
-</div>
-<?php echo $this->article->event->afterDisplayContent; ?>

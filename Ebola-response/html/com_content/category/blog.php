@@ -1,11 +1,20 @@
 <?php // no direct access
 defined('_JEXEC') or die('Restricted access');
-$cparams =& JComponentHelper::getParams('com_media');
+$cparams = JComponentHelper::getParams('com_media');
 ?>
 <?php if ($this->params->get('show_page_title', 1)) : ?>
-<h1 class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
-	<?php echo $this->escape($this->params->get('page_title')); ?>
-</h1>
+<div class="heading"><h1 class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+	<?php echo $this->escape($this->params->get('page_title'));
+	
+	$mydocument = JFactory::getDocument();
+	$mytitle = $mydocument->getTitle();
+	$mytitle = $this->escape($this->params->get('page_title'));
+	$mylanguage = $mydocument->getLanguage();
+	$organization = "PAHO WHO";
+	if ($mylanguage == "es-es") $organization = "OPS OMS";
+	$mytitle = $organization . " | " . $mytitle;
+	$mydocument->setTitle($mytitle); ?>
+</h1></div>
 <?php endif; ?>
 <table role="presentation" class="blog<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>" style="padding:0px;border-collapse:collapse;border-spacing:0px">
 <?php if ($this->params->get('num_leading_articles')) : ?>
@@ -75,7 +84,8 @@ if (($numIntroArticles != $startIntroArticles) && ($i < $this->total)) : ?>
 	</td>
 </tr>
 <?php endif; ?>
-<?php if ($this->params->get('num_links') && ($i < $this->total)) : ?>
+<?php if ($this->params->get('num_links') &&
+		 ($i < $this->total)) : ?>
 <tr>
 	<td style="vertical-align:top">
 		<div class="blog_more<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
