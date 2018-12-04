@@ -48,7 +48,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MDCJXB');</script>
 <!-- End Google Tag Manager -->
 <?php
-$menu = & JSite::getMenu();
+$menu = JFactory::getApplication()->getMenu(); // anterior: JSite::getMenu();
 if ($menu->getActive() == $menu->getDefault()) {
 	$conf = JFactory::getConfig();
 	$sitename = $conf->get('sitename');
@@ -86,12 +86,12 @@ if ($menu->getActive() == $menu->getDefault()) {
 				<jdoc:include type="modules" name="left" />
 			</div><!-- #open_close_menus -->
 
-			<div id="search">
-				<jdoc:include type="modules" name="user4" />
+			<div id="search"><!-- user4 -->
+				<jdoc:include type="modules" name="user4" style="raw" />
 			</div><!-- end of #search -->
 
 		</div><!-- end of #menus -->
-
+<gcse:searchresults></gcse:searchresults>
 		<div id="slideshow" style="min-height: 200px;">
 			<jdoc:include type="modules" name="slideshow" style="xhtml" />
 		</div><!-- end of #slideshow -->
