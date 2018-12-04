@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.5/template-install.dtd">
-<install version="1.5" type="template">
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site">
 	<name>Directing Council</name>
 	<creationDate>2014-06-26</creationDate>
 	<author>Paulo Leite</author>
@@ -16,13 +16,17 @@
 		<filename>canonical_tag.php</filename>
 		<filename>templateDetails.xml</filename>
 		<filename>template_thumbnail.png</filename>
+		<folder>css</folder>
 		<filename>css/reset.css</filename>
 		<filename>css/style.css</filename>
 		<filename>css/index.html</filename>
+		<folder>images</folder>
 		<filename>images/mobile_menu_icon.png</filename>
 		<filename>images/flecha.png</filename>
 		<filename>images/index.html</filename>
+		<folder>js</folder>
 		<filename>js/index.html</filename>
+		<folder>html</folder>
 		<filename>html/index.html</filename>
 		<filename>html/com_content/index.html</filename>
 	</files>
@@ -60,4 +64,4 @@
 		<position>site_info</position>
 		<position>user4</position>
 	</positions>
-</install>
+</extension>

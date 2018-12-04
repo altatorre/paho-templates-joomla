@@ -9,7 +9,7 @@ $isIE = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'MSIE');
 	if ($isIE) { ?>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <?php } ?>
-<?php include ('canonical_tag.php'); ?>
+<?php //include ('canonical_tag.php'); ?>
 <jdoc:include type="head" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -70,7 +70,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MDCJXB');</script>
 <!-- End Google Tag Manager -->
- <?php
+<?php
  $menu = & JSite::getMenu();
 if ($menu->getActive() == $menu->getDefault()) {
 	$conf =& JFactory::getConfig();

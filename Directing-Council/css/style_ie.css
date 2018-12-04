@@ -71,6 +71,9 @@ ul {
 #language {
 	text-align: right;
 }
+#language .mod-languagesengspa ul.lang-inline li:nth-child(3), #language .mod-languagesengspa ul.lang-inline li:nth-child(4) {
+	display: none;
+}
 #header {
 	width: 980px;
 	clear: both;
