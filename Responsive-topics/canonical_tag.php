@@ -65,7 +65,7 @@
 
 		$db_can	= JFactory::getDBO();
 		$query_can =
-		"SELECT a.title AS title, c.title AS category, a.sectionid as sectionid, " .
+		"SELECT a.title AS title, c.title AS category, " . // a.sectionid as sectionid, 
 			" CASE WHEN CHAR_LENGTH(a.alias) THEN CONCAT_WS(':', a.id, a.alias) ELSE a.id END as slug, " .
 			" CASE WHEN CHAR_LENGTH(c.alias) THEN CONCAT_WS(':', c.id, c.alias) ELSE c.id END as catslug FROM #__content AS a ".
 			" LEFT JOIN #__categories AS c ON c.id = a.catid WHERE a.state = 1 AND a.id=".intval($article_id)." ORDER BY a.catid, a.ordering";		
@@ -222,7 +222,6 @@
 	if ($condicion) { 
 		$mydocument->setMetaData( 'robots', "noindex, nofollow" );
 	}
-	
 	
 	/* mysql_connect('hq-int-sql-01', 'commondb', 'xUWyH!7uZgPw');
 	mysql_set_charset('utf8'); 
