@@ -30,6 +30,8 @@ function setPAHOWHO() {
 		$mitemid = 1;
 	}
 
+$ai = JRequest::getString('ai')
+$cod_language = JRequest::getString('lang')
 ?>
 <!-- Google CSE Search Box Begins -->
 <div class="search<?php echo $moduleclass_sfx; ?>">
