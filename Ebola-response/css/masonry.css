@@ -1,0 +1,77 @@
+#masonry-grid .grid-item {
+	width: 300px;
+	display: block;
+	float: left;
+	margin-bottom: 8	px;
+	padding: 6px 13px;
+}
+#masonry-grid .grid-item a {
+	color: #333;
+}
+#masonry-grid .grid-item p {
+	background: #E4F5FF;
+	border: 10px solid #E4F5FF;
+	margin-top: -5px;
+}
+#masonry-grid .grid-sizer {
+	width: 326px;
+}
+#masonry-grid .grid-item img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) and (max-width: 989px) {
+	#masonry-grid .grid-item {
+		width: 350px;
+		display: block;
+		float: left;
+		margin-bottom: 20px;
+		padding: 6px 12px;
+	}
+	#masonry-grid .grid-sizer {
+		width: 374px;
+	}
+}
+
+@media screen and (min-width: 640px) and (max-width: 767px) {
+	#masonry-grid .grid-item {
+		width: 280px;
+		display: block;
+		float: left;
+		margin-bottom: 20px;
+		padding: 6px 10px;
+	}
+	#masonry-grid .grid-sizer {
+		width: 300px;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+	#masonry-grid .grid-item {
+		width: 420px;
+		display: block;
+		float: left;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #AAA;
+		padding: 6px 10px;
+	}
+	#masonry-grid .grid-sizer {
+		width: 440px;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	#masonry-grid .grid-item {
+		width: 280px;
+		display: block;
+		float: left;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #AAA;
+		padding: 6px 5px;
+	}
+	#masonry-grid .grid-sizer {
+		width: 290px;
+	}
+}

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.5/template-install.dtd">
+<install version="1.5" type="template">
+	<name>Director's Corner</name>
+	<creationDate>2015-03-06</creationDate>
+	<author>Paulo Leite</author>
+	<authorEmail>leitepau@paho.org</authorEmail>
+	<authorUrl>http://www.paho.org</authorUrl>
+	<copyright>PAHO/WHO 2015</copyright>
+	<license>GNU/GPL</license>
+	<version>1.0.0</version>
+	<description>Template to be used just for the Director's Corner subsite.</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>index.html</filename>
+		<filename>canonical_tag.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>css/reset.css</filename>
+		<filename>css/style.css</filename>
+		<filename>css/index.html</filename>
+		<filename>html/index.html</filename>
+		<filename>html/com_content/index.html</filename>
+		<filename>html/com_content/frontpage/index.html</filename>
+		<filename>html/com_content/frontpage/default.php</filename>
+	</files>
+	<positions>
+		<position>banner_dc</position>
+		<position>share_dc</position>
+		<position>footer_left</position>
+		<position>ftmenu1</position>
+		<position>ftmenu2</position>
+		<position>ftmenu3</position>
+		<position>innerleft_dc</position>
+		<position>innercenter_dc</position>
+		<position>innerright_dc</position>
+		<position>menu_dc</position>
+		<position>language</position>
+		<position>right_dc</position>
+		<position>site_info</position>
+		<position>slideshow_dc</position>
+		<position>search_dc</position>
+	</positions>
+</install>

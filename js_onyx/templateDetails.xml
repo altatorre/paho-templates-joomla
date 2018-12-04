@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.5/template-install.dtd">
+<install version="1.5" type="template">
+	<name>JS_ONYX</name>
+	<creationDate>2014-06-26</creationDate>
+	<author>Paulo Leite / Juan Carlos Diaz</author>
+	<authorEmail>pahoweb@paho.org</authorEmail>
+	<authorUrl>http://www.paho.org</authorUrl>
+	<copyright>PAHO/WHO 2017</copyright>
+	<license>GNU/GPL</license>
+	<version>1.0.0</version>
+	<description>Responsive Template to be used just on the front page of the site.</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>index.html</filename>
+		<filename>canonical_tag.php</filename>
+		<filename>params.ini</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>screenshot.png</filename>
+		<filename>css/bootstrap.min.css</filename>
+		<filename>css/docs.css</filename>
+		<filename>css/font-awesome.min.css</filename>
+		<filename>css/index.html</filename>
+		<filename>css/joomla30-blue-dark-extended.css</filename>
+		<filename>css/joomla30-blue-dark-responsive.css</filename>
+		<filename>css/joomla30-blue-light-extended.css</filename>
+		<filename>css/joomla30-blue-light-responsive.css</filename>
+		<filename>css/joomla30-green-dark-extended.css</filename>
+		<filename>css/joomla30-green-dark-responsive.css</filename>
+		<filename>css/joomla30-green-light-extended.css</filename>
+		<filename>css/joomla30-green-light-responsive.css</filename>
+		<filename>css/joomla30-orange-dark-extended.css</filename>
+		<filename>css/joomla30-orange-dark-responsive.css</filename>
+		<filename>css/joomla30-orange-light-extended.css</filename>
+		<filename>css/joomla30-orange-light-responsive.css</filename>
+		<filename>css/joomla30-red-dark-extended.css</filename>
+		<filename>css/joomla30-red-dark-responsive.css</filename>
+		<filename>css/joomla30-red-light-extended.css</filename>
+		<filename>css/joomla30-red-light-responsive.css</filename>
+		<filename>css/reset.css</filename>
+		<filename>css/rtl.css</filename>
+		<filename>css/style-blue-dark.css</filename>
+		<filename>css/style-blue-light.css</filename>
+		<filename>css/style-green-dark.css</filename>
+		<filename>css/style-green-light.css</filename>
+		<filename>css/style-orange-dark.css</filename>
+		<filename>css/style-orange-light.css</filename>
+		<filename>css/style-red-dark.css</filename>
+		<filename>css/style-red-light.css</filename>
+		<filename>css/style.css</filename>
+		<filename>css/style_ie.css</filename>
+		<filename>js/bootstrap.min.js</filename>
+		<filename>js/index.html</filename>
+		<filename>html/com_content/article/default.php</filename>
+	</files>
+	<positions>
+		<position>toolbar</position>
+		<position>logo</position>
+		<position>top</position>
+		<position>menu</position>
+		<position>featured</position>
+		<position>grid-top</position>
+		<position>grid-top2</position>
+		<position>above-content</position>
+		<position>breadcrumbs</position>
+		<position>sidebar1</position>
+		<position>sidebar2</position>
+		<position>below-content</position>
+		<position>inner</position>
+		<position>grid-extra</position>
+		<position>grid-bottom</position>
+		<position>grid-bottom2</position>
+		<position>bottom-menu</position>
+		<position>onyx-footer</position>
+		<position>debug</position>
+	</positions>
+	<params>
+
+		<param name="style" type="list" default="green-light" label="Style" description="Select which of the style variations you wish to use">
+			<option value="blue-dark">Blue-dark</option>
+			<option value="blue-light">Blue-light</option>
+			<option value="green-dark">Green-dark</option>
+			<option value="green-light">Green-light</option>
+			<option value="orange-dark">Orange-dark</option>
+			<option value="orange-light">Orange-light</option>
+			<option value="red-dark">Red-dark</option>
+			<option value="red-light">Red-light</option>
+		</param>
+
+		<param name="modal" type="radio" default="1" label="Load modal behavior" description="Use the modal class in any link tag to open up pop ups
+		 instead of new windows">
+			<option value="1" checked="checked">Yes</option>
+			<option value="0">No</option>
+		</param>
+
+		<param name="jquery" type="radio" default="1" label="Load jQuery *" description="Control the way that jQuery gets loaded">
+			<option value="0">No</option>
+			<option value="1" checked="checked">Load locally</option>
+			<option value="2">Load from Google</option>
+		</param>
+
+		<param name="javascriptBottom" type="radio" default="1" label="Load Javascript at bottom" description="As a recommended practice
+		 for speeding sites, Wright's calls will be placed near to the closure of the body tag">
+			<option value="1" checked="checked">Yes</option>
+			<option value="0">No</option>
+		</param>
+
+		<param name="logo" type="text" default="template" label="Logo Image" description="You can select your logo from the images directory after
+		 you upload the image" size="20" />
+
+		<param name="logowidth" type="text" default="4" label="Logo Image" description="Select the column width for the logo, the rest of the
+		 space will be given to the newsflash module, or if you set it to full width the module will disappear" size="20" />
+
+		<param name="body_font" type="list" default="jdefault" label="Body font" description="Select the default font face for the body">
+			<option value="jdefault" selected="selected">Default - Template default</option>
+			<option value="arial">Arial - sans-serif</option>
+			<option value="baskerville">Baskerville - serif</option>
+			<option value="cambria">Cambria - serif</option>
+			<option value="centurygothic">Century Gothic - sans-serif</option>
+			<option value="consolas">Consolas - monospace</option>
+			<option value="copperplatelight">Copperplate Light - serif</option>
+			<option value="couriernew">Courier New - monospace</option>
+			<option value="franklingothic">Franklin Gothic - sans-serif</option>
+			<option value="futura">Futura - sans-serif</option>
+			<option value="garamond">Garamond - serif</option>
+			<option value="geneva">Geneva - sans-serif</option>
+			<option value="georgia">Georgia - serif</option>
+			<option value="gillsans">Gill Sans - sans-serif</option>
+			<option value="helvetica">Helvetica - sans-serif</option>
+			<option value="impact">Impact - sans-serif</option>
+			<option value="lucidasans">Lucida Sans - sans-serif</option>
+			<option value="palatino">Palatino - serif</option>
+			<option value="tahoma">Tahoma - sans-serif</option>
+			<option value="times">Times - serif</option>
+			<option value="trebuchetms">Trebuchet MS - sans-serif</option>
+			<option value="verdana">Verdana - sans-serif</option>
+		</param>
+
+		<param name="header_font" type="list" default="jdefault" label="Heading Font" description="Select the default font face for the headers">
+			<option value="jdefault" selected="selected">Default - Template default</option>
+			<option value="arial">Arial - sans-serif</option>
+			<option value="baskerville">Baskerville - serif</option>
+			<option value="cambria">Cambria - serif</option>
+			<option value="centurygothic">Century Gothic - sans-serif</option>
+			<option value="consolas">Consolas - monospace</option>
+			<option value="copperplatelight">Copperplate Light - serif</option>
+			<option value="couriernew">Courier New - monospace</option>
+			<option value="franklingothic">Franklin Gothic - sans-serif</option>
+			<option value="futura">Futura - sans-serif</option>
+			<option value="garamond">Garamond - serif</option>
+			<option value="geneva">Geneva - sans-serif</option>
+			<option value="georgia">Georgia - serif</option>
+			<option value="gillsans">Gill Sans - sans-serif</option>
+			<option value="helvetica">Helvetica - sans-serif</option>
+			<option value="impact">Impact - sans-serif</option>
+			<option value="lucidasans">Lucida Sans - sans-serif</option>
+			<option value="palatino">Palatino - serif</option>
+			<option value="tahoma">Tahoma - sans-serif</option>
+			<option value="times">Times - serif</option>
+			<option value="trebuchetms">Trebuchet MS - sans-serif</option>
+			<option value="verdana">Verdana - sans-serif</option>
+		</param>
+
+		<param name="sidebar1" type="text" default="4" label="Columns Sidebar 1" description="Number of columns that sidebar 1 will ocupy
+		 (total number of columns must be equal to 12)" size="10" />
+
+		<param name="main" type="text" default="4" label="Columns Main Content" description="Number of columns that the main content will
+		 ocupy (total number of columns must be equal to 12)" size="10" />
+
+		<param name="sidebar2" type="text" default="4" label="Columns Sidebar 2" description="Number of columns that sidebar 2 will ocupy
+		 (total number of columns must be equal to 12)" size="10" />
+
+		<param type="spacer" default="Booststrap Options" />		
+
+		<param name="bs_rowmode" type="radio" default="row" label="Load modal behavior" description="Use the modal class in any link tag to open up pop ups
+		 instead of new windows">
+			<option value="row-fluid">Fluid (%)</option>
+			<option value="row">Default (px)</option>
+		</param>
+
+		<param name="responsive" type="radio" default="1" label="Responsive support" description="You can select whether you want to have responsive
+		 behavior (mobile/tablet view)">
+			<option value="1" checked="checked">Yes</option>
+			<option value="0">No</option>
+		</param>
+
+		<param name="stickyFooter" type="radio" default="1" label="Sticky footer" description="Select whether you want to force the footer to be
+		 always at the bottom of the screen">
+			<option value="1" checked="checked">Yes</option>
+			<option value="0">No</option>
+		</param>
+
+		<param name="wright_bootstrap_images" type="radio" default="" label="Styles for article images" description="Select if you want to enable your
+		 article (intro and full text) images any of the styles available, and grow them to be responsive width/height">
+			<option value="" checked="checked">None</option>
+			<option value="img-rounded">Rounded</option>
+			<option value="img-circle">Circle</option>
+			<option value="img-polaroid">Polaroid</option>
+		</param>
+
+		<param type="spacer" default="Mobile Menu" />		
+
+		<param name="mobile_menu_text" type="text" default="" label="Mobile menu text" description="Replace hamburger icon with a label" size="10" />
+
+		<param name="onyx_toolbar_displayed" type="radio" default="navbar-fixed-top" label="Toolbar" description="Select whether you want to force the footer to be
+		 always at the bottom of the screen">
+			<option value="navbar-fixed-top" checked="checked">Fixed</option>
+			<option value="navbar-static-top">Static</option>
+		</param>
+	</params>
+</install>

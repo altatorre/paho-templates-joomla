@@ -1,0 +1,37 @@
+/*
+	---------------------
+	Stylesheet for printers
+	---------------------
+*/
+
+#language,
+#search,
+#menus,
+#highlight_out,
+#highlight_mid,
+#right,
+#footr_out,
+#addthis,
+#article-icons,
+#highlight_out 
+{
+	display: none;
+}
+.newsphoto {
+	width: 480px;
+	height: auto;
+	float: none;
+	margin-bottom: 15px;
+}
+
+#art_div1, #art_div2, #art_div3, #art_div4 {
+	clear: both;
+}
+
+.contentheading {
+	margin-top: 0;
+}
+#banner {
+	height: 70px;
+	margin: 0;
+}

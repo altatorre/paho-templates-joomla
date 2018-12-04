@@ -1,0 +1,19 @@
+/* main selectors */
+.twitter-timeline {
+	width:100% !important;
+	max-width:none !important;
+	height: 150px !important;
+	min-height: 240px !important;
+}
+
+
+.pagination{margin: 10px 0;}
+.pagination .counter{display: inline;}
+.pagination .pagination-list{
+	display: inline;
+	list-style: none;
+}
+.pagination .pagination-list li{
+	display: inline;
+	margin: 0 5px;
+}
