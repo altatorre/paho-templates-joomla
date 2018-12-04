@@ -9,12 +9,12 @@ $isIE = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'MSIE');
 	if ($isIE) { ?>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <?php } ?>
-<?php include ('canonical_tag.php'); ?>
-<jdoc:include type="head" />
+<?php //include ('canonical_tag.php'); ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<link rel="stylesheet" href="<?php echo JURI::base(); ?>templates/<?php echo $this->template?>/css/style.css" type="text/css" />
+	<meta http-equiv="refresh" content="28800">
+	<link rel="stylesheet" href="<?php echo JURI::base(); ?>templates/<?php echo $this->template?>/css/style.css?v=20160315.1" type="text/css" />
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="<?php echo JURI::base(); ?>templates/<?php echo $this->template?>/css/style_ie.css" type="text/css" />
 	<![endif]-->
@@ -22,7 +22,9 @@ $isIE = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'MSIE');
 	<link rel="stylesheet" href="<?php echo JURI::base(); ?>templates/<?php echo $this->template?>/css/print.css" type="text/css" media="print" />
 	<script type="text/javascript" src="<?php echo JURI::base(); ?>media/system/js/language.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="<?php echo JURI::base(); ?>templates/<?php echo $this->template?>/js/html5lightbox/html5lightbox.js"></script>
+<jdoc:include type="head" />
 <?php
 	$lm = 0;
 	$lm = $lm + ($this->countModules( 'left1' )); 
@@ -70,6 +72,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MDCJXB');</script>
 <!-- End Google Tag Manager -->
+<!--googleoff: index-->  
  <?php
  $menu = & JSite::getMenu();
 if ($menu->getActive() == $menu->getDefault()) {
@@ -79,6 +82,7 @@ if ($menu->getActive() == $menu->getDefault()) {
 }
 ?>
 <div id="wrapper">
+	<header>
 	<div id="access">
 			<p><a href="<?php echo $access; ?>" title="Skip to content">Skip to content</a></p>
 		</div><!-- end of #access -->
@@ -99,18 +103,20 @@ if ($menu->getActive() == $menu->getDefault()) {
 		<div id="menus">
 			<p class="ocm"><img src="<?php echo JURI::base(); ?>templates/<?php echo $this->template?>/images/mobile_menu_icon.png" style="width: 17px;float:left;margin-right:4px;border:0" width="17" alt="" />Menu</p>
 			<div id="open_close_menu">
-				<jdoc:include type="modules" name="left" />
+				<nav><jdoc:include type="modules" name="left" /></nav>
 			</div><!-- #open_close_menus -->
 			<div id="search">
 				<jdoc:include type="modules" name="user4" />
 			</div><!-- end of #search -->
 		</div><!-- end of #menus -->
+		</header>
 	<div id="main">
 		<div id="breadcrumbs">
-			<jdoc:include type="modules" name="breadcrumb" style="xhtml" />
+			<jdoc:include type="modules" name="breadcrumbs" style="xhtml" />
 		</div><!-- end of #breadcrumbs -->
+
 <?php if($lm) { ?>
-	<div id="highlight_out">
+	<div id="highlight_out"><nav>
 		<div id="highlight_mid">
 <?php if($this->countModules( 'left1' )) { ?>
 			<jdoc:include type="modules" name="left1" style="xhtml" />
@@ -136,11 +142,9 @@ if ($menu->getActive() == $menu->getDefault()) {
 			</div><!-- end of #left5 -->
 <?php } ?>
 		</div><!-- end of #highlight_mid -->
+		</nav>
 	</div><!-- end of #highlight_out -->
 <?php } ?>
-
-			<jdoc:include type="component" />
-
 		<div<?php echo $content; ?>><!-- content -->
 <?php if($this->countModules( 'top_wide' )) { ?>
 			<div id="top_wide">
@@ -156,7 +160,9 @@ if ($menu->getActive() == $menu->getDefault()) {
 			<div id="premain">
 				<jdoc:include type="modules" name="premain" style="xhtml" />
 			</div><!-- end of #premain -->
-<?php } ?>
+<?php } ?><!--googleon: index-->
+			<jdoc:include type="component" />
+	<!--googleoff: index-->
 <?php if($this->countModules( 'postmain' )) { ?>
 			<div id="postmain">
 				<jdoc:include type="modules" name="postmain" style="xhtml" />
@@ -220,6 +226,7 @@ if ($menu->getActive() == $menu->getDefault()) {
 	</div><!-- #main -->
 	<div style="clear:both"></div>
 </div><!-- #wrapper -->
+<footer>
 	<div id="footr_out">
 		<div id="footr_in">
 			<div id="honcode">
@@ -240,10 +247,11 @@ if ($menu->getActive() == $menu->getDefault()) {
 		</div><!-- end of #site-info -->
 		<div class="clr"></div>
 	</div><!-- end of #footr_out -->
+	</footer>
 	<script>
-	$(document).ready(function(){
-		$(".ocm").click(function(){
-			$("#open_close_menu").toggle(500);
+	jQuery(document).ready(function(){
+		jQuery(".ocm").click(function(){
+			jQuery("#open_close_menu").toggle(500);
 		});
 	});
 	</script>
@@ -257,5 +265,6 @@ if ($menu->getActive() == $menu->getDefault()) {
   ga('send', 'pageview');
 
 </script>
+<!--googleon: index-->
 </body>
 </html>
