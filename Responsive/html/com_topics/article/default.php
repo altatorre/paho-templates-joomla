@@ -5,256 +5,178 @@
  */
 
 defined('_JEXEC') or die('Restricted access');
-$lang = $_GET['lang'];
-include_once( JPATH_COMPONENT.DS.'helpers' . DS . 'route.php' );
-$topic = $this->healthtopic;
-//echo "nueva direccion". this->healthtopic->replacingurl; 
-
-/* if ($this->healthtopic->replacingurl != '') {
-	echo "saltando a ".$this->healthtopic->replacingurl;
-} */
-
-if (!$topic) { $topic = new stdClass(); }
-$topic->sci_tech_docs = intval($this->sci_tech); 
-$topic->alerts_docs = intval($this->alerts);
-$topic->advocacy_docs = intval($this->advocacy);
-$topic->statistics_docs = intval($this->statistics);
-$topic->external_docs = intval($this->external);
-$topic->mandates_docs = intval($this->mandates);
-$mykeywords = $mydocument->keywords;
-$mykeywords .= $this->healthtopic->topic;
-$mydocument =& JFactory::getDocument();
-$mytitle = $mydocument->getTitle();
-$mylanguage = $mydocument->getLanguage();
-$organization = "PAHO WHO";
-if ($mylanguage == "es-es") $organization = "OPS OMS";
-$mytitle = $organization . " | " . $this->healthtopic->topic;;
-$mydocument->setTitle($mytitle);
+$topic = $this->topics;
+$slug =$topic->alias;
+//$itmid = $topic->Itemid;
 ?>
-
-	<!-- Title -->
-<div class="heading col-xs-12">
-	<h1><?php echo $topic->topic; ?></h1>
-</div><!-- end of heading col-xs-12 -->
-<div class="clearfix"></div>
-	<!-- Internal Menu -->
-<div id="sidebar" class="col-md-4">
-	<ul class="navigation">
-<?php 
-    $left_menu[0] = "PAHO/WHO Scientific and Technical Material|#sci_tech";
-    $left_menu[1] = "PAHO/WHO Communication Materials|#communication";
-    $left_menu[2] = "PAHO/WHO Mandates and Strategies|#mandates";
-    $left_menu[3] = "PAHO/WHO Multimedia Materials|#multimedia";
-    //$left_menu[4] = "HT_NEWS|#news";				
-?>				
+<style>#breadcrumbs { display: none; }</style>
+<h1 class="htopics" style="margin-top: 0"><?php echo $topic->topic; ?></h1>
 <?php
-foreach($left_menu as $row) {
-	$menu = explode('|', $row);
-	echo '					<li><a href="' . $menu[1] . '">' . JText::_( $menu[0] ) . "</a></li>\n";
-}
-?>
-	</ul>
-</div><!-- end of side bar col-md-4 -->
-	<!-- Definition -->
-<div id="content" class="col-md-8 hidden-xs">
-	<div class="text-block">
+	if (property_exists($topic, 'alert')) {  
+	//if ($topic->alert) {
+		echo "<div id=\"htdef\" style=\"width: 68%;float:left;margin-right:2%\">\n";
+	}
+	if ($topic->definition) {
+	?>
+<p class="htdef"><?php echo stripslashes($topic->definition); ?>
+	<span style="font-size:11px;display:block;text-align:right"><?php echo JText::_( 'Source' ); ?>: <?php echo $topic->definition_source; ?></span></p>
+	<?php
+	}
+	if (property_exists($topic, 'alert')) {  
+	//if ($topic->alert) {
+		echo "</div>\n";
+		echo "<div id=\"htalt\" style=\"width: 30%;min-height:80px;background:#F6F6F9;border-bottom:2px solid #CC1305;float:right\">\n";
+		echo "<h3 class=\"\" style=\"clear:both;background: #CC1305;color:#FFF;padding:3px;margin-top:0\">" . JText::_( 'Epidemiological Alert' ) . "</h3>\n";
+		echo "<ul style=\"font-size:11px;margin-top:10px;margin-left:12px;padding-left:12px;line-height:14px\"><li><a href=\"#\">Antimicrobial Resistance Alert</a><br />16 October 2013</li></ul>";
+		echo "</div>\n";
+	}
+	if ($topic->replacingurl) {
+		echo "<script>location.replace('" . $topic->replacingurl . "'); </script>";
+	}
+	?>
+	<div style="clear:both"></div>
+	<div id="htblurb">
+		<div id="htphoto">
+			<img src="<?php echo $topic->photo; ?>" alt="<?php $topic->topic; ?>" style="width:100%;max-width: 280px;height:auto" /><br />
+			<p class="htcaption"><?php echo $topic->photo_copyright; ?></p>
+		</div><!-- end of #htphoto -->
 		<p><?php echo stripslashes($topic->blurb); ?></p>
-		<?php echo stripslashes($topic->highlight); ?>
-		<?php if ($topic->additional_info) {
-			$additionallink = str_replace( "&amp;amp;", "&amp;", str_replace( "&", "&amp;", stripslashes($topic->additional_link) ));
-		?>
+<?php if ($topic->additional_info) { 
+		$additionallink = str_replace( "&amp;amp;", "&amp;", str_replace( "&", "&amp;", stripslashes($topic->additional_link) ));
+	?>	
 		<p><a href="<?php echo $additionallink; ?>"><?php echo stripslashes($topic->additional_info); ?></a></p>
 <?php } ?>
-	</div><!-- end of text-block" -->
-</div><!-- content col-md-8 --> 
-
-
-		<!-- Row that starts with topic photo -->
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="gallery-holder">
-
-					<!-- Scientific and Technical Material starts here -->
-					<div class="item" id="sci_tech">
-						<div class="img-holder">
-                  	<img src="<?php echo $topic->photos; ?>-1.jpg" alt="<?php $topic->topic; ?>" width="364" height="180">
-						</div>
-						<?php if ( $topic->sci_tech_docs ) { ?>
-						<div class="textholder">
-							<h2><?php echo JText::_( 'PAHO/WHO Scientific and Technical Material' ); ?></h2>
-							<?php 
-		$mykeywords = $mykeywords . ", " . JText::_('PAHO/WHO Scientific and Technical Material');
-		$mydocument->setMetaData( 'keywords', $mykeywords );
-		$catid2 = $this->healthtopic->sci_tech;
-		showDocman($this->sci_tech, 'PAHO/WHO Scientific and Technical Material', $catid2);
-	$tq = urlencode($this->healthtopic->topic);
-	$tq = str_replace(",", "", $tq);
-	$tq = str_replace(" Infección", "", $tq);
-	$tq = str_replace(" Infection", "", $tq);
-	$tq = str_replace(" por", "", $tq);
-	$tq = str_replace(" Virus", "", $tq);
-	//$tq = str_replace("Microcephaly", "(("zika virus" or (zika virus) or zika or "infeccoes por Flavivirus" or (zika virus (infection or infeccao or infeccion))) (microcefalia or microcephaly))", $tq);
-	$tq = str_replace("Microcefalia", "((\"zika virus\" or (zika virus) or zika or \"infeccoes por Flavivirus\" or (zika virus (infection or infeccao or infeccion))) (microcefalia or microcephaly))", $tq);
-	$tq = str_replace("Microcephaly", "((\"zika virus\" or (zika virus) or zika or \"infeccoes por Flavivirus\" or (zika virus (infection or infeccao or infeccion))) (microcefalia or microcephaly))", $tq);
+	</div><!-- end of #htblurb -->
+	<div id="htpahowho">
+		<div id="htpaho">
+<?php	if ($topic->paho_text) { $text = $topic->paho_text; } else { $text = $topic->topic; } ?>
+			<a href="<?php echo $topic->paho; ?>"><strong><?php echo JText::_('PAHOWHO_PROGRAM'); ?>:</strong> <?php echo $text; ?></a>
+		</div><!--end of paho -->
+		<div id="htwho">
+<?php	if ($topic->who_text) { $text = $topic->who_text; } else { $text = $topic->topic; } ?>
+			<a href="<?php echo $topic->who; ?>"><strong><?php echo JText::_('WHO_HEALTH_TOPIC'); ?>:</strong> <?php echo $text; ?></a>
+		</div><!-- end of who -->
+	</div><!-- end of pahowho -->
+	<div class="clr"></div>
+<?php
+	if ( $topic->sci_tech_docs[0]->catid ) {
+?>
+	<div class="httopics">
+		<h3 class="htheader"><?php echo JText::_( 'PAHOWHO_SCIENTIFIC_TECHNICAL_MATERIAL' ); ?></h3>
+<?php showDocman($topic->sci_tech_docs, 'PAHOWHO_SCIENTIFIC_TECHNICAL_MATERIAL', $slug, 'scientific_technical');
+	}
+	$tq = $topic->topic;
 	$tq = urlencode($tq);
 ?>
-		<div class="linkholder">[<img src="images/banners/logovhl.png" style="width:20px;height:20px" /><a href="http://pesquisa.bvsalud.org/portal/?q=<?php echo $tq; ?>&amp;where=&amp;index=&amp;lang=en">
-<?php echo JText::_('Search the Virtual Health Library databases'); ?></a>] </div>
-<?php							}
-							?>
-						<?php if ( $topic->sci_tech_docs ) { ?>
-						</div><!-- end of textholder -->
-						<?php } ?>
-					</div><!-- end of item -->
-					<!-- End of Scientific and Technical Material -->
+		<p>[<a href="http://pesquisa.bvsalud.org/portal/?q=<?php echo $tq; ?>&amp;where=&amp;index=&amp;lang=en">
+<?php echo JText::_('SEARCH_VHL'); ?></a>] </p>
+	</div><!-- end of .hhtopics -->
 
-					<!-- Epidemiological Alerts start here -->
-					<?php if ( count($this->alerts) ) { ?>
-					<div class="item" id="alerts">
-						<div class="textholder textholder3">
-							<h2><?php echo JText::_( 'PAHO/WHO Epidemiological Alerts and Updates' ); ?></h2>
-<?php		$catid2 = $this->healthtopic->alerts;
-		showDocman($this->alerts, 'PAHO/WHO Epidemiological Alerts and Updates', $catid2); ?>
-<?php 		$mykeywords = $mykeywords . ", " . JText::_('PAHO/WHO Epidemiological Alerts and Updates');
-		$mydocument->setMetaData( 'keywords', $mykeywords ); ?>
-						</div>
-					</div><!-- end of item -->
-					<?php } ?>
-					<!-- Epidemiological Alerts end here -->
+<?php
+	if (property_exists($topic, 'alerts_docs')) {  
+	//if ($topic->alerts_docs[0]->catid) {
+?>
+	<div class="httopics">
+		<h3 class="htheader"><?php echo JText::_( 'PAHOWHO_EPI_ALERTS' ); ?></h3>
+<?php
+		showDocman($topic->alerts_docs, 'PAHOWHO_EPI_ALERTS', $slug, 'alerts');
+?>
+	</div><!-- end of .hhtopics -->
+<?php } ?>
 
-					<!-- News Module starts here -->
-					<?php if ( $topic->news ) { ?>
-					<div class="item" id="news">
-						<div class="textholder2">
-							<h2><?php echo JText::_( 'HT_NEWS' ); ?></h2>
-							<ul class="news-list">
-							<?php $ct = 0;
-							foreach ( $topic->news as $nw ) {
-								if ( $ct > 1 ) continue;
-								require_once JPATH_SITE . '/components/com_content/helpers/route.php';
-								$nw->slug     = $nw->id . ':' . $nw->alias;
-								$nw->catslug  = $nw->catid; // . ':' . $row->category_alias;
-								$nw->language = JRequest::getCmd('lang');
-								// falta por revisar. 
-								// $link     = JRoute::_(ContentHelperRoute::getArticleRoute($nw->slug, $nw->catid, $nw->language));
-								$link = JRoute::_("index.php?option=com_docman&task=doc_download&gid=".$nw->id);  ?>
-								<li><a href="<?php echo $link; ?>"><?php echo $nw->title; ?></a></li>
-							<?php $ct++;
-							} ?>
-							</ul>
-							<!--	<a href="#" class="btn">All News</a> -->
-						</div>
-					</div>
-					<?php } ?>
-					<!-- News Module ends here -->
+<?php
+	if ($topic->advocacy_docs[0]->catid) {
+?>
+	<div class="httopics">
+		<h3 class="htheader"><?php echo JText::_( 'PAHOWHO_COMM_MATERIALS' ); ?></h3>
+<?php
+		showDocman($topic->advocacy_docs, 'PAHOWHO_COMM_MATERIALS', $slug, 'communication');
+?>
+	</div><!-- end of .hhtopics -->
+<?php } ?>
 
-					<!-- Communication Materials start here -->
-					<?php if ( count($this->advocacy) ) { ?>
-					<div class="item" id="communication">
-						<div class="img-holder">
-							<img src="<?php echo $topic->photos; ?>-2.jpg" alt="image description" width="364" height="180">
-						</div>
-						<div class="textholder">
-							<h2><?php echo JText::_( 'PAHO/WHO Communication Materials' ); ?></h2>
-<?php		$catid2 = $this->healthtopic->advocacy;
-		showDocman($this->advocacy, 'PAHO/WHO Communication Materials', $catid2); ?>
-<?php 		$mykeywords = $mykeywords . ", " . JText::_('PAHO/WHO Communication Materials');
-		$mydocument->setMetaData( 'keywords', $mykeywords ); ?>
-						</div>
-					</div>
-					<?php } ?>
-					<!-- Communication Materials end here -->
+<?php
+	if (property_exists($topic, 'statistics_docs')) {  
+	//if ($topic->statistics_docs[0]->catid) {
+?>
+	<div class="httopics">
+		<h3 class="htheader"><?php echo JText::_( 'PAHOWHO_DATA' ); ?></h3>
+<?php
+		showDocman($topic->statistics_docs, 'PAHOWHO_DATA', $slug, 'statistics');
+?>
+	</div><!-- end of .hhtopics -->
+<?php } ?>
 
-					<!-- Mandates and Strategies start here -->
-					<?php if ( count($this->mandates) ) { ?>
-					<div class="item" id="mandates">
-						<div class="img-holder">
-							<img src="<?php echo $topic->photos; ?>-3.jpg" alt="image description" width="364" height="179">
-						</div>
-						<div class="textholder">
-	                  <h2><?php echo JText::_( 'PAHO/WHO Mandates and Strategies' ); ?></h2>
-<?php		$catid2 = $this->healthtopic->mandates;
-		showDocman($this->mandates, 'PAHO/WHO Mandates and Strategies', $catid2); ?>
-<?php 		$mykeywords = $mykeywords . ", " . JText::_('PAHO/WHO Mandates and Strategies');
-		$mydocument->setMetaData( 'keywords', $mykeywords );
- ?>
-						</div>
-					</div>
-					<?php } ?>
-					<!-- Mandates and Strategies end here -->
+<?php
+	if (count($topic->mandates_docs[0]->catid)) {
+?>
+	<div class="httopics">
+		<h3 class="htheader"><?php echo JText::_( 'PAHOWHO_MANDATES' ); ?></h3>
+<?php
+		showDocman($topic->mandates_docs, 'PAHOWHO_MANDATES', $slug, 'mandates');
+?>
+	</div><!-- end of .hhtopics -->
+<?php } ?>
 
-					<!-- Video Block starts herel -->
-					<?php
-					if ( $topic->mm_highlight ) {
-						$video = $this->healthtopic->mm_highlight; // $topic->mm_highlight;
-						if (stripos($video,'v=')) {
-							$ytcode = substr($video, stripos($video,'v=')+2,11);
-						} else {
-							$ytcode = substr($video, strlen($video)-11, 11);
-						}
-		$mykeywords = $mykeywords . ", " . JText::_('Multimedia Highlight');
-		$mydocument->setMetaData( 'keywords', $mykeywords );
-					?>
-					<div class="item">
-						<div class="ytWrapper">
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $ytcode; ?>?rel=0" frameborder="0" allowfullscreen></iframe>
-						</div><!-- end of ytWrapper -->
-						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-							<div class="modal-dialog" role="document">
-								<div class="modal-content">
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-									<div class="modal-body">
-										<div class="embed-responsive">
-											<iframe  class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/<?php echo $ytcode; ?>?rel=0" frameborder="0" allowfullscreen></iframe>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div><!-- end of item -->
-					<?php } ?>
-					<!-- Video Block ends herel -->
+<?php
+	if (property_exists($topic, 'external_docs')) {  
+	//if ( $topic->external_docs[0]->catid ) {
+?>
+	<div class="httopics">
+		<h3 class="htheader"><?php echo JText::_( 'EXTERNAL_MATERIAL' ); ?></h3>
+<?php
+		showDocman($topic->external_docs, 'EXTERNAL_MATERIAL', $slug, 'external');
+?>
+	</div><!-- end of .hhtopics -->
+<?php } ?>
 
-					<!-- External Parties Material starts here -->
-					<?php if ( count($this->external) ) { ?>
-					<div class="item" id="external">
-						<div class="textholder textholder3">
-							<h2><?php echo JText::_( 'External Parties Material' ); ?></h2>
-		<?php $catid2 = $this->healthtopic->external;
-		showDocman($this->external, 'External Parties Material', $catid2); ?>
-<?php		$mykeywords = $mykeywords . ", " . JText::_('External Parties Material');
-		$mydocument->setMetaData( 'keywords', $mykeywords ); ?>
-						</div>
-					</div>
-					<?php } ?>
-					<!-- External Parties Material ends here -->
+<?php
+		//cambio paulo 20150717
+	if ( $topic->mm_highlight ) {
+?>
+	<div class="httopics">
+		<h3 class="htheader"><?php echo JText::_( 'MM_HILITE' ); ?></h3>
+<?php 
+		$enlace = $topic->mm_highlight;
+		$enlace = substr($enlace, -11);
+?>
+		<div class="ytWrapper">
+			<iframe width="476" height="267" src="https://www.youtube.com/embed/<?php echo $enlace;  ?>" seamless="seamless" allowfullscreen="allowfullscreen">
+			</iframe>
+		</div>
+	</div><!-- end of .hhtopics -->
+<?php } ?>
 
-					<!-- Statistics start here -->
-					<?php if ( count($this->statistics) ) { ?>
-					<div class="item" id="data">
-						<div class="textholder textholder3">
-							<h2><?php echo JText::_( 'PAHO/WHO Data, Maps and Statistics' ); ?></h2>
-							<?php showDocman($topic->statistics_docs, 'PAHO/WHO Data, Maps and Statistics', $slug, 'statistics'); ?>
-<?php		$catid2 = $this->healthtopic->statistics;
-		showDocman($this->statistics, 'PAHO/WHO Data, Maps and Statistics', $catid2);
- 		$mykeywords = $mykeywords . ", " . JText::_('PAHO/WHO Data, Maps and Statistics');
-		$mydocument->setMetaData( 'keywords', $mykeywords ); ?>
-						</div><!-- text holder -->
-					</div>
-					<?php } ?>
-					<!-- Statistics end here -->
-
-					<!-- Strategic Partners Module starts here -->
-					<?php if ( $topic->centers && substr( $topic->centers[0], 0, 16) != '{"name":"","link' ) { ?>
-					<div class="item">
-						<div class="textholder textholder3">
-						<h2><?php echo JText::_('Strategic Partners'); ?></h2>
-<?php	if ($this->healthtopic->centers) {
-		$mykeywords = $mykeywords . ", " . JText::_('Strategic Partners');
-		$mydocument->setMetaData( 'keywords', $mykeywords );
-		$ctrows = unserialize($this->healthtopic->centers);
+<?php
+	if($topic->multimedia && count(unserialize($topic->multimedia))) {
+?>
+	<div class="httopics">
+		<h3 class="htheader"><?php echo JText::_('PAHOWHO_MULTIMEDIA'); ?></h3>
+		<ul>
+<?php
+		$mm = unserialize($topic->multimedia);
+		if (is_array($mm)) {
+			foreach ($mm as $row) {
+				$mitem = explode(",",$row);
+				$mitem[0] = str_ireplace("||",",",$mitem[0]);
+				$mlink = str_replace( "&amp;amp;", "&amp;", str_replace( "&", "&amp;", $mitem[2] ));
+				if ($mitem[1] != "Other") {
+					echo "<li><strong>$mitem[1]:&nbsp;</strong><a href=\"$mlink\">$mitem[0]</a></li>\n";
+				} else {
+					echo "<li><a href=\"$mlink\">$mitem[0]</a></li>\n";
+				}	
+			}
+		}
+?>
+		</ul>
+	</div><!-- end of .httopics -->
+<?php } ?>
+	<div class="httopics">
+		<h3 class="htheader"><?php echo JText::_('STRATEGIC_PARTNERS'); ?></h3>
+<?php	if ($topic->centers) {
+		$ctrows = unserialize($topic->centers);
 		if (is_array($ctrows)) {
-			echo "<ul class=\"list\">\n";
+			echo "<ul>\n";
 			foreach($ctrows as $row) {
 				$temp = explode("|",$row);
 				if ($temp[1]) {
@@ -266,219 +188,99 @@ foreach($left_menu as $row) {
 		}
 		echo "</ul>\n";
 } 
-	$urlcenters = str_replace( "&amp;amp;", "&amp;", str_replace( "&", "&amp;", $this->healthtopic->urlcenters));
+	$urlcenters = str_replace( "&amp;amp;", "&amp;", str_replace( "&", "&amp;", $topic->urlcenters));
 ?>
-			<p>[ <a target="_blank" href="<?php echo $urlcenters ?>"><?php echo JText::_('PAHO/WHO Collaborating Centers Website'); ?></a> ]</p>
-						</div>
-					</div>
-					<?php } ?>
-					<!-- Strategic Partners Module ends here -->
-
-
-					<!-- PAHO/WHO Programs start here -->
-					<?php	if ($topic->paho_text) { $ptext = $topic->paho_text; } else { $ptext = $topic->topic; } ?>
-					<?php	if ($topic->who_text) { $wtext = $topic->who_text; } else { $wtext = $topic->topic; } ?>
-			
-					<div class="item">
-						<div class="textholder1">
-							<h2><?php echo JText::_('PAHO/WHO PROGRAM:'); ?></h2>
-							<ul style="margin-top: -12px"><li><a style="color: #FFF" href="<?php echo $topic->paho; ?>"><?php echo $ptext; ?></a></li></ul>
-<?php 		$mykeywords = $mykeywords . ", " . JText::_('PAHO/WHO PROGRAM:');
-		$mydocument->setMetaData( 'keywords', $mykeywords ); ?>
-							<h2><?php echo JText::_('WHO Health Topic:'); ?></h2>
-							<ul style="margin-top: -12px"><li><a style="color: #FFF" href="<?php echo $topic->who; ?>"><?php echo $wtext; ?></a></li></ul>
-						</div>
-					</div>
-					<!-- PAHO/WHO Programs end here -->
-
-					<!-- Multimedia Materials start here -->
-					<?php /* if ( substr( $topic->multimedia[0], 0, 16) != '{"name":"","type' ) {  */ ?>
-					<?php if($this->healthtopic->multimedia && count(unserialize($this->healthtopic->multimedia))) { ?>
-					<div class="item" id="multimedia">
-						<div class="textholder">
-							<h2><?php echo JText::_('PAHO/WHO Multimedia Materials'); ?></h2>
-		<ul class="list">
-<?php
-		$mm = unserialize($this->healthtopic->multimedia);
-		if (is_array($mm)) {
-			$mykeywords = $mykeywords . ", " . JText::_('PAHO/WHO Multimedia Materials');
-			$mydocument->setMetaData( 'keywords', $mykeywords );
-			foreach ($mm as $row) {
-				$mitem = explode(",",$row);
-				$mitem[0] = str_ireplace("||",",",$mitem[0]);
-				$mlink = str_replace( "&amp;amp;", "&amp;", str_replace( "&", "&amp;", $mitem[2] ));
-				if ($mitem[1] != "Other") {
-					echo "<li><strong>$mitem[1]:&nbsp;</strong><a href=\"$mlink\" target=\"_blank\">$mitem[0]</a></li>\n";
-				} else {
-					echo "<li><a href=\"$mlink\" target=\"_blank\">$mitem[0]</a></li>\n";
-				}	
-			}
-		}
-?>
-		</ul>					<?php } ?>
-						</div>
-					</div><!-- end of item -->
-					<!-- Multimedia Materials end here -->
-
-
-<?php
-	
-	if ($this->healthtopic->alert) {
-		if ($this->healthtopic->definition) {
-			$widthdefinition = "68%";
-			$widthalert = "30%";
-		} else {
-			$widthdefinition = "0%";
-			$widthalert = "100%";
-		}
-	} else {
-		if ($this->healthtopic->definition) {
-			$widthdefinition = "100%";
-			$widthalert = "0%";
-		}
-	}
-	if ($this->healthtopic->definition) {
-		$widthdefinition = "width: 68%;float:left";
-		$widthalert = "width: 30%;float:right";
-		$mydescription .= $this->healthtopic->definition . ". ";
-			$lengthdescription = strlen($mydescription);
-			if ($lengthdescription < 159) {
-				$mydescription .= $row->keyword . ". ";
-			}
-		$mydescription = str_replace("\"", "", $mydescription);
-		$mydescription = str_replace("&nbsp;", " ", $mydescription);
-		$mydescription = str_replace("\r\n", " ", $mydescription);
-		$mydescription = str_replace("\t", " ", $mydescription);
-		$mydescription = str_replace( " align=justify", "", $mydescription );
-		$mydescription = str_replace( " align=left", "", $mydescription );
-		$mydescription = str_replace("<p>", " ", $mydescription);
-		$mydescription = str_replace("  ", " ", $mydescription);
-		$mydescription = str_replace("  ", " ", $mydescription);
-		$mydescription = str_replace("  ", " ", $mydescription);
-		$mydescription = substr($mydescription,0,159);
-		$mydocument->setMetaData( 'description', $mydescription );
-
-	} else {
-		$widthdefinition = "width: 0%";
-		$widthalert = "width: 100%";
-	}
-	$widthdefinition = "width: 100%";
-	$widthalert = "width: 0%";
-				$mydescription .= $this->healthtopic->blurb;
-			$lengthdescription = strlen($mydescription);
-			if ($lengthdescription < 159) {
-				$mydescription .= $row->keyword . ". ";
-			}
-		$mydescription = str_replace("\"", "", $mydescription);
-		$mydescription = str_replace("&nbsp;", " ", $mydescription);
-		$mydescription = str_replace("\r\n", " ", $mydescription);
-		$mydescription = str_replace("\t", " ", $mydescription);
-		$mydescription = str_replace( " align=justify", "", $mydescription );
-		$mydescription = str_replace( " align=left", "", $mydescription );
-		$mydescription = str_replace("<p>", " ", $mydescription);
-		$mydescription = str_replace("  ", " ", $mydescription);
-		$mydescription = str_replace("  ", " ", $mydescription);
-		$mydescription = str_replace("  ", " ", $mydescription);
-		$mydescription = substr($mydescription,0,159);
-		$mydocument->setMetaData( 'description', $mydescription );
-
-		$mykeywords = str_replace( "PAHO/WHO ", "", $mykeywords );
-		$mykeywords = str_replace( ":", "", $mykeywords );
-		$mykeywords = str_replace( " de la OPS/OMS", "", $mykeywords );
-		$mykeywords = str_replace( " de OPS/OMS", "", $mykeywords );
-		$mydocument->setMetaData( 'keywords', $mykeywords );
-
-?>
-</div> <!-- end of col -->
-</div> <!-- end of row -->
-<!--
+			<p>[ <a target="_blank" href="<?php echo $urlcenters ?>"><?php echo JText::_('PAHOWHO_COLLAB'); ?></a> ]</p>
+	</div><!-- end of .httopics -->
 <div style="clear: both"></div>
--->
-
-
 <?php
-function showDocman($total, $name, $catid) {
+function showDocman($total, $name, $slug, $tipo) {
+	$file = "cache\\com_topics\\" . $slug . '-' . $tipo;
 	$cats = array();
-	if (is_array($total)) { 
-		foreach ($total as $row) {
+	foreach ($total as $row) {
+		if ($row->catid) {
 			$data = new stdClass();
-			$data->catgname = $row->nome;
-			$data->mid = $row->id;
+			$data->topic = $slug;
+			$data->category = $name;
+			$data->subcategory = $row->catgname;
+			$data->catid = $row->catid;
+			$data->catslug = $row->catslug;
 			$cats[] = $data;
 		}
 	}
 	asort($cats);
 	$cats = array_values(array_unique($cats, SORT_REGULAR));
 	if (count($cats) > 1) {
-		$data = new stdClass();
-		echo '<ul class="categorias category-list">';
+		// Print blue submenu with subcategories
+		echo '<ul class="categorias">';
 		foreach ($cats as $row) {
-			$data = new stdClass();
-			$data->subcategory = $row->catgname;
-			$data->category = $name;
-			$file = "cache\\com_topics\\" . $row->mid;
-			$data = json_encode( $data );
-			file_put_contents ( $file , $data );
-			echo '<li><a href="index.php?option=com_topics&amp;view=rdmore&amp;cid=' . $row->mid . '&amp;Itemid='.$_GET['Itemid'].'">' . $row->catgname . '</a></li>';
+			$link = JRoute::_('index.php?option=com_topics&amp;view=rdmore&amp;item=' . $slug . '-' . $tipo . '&amp;type=' . $row->catslug);
+			echo '<li><a href="' . $link . '">' . $row->subcategory . '</a></li>';
 		}
 		echo '</ul>';
-	}
+	} // End of blue submenu
+
 	$artigos = array();
 	$totalcount = count($total);
 	$ct = 0;
-	if (is_array($total)) { 
-		foreach ($total as $r) {
-			if ($r->link ) {
-				$data = new stdClass;
-				$data->link = $r->link;
-				$data->dmdate_published = $r->dmdate_published;
-				$data->titulo = $r->titulo;
-				if (!$data->titulo) $data->titulo = $r->title;
-				$artigos[] = $data;
-				$ct++;
-			}
+	foreach ($total as $r) {
+		if ($r->docman_document_id ) {
+			$data = new stdClass;
+			$data->id = $r->docman_document_id;
+			$data->titulo = $r->title;
+			$data->categoria = $r->catgname;
+			$data->catslug = $r->catslug;
+			$data->link = "index.php/documents/$r->catslug/$r->docman_document_id-$r->slug/file";
+			$data->dmdate_published = $r->updated;
+			$artigos[] = $data;
+			$ct++;
 		}
 	}
 	if ($artigos[0]->dmdate_published) {
 		uasort($artigos, 'compare_dmdate');
 		$artigos = array_reverse($artigos);
 	}
-
 	if ($ct < $totalcount) $totalcount = $ct;
-	//	if ($dcid == 5932 || $dcid == 5927 || $dcid == 3273 || $dcid == 3274) { $totalcount = 2; }
-
-	if ($totalcount == 1) {
-		$numbers[0] = 0;
-	}
-	if ($totalcount == 2) {
-		$numbers[0] = 0;
-		$numbers[1] = 1;
-	}
-	if ($totalcount > 2) {
-		$numbers = array_rand(range(0,(count($artigos)-1)), 2);
-	}
-	if ($totalcount) {
-		echo "\n<ul style=\"margin-top:0;margin-bottom:4px\">\n";
-		$link = "index.php?option=com_docman&amp;task=doc_download";
-		$link .= "&amp;Itemid=&amp;gid=" . $artigos[0]->link;
-		$link = JRoute::_( $link );
-		echo "<li><a href=\"" . $link . "\">";
-		echo $artigos[0]->titulo . "</a></li>\n";
-	}
-	if ($totalcount > 1) {
-		$link = "index.php?option=com_docman&amp;task=doc_download";
-		$link .= "&amp;Itemid=&amp;gid=" . $artigos[1]->link;
-		$link = JRoute::_( $link );
-		echo "<li><a href=\"" . $link . "\">";
-		echo $artigos[1]->titulo . "</a></li>\n";
-	}
-	if ($totalcount > 0) {
+		if ($totalcount == 1) {
+			$numbers[0] = 0;
+		}
+		if ($totalcount == 2) {
+			$numbers[0] = 0;
+			$numbers[1] = 1;
+		}
+		if ($totalcount > 2) {
+			$numbers = array_rand(range(0,(count($artigos)-1)), 2);
+		}
+		if ($totalcount) {
+			echo "\n<ul style=\"margin-top:0;margin-bottom:4px\">\n";
+			$link = $artigos[0]->link;
+			echo "<li><a href=\"" . $link . "\">";
+			echo $artigos[0]->titulo . "</a></li>\n";
+		}
+		if ($totalcount > 1) {
+			$link = $artigos[1]->link;
+			echo "<li><a href=\"" . $link . "\">";
+			echo $artigos[1]->titulo . "</a></li>\n";
+		}
 		echo "</ul>\n";
+		if ($totalcount > 2) {
+		echo '<p><a style="text-decoration:underline" href="index.php?option=com_topics&amp;view=readall&amp;item=' . $slug . '-' . $tipo . '">' . JText::_( 'ALL_DOCS' ) . '</a></p>';
 	}
-	if ($totalcount > 2) {
-		echo "<p><a style=\"text-decoration:underline\" href=\"index.php?option=com_topics&amp;view=readall&amp;cid=".print_r($catid,true)."&amp;Itemid=".$_GET['Itemid']."\">" . JText::_( 'All Documents' ) . "</a></p>\n";
-	}
-
+	// Save all data to cache
+	$dados = array();
+	foreach ( $cats as $c ) {
+		$data = new stdClass;
+		$data->cats = $c;
+		$docs = array();
+		foreach ($artigos as $a) {
+			if ($c->catslug != $a->catslug) continue;
+			$docs[] = $a;
+		}
+		$data->docs = $docs;
+		$dados[] = $data;
+		}
+	$data = json_encode( $dados );
+	file_put_contents ( $file , $data );
 }
 
 function compare_dmdate($a, $b) {
