@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.0" type="template" client="site">
-	<name>Responsive-topics</name>
+	<name>Fronttopics</name>
 	<version>1.0</version>
-	<creationDate>02/09/2017</creationDate>
-	<author>Carousel 30, Paulo Leite, Juan Carlos Diaz</author>
+	<creationDate>08/12/2015</creationDate>
+	<author></author>
 	<authorEmail></authorEmail>
 	<copyright>GNU/GPL</copyright>
 	<license>GNU/GPL</license>
-	<description>Accessible template for PAHO internal pages in Joomla 3.x</description>
+	<description>Accessible template for Joomla 3.x</description>
 	<files>
 		<filename>component.php</filename>
 		<filename>favicon.ico</filename>

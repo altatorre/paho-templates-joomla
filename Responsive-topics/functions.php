@@ -5,10 +5,13 @@ class Joomla_Template {
 	var $config = '';
 	var $menuitem = '';
 
-	function Joomla_Template ($template) {
+		// https://cweiske.de/tagebuch/php4-constructors-php7.htm	
+	function __construct($template) {
 		$this->template = $template->template;
 		$this->config = new JConfig();
-		$this->menuitem = &JSite::getMenu();
+		// original: $this->menuitem = JSite::getMenu();
+		// https://forum.joomla.org/viewtopic.php?t=828964
+		$this->menuitem = JFactory::getApplication()->getMenu();
 	}
 
 	function sitename() {
@@ -16,11 +19,11 @@ class Joomla_Template {
 	}
 
 	function base_url() {
-		return JURI::base();
+		return JUri::base();
 	}
 
 	function template_url() {
-		return JURI::base()."templates/".$this->template;
+		return JUri::base()."templates/".$this->template;
 	}
 
 	function is_home() {

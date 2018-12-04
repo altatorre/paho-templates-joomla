@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Health Topics Component
  * by Paulo Leite - 2014
@@ -8,32 +8,20 @@ defined('_JEXEC') or die('Restricted access');
 $topic = $this->topics;
 //print_r($topic);
 $document = JFactory::getDocument();
-$lang = JFactory::getLanguage();
-$lang = $lang->getTag();
-if ($lang == 'es-ES') {
-	if (isset($rows)) {
-		asort( $rows );
-	}
-	$document->setTitle( 'OPS OMS | '. $topic->topic );
-} else {
-	if (isset($rows)) {
-		ksort( $rows );
-	}
-	$document->setTitle( 'PAHO WHO | '. $topic->topic );
-}
+$document->setTitle($topic->topic . ' | PAHO' );
 $slug =$topic->alias;
 if ($topic->replacingurl) {
 	echo "<script>location.replace('" . $topic->replacingurl . "'); </script>";
 }
 $left_menu = array();
-if ($topic->sci_tech_doc_types) $left_menu[] = "PAHOWHO_SCIENTIFIC_TECHNICAL_MATERIAL|#sci_tech";
-if ($topic->advocacy_doc_types) $left_menu[] = "PAHOWHO_COMM_MATERIALS|#communication";
-if ($topic->mandates_doc_types) $left_menu[] = "PAHOWHO_MANDATES|#mandates";
-if ($topic->alerts_doc_types) $left_menu[] = "PAHOWHO_EPI_ALERTS|#alerts";
+if (isset($topic->sci_tech_doc_types)) $left_menu[] = "PAHOWHO_SCIENTIFIC_TECHNICAL_MATERIAL|#sci_tech";
+if (isset($topic->advocacy_doc_types)) $left_menu[] = "PAHOWHO_COMM_MATERIALS|#communication";
+if (isset($topic->mandates_doc_types)) $left_menu[] = "PAHOWHO_MANDATES|#mandates";
+if (isset($topic->alerts_doc_types)) $left_menu[] = "PAHOWHO_EPI_ALERTS|#alerts";
 if (isset($topic->external_doc_types)) $left_menu[] = "EXTERNAL_MATERIAL|#external";
-if ($topic->statistics_doc_types) $left_menu[] = "PAHO/WHO Data, Maps and Statistics|#data";
+if (isset($topic->statistics_doc_types)) $left_menu[] = "PAHO/WHO Data, Maps and Statistics|#data";
 if ( substr( $topic->multimedia[0], 0, 16) != '{"name":"","type' ) $left_menu[] = "PAHOWHO_MULTIMEDIA|#multimedia";
-if ($topic->news) $left_menu[] = "HT_NEWS|#news";
+if (isset($topic->news)) $left_menu[] = "HT_NEWS|#news";
 //print_r($topic);
 ?>
 			<!-- Title -->
@@ -65,7 +53,6 @@ foreach($left_menu as $row) {
 			</div>
 		</div>
 
-
 		<!-- Row that starts with topic photo -->
 		<div class="row">
 			<div class="col-xs-12">
@@ -93,7 +80,7 @@ foreach($left_menu as $row) {
 					<!-- End of Scientific and Technical Material -->
 
 					<!-- Epidemiological Alerts start here -->
-					<?php if ( $topic->alerts_docs ) { ?>
+					<?php if ( isset($topic->alerts_docs) ) { ?>
 					<div class="item" id="alerts">
 						<div class="textholder textholder3">
 							<h2><?php echo JText::_( 'PAHOWHO_EPI_ALERTS' ); ?></h2>
@@ -104,7 +91,7 @@ foreach($left_menu as $row) {
 					<!-- Epidemiological Alerts end here -->
 
 					<!-- News Module starts here -->
-					<?php if ( $topic->news ) { ?>
+					<?php if ( isset($topic->news) ) { ?>
 					<div class="item" id="news">
 						<div class="textholder2">
 							<h2><?php echo JText::_( 'HT_NEWS' ); ?></h2>
@@ -130,7 +117,7 @@ foreach($left_menu as $row) {
 					<!-- News Module ends here -->
 
 					<!-- Communication Materials start here -->
-					<?php if ( $topic->advocacy_docs ) { ?>
+					<?php if ( isset($topic->advocacy_docs) ) { ?>
 					<div class="item" id="communication">
 						<div class="img-holder">
 							<img src="<?php echo $topic->photo; ?>-2.jpg" alt="image description" width="364" height="180">
@@ -144,7 +131,7 @@ foreach($left_menu as $row) {
 					<!-- Communication Materials end here -->
 
 					<!-- Mandates and Strategies start here -->
-					<?php if ( $topic->mandates_docs ) { ?>
+					<?php if ( isset($topic->mandates_docs) ) { ?>
 					<div class="item" id="mandates">
 						<div class="img-holder">
 							<img src="<?php echo $topic->photo; ?>-3.jpg" alt="image description" width="364" height="179">
@@ -159,7 +146,7 @@ foreach($left_menu as $row) {
 
 					<!-- Video Block starts herel -->
 					<?php
-					if ( $topic->mm_highlight ) {
+					if ( isset($topic->mm_highlight) ) {
 						$video = $topic->mm_highlight;
 						if (stripos($video,'v=')) {
 							$ytcode = substr($video, stripos($video,'v=')+2,11);
@@ -200,7 +187,7 @@ foreach($left_menu as $row) {
 					<!-- External Parties Material ends here -->
 
 					<!-- Statistics start here -->
-					<?php if ( $topic->statistics_docs ) { ?>
+					<?php if ( isset($topic->statistics_docs) ) { ?>
 					<div class="item" id="data">
 						<div class="textholder textholder3">
 							<h2><?php echo JText::_( 'PAHOWHO_DATA' ); ?></h2>
@@ -258,6 +245,7 @@ foreach($left_menu as $row) {
 					</div><!-- end of item -->
 					<?php } ?>
 					<!-- Multimedia Materials end here -->
+
 <?php $mod_right = JHTML::_('content.prepare', '{loadposition right}');
 if($mod_right): ?>
 <!--	<div class="item col-md-4 text-holder"> -->
@@ -302,10 +290,18 @@ if($mod_right): ?>
 				echo $mod_right; 
 		?>
 <!-- 	</div> -->
-<?php endif; ?>
-
+<?php endif; ?>					
 				</div><!-- end of gallery-holder -->
 			</div>
+
+<?php $mod_right = JHTML::_('content.prepare', '{loadposition right3}');
+if($mod_right): ?>
+	<div id="sidebar" class="col-md-4">
+		<?php echo $mod_right; ?>
+	</div>
+<?php endif; ?>
+
+
 
 
 <!--
@@ -349,28 +345,13 @@ function showDocman($total, $name, $slug, $tipo) {
 	$file = "cache\\com_topics\\" . $slug . '-' . $tipo;
 	$cats = array();
 	foreach ($total as $row) {
-		if (($row->catid) && ($row->level > 0) && ($row->level < 3)) {
+		if ($row->catid) {
 			$data = new stdClass();
 			$data->topic = $slug;
 			$data->category = $name;
-			if ($row->level == 2) {
-				$db = JFactory::getDBO();
-				$query_categ_relation = "SELECT * FROM #__docman_category_relations where descendant_id=".$row->catid." and level=1";			
-				$db->setQuery($query_categ_relation);
-				$this_categ_relation = $db->loadObject();
-
-				$query_categ_father = "SELECT * FROM #__docman_categories where docman_category_id=".$this_categ_relation->ancestor_id;		
-				$db->setQuery($query_categ_father);
-				$this_categ_father = $db->loadObject();
-
-				$data->subcategory = $this_categ_father->title; 
-				$data->catid = $this_categ_father->docman_category_id; 
-				$data->catslug = $this_categ_father->slug; 
-			} else {
-				$data->subcategory = $row->catgname;
-				$data->catid = $row->catid;
-				$data->catslug = $row->catslug;
-			}
+			$data->subcategory = $row->catgname;
+			$data->catid = $row->catid;
+			$data->catslug = $row->catslug;
 			$cats[] = $data;
 		}
 	}
@@ -381,8 +362,7 @@ function showDocman($total, $name, $slug, $tipo) {
 		echo '<ul class="category-list">';
 		foreach ($cats as $row) {
 			$link = JRoute::_('index.php?option=com_topics&amp;view=rdmore&amp;item=' . $slug . '&amp;cat=' . $tipo . '&amp;type=' . $row->catslug);
-			//if ($row->level == 1)
-				echo '<li><a href="' . $link . '">' . $row->subcategory . '</a></li>';
+			echo '<li><a href="' . $link . '">' . $row->subcategory . '</a></li>';
 		}
 		echo '</ul>';
 	} // End of blue submenu
