@@ -48,7 +48,7 @@ if ( mosCountModules( 'right' ) and ( empty( $_REQUEST['task'] ) || ( $_REQUEST[
 </head>
 <body>
 
-			<table border="0" cellpadding="0" cellspacing="0" width="50%" class="content_table"
+			<table border="0" cellpadding="0" cellspacing="0" width="50%" class="content_table" align="center">
                                         
                                         <!-- News Content -->
                                         
