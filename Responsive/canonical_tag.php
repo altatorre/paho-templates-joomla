@@ -63,9 +63,9 @@
 		// get url for article
 
 
-		$db_can	=& JFactory::getDBO();
+		$db_can	= JFactory::getDBO();
 		$query_can =
-		"SELECT a.title AS title, c.title AS category, a.sectionid as sectionid, " .
+		"SELECT a.title AS title, c.title AS category, " . // a.sectionid as sectionid, 
 			" CASE WHEN CHAR_LENGTH(a.alias) THEN CONCAT_WS(':', a.id, a.alias) ELSE a.id END as slug, " .
 			" CASE WHEN CHAR_LENGTH(c.alias) THEN CONCAT_WS(':', c.id, c.alias) ELSE c.id END as catslug FROM #__content AS a ".
 			" LEFT JOIN #__categories AS c ON c.id = a.catid WHERE a.state = 1 AND a.id=".intval($article_id)." ORDER BY a.catid, a.ordering";		
@@ -195,14 +195,35 @@
 		$canonical_value = str_replace("./", "/", $canonical_value );
 		$canonical_value = str_replace("%20/", "/", $canonical_value );
 		$canonical_value = str_replace("%20/", "/", $canonical_value );
+		$canonical_value = str_replace("www2.paho.org", "www.paho.org", $canonical_value );
 	?>
 		<!--canonical tag-->	
 	<link rel="canonical" href="<?php echo($canonical_value); ?>" /> 
-		
+	<meta property="og:url" content="<?php echo($canonical_value); ?>" />	
 	<?php
 	}
 
-	mysql_connect('hq-int-sql-01', 'commondb', 'xUWyH!7uZgPw');
+	$mydocument = JFactory::getDocument();
+
+	$myrobot = $mydocument->_metaTags['standard']['robots'];
+	
+	$miuri = $_SERVER['REQUEST_URI'];
+	$condicion = strpos($miuri, "&lang=en&lang=") > 0;
+	$condicion |= strpos($miuri, "/admin-ajax.php") > 0;
+	$condicion |= strpos($miuri, "&amp;") > 0;
+	$condicion |= strpos($miuri, "com_eventlist") > 0;
+	$condicion |= strpos($miuri, "feed=rss2") > 0;
+	$condicion |= strpos($miuri, "feed/atom_") > 0;
+	$condicion |= strpos($miuri, "feed/rss_") > 0;
+	$condicion |= strpos($miuri, "format=feed") > 0;
+	$condicion |= ((strpos($miuri, "limitstart") > 0) && (strpos($miuri, "view=article") === false));
+
+	
+	if ($condicion) { 
+		$mydocument->setMetaData( 'robots', "noindex, nofollow" );
+	}
+	
+	/* mysql_connect('hq-int-sql-01', 'commondb', 'xUWyH!7uZgPw');
 	mysql_set_charset('utf8'); 
 	$ipaddress=$_SERVER['REMOTE_ADDR'];
 	$referer=$_SERVER['HTTP_REFERER'];
@@ -227,7 +248,7 @@
     	//die('Invalid query: ' . mysql_error());
 		echo "<!-- <h3>Se ha producido un error al enviar su solicitud.</h3>". $query . " -->";
 	}
-
+		*/
 
 	?>
 
