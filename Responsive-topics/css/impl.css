@@ -1,15 +1,21 @@
 /* main selectors */
-.twitter-timeline {
+ .twitter-timeline {
 	width:100% !important;
 	max-width:none !important;
-	height: 150px !important;
-	min-height: 150px !important;
+	height:450px !important;
+	/* cambio twitter. antes 150 */ 
+	min-height:450px !important;
+	/* cambio twitter. antes 240 */ 
 }
-.pagination{margin: 10px 0;}
-.pagination .counter{display: inline;}
-.pagination .pagination-list{
-	display: inline;
-	list-style: none;
+.pagination {
+	margin:10px 0;
+}
+.pagination .counter {
+	display:inline;
+}
+.pagination .pagination-list {
+	display:inline;
+	list-style:none;
 }
 .pagination .pagination-list li{
 	display: inline;
