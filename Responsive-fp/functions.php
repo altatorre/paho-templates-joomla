@@ -5,8 +5,8 @@ class Joomla_Template {
 	var $config = '';
 	var $menuitem = '';
 
-		// https://cweiske.de/tagebuch/php4-constructors-php7.htm
-	function __construct ($template) {
+		// https://cweiske.de/tagebuch/php4-constructors-php7.htm	
+	function __construct($template) {
 		$this->template = $template->template;
 		$this->config = new JConfig();
 		// original: $this->menuitem = JSite::getMenu();

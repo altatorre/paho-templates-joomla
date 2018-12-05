@@ -2,6 +2,8 @@
 include_once (dirname(__FILE__).'/functions.php');
 global $tpl;
 $tpl = new Joomla_Template($this);
+$app = JFactory::getApplication();
+$sitename = $app->getCfg('sitename');
 ?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>

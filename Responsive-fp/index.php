@@ -14,8 +14,10 @@ $doc = JFactory::getDocument();
 $this->language = $doc->language;
 $this->direction = $doc->direction;
 
+$this->setGenerator(null);
+
 ?><!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
  
@@ -23,15 +25,23 @@ $this->direction = $doc->direction;
 
 $option   = $app->input->getCmd('option', '');
 $view   = $app->input->getCmd('view', '');
-$sitename = $app->getCfg('sitename');
+$sitename = JFactory::getApplication()->get('sitename');
+//$sitename = "PAHO/WHO";
 
-$doc->addStyleSheet(JUri::base() . 'templates/' . $this->template . '/css/bootstrap.css?v=3');
-$doc->addStyleSheet(JUri::base() . 'templates/' . $this->template . '/css/font-awesome.min.css');
-$doc->addStyleSheet(JUri::base() . 'templates/' . $this->template . '/css/font-awesome.css');
-$doc->addStyleSheet(JUri::base() . 'templates/' . $this->template . '/css/main.css?v=3');
-$doc->addStyleSheet(JUri::base() . 'templates/' . $this->template . '/css/paho.css?v=1');
-$doc->addStyleSheet(JUri::base() . 'templates/' . $this->template . '/css/impl.css?v=3');
-
+$JUribase = JURI::base();
+	/* compresion de css */
+$compress_css = true;
+if ($compress_css) {
+	$doc->addStyleSheet($JUribase . 'templates/' . $this->template . '/css/css-compress.php');
+} else {
+	$doc->addStyleSheet($JUribase . 'templates/' . $this->template . '/css/bootstrap.css');
+	$doc->addStyleSheet($JUribase . 'templates/' . $this->template . '/css/font-awesome.min.css');
+	$doc->addStyleSheet($JUribase . 'templates/' . $this->template . '/css/font-awesome.css');
+	$doc->addStyleSheet($JUribase . 'templates/' . $this->template . '/css/main.css');
+	$doc->addStyleSheet($JUribase . 'templates/' . $this->template . '/css/custom.css');
+	$doc->addStyleSheet($JUribase . 'templates/' . $this->template . '/css/paho.css');
+	$doc->addStyleSheet($JUribase . 'templates/' . $this->template . '/css/impl.css');
+}
 
 //$doc->addScript(JUri::base() . 'templates/' . $this->template . '/js/jquery.main.js', 'text/javascript');
 //$doc->addScript(JUri::base() . 'templates/' . $this->template . '/js/bootstrap.min.js', 'text/javascript');
@@ -47,16 +57,16 @@ $doc->addStyleSheet(JUri::base() . 'templates/' . $this->template . '/css/impl.c
 	<!-- <meta name="theme-color" content="#0099d9" /> -->
 	<jdoc:include type="head" />
 <?php 
-$doc->addScript(JUri::base() . 'media/system/js/language.js');
-$doc->addScript(JUri::base() . 'media/jui/js/jquery.min.js', 'text/javascript');
-$doc->addScript(JUri::base() . 'media/jui/js/jquery-noconflict.js', 'text/javascript');
-$doc->addScript(JUri::base() . 'media/jui/js/jquery-migrate.min.js', 'text/javascript');
+//$doc->addScript(JUri::base() . 'media/system/js/language.js');
+//$doc->addScript(JUri::base() . 'media/jui/js/jquery.min.js', 'text/javascript');
+//$doc->addScript(JUri::base() . 'media/jui/js/jquery-noconflict.js', 'text/javascript');
+//$doc->addScript(JUri::base() . 'media/jui/js/jquery-migrate.min.js', 'text/javascript');
 	?>
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.paho.org/images/icons/ios-ipad-144x144.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.paho.org/images/icons/ios-iphone-114x114.png" />
-	<link rel="apple-touch-icon-precomposed" href="http://www.paho.org/images/icons/ios-default-homescreen-57x57.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.paho.org/images/icons/ios-ipad-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.paho.org/images/icons/ios-iphone-114x114.png" />
+	<link rel="apple-touch-icon-precomposed" href="https://www.paho.org/images/icons/ios-default-homescreen-57x57.png" />
 	<meta http-equiv="refresh" content="28800">
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
 	<script type="text/javascript">
@@ -104,7 +114,7 @@ if ($lm && $rm) {
 
 ?>
 </head>
-<body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="https://schema.org/WebPage">
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MDCJXB" title="Google Tag Manager"
 style="height:0px;width:0px;display:none;visibility:hidden"><span style="visibility:hidden">Google Tag</span></iframe></noscript>
@@ -115,6 +125,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MDCJXB');</script>
 <!-- End Google Tag Manager -->
 <!--googleoff: index-->  
+<!-- inte-web-03 -->
 	<div id="wrapper">
 		<jdoc:include type="modules" name="sidebar_social" />
 		<div class="container">
@@ -136,33 +147,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<jdoc:include type="modules" name="language_switcher_mobile" />
 					  </div>
 					  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<span class="topheader">
-								<jdoc:include type="modules" name="share2" style="xhtml" />
-								<span class="lang-inline toplanguage">
+							<div class="topheader">
+								<div class="topsearch">
+									<jdoc:include type="modules" name="user4" />
+								</div>
+                <span class="lang-inline toplanguage">
 									<jdoc:include type="modules" name="language" />
 								</span>
-								<span class="topsearch">
-									<jdoc:include type="modules" name="user4" />
-								</span>
-							</span>	
+								<jdoc:include type="modules" name="share2" style="xhtml" />
+							</div>	
 						  <jdoc:include type="modules" name="header" style="xhtml" />
-					  
 					</div>
 				  </nav>
 				</div>
 			  </header>
 			</div>
-<gcse:searchresults></gcse:searchresults>			
+      <gcse:searchresults></gcse:searchresults>			
 			<?php if($tpl->is_front_page()): ?>
 				<!-- Frontpage content starts here -->
 				<jdoc:include type="modules" name="home_top" />
+				<!--googleon: index-->
 				<jdoc:include type="component" />
 						<?php if($this->countModules('home_events')): ?>
 						<div class="tabs-holder">
 						  <!-- Nav tabs -->
 						  <ul class="nav nav-tabs" role="tablist">
-							<li class="active"><a href="#tab1" role="tab" data-toggle="tab"><?php echo JText::_('TAB_EPIDEMIOLOGICAL'); ?></a></li>
-							<li><a href="#tab2" role="tab" data-toggle="tab"><?php echo JText::_('TAB_UPCOMING'); ?></a></li>
+							<li class="active"><a href="#tab1" role="tab" data-toggle="tab"><?php echo JText::_('TPL_RESPONSIVE_FP_TAB_EPIDEMIOLOGICAL'); ?></a></li>
+							<li><a href="#tab2" role="tab" data-toggle="tab"><?php echo JText::_('TPL_RESPONSIVE_FP_TAB_UPCOMING'); ?></a></li>
 						  </ul>
 						  <!-- Tab panes -->
 						  <div class="tab-content">
@@ -170,12 +181,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						  </div>
 						</div>
 						<?php endif; ?>
-				
 					</div>
+<?php if($this->countModules( 'postmain' )) { ?>
+			<div id="postmain">
+				<jdoc:include type="modules" name="postmain" style="xhtml" />
+			</div><!-- end of #postmain -->
+<?php } ?>
 				</div>
 				
 				<jdoc:include type="modules" name="home_bottom" style="clear" />
-								
+				<!--googleon: index-->								
 				<!-- Frontpage content ends here -->
 				<div class="container3 row" style="margin-top: 20px">
 				  <div class="col-xs-12">
@@ -189,20 +204,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<div class="row">
 					<?php if( $view == 'article' || $view == 'category' ): ?>
 						<jdoc:include type="modules" name="breadcrumbs" style="xhtml" />
+
 						<?php if($lm) { ?>
 						<div class="col-lg-2 col-md-2 col-sm-3 left_column">
+
 						<?php if($this->countModules( 'left1' )) { ?>
 							<jdoc:include type="modules" name="left1" style="xhtml" />
 						<?php } ?>
+
 						<?php if($this->countModules( 'left2' )) { ?>
 							<jdoc:include type="modules" name="left2" style="xhtml" />
 						<?php } ?>
+
 						<?php if($this->countModules( 'left3' )) { ?>
 							<jdoc:include type="modules" name="left3" style="xhtml" />
 						<?php } ?>
+
 						<?php if($this->countModules( 'left4' )) { ?>
 							<jdoc:include type="modules" name="left4" style="xhtml" />
 						<?php } ?>
+
 						<?php if($this->countModules( 'left5' )) { ?>
 							<jdoc:include type="modules" name="left5" style="xhtml" />
 						<?php } ?>
@@ -244,36 +265,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</div>
 
 <?php if($rm) { ?>
-					<div class="col-lg-2 col-md-3 col-sm-3 sidebar">
-<?php if($this->countModules( 'right' )) { ?>
-						<jdoc:include type="modules" name="right" style="xhtml" />
-<?php } ?>
-<?php if($this->countModules( 'right1' )) { ?>
-						<jdoc:include type="modules" name="right1" style="xhtml" />
-<?php } ?>
-<?php if($this->countModules( 'right2' )) { ?>
-						<jdoc:include type="modules" name="right2" style="xhtml" />
-<?php } ?>
-<?php if($this->countModules( 'right3' )) { ?>
-						<jdoc:include type="modules" name="right3" style="xhtml" />
-<?php } ?>
-<?php if($this->countModules( 'right4' )) { ?>
-						<jdoc:include type="modules" name="right4" style="xhtml" />
-<?php } ?>
-<?php if($this->countModules( 'right5' )) { ?>
-						<jdoc:include type="modules" name="right5" style="xhtml" />
-<?php } ?>
+          <div class="col-lg-2 col-md-3 col-sm-3 sidebar">
+            <?php if($this->countModules( 'right' )) { ?>
+                        <jdoc:include type="modules" name="right" style="xhtml" />
+            <?php } ?>
+            <?php if($this->countModules( 'right1' )) { ?>
+                        <jdoc:include type="modules" name="right1" style="xhtml" />
+            <?php } ?>
+            <?php if($this->countModules( 'right2' )) { ?>
+                        <jdoc:include type="modules" name="right2" style="xhtml" />
+            <?php } ?>
+            <?php if($this->countModules( 'right3' )) { ?>
+                        <jdoc:include type="modules" name="right3" style="xhtml" />
+            <?php } ?>
+            <?php if($this->countModules( 'right4' )) { ?>
+                        <jdoc:include type="modules" name="right4" style="xhtml" />
+            <?php } ?>
+            <?php if($this->countModules( 'right5' )) { ?>
+                        <jdoc:include type="modules" name="right5" style="xhtml" />
+            <?php } ?>
 					</div><!-- end of sidebar -->
 <?php } ?>
 
 					<?php elseif( $view == 'topics' || $view == 'single'): ?>
 						<jdoc:include type="message" />
+						<!--googleon: index-->
 						<jdoc:include type="component" />
+						<!--googleoff: index-->
 					<?php else: ?>
 						<div id="content" class="col-md-8">
 							<div class="text-block">
 								<jdoc:include type="message" />
+								<!--googleon: index-->
 								<jdoc:include type="component" />
+								<!--googleoff: index-->
 							</div>
 						</div>
 					<?php endif; ?>
@@ -318,7 +343,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="<?php echo JUri::base() . 'templates/' . $this->template . '/js/bootstrap.min.js'; ?>"></script>
 <script src="<?php echo JUri::base() . 'templates/' . $this->template . '/js/jquery.main.js'; ?>"></script>
 
-<script>/* alert(jQuery('.container').width()); */</script> 
 	<script>
 	jQuery(document).ready(function(){
 	   if (jQuery('#big_slide').length){
