@@ -1,0 +1,555 @@
+.mcnews a {
+     font-size: 14px;
+}
+ .video-block .ytWrapperFP p {
+     top: 230px!important;
+}
+ .navtopiclist li span {
+     padding-left: 20px;
+}
+ #carousel-holder {
+     margin-top: -20px;
+     margin-bottom: -20px;
+}
+ .page-header {
+     border: none;
+}
+ #innerleft {
+     width: 47.5%;
+     float: left;
+}
+ #innercenter {
+     width: 34%;
+     float: left;
+}
+ #innerright {
+     width: 47.5%;
+     float: right;
+}
+/* hijos del menu */
+ .left_column .nav li ul {
+     padding-top: 10px;
+     padding-left: 10px;
+     font-size: 12px;
+     line-height: 14px;
+}
+/* hijos del menu */
+ .left_column .nav li ul li {
+     padding: 0 0 10px 10px;
+     border-bottom: 1px solid #fff;
+}
+/* hijos del menu */
+ .left_column .nav li ul li a {
+     margin: 0 12px 0 0;
+     padding: 0;
+     text-decoration: none;
+}
+ ul.newsfeed li {
+     padding-top: 10px;
+}
+ ul.newsfeed li a {
+     font-weight: normal;
+}
+ .navtopiclist {
+     float: left;
+}
+/* Estilos para NMH */
+ div[class*='moduletablenmh-'] h3 {
+     clear: both;
+     font-size: 18px;
+     font-weight: 600;
+     color: #337ab7;
+     min-height: 28px;
+     background-size: 32px;
+     background-position: -0 0;
+     background-repeat: no-repeat;
+     background-color: #FFF;
+     padding: 6px 0 0 35px;
+     margin-top: 4px;
+     margin-bottom: 0;
+}
+ .moduletablenmh-data h3 {
+     background-image: url("../../../images/stories/PAHO/data-icon.jpg");
+}
+ .moduletablenmh-news h3 {
+     background-image: url("../../../images/stories/PAHO/icon-news.jpg");
+}
+ .moduletablenmh-events h3 {
+     background-image: url("../../../images/stories/PAHO/calendar-icon.jpg");
+}
+ .moduletablenmh-links h3 {
+     background-image: url("../../../images/stories/PAHO/links-icon.jpg");
+}
+ .moduletablenmh-multimedia h3 {
+     background-image: url("../../../images/stories/PAHO/multimedia-icon.jpg");
+}
+ .moduletablenmh-publications h3 {
+     background-image: url("../../../images/stories/PAHO/pub-icon.jpg");
+}
+ .moduletablenmh-resources h3 {
+     background-image: url("../../../images/stories/PAHO/resources-icon.jpg");
+}
+ .moduletablenmh-virtual h3 {
+     background-image: url("../../../images/stories/PAHO/virtual-icon.jpg");
+}
+ div[class*='moduletablenmh-'] {
+    /* border-bottom: 1px dotted #25A;
+     */
+     margin-bottom: 15px;
+}
+ .moduletablenmh-events, .moduletablenmh-publications {
+     border-bottom: none !important;
+     margin-bottom: 2px;
+}
+ #mcnewsright {
+     margin-top: 0;
+}
+ div[class*='moduletablenmh-'] #mcnewsright p {
+     margin-top: 0;
+     margin-right: 6px;
+}
+ div[class*='moduletablenmh-'] h3.contentheading {
+     border: none !important;
+     line-height: 16px;
+     font-size: 13px;
+     color: #26C;
+     margin-left: -35px !important;
+     margin-top: -8px !important;
+     margin-bottom: 8px !important;
+     background: none;
+}
+/* Fim dos estilos para NMH */
+/* Estilos para modulo colapslist */
+ .moduletable .colapslist_title, .moduletablenoarroworange .colapslist_title {
+     cursor: default;
+     color: #26C;
+     font-size: 13px;
+     font-weight: normal;
+}
+ .moduletable .colapslist_title_hover, .moduletablenoarroworange .colapslist_title_hover {
+     cursor: pointer;
+     font-size: 13px;
+     font-weight: normal;
+     color: #DD7700;
+}
+ .moduletablebold .colapslist_titlebold {
+     cursor: default;
+     color: #26C;
+     font-size: 13px;
+     font-weight: normal;
+}
+ .moduletablebold .colapslist_title_hoverbold {
+     cursor: pointer;
+     font-size: 13px;
+     font-weight: normal;
+     color: #DD7700;
+}
+ .moduletableorange .colapslist_titleorange {
+     cursor: default;
+     color: #DD7700;
+     font-size: 13px;
+     font-weight: normal;
+}
+ .moduletableorange h3 {
+     color: #DD7700;
+     font-size: 13px;
+     font-weight: normal;
+}
+ .moduletablenoarrow h3 {
+     cursor: pointer;
+     font-size: 20px;
+     font-weight: bold;
+}
+ .moduletableh1n1 h3 {
+     color: #259;
+}
+ .moduletableorange .colapslist_title_hoverorange {
+     cursor: pointer;
+     font-size: 13px;
+     font-weight: normal;
+     color: #26C;
+}
+ .moduletablenoarrow .colapslist_titlenoarrow {
+     cursor: default;
+     color: #26C;
+     font-size: 13px;
+     font-weight: normal;
+}
+ .moduletablenoarrow .colapslist_title_hovernoarrow {
+     cursor: pointer;
+     font-size: 13px;
+     font-weight: normal;
+     color: #DD7700;
+}
+ .moduletablenoarroworange .colapslist_titlenoarroworange {
+     cursor: default;
+     color: #DD7700;
+     font-size: 13px;
+     font-weight: bold;
+}
+ .moduletablenoarroworange h3, .colapslist_title_hovernoarroworange {
+     cursor: pointer;
+     font-size: 13px;
+     font-weight: bold;
+     color: #D70;
+}
+ .moduletablenoarrow img.colapslist_arrownoarrow {
+     display: none;
+}
+ .moduletablenoarroworange img.colapslist_arrownoarroworange {
+     display: none;
+}
+ .moduletable img.colapslist_arrow {
+     float: left;
+     margin: 2px 6px 0 0;
+}
+ .moduletablenoarroworange img.clp_internal_img {
+     display: block;
+     float: left;
+     margin: 2px 6px 0 0;
+}
+ .colapslist_list ul {
+     list-style-type: square;
+     margin-left: 14px;
+}
+ .colapslist_main ul li, .colapslist_mainnoarrow ul li, .colapslist_mainnoarroworange ul li {
+     margin-left: 0px;
+}
+ .colapslist_mainorangetitle ul {
+     list-style-type: none;
+}
+ .colapslist_mainorangetitle ul li {
+     margin-left: -14px;
+     line-height: 15px;
+}
+ #sidebar .moduletableorangetitle .colapslist_mainorangetitle ul li a {
+     display: block;
+     font-size: 13px;
+     font-weight: bold;
+     color: #dd7700;
+     margin-top: 0px;
+     border-bottom: 1px solid #AAA;
+     padding-bottom: 2px;
+}
+ #sidebar .moduletableorangetitle h3 {
+     display: none;
+}
+ .moduletablenoarroworange ul {
+     margin-left: 0px;
+}
+ .moduletableeb h3 {
+     color: #248;
+     margin: 16px 0 6px 0;
+}
+ .moduletableeb h3 img {
+     margin-right: 6px;
+}
+ .moduletableeb ul {
+     list-style-type: square;
+     margin-left: 24px;
+}
+ .colaps_bulptd {
+     background-color: #EEEEF6;
+     width:20px;
+     height:20px;
+     border-bottom: 2px solid #999;
+}
+ a.colapslistptd {
+     background-color: #EEEEF6;
+     display:block;
+     font-weight: bold;
+     width:478px;
+     height:20px;
+     margin-bottom: -12px;
+     border-bottom: 2px solid #999;
+}
+ .colaps_liptd {
+     list-style-type: none;
+     width: 478px;
+     margin-left: -32px;
+     padding-left: -32px;
+     padding-bottom: 8px;
+     border-bottom: 1px solid #CCC;
+     margin-bottom: 10px;
+}
+ ul#list_3547 {
+     margin-top: 100px;
+     margin-left: -10px;
+     padding-left: -10px;
+}
+ ul.colaps_ulnoarrow li {
+     margin-bottom: 6px;
+}
+ .moduletable .clplst p {
+     font-size: 11px;
+}
+/* Fin dos estilos para o modulo colapslist */
+/* Estilos para Proyectos y Programas */
+ .programs {
+     -webkit-columns: 3 280px;
+     -moz-columns: 3 280px;
+     columns: 3 280px;
+     -webkit-column-gap: 2em;
+     -moz-column-gap: 2em;
+     column-gap: 2em;
+}
+ .programs ul {
+     list-style-type: none;
+     list-style-image: none;
+     list-style-position: outside;
+     padding: 5px;
+}
+ .programs ul li {
+     padding-bottom: 5px;
+     border-bottom: 1px solid #dddddd;
+}
+ .largebox_title {
+    /* color: #2266cc;
+     */
+     margin-top: 25px !important;
+     padding-top: 8px !important;
+     border-top: 1px solid #AAA;
+     font-weight: bold;
+}
+ .largebox_title:first-child {
+     margin-top: 0 !important;
+}
+/* PUBLICACIONES */
+ #big_pubslide {
+     width: 1000%;
+    /* 6000px;
+    /* 100% */
+     height: 600px;
+     position: absolute;
+     top: 0;
+     left: 0;
+}
+ .pub_slsh_texto {
+     width: 10%;
+    /* 580px;
+     */
+     height: auto;
+     margin-left: 0;
+     float: left;
+}
+ .pub_slsh_texto img {
+     width: 140px;
+     height: auto;
+     float: left;
+     border: 1px solid #CCC;
+     margin: 0 18px 4px 0;
+}
+ .pub_slsh_texto p, .pub_slsh_texto li {
+     margin-top: 2px;
+     margin-bottom: 0;
+     font-size: 16px;
+     line-height: 18px;
+}
+ .pub_slsh_texto a {
+     font-size: 18px;
+}
+ .image_only {
+     width: 580px;
+     height: 435px;
+     margin-left: 0;
+     float: left;
+}
+ .image_only img {
+     width: 100%;
+     height: auto;
+}
+ span.pub_title a {
+     display: block;
+     margin-bottom: 8px;
+     font-size: 14px;
+     line-height: 19px;
+     font-weight: bold;
+}
+ #pubslides {
+     width: 100%;
+    /* 580px */
+     height: 250px;
+     float: left;
+     position: relative;
+     margin: 10px 0 5px 0;
+     overflow: hidden;
+     border-bottom: 1px solid #CCC;
+}
+ #pubsld_crc {
+     width: 100%;
+     float: left;
+     text-align: center;
+     margin-top: 0;
+     margin-bottom: 12px;
+}
+ #pubcircles {
+     margin: 0 auto;
+}
+/* Estilos para Proyectos y Programas */
+ .programs a{
+     display: block;
+     background-color: #eeeeee;
+     background-image: none;
+     background-repeat: repeat;
+     background-attachment: scroll;
+     background-clip: border-box;
+     background-origin: padding-box;
+     background-position-x: 0%;
+     background-position-y: 0%;
+     background-size: auto auto;
+     font-size: 14px;
+     font-weight: bold;
+     padding-top: 3px;
+     padding-right: 3px;
+     padding-bottom: 3px;
+     padding-left: 3px;
+     margin-bottom: 4px;
+}
+ #postcols{
+     clear:both;
+}
+ #content.topic-content{
+     padding:0;
+}
+ h3.largebox_title {
+     font-size: 24px;
+}
+ .koowa .koowa_header__item {
+     vertical-align: top!important;
+}
+ [class^="koowa_icon--"], [class*=" koowa_icon--"], .koowa_icon_font {
+     margin-top: 3px;
+}
+ h1.koowa_header .koowa_header__item--image_container{
+     display:none;
+}
+ .sidebar .moduletable .mod_docman ul.mod_docman_icons li{
+     margin-left:0px;
+}
+ .koowa .docman_download__button.btn-primary{
+     color:#fff;
+}
+ @media (max-width: 767px) {
+     .left_column .nav > li > a {
+        /* display: inline !important;
+         margin: 10px;
+         */
+         display: inline-block !important;
+         vertical-align: top;
+         color: #0099d9;
+         border: 1px solid #a3def7;
+         padding: 3px 7px;
+         margin: 5px;
+    }
+     .left_column .nav > li {
+         display: inline;
+    }
+     .left_column .nav ul {
+         border: 1px blue solid;
+         display: none;
+    }
+     .moduletablemcleft {
+         display: none;
+    }
+     .left_column .moduletable {
+         padding-bottom: 0px;
+    }
+     .additional-menus {
+         display: none;
+    }
+     #main .heading h1 {
+         padding: 0;
+         font-size:22px;
+    }
+     #inner_content .heading, #inner_content .page-header {
+         padding: 0 0 6px 0;
+    }
+     .additional-menus {
+         display: none;
+    }
+     #main .heading h1 {
+         padding: 0;
+         font-size:22px;
+    }
+     #inner_content .heading, #inner_content .page-header {
+         padding: 0 0 6px 0;
+    }
+}
+ #champions .views-field-title a{
+     color:#000;
+     text-transform:uppercase;
+     font-weight:bold;
+}
+ #champions .field-image a img:hover{
+     opacity:0.8;
+}
+ #champions .col{
+     text-align:center;
+}
+ #champions .row{
+     margin-bottom:20px;
+}
+ #heroes .views-field-title a{
+     color:#1082CC;
+     font-weight:bold;
+}
+ #heroes .field-image a img:hover{
+     opacity:0.8;
+}
+ #heroes .col{
+     text-align:center;
+     border-right: 1px solid #1082CC;
+}
+ #heroes .col:last-child{
+     border-right: 0px solid #1082CC;
+}
+ #heroes .col p{
+     text-align:left;
+     margin-left:25px;
+}
+ #heroes .row{
+     margin-bottom:30px;
+     padding-bottom:30px;
+     border-bottom: 1px solid #1082CC;
+}
+ #heroes a.golden-button{
+     background-color: #FEBB21;
+     padding:5px 15px;
+     border-radius: 10px;
+     color:#fff;
+     font-size:90%;
+}
+ #heroes a.golden-button:hover {
+     background-color: #1082CC;
+     text-decoration:none;
+}
+ .intro-heroes{
+     position: relative;
+     padding: 0 0 60px 0;
+     margin-bottom: 50px;
+}
+ @media screen and (min-width: 1190px) {
+     .heroes-intro-text{
+         position: absolute;
+         bottom: 0;
+         max-width: 650px;
+    }
+}
+ @media screen and (max-width: 992px) {
+     #heroes .col p{
+         margin-left:0px;
+    }
+     #heroes .row{
+         margin-bottom:0px;
+         padding-bottom:0px;
+         border-bottom: 0px solid #1082CC;
+    }
+     #heroes .col{
+         margin-bottom:10px;
+         padding-bottom:10px;
+         border-bottom: 1px solid #1082CC;
+    }
+}
+ .heroes-intro-image img{
+     max-width:100%;
+}
