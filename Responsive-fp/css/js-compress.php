@@ -15,13 +15,12 @@
  */
 /* Add your CSS files to this array (THESE ARE ONLY EXAMPLES) */
 $cssFiles = array(
-  "bootstrap.css",
-  "font-awesome.min.css",
-  "font-awesome.css",
-  "main.css",
-  "custom.css",
-  "paho.css",
-  "impl.css"
+ "../../../media/system/js/language.js", 
+ "../../../media/jui/js/jquery.min.js",
+  "../../../media/jui/js/jquery-noconflict.js",
+  "../../../media/jui/js/jquery-migrate.min.js",
+  "../js/bootstrap.min.js",
+  "../js/jquery.main.js"
 );
 /**
  * Ideally, you wouldn't need to change any code beyond this point.
@@ -43,7 +42,7 @@ header('Cache-Control: public');
 // Expire in one day
 header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 786400) . ' GMT');
 // Set the correct MIME type, because Apache won't set it for us
-header("Content-type: text/css");
+header("Content-type: text/javascript");
 // Write everything out
 echo($buffer);
 ?>
