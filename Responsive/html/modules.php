@@ -19,7 +19,9 @@ function modChrome_widget($module, &$params, &$attribs)
 	$prefix = $params->get('moduleclass_sfx') ? " prefix".$params->get('moduleclass_sfx') : "";
 	$hl = isset($attribs['headerLevel']) ? (int) $attribs['headerLevel'] : 3;
 	
-	if (!empty ($module->content)) : ?>
+	if (!empty ($module->content)) : 
+		echo "\n<!-- Mod: " . $module->title . " - Type: " . $module->module . " - Position: ".$module->position." - ID: " . $module->id . " -->";
+	?>
 	<div class="widget widget-<?php echo $base, $prefix; ?>" id="<?php echo $base.'-'.$module->id; ?>">
 		<?php if ($module->showtitle) : ?>
 			<h<?php echo $hl; ?>><?php echo $module->title; ?></h<?php echo $hl; ?>>
@@ -57,3 +59,35 @@ function modChrome_events($module, &$params, &$attribs)
 	</div>
 	<?php endif;
 }
+
+	/* http://stackoverflow.com/questions/1309452/how-to-replace-innerhtml-of-a-div-using-jquery */
+	/* https://docs.joomla.org/Applying_custom_module_chrome */
+function modChrome_item($module, &$params, &$attribs)
+{
+	if (isset($GLOBALS['cuentamodulos'])) $GLOBALS['cuentamodulos'] ++;
+	else $GLOBALS['cuentamodulos'] = 0;
+	$base = substr($module->module, 4);
+	$prefix = $params->get('moduleclass_sfx') ? " prefix".$params->get('moduleclass_sfx') : "";
+	$hl = isset($attribs['headerLevel']) ? (int) $attribs['headerLevel'] : 3;
+	
+	if (!empty ($module->content)) : 
+		echo "\n<!-- Mod: " . $module->title . " - Type: " . $module->module . " - Position: ".$module->position." - ID: " . $module->id . " -->";
+	?>
+		<div class="item">
+			<?php 
+			$estilo = '';
+			$cuentaciclo = $GLOBALS['cuentamodulos'] % 5;
+			if ($cuentaciclo ==1) $estilo = '3';
+			if ($cuentaciclo ==2) $estilo = '2';
+			if ($cuentaciclo ==4) $estilo = '1';
+			?>
+			<div class="textholder<?php echo $estilo; ?>">
+		<?php if ($module->showtitle) : ?>
+			<h2><?php echo $module->title; ?></h2>
+		<?php endif; ?>
+		<?php echo str_replace(array('[%', '%]'), array('<', '>'), $module->content); ?>
+			</div><!-- textholder -->
+		</div><!-- item -->
+	<?php endif;
+}
+
