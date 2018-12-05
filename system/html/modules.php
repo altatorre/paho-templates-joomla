@@ -14,6 +14,7 @@ defined('_JEXEC') or die;
  */
 function modChrome_none($module, &$params, &$attribs)
 {
+	echo "\n<!-- Mod: " . $module->title . " - Type: " . $module->module . " - Position: ".$module->position." - ID: " . $module->id . " -->";
 	echo $module->content;
 }
 
