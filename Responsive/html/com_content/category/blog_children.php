@@ -5,8 +5,9 @@ JHtml::_('bootstrap.tooltip');
 
 if (count($this->children[$this->category->id]) > 0 && $this->maxLevel != 0) : ?>
 
-	<?php foreach($this->children[$this->category->id] as $id => $child) : ?>
-		<?php if ($this->params->get('show_empty_categories') || $child->numitems || count($child->getChildren())) : ?>
+	<?php foreach ($this->children[$this->category->id] as $id => $child) : ?>
+		<?php 
+		if ($this->params->get('show_empty_categories') || $child->numitems || count($child->getChildren())) : ?>
 			<div class="sub-category">
 				<h3 class="page-header item-title"><a href="<?php echo JRoute::_(ContentHelperRoute::getCategoryRoute($child->id));?>">
 					<?php echo $this->escape($child->title); ?></a>

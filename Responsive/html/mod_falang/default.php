@@ -30,25 +30,25 @@ foreach($list as $language)
     // si on est sur la langue par defaut du site et que l'on a demander à retirer le prefix
     if (($language->lang_code == $default_lang) && ($remove_default_prefix == '1') && ($default_lang == $current_lang)){
         if ($sef == '1') {
-            $doc->addCustomTag('<link rel="alternate" href="' . /* JURI::base() . */ $language->sef . '/' . substr($language->link, 1) . '" hreflang="' . $language->lang_code . '" />');
+            $doc->addCustomTag('<link rel="alternate" href="' . /* JUri::base() . */ $language->sef . '/' . substr($language->link, 1) . '" hreflang="' . $language->lang_code . '" />');
         } else {
-            $doc->addCustomTag('<link rel="alternate" href="' . /* JURI::base() . */ $language->link . '" hreflang="' . $language->lang_code . '" />');
+            $doc->addCustomTag('<link rel="alternate" href="' . /* JUri::base() . */ $language->link . '" hreflang="' . $language->lang_code . '" />');
         }
     } else {
         if ($sef == '1') {
             //remove slash from $language_link
-            $doc->addCustomTag('<link rel="alternate" href="' . /* JURI::base() . */ substr($language->link, 1) . '" hreflang="' . $language->lang_code . '" />');
+            $doc->addCustomTag('<link rel="alternate" href="' . /* JUri::base() . */ substr($language->link, 1) . '" hreflang="' . $language->lang_code . '" />');
         } else {
-            $doc->addCustomTag('<link rel="alternate" href="' . /* JURI::base() . */ $language->link . '" hreflang="' . $language->lang_code . '" />');
+            $doc->addCustomTag('<link rel="alternate" href="' . /* JUri::base() . */ $language->link . '" hreflang="' . $language->lang_code . '" />');
         }
     }
 
     if ($language->lang_code == $default_lang){
        //add default alternate
         if ($sef == '1') {
-            $doc->addCustomTag('<link rel="alternate" href="' . /* JURI::base() . */ substr($language->link, 1) . '" hreflang="x-default" />');
+            $doc->addCustomTag('<link rel="alternate" href="' . /* JUri::base() . */ substr($language->link, 1) . '" hreflang="x-default" />');
         } else {
-            $doc->addCustomTag('<link rel="alternate" href="' . JURI::base() . '" hreflang="x-default" />');
+            $doc->addCustomTag('<link rel="alternate" href="' . JUri::base() . '" hreflang="x-default" />');
         }
     }
 }

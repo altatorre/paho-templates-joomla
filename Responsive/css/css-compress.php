@@ -16,7 +16,11 @@
 /* Add your CSS files to this array (THESE ARE ONLY EXAMPLES) */
 $cssFiles = array(
   "bootstrap.css",
+  "font-awesome.min.css",
+  "font-awesome.css",
   "main.css",
+  "custom.css",
+  "paho.css",
   "impl.css"
 );
 /**

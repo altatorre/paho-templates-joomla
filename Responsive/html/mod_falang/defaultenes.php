@@ -23,34 +23,56 @@ if (!empty($filter_plugin)) {
     $remove_default_prefix = $filter_plugin_params->get('remove_default_prefix','0');
 }
 
+$Itemid = 0;
+if (isset($_GET['Itemid'])) $Itemid = intval($_GET['Itemid']);
+
+		$db = JFactory::getDBO();	
+
+
+			$sql =  "select * from #__falang_content where reference_table = 'menu' and reference_field = 'title' and reference_id = ".$Itemid." and published = 1 and language_id > 3;";
+
+			$db->setQuery( $sql );
+
+			$translationsptfr = $db->loadObjectList('',false);
+
+			$frenchexists = false;
+			$portugueseexists = false; 
+			$langavailable = Array();
+			foreach ($translationsptfr as $langptfr) {
+				$langavailable[$langptfr->language_id] = true;
+			}
+
+				
 
 //add an alterante by language
 foreach($list as $language)
 {
     // si on est sur la langue par defaut du site et que l'on a demander à retirer le prefix
-    if (($language->lang_code == $default_lang) && ($remove_default_prefix == '1') && ($default_lang == $current_lang)){
-        if ($sef == '1') {
-            $doc->addCustomTag('<link rel="alternate" href="' . /* JURI::base() . */ $language->sef . '/' . substr($language->link, 1) . '" hreflang="' . $language->lang_code . '" />');
-        } else {
-            $doc->addCustomTag('<link rel="alternate" href="' . /* JURI::base() . */ $language->link . '" hreflang="' . $language->lang_code . '" />');
-        }
-    } else {
-        if ($sef == '1') {
+		if (($language->lang_id <= 3) ||  (($language->lang_id > 3) && isset($langavailable[$language->lang_id]))) {
+			if (($language->lang_code == $default_lang) && ($remove_default_prefix == '1') && ($default_lang == $current_lang)){
+					if ($sef == '1') {
+							$doc->addCustomTag('<link rel="alternate" href="' . /* JUri::base() . */ $language->sef . '/' . substr($language->link, 1) . '" hreflang="' . $language->lang_code . '" />');
+					} else {
+							$doc->addCustomTag('<link rel="alternate" href="' . /* JUri::base() . */ $language->link . '" hreflang="' . $language->lang_code . '" />');
+					}
+			} else {
+					if ($sef == '1') {
             //remove slash from $language_link
-            $doc->addCustomTag('<link rel="alternate" href="' . /* JURI::base() . */ substr($language->link, 1) . '" hreflang="' . $language->lang_code . '" />');
-        } else {
-            $doc->addCustomTag('<link rel="alternate" href="' . /* JURI::base() . */ $language->link . '" hreflang="' . $language->lang_code . '" />');
-        }
-    }
+            $doc->addCustomTag('<link rel="alternate" href="' . /* JUri::base() . */ substr($language->link, 1) . '" hreflang="' . $language->lang_code . '" />');
+					} else {
+            $doc->addCustomTag('<link rel="alternate" href="' . /* JUri::base() . */ $language->link . '" hreflang="' . $language->lang_code . '" />');
+					}
+			}
 
-    if ($language->lang_code == $default_lang){
+			if ($language->lang_code == $default_lang){
        //add default alternate
         if ($sef == '1') {
-            $doc->addCustomTag('<link rel="alternate" href="' . /* JURI::base() . */ substr($language->link, 1) . '" hreflang="x-default" />');
+            $doc->addCustomTag('<link rel="alternate" href="' . /* JUri::base() . */ substr($language->link, 1) . '" hreflang="x-default" />');
         } else {
-            $doc->addCustomTag('<link rel="alternate" href="' . JURI::base() . '" hreflang="x-default" />');
+            $doc->addCustomTag('<link rel="alternate" href="' . JUri::base() . '" hreflang="x-default" />');
         }
-    }
+			}
+		}
 }
 //end of alternate tag
 
@@ -75,8 +97,10 @@ foreach($list as $language)
 <?php else : ?>
 	<ul class="<?php echo $params->get('inline', 1) ? 'lang-inline' : 'lang-block';?>">
 	<?php foreach($list as $language):?>
-        <!-- >>> [PAID] >>> -->
-        <?php if (($params->get('show_active', 0) || !$language->active) && (($language->sef=='en') || ($language->sef=='es'))):?>
+        <?php if (($language->lang_id <= 3) ||  (($language->lang_id > 3) && isset($langavailable[$language->lang_id]))) { ?>
+
+				<!-- >>> [PAID] >>> -->
+        <?php if (($params->get('show_active', 0) || !$language->active)):?>
             <li class="<?php echo $language->active ? 'lang-active' : '';?>" dir="<?php echo JLanguage::getInstance($language->lang_code)->isRTL() ? 'rtl' : 'ltr' ?>">
             <?php if ($language->display) { ?>
                 <a href="<?php echo $language->link;?>">
@@ -96,7 +120,7 @@ foreach($list as $language)
 			</li>
 		<?php endif;?>
         <!-- <<< [PAID] <<< -->
-        
+     <?php } ?>   
 	<?php endforeach;?>
 	</ul>
 <?php endif; ?>

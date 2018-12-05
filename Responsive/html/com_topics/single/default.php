@@ -7,41 +7,44 @@
 defined('_JEXEC') or die('Restricted access');
 $topic = $this->topics;
 //print_r($topic);
-$document = & JFactory::getDocument();
+$document = JFactory::getDocument();
 $document->setTitle($topic->topic . ' | PAHO' );
 $slug =$topic->alias;
 if ($topic->replacingurl) {
 	echo "<script>location.replace('" . $topic->replacingurl . "'); </script>";
 }
 $left_menu = array();
-if ($topic->sci_tech_doc_types) $left_menu[] = "PAHOWHO_SCIENTIFIC_TECHNICAL_MATERIAL|#sci_tech";
-if ($topic->advocacy_doc_types) $left_menu[] = "PAHOWHO_COMM_MATERIALS|#communication";
-if ($topic->mandates_doc_types) $left_menu[] = "PAHOWHO_MANDATES|#mandates";
-if ($topic->alerts_doc_types) $left_menu[] = "PAHOWHO_EPI_ALERTS|#alerts";
-if ($topic->external_doc_types) $left_menu[] = "EXTERNAL_MATERIAL|#external";
-if ($topic->statistics_doc_types) $left_menu[] = "PAHO/WHO Data, Maps and Statistics|#data";
+if (isset($topic->sci_tech_doc_types)) $left_menu[] = "PAHOWHO_SCIENTIFIC_TECHNICAL_MATERIAL|#sci_tech";
+if (isset($topic->advocacy_doc_types)) $left_menu[] = "PAHOWHO_COMM_MATERIALS|#communication";
+if (isset($topic->mandates_doc_types)) $left_menu[] = "PAHOWHO_MANDATES|#mandates";
+if (isset($topic->alerts_doc_types)) $left_menu[] = "PAHOWHO_EPI_ALERTS|#alerts";
+if (isset($topic->external_doc_types)) $left_menu[] = "EXTERNAL_MATERIAL|#external";
+if (isset($topic->statistics_doc_types)) $left_menu[] = "PAHO/WHO Data, Maps and Statistics|#data";
 if ( substr( $topic->multimedia[0], 0, 16) != '{"name":"","type' ) $left_menu[] = "PAHOWHO_MULTIMEDIA|#multimedia";
-if ($topic->news) $left_menu[] = "HT_NEWS|#news";
+if (isset($topic->news)) $left_menu[] = "HT_NEWS|#news";
 //print_r($topic);
 ?>
 			<!-- Title -->
-			<div class="heading col-xs-12">
+			<div class="heading heading-topic col-xs-12">
 				<h1><?php echo $topic->topic; ?></h1>
 			</div>
 			<div class="clearfix"></div>
 			<!-- Internal Menu -->
-			<div id="sidebar" class="col-md-4">
+			<!--<div id="sidebar" class="col-md-4">
 				<ul class="navigation">
 <?php
 foreach($left_menu as $row) {
 	$menu = explode('|', $row);
-	echo '					<li><a href="' . $menu[1] . '">' . JText::_( $menu[0] ) . "</a></li>\n";
+	$menutext = JText::_( $menu[0] );
+	$menutext = str_replace("PAHO/WHO ", "", $menutext);
+	$menutext = str_replace(" de OPS/OMS", "", $menutext);
+	//echo '					<li><a href="' . $menu[1] . '">' . $menutext . "</a></li>\n";
 }
 ?>
 				</ul>
-			</div>
+			</div> -->
 			<!-- Definition -->
-			<div id="content" class="col-md-8 hidden-xs">
+			<div id="content" class="col-md-12 hidden-xs topic-content">
 				<div class="text-block">
 					<p><?php echo stripslashes($topic->blurb); ?></p>
 					<?php if ($topic->additional_info) {
@@ -52,11 +55,22 @@ foreach($left_menu as $row) {
 			</div>
 			</div>
 		</div>
-
+afasfdasdf
 		<!-- Row that starts with topic photo -->
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="gallery-holder">
+
+					<!-- Statistics start here -->
+					<?php if ( isset($topic->statistics_docs) ) { ?>
+					<div class="item" id="data">
+						<div class="textholder textholder3">
+							<h2><?php echo JText::_( 'PAHOWHO_DATA' ); ?></h2>
+							<?php showDocman($topic->statistics_docs, 'PAHOWHO_DATA', $slug, 'statistics'); ?>
+						</div>
+					</div>
+					<?php } ?>
+					<!-- Statistics end here -->
 
 					<!-- Scientific and Technical Material starts here -->
 					<div class="item" id="sci_tech">
@@ -80,7 +94,7 @@ foreach($left_menu as $row) {
 					<!-- End of Scientific and Technical Material -->
 
 					<!-- Epidemiological Alerts start here -->
-					<?php if ( $topic->alerts_docs ) { ?>
+					<?php if ( isset($topic->alerts_docs) ) { ?>
 					<div class="item" id="alerts">
 						<div class="textholder textholder3">
 							<h2><?php echo JText::_( 'PAHOWHO_EPI_ALERTS' ); ?></h2>
@@ -91,7 +105,7 @@ foreach($left_menu as $row) {
 					<!-- Epidemiological Alerts end here -->
 
 					<!-- News Module starts here -->
-					<?php if ( $topic->news ) { ?>
+					<?php if ( isset($topic->news) ) { ?>
 					<div class="item" id="news">
 						<div class="textholder2">
 							<h2><?php echo JText::_( 'HT_NEWS' ); ?></h2>
@@ -117,7 +131,7 @@ foreach($left_menu as $row) {
 					<!-- News Module ends here -->
 
 					<!-- Communication Materials start here -->
-					<?php if ( $topic->advocacy_docs ) { ?>
+					<?php if ( isset($topic->advocacy_docs) ) { ?>
 					<div class="item" id="communication">
 						<div class="img-holder">
 							<img src="<?php echo $topic->photo; ?>-2.jpg" alt="image description" width="364" height="180">
@@ -131,7 +145,7 @@ foreach($left_menu as $row) {
 					<!-- Communication Materials end here -->
 
 					<!-- Mandates and Strategies start here -->
-					<?php if ( $topic->mandates_docs ) { ?>
+					<?php if ( isset($topic->mandates_docs) ) { ?>
 					<div class="item" id="mandates">
 						<div class="img-holder">
 							<img src="<?php echo $topic->photo; ?>-3.jpg" alt="image description" width="364" height="179">
@@ -146,7 +160,7 @@ foreach($left_menu as $row) {
 
 					<!-- Video Block starts herel -->
 					<?php
-					if ( $topic->mm_highlight ) {
+					if ( isset($topic->mm_highlight) ) {
 						$video = $topic->mm_highlight;
 						if (stripos($video,'v=')) {
 							$ytcode = substr($video, stripos($video,'v=')+2,11);
@@ -176,7 +190,7 @@ foreach($left_menu as $row) {
 					<!-- Video Block ends herel -->
 
 					<!-- External Parties Material starts here -->
-					<?php if ( $topic->external_docs ) { ?>
+					<?php if ( isset($topic->external_docs) ) { ?>
 					<div class="item" id="external">
 						<div class="textholder textholder3">
 							<h2><?php echo JText::_( 'EXTERNAL_MATERIAL' ); ?></h2>
@@ -186,16 +200,7 @@ foreach($left_menu as $row) {
 					<?php } ?>
 					<!-- External Parties Material ends here -->
 
-					<!-- Statistics start here -->
-					<?php if ( $topic->statistics_docs ) { ?>
-					<div class="item" id="data">
-						<div class="textholder textholder3">
-							<h2><?php echo JText::_( 'PAHOWHO_DATA' ); ?></h2>
-							<?php showDocman($topic->statistics_docs, 'PAHOWHO_DATA', $slug, 'statistics'); ?>
-						</div>
-					</div>
-					<?php } ?>
-					<!-- Statistics end here -->
+
 
 					<!-- Strategic Partners Module starts here -->
 					<?php if ( $topic->centers && substr( $topic->centers[0], 0, 16) != '{"name":"","link' ) { ?>
@@ -235,11 +240,13 @@ foreach($left_menu as $row) {
 						<div class="textholder">
 							<h2><?php echo JText::_('PAHOWHO_MULTIMEDIA'); ?></h2>
 							<ul class="list">
-							<?php foreach ( $topic->multimedia as $mm ) {
-							$mm = json_decode( $mm );
-							if ( !$mm->name ) continue; ?>
-								<li><strong><?php echo $mm->type; ?>:</strong>&nbsp;<a href="<?php echo $mm->link; ?>"><?php echo $mm->name; ?></a></li>
-							<?php } ?>
+							<?php 
+							if (isset($topic->multimedia))
+								foreach ( $topic->multimedia as $mm ) {
+									$mm = json_decode( $mm );
+									if ( !$mm->name ) continue; ?>
+										<li><strong><?php echo $mm->type; ?>:</strong>&nbsp;<a href="<?php echo $mm->link; ?>"><?php echo $mm->name; ?></a></li>
+								<?php } ?>
 							</ul>
 						</div>
 					</div><!-- end of item -->
@@ -291,16 +298,9 @@ if($mod_right): ?>
 		?>
 <!-- 	</div> -->
 <?php endif; ?>					
-
 				</div><!-- end of gallery-holder -->
 			</div>
 
-<?php $mod_right = JHTML::_('content.prepare', '{loadposition right3}');
-if($mod_right): ?>
-	<div id="sidebar" class="col-md-4">
-		<?php echo $mod_right; ?>
-	</div>
-<?php endif; ?>
 
 
 
@@ -346,11 +346,10 @@ function showDocman($total, $name, $slug, $tipo) {
 	$file = "cache\\com_topics\\" . $slug . '-' . $tipo;
 	$cats = array();
 	foreach ($total as $row) {
-		if ($row->catid) {
+		if (isset($row->catid)) {
 			$data = new stdClass();
 			$data->topic = $slug;
 			$data->category = $name;
-			$data->level = $row->level;
 			$data->subcategory = $row->catgname;
 			$data->catid = $row->catid;
 			$data->catslug = $row->catslug;
@@ -364,8 +363,7 @@ function showDocman($total, $name, $slug, $tipo) {
 		echo '<ul class="category-list">';
 		foreach ($cats as $row) {
 			$link = JRoute::_('index.php?option=com_topics&amp;view=rdmore&amp;item=' . $slug . '&amp;cat=' . $tipo . '&amp;type=' . $row->catslug);
-			if ($row->level == 1)
-				echo '<li><a href="' . $link . '">' . $row->subcategory . ' '.$row->level.'</a></li>';
+			echo '<li><a href="' . $link . '">' . $row->subcategory . '</a></li>';
 		}
 		echo '</ul>';
 	} // End of blue submenu
